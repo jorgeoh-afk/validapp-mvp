@@ -1,7 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 
 export type LessonStatus = "bloqueada" | "disponible" | "completada";
@@ -82,30 +80,4 @@ export async function getLearningPath(
     previousUnlocked = status === "completada" || status === "disponible";
     return { ...lesson, status };
   });
-}
-
-export async function completeLesson(formData: FormData) {
-  const lessonId = String(formData.get("lessonId") ?? "");
-  const subjectId = String(formData.get("subjectId") ?? "");
-
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
-
-  const path = await getLearningPath(subjectId);
-  const target = path.find((l) => l.id === lessonId);
-  if (!target || target.status === "bloqueada") {
-    return;
-  }
-
-  await supabase
-    .from("lesson_progress")
-    .upsert(
-      { student_id: user.id, lesson_id: lessonId },
-      { onConflict: "student_id,lesson_id" }
-    );
-
-  revalidatePath(`/ruta/${subjectId}`);
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { getLearningPath, completeLesson } from "@/lib/data/progress";
+import { getLearningPath } from "@/lib/data/progress";
 import { listSubjects } from "@/lib/data/content";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 const STATUS_LABEL: Record<string, string> = {
   bloqueada: "Bloqueada",
@@ -47,14 +47,13 @@ export default async function RutaPage({
                   ({lesson.levels?.name} · {STATUS_LABEL[lesson.status]})
                 </span>
               </span>
-              {lesson.status === "disponible" && (
-                <form action={completeLesson}>
-                  <input type="hidden" name="lessonId" value={lesson.id} />
-                  <input type="hidden" name="subjectId" value={subjectId} />
-                  <Button type="submit" size="sm">
-                    Marcar como completada
-                  </Button>
-                </form>
+              {lesson.status !== "bloqueada" && (
+                <Link
+                  href={`/leccion/${lesson.id}`}
+                  className={buttonVariants({ variant: "default", size: "sm" })}
+                >
+                  {lesson.status === "completada" ? "Repasar" : "Empezar"}
+                </Link>
               )}
             </li>
           ))}

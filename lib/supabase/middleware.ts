@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 const ADMIN_PREFIX = "/admin";
-const STUDENT_PREFIX = "/panel";
+const STUDENT_PREFIXES = ["/panel", "/diagnostico"];
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -33,7 +33,9 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   const { pathname } = request.nextUrl;
-  const needsStudent = pathname.startsWith(STUDENT_PREFIX);
+  const needsStudent = STUDENT_PREFIXES.some((prefix) =>
+    pathname.startsWith(prefix)
+  );
   const needsAdmin = pathname.startsWith(ADMIN_PREFIX);
 
   if ((needsStudent || needsAdmin) && !user) {

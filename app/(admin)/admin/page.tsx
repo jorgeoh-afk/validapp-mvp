@@ -27,6 +27,9 @@ export default async function PanelAdmin() {
         <Link href="/admin/preguntas" className={buttonVariants({ variant: "outline" })}>
           Preguntas
         </Link>
+        <Link href="/admin/resultados" className={buttonVariants({ variant: "outline" })}>
+          Resultados
+        </Link>
       </div>
       <form action={signOut}>
         <Button type="submit" variant="ghost">

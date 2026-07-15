@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { getLesson, getLessonQuestions } from "@/lib/data/lessons";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { PracticeForm } from "./practice-form";
 
 export default async function LeccionPage({
@@ -15,19 +23,24 @@ export default async function LeccionPage({
   const questions = await getLessonQuestions(lessonId);
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-12">
-      <Link href={`/ruta/${lesson.subject_id}`} className="text-sm underline">
-        ← Mi ruta
+    <main className="mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-8 sm:px-6 sm:py-12">
+      <Link
+        href={`/ruta/${lesson.subject_id}`}
+        className="flex w-fit items-center gap-1 text-sm text-muted-foreground underline-offset-4 hover:underline"
+      >
+        <ArrowLeft className="size-4" aria-hidden="true" />
+        Mi ruta
       </Link>
-      <h1 className="mt-2 text-xl font-semibold">
-        {lesson.title}{" "}
-        <span className="text-sm font-normal text-zinc-500">
-          ({lesson.levels?.name})
-        </span>
-      </h1>
-      <p className="mt-4 whitespace-pre-line text-zinc-700 dark:text-zinc-300">
-        {lesson.content}
-      </p>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-xl">{lesson.title}</CardTitle>
+          {lesson.levels?.name && <CardDescription>{lesson.levels.name}</CardDescription>}
+        </CardHeader>
+        <CardContent>
+          <p className="whitespace-pre-line text-sm text-foreground/90">{lesson.content}</p>
+        </CardContent>
+      </Card>
 
       <PracticeForm
         lessonId={lessonId}

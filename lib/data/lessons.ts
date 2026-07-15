@@ -31,6 +31,29 @@ export async function getLessonQuestions(lessonId: string) {
   return data ?? [];
 }
 
+export type CheckPracticeAnswerResult =
+  | { error: string }
+  | { correct: boolean; correctIndex: number };
+
+export async function checkPracticeAnswer(
+  questionId: string,
+  selectedIndex: number
+): Promise<CheckPracticeAnswerResult> {
+  const supabase = await createClient();
+  const { data: question } = await supabase
+    .from("questions")
+    .select("correct_index")
+    .eq("id", questionId)
+    .single();
+
+  if (!question) return { error: "Pregunta no encontrada." };
+
+  return {
+    correct: selectedIndex === question.correct_index,
+    correctIndex: question.correct_index,
+  };
+}
+
 export type PracticeResultQuestion = {
   id: string;
   prompt: string;
@@ -71,7 +94,7 @@ export async function submitLessonPractice(
     return { error: "Esta lección todavía está bloqueada." };
   }
 
-  let results: PracticeResultQuestion[] = [];
+  const results: PracticeResultQuestion[] = [];
   let score = 0;
 
   if (questionIds.length > 0) {

@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 const ADMIN_PREFIX = "/admin";
-const STUDENT_PREFIXES = ["/panel", "/diagnostico"];
+const STUDENT_PREFIXES = ["/panel", "/diagnostico", "/ruta"];
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });

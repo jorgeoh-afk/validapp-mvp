@@ -15,9 +15,14 @@ export default async function PanelEstudiante() {
         Aquí verás tu ruta educativa y tu progreso. Esta sección se seguirá
         construyendo en las próximas etapas.
       </p>
-      <Link href="/diagnostico" className={buttonVariants({ variant: "default" })}>
-        Rendir diagnóstico
-      </Link>
+      <div className="flex gap-3">
+        <Link href="/diagnostico" className={buttonVariants({ variant: "default" })}>
+          Rendir diagnóstico
+        </Link>
+        <Link href="/ruta" className={buttonVariants({ variant: "outline" })}>
+          Mi ruta educativa
+        </Link>
+      </div>
       <form action={signOut}>
         <Button type="submit" variant="outline">
           Cerrar sesión

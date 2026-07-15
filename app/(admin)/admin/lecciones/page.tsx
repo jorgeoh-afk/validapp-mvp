@@ -45,7 +45,7 @@ export default async function LeccionesPage({
         {lessons.map((lesson) => (
           <li
             key={lesson.id}
-            className="flex items-center justify-between rounded-lg border border-border px-3 py-2"
+            className="flex items-center justify-between gap-4 rounded-lg border border-border px-3 py-2"
           >
             <span>
               {lesson.title}{" "}

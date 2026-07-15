@@ -27,7 +27,7 @@ export default async function AsignaturasPage({
         {subjects.map((subject) => (
           <li
             key={subject.id}
-            className="flex items-center justify-between rounded-lg border border-border px-3 py-2"
+            className="flex items-center justify-between gap-4 rounded-lg border border-border px-3 py-2"
           >
             <span>{subject.name}</span>
             <div className="flex items-center gap-2">

@@ -30,13 +30,15 @@ export function DiagnosticForm({
       />
 
       {questions.map((question, index) => (
-        <fieldset
+        <div
           key={question.id}
+          role="group"
+          aria-label={question.prompt}
           className="rounded-lg border border-border p-4"
         >
-          <legend className="text-sm font-medium">
+          <p className="text-sm font-medium">
             {index + 1}. {question.prompt}
-          </legend>
+          </p>
           <div className="mt-2 flex flex-col gap-2">
             {question.choices.map((choice, choiceIndex) => (
               <label
@@ -53,7 +55,7 @@ export function DiagnosticForm({
               </label>
             ))}
           </div>
-        </fieldset>
+        </div>
       ))}
 
       {state?.error && <p className="text-sm text-red-600">{state.error}</p>}

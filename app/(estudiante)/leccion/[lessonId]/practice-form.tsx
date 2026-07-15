@@ -77,10 +77,15 @@ export function PracticeForm({
       />
 
       {questions.map((question, index) => (
-        <fieldset key={question.id} className="rounded-lg border border-border p-4">
-          <legend className="text-sm font-medium">
+        <div
+          key={question.id}
+          role="group"
+          aria-label={question.prompt}
+          className="rounded-lg border border-border p-4"
+        >
+          <p className="text-sm font-medium">
             {index + 1}. {question.prompt}
-          </legend>
+          </p>
           <div className="mt-2 flex flex-col gap-2">
             {question.choices.map((choice, choiceIndex) => (
               <label key={choiceIndex} className="flex items-center gap-2 text-sm">
@@ -94,7 +99,7 @@ export function PracticeForm({
               </label>
             ))}
           </div>
-        </fieldset>
+        </div>
       ))}
 
       {state && "error" in state && (

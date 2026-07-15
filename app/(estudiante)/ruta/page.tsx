@@ -19,7 +19,7 @@ export default async function RutaSubjectsPage() {
         {subjects.map((subject) => (
           <li
             key={subject.id}
-            className="flex items-center justify-between gap-4 rounded-lg border border-border px-3 py-2"
+            className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
           >
             <span>{subject.name}</span>
             <Link

@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${appSans.variable} ${appMono.variable} h-full antialiased`}
+      className={`${appSans.variable} ${appMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-zinc-50 dark:bg-black">
         {children}

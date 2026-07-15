@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { recordDiagnosticCompleted } from "@/lib/data/gamification";
 
 export async function getDiagnosticQuestions(subjectId: string) {
   const supabase = await createClient();
@@ -112,6 +113,8 @@ export async function submitDiagnostic(
   await supabase
     .from("diagnostic_answers")
     .insert(answerRows.map((a) => ({ ...a, diagnostic_id: diagnostic.id })));
+
+  await recordDiagnosticCompleted(user.id);
 
   redirect(`/diagnostico/resultado/${diagnostic.id}`);
 }

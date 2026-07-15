@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getLearningPath } from "@/lib/data/progress";
+import { recordLessonCompleted } from "@/lib/data/gamification";
 
 export async function getLesson(lessonId: string) {
   const supabase = await createClient();
@@ -105,6 +106,11 @@ export async function submitLessonPractice(
     { onConflict: "student_id,lesson_id" }
   );
 
+  if (status !== "completada") {
+    await recordLessonCompleted(user.id, lesson.subject_id);
+  }
+
   revalidatePath(`/ruta/${lesson.subject_id}`);
+  revalidatePath("/panel");
   return { score, total: results.length, results };
 }

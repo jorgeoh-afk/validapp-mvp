@@ -81,3 +81,174 @@ export async function getLearningPath(
     return { ...lesson, status };
   });
 }
+
+// ---------- Resumen para el panel del estudiante ----------
+
+export type SubjectSummary = {
+  id: string;
+  name: string;
+  totalLessons: number;
+  completedLessons: number;
+  percent: number;
+  nextLessonId: string | null;
+  nextLessonTitle: string | null;
+};
+
+export type NextActivity = {
+  subjectId: string;
+  subjectName: string;
+  lessonId: string;
+  lessonTitle: string;
+  levelName: string | null;
+  questionCount: number;
+  /**
+   * Duración y dificultad son estimaciones calculadas en el cliente a partir
+   * de la cantidad de preguntas de la lección. El modelo de datos aún no
+   * guarda estos valores; conectar cuando `lessons` incorpore campos reales
+   * de duración/dificultad.
+   */
+  estimatedMinutes: number;
+  difficultyLabel: "Introductorio" | "Intermedio" | "Avanzado";
+} | null;
+
+export type DashboardSummary = {
+  studentName: string | null;
+  targetLevel: string | null;
+  subjects: SubjectSummary[];
+  totalLessons: number;
+  completedLessons: number;
+  overallPercent: number;
+  questionsAnswered: number;
+  correctAnswers: number;
+  accuracyPercent: number | null;
+  diagnosticsCount: number;
+  hasAnyDiagnostic: boolean;
+  nextActivity: NextActivity;
+};
+
+export async function getDashboardSummary(): Promise<DashboardSummary | null> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("full_name, target_level")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  const { data: subjects } = await supabase
+    .from("subjects")
+    .select("id, name")
+    .order("name");
+
+  const { data: diagnostics, count: diagnosticsCount } = await supabase
+    .from("diagnostics")
+    .select("id", { count: "exact" })
+    .eq("student_id", user.id);
+
+  const { data: lessonProgressRows } = await supabase
+    .from("lesson_progress")
+    .select("score, total_questions")
+    .eq("student_id", user.id);
+
+  const questionsAnswered = (lessonProgressRows ?? []).reduce(
+    (sum, row) => sum + (row.total_questions ?? 0),
+    0
+  );
+  const correctAnswers = (lessonProgressRows ?? []).reduce(
+    (sum, row) => sum + (row.score ?? 0),
+    0
+  );
+
+  const subjectPaths = await Promise.all(
+    (subjects ?? []).map(async (subject) => {
+      const path = await getLearningPath(subject.id);
+      return { subject, path };
+    })
+  );
+
+  const subjectSummaries: SubjectSummary[] = subjectPaths.map(
+    ({ subject, path }) => {
+      const totalLessons = path.length;
+      const completedLessons = path.filter(
+        (l) => l.status === "completada"
+      ).length;
+      const nextLesson = path.find((l) => l.status === "disponible") ?? null;
+      return {
+        id: subject.id,
+        name: subject.name,
+        totalLessons,
+        completedLessons,
+        percent:
+          totalLessons > 0
+            ? Math.round((completedLessons / totalLessons) * 100)
+            : 0,
+        nextLessonId: nextLesson?.id ?? null,
+        nextLessonTitle: nextLesson?.title ?? null,
+      };
+    }
+  );
+
+  const totalLessons = subjectSummaries.reduce(
+    (sum, s) => sum + s.totalLessons,
+    0
+  );
+  const completedLessons = subjectSummaries.reduce(
+    (sum, s) => sum + s.completedLessons,
+    0
+  );
+
+  const nextSubjectWithActivity = subjectPaths.find(
+    ({ path }) => path.some((l) => l.status === "disponible")
+  );
+  let nextActivity: NextActivity = null;
+  if (nextSubjectWithActivity) {
+    const lesson = nextSubjectWithActivity.path.find(
+      (l) => l.status === "disponible"
+    )!;
+    const { count: questionCount } = await supabase
+      .from("questions")
+      .select("id", { count: "exact", head: true })
+      .eq("lesson_id", lesson.id);
+    const total = questionCount ?? 0;
+    nextActivity = {
+      subjectId: nextSubjectWithActivity.subject.id,
+      subjectName: nextSubjectWithActivity.subject.name,
+      lessonId: lesson.id,
+      lessonTitle: lesson.title,
+      levelName: lesson.levels?.name ?? null,
+      questionCount: total,
+      estimatedMinutes: Math.max(5, total * 2 + 3),
+      difficultyLabel:
+        (lesson.levels?.order_index ?? 0) <= 0
+          ? "Introductorio"
+          : (lesson.levels?.order_index ?? 0) === 1
+            ? "Intermedio"
+            : "Avanzado",
+    };
+  }
+
+  return {
+    studentName: profile?.full_name ?? null,
+    targetLevel: profile?.target_level ?? null,
+    subjects: subjectSummaries,
+    totalLessons,
+    completedLessons,
+    overallPercent:
+      totalLessons > 0
+        ? Math.round((completedLessons / totalLessons) * 100)
+        : 0,
+    questionsAnswered,
+    correctAnswers,
+    accuracyPercent:
+      questionsAnswered > 0
+        ? Math.round((correctAnswers / questionsAnswered) * 100)
+        : null,
+    diagnosticsCount: diagnosticsCount ?? diagnostics?.length ?? 0,
+    hasAnyDiagnostic: (diagnosticsCount ?? 0) > 0,
+    nextActivity,
+  };
+}

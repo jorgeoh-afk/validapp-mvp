@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node ./e2e-diagnostico.mjs)",
+      "Read(//tmp/**)",
+      "Bash(netstat -ano)",
+      "PowerShell(Stop-Process -Id 32900,33908 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"done\")",
+      "Bash(node ./e2e-ruta.mjs)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(rm -f e2e-*.mjs e2e-*.png)",
+      "Bash(npm run *)",
+      "Bash(pkill -f \"next\")",
+      "Bash(rm -rf .next)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(curl -sf https://validapp-mvp.vercel.app/ruta -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -sf http://localhost:3000/ -o /dev/null -w \"home: %{http_code}\\\\n\")",
+      "Bash(curl -sf http://localhost:3000/login -o /dev/null -w \"login: %{http_code}\\\\n\")"
+    ]
+  }
+}

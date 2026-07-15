@@ -77,3 +77,11 @@ Cercano, dinámico, motivador y gamificado. Debe sentirse profesional y fácil d
 - Mantener la aplicación adaptable a celular (mobile-first).
 - Ejecutar pruebas después de cada función.
 - Antes de tocar autenticación, contenido o resultados, confirmar en qué dominio de datos cae el cambio (ver "Modelo de datos en Supabase").
+
+## Diseño UX/UI de ValidApp
+
+- Existe el agente `validapp-ui-designer` (`.claude/agents/validapp-ui-designer.md`), especializado en UX/UI educativo, gamificación, frontend, accesibilidad y consistencia visual.
+- Existe el skill `/validapp-ui` (`.claude/skills/validapp-ui/SKILL.md`) que delega en ese agente.
+- Las tareas de diseño visual o de interfaz deben usar ese agente/skill en lugar de modificarse de forma ad hoc.
+- La identidad visual debe ser original: se inspira en la claridad y gamificación de apps como Duolingo, pero no debe copiar su interfaz, personajes ni marca.
+- Antes de publicar cualquier cambio visual (git push, despliegue en Vercel) se necesita autorización explícita del usuario.

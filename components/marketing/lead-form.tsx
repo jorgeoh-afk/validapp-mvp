@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { submitLead } from "@/lib/data/leads";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -31,32 +32,10 @@ const NIVELES = [
   "Aún no estoy seguro/a",
 ];
 
-type Status = "idle" | "submitting" | "success" | "error";
-
-/**
- * Formulario de interés para el MVP.
- * NOTA (temporal): por ahora solo simula el envío en el cliente.
- * Falta conectarlo a una tabla de leads en Supabase; no se debe
- * habilitar esa conexión sin autorización explícita.
- */
 export function LeadForm() {
-  const [status, setStatus] = useState<Status>("idle");
+  const [state, formAction, pending] = useActionState(submitLead, null);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("submitting");
-
-    try {
-      // TODO: reemplazar por un server action que guarde el interesado
-      // en la tabla de leads de Supabase, previa autorización.
-      await new Promise((resolve) => setTimeout(resolve, 700));
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  if (status === "success") {
+  if (state && "success" in state) {
     return (
       <div
         role="status"
@@ -75,7 +54,7 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form action={formAction} className="flex flex-col gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label htmlFor="lead-name">Nombre</Label>
@@ -171,19 +150,14 @@ export function LeadForm() {
         </label>
       </div>
 
-      {status === "error" && (
+      {state && "error" in state && (
         <p role="alert" className="text-sm text-destructive">
-          No pudimos enviar tus datos. Intenta nuevamente en unos minutos.
+          {state.error}
         </p>
       )}
 
-      <Button
-        type="submit"
-        size="lg"
-        disabled={status === "submitting"}
-        className="w-full sm:w-auto"
-      >
-        {status === "submitting" ? (
+      <Button type="submit" size="lg" disabled={pending} className="w-full sm:w-auto">
+        {pending ? (
           <>
             <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             Enviando...

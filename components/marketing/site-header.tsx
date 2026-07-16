@@ -44,12 +44,12 @@ export function SiteHeader() {
           >
             Iniciar sesión
           </Link>
-          <Link
-            href="/registro"
+          <a
+            href="#contacto"
             className={buttonVariants({ variant: "default", size: "sm" })}
           >
             Quiero probar ValidApp
-          </Link>
+          </a>
         </div>
 
         <button
@@ -92,13 +92,13 @@ export function SiteHeader() {
             >
               Iniciar sesión
             </Link>
-            <Link
-              href="/registro"
+            <a
+              href="#contacto"
               onClick={() => setOpen(false)}
               className={cn(buttonVariants({ variant: "default" }), "w-full")}
             >
               Quiero probar ValidApp
-            </Link>
+            </a>
           </div>
         </div>
       )}

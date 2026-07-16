@@ -202,15 +202,15 @@ export default function Home() {
               progreso.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/registro"
+              <a
+                href="#contacto"
                 className={cn(
                   buttonVariants({ variant: "default", size: "lg" }),
                   "w-full sm:w-auto"
                 )}
               >
                 Quiero probar ValidApp
-              </Link>
+              </a>
               <a
                 href="#como-funciona"
                 className={cn(
@@ -452,17 +452,15 @@ export default function Home() {
             </h2>
             <p className="mx-auto max-w-xl text-muted-foreground">
               Cuéntanos un poco de ti y te avisaremos apenas puedas probar
-              ValidApp. También puedes crear tu cuenta ahora mismo.
+              ValidApp. Si ya sabes que quieres partir, puedes{" "}
+              <Link
+                href="/registro"
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                crear tu cuenta directamente
+              </Link>
+              .
             </p>
-          </div>
-
-          <div className="mt-4 flex justify-center">
-            <Link
-              href="/registro"
-              className={buttonVariants({ variant: "default", size: "lg" })}
-            >
-              Quiero probar ValidApp
-            </Link>
           </div>
 
           <Card className="mt-8">

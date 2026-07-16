@@ -32,6 +32,30 @@ export default async function PanelAdmin() {
           Resultados
         </Link>
       </div>
+
+      <h2 className="mt-4 text-sm font-medium text-zinc-500">
+        Estructura curricular
+      </h2>
+      <div className="flex flex-wrap justify-center gap-3">
+        <Link href="/admin/programas" className={buttonVariants({ variant: "outline" })}>
+          Programas
+        </Link>
+        <Link href="/admin/niveles-educativos" className={buttonVariants({ variant: "outline" })}>
+          Niveles educativos
+        </Link>
+        <Link href="/admin/ejes" className={buttonVariants({ variant: "outline" })}>
+          Ejes temáticos
+        </Link>
+        <Link href="/admin/unidades" className={buttonVariants({ variant: "outline" })}>
+          Unidades
+        </Link>
+        <Link href="/admin/habilidades" className={buttonVariants({ variant: "outline" })}>
+          Habilidades
+        </Link>
+        <Link href="/admin/objetivos-aprendizaje" className={buttonVariants({ variant: "outline" })}>
+          Objetivos de aprendizaje
+        </Link>
+      </div>
       <form action={signOut}>
         <Button type="submit" variant="ghost">
           Cerrar sesión

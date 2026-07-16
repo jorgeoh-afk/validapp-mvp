@@ -44,7 +44,7 @@ export async function listLevels() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("levels")
-    .select("*")
+    .select("*, programs(name), education_levels(name)")
     .order("order_index");
   return data ?? [];
 }

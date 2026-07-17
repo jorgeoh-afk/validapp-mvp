@@ -31,7 +31,9 @@
       "Bash(break)",
       "Bash(curl -sf http://localhost:3001/ -o /dev/null -w \"3001: %{http_code}\\\\n\")",
       "Bash(node .test-question-wizard.js)",
-      "Bash(node .test-student-flows.js)"
+      "Bash(node .test-student-flows.js)",
+      "Bash(node .test-cleanup-check.js)",
+      "Edit(/.claude/skills/validapp-assessments/**)"
     ]
   }
 }

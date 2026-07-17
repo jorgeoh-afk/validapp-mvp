@@ -13,7 +13,13 @@ export default async function CoberturaPage() {
       <h1 className="mt-2 text-xl font-semibold">Cobertura curricular</h1>
       <p className="mt-1 text-sm text-muted-foreground">
         Solo cuenta preguntas con estado &quot;aprobado&quot;. Úsalo para
-        detectar qué necesitas cargar antes de generar más ensayos.
+        detectar qué necesitas cargar antes de generar más ensayos. Para ver
+        cómo les está yendo realmente a los estudiantes con las preguntas ya
+        publicadas, revisa{" "}
+        <Link href="/admin/estadisticas" className="underline">
+          estadísticas de desempeño
+        </Link>
+        .
       </p>
 
       <section className="mt-6">

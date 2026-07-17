@@ -37,6 +37,9 @@ export default async function PanelAdmin() {
         <Link href="/admin/cobertura" className={buttonVariants({ variant: "outline" })}>
           Cobertura curricular
         </Link>
+        <Link href="/admin/estadisticas" className={buttonVariants({ variant: "outline" })}>
+          Estadísticas de preguntas
+        </Link>
       </div>
 
       <h2 className="mt-4 text-sm font-medium text-zinc-500">

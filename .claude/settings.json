@@ -47,7 +47,9 @@
       "Bash(tasklist //FI \"PID eq 276\")",
       "Bash(taskkill //F //PID 276)",
       "Bash(curl -sf http://localhost:3004/ -o /dev/null -w \"%{http_code}\\\\n\")",
-      "Bash(node .test-essay-attempt.js)"
+      "Bash(node .test-essay-attempt.js)",
+      "Bash(xargs grep -l \"cobertura\\\\|Ensayos\\\\|nav\")",
+      "Bash(node .test-stats.js)"
     ]
   }
 }

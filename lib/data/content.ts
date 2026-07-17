@@ -131,13 +131,74 @@ export async function deleteLesson(formData: FormData) {
 
 // ---------- Preguntas ----------
 
+const QUESTION_DIFFICULTIES = ["inicial", "intermedia", "avanzada"] as const;
+const QUESTION_REVIEW_STATUSES = [
+  "borrador",
+  "en_revision",
+  "aprobado",
+  "archivado",
+] as const;
+
 export async function listQuestions() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("questions")
-    .select("*, subjects(name), levels(name), lessons(title)")
+    .select(
+      "*, subjects(name), levels(name), lessons(title), learning_objectives(short_name), skills(name), question_tag_assignments(question_tags(id, name))"
+    )
     .order("created_at", { ascending: false });
   return data ?? [];
+}
+
+export async function listQuestionTags() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("question_tags")
+    .select("*")
+    .order("name");
+  return data ?? [];
+}
+
+/**
+ * Busca o crea etiquetas a partir de una lista de nombres (tal como las
+ * escribe el administrador, separadas por coma en el paso 5 del wizard) y
+ * devuelve sus ids. Se normaliza a minúsculas/trim para evitar duplicados
+ * como "Álgebra" y "álgebra ".
+ */
+async function resolveTagIds(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  tagNamesRaw: string[]
+): Promise<{ ids: string[]; error?: string }> {
+  const names = Array.from(
+    new Set(
+      tagNamesRaw
+        .map((n) => n.trim())
+        .filter(Boolean)
+        .map((n) => n.toLowerCase())
+    )
+  );
+  if (names.length === 0) return { ids: [] };
+
+  const { data: existing, error: existingError } = await supabase
+    .from("question_tags")
+    .select("id, name")
+    .in("name", names);
+  if (existingError) return { ids: [], error: existingError.message };
+
+  const existingNames = new Set((existing ?? []).map((t) => t.name));
+  const missing = names.filter((n) => !existingNames.has(n));
+
+  const created: { id: string; name: string }[] = [];
+  if (missing.length > 0) {
+    const { data: inserted, error: insertError } = await supabase
+      .from("question_tags")
+      .insert(missing.map((name) => ({ name })))
+      .select("id, name");
+    if (insertError) return { ids: [], error: insertError.message };
+    created.push(...(inserted ?? []));
+  }
+
+  return { ids: [...(existing ?? []), ...created].map((t) => t.id) };
 }
 
 export async function upsertQuestion(
@@ -148,9 +209,26 @@ export async function upsertQuestion(
   const subjectId = String(formData.get("subjectId") ?? "");
   const levelId = String(formData.get("levelId") ?? "");
   const lessonId = String(formData.get("lessonId") ?? "");
+  const learningObjectiveId = String(
+    formData.get("learningObjectiveId") ?? ""
+  );
+  const skillId = String(formData.get("skillId") ?? "");
   const prompt = String(formData.get("prompt") ?? "").trim();
+  const resourceUrl = String(formData.get("resourceUrl") ?? "").trim();
+  const explanation = String(formData.get("explanation") ?? "").trim();
   const choicesRaw = String(formData.get("choices") ?? "");
   const correctIndex = Number(formData.get("correctIndex") ?? 0);
+  const difficulty = String(formData.get("difficulty") ?? "intermedia");
+  const points = Number(formData.get("points") ?? 1);
+  const estimatedSecondsRaw = String(
+    formData.get("estimatedSeconds") ?? ""
+  ).trim();
+  const estimatedSeconds = estimatedSecondsRaw
+    ? Number(estimatedSecondsRaw)
+    : null;
+  const source = String(formData.get("source") ?? "").trim();
+  const reviewStatus = String(formData.get("reviewStatus") ?? "borrador");
+  const tagsRaw = String(formData.get("tags") ?? "");
 
   const choices = choicesRaw
     .split("\n")
@@ -163,25 +241,75 @@ export async function upsertQuestion(
         "Asignatura, nivel, pregunta y al menos 2 alternativas son obligatorios.",
     };
   }
+  const normalizedChoices = choices.map((c) => c.toLowerCase());
+  if (new Set(normalizedChoices).size !== choices.length) {
+    return { error: "No puede haber alternativas repetidas." };
+  }
   if (correctIndex < 0 || correctIndex >= choices.length) {
-    return { error: "El índice de la respuesta correcta no es válido." };
+    return { error: "Debes marcar cuál alternativa es la correcta." };
+  }
+  if (!QUESTION_DIFFICULTIES.includes(difficulty as never)) {
+    return { error: "Dificultad no válida." };
+  }
+  if (!QUESTION_REVIEW_STATUSES.includes(reviewStatus as never)) {
+    return { error: "Estado de revisión no válido." };
   }
 
   const record = {
     subject_id: subjectId,
     level_id: levelId,
     lesson_id: lessonId || null,
+    learning_objective_id: learningObjectiveId || null,
+    skill_id: skillId || null,
     prompt,
+    resource_url: resourceUrl || null,
+    explanation: explanation || null,
     choices,
     correct_index: correctIndex,
+    difficulty,
+    points: Number.isFinite(points) && points > 0 ? points : 1,
+    estimated_seconds: estimatedSeconds,
+    source: source || null,
+    review_status: reviewStatus,
+    updated_at: new Date().toISOString(),
   };
 
   const supabase = await createClient();
-  const { error } = id
-    ? await supabase.from("questions").update(record).eq("id", id)
-    : await supabase.from("questions").insert(record);
+  const { ids: tagIds, error: tagsError } = await resolveTagIds(
+    supabase,
+    tagsRaw.split(",")
+  );
+  if (tagsError) return { error: tagsError };
 
-  if (error) return { error: error.message };
+  let questionId = id;
+  if (id) {
+    const { error } = await supabase
+      .from("questions")
+      .update(record)
+      .eq("id", id);
+    if (error) return { error: error.message };
+  } else {
+    const { data, error } = await supabase
+      .from("questions")
+      .insert(record)
+      .select("id")
+      .single();
+    if (error) return { error: error.message };
+    questionId = data.id;
+  }
+
+  // Sincroniza las etiquetas asociadas (borra y reinserta el set completo).
+  await supabase
+    .from("question_tag_assignments")
+    .delete()
+    .eq("question_id", questionId);
+  if (tagIds.length > 0) {
+    const { error: assignError } = await supabase
+      .from("question_tag_assignments")
+      .insert(tagIds.map((tagId) => ({ question_id: questionId, tag_id: tagId })));
+    if (assignError) return { error: assignError.message };
+  }
+
   revalidatePath("/admin/preguntas");
   return null;
 }

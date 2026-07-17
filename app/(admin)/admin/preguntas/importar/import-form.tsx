@@ -13,6 +13,7 @@ import {
 } from "@/lib/data/question-import-shared";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const STATUS_LABEL: Record<ValidatedImportRow["status"], string> = {
   valida: "Válida",
@@ -97,49 +98,60 @@ export function ImportForm({ catalogs }: { catalogs: ImportCatalogs }) {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2 rounded-xl border border-border p-4">
-        <p className="text-sm font-medium">1. Descarga la plantilla</p>
-        <p className="text-sm text-muted-foreground">
-          Usa este archivo de ejemplo como base: mantén los nombres de columna
-          y complétalos con tus preguntas. Asignatura y curso deben escribirse
-          igual que en el catálogo (por ejemplo, tal como aparecen en{" "}
-          <span className="font-medium">/admin/asignaturas</span> y{" "}
-          <span className="font-medium">/admin/niveles</span>).
-        </p>
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          className="w-fit"
-          onClick={downloadTemplate}
-        >
-          Descargar plantilla CSV
-        </Button>
-      </div>
-
-      <div className="flex flex-col gap-2 rounded-xl border border-border p-4">
-        <p className="text-sm font-medium">2. Sube tu archivo</p>
-        <input
-          type="file"
-          accept=".csv,text/csv"
-          onChange={handleFile}
-          aria-label="Seleccionar archivo CSV de preguntas"
-          className="text-sm"
-        />
-        {fileName && (
-          <p className="text-xs text-muted-foreground">
-            Archivo cargado: {fileName} ({rawRows.length} fila
-            {rawRows.length === 1 ? "" : "s"})
+      <Card>
+        <CardHeader>
+          <CardTitle>1. Descarga la plantilla</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-2">
+          <p className="text-sm text-muted-foreground">
+            Usa este archivo de ejemplo como base: mantén los nombres de columna
+            y complétalos con tus preguntas. Asignatura y curso deben escribirse
+            igual que en el catálogo (por ejemplo, tal como aparecen en{" "}
+            <span className="font-medium">/admin/asignaturas</span> y{" "}
+            <span className="font-medium">/admin/niveles</span>).
           </p>
-        )}
-        {parseError && (
-          <p className="text-sm text-destructive">{parseError}</p>
-        )}
-      </div>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="w-fit"
+            onClick={downloadTemplate}
+          >
+            Descargar plantilla CSV
+          </Button>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>2. Sube tu archivo</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-2">
+          <input
+            type="file"
+            accept=".csv,text/csv"
+            onChange={handleFile}
+            aria-label="Seleccionar archivo CSV de preguntas"
+            className="text-sm"
+          />
+          {fileName && (
+            <p className="text-xs text-muted-foreground">
+              Archivo cargado: {fileName} ({rawRows.length} fila
+              {rawRows.length === 1 ? "" : "s"})
+            </p>
+          )}
+          {parseError && (
+            <p className="text-sm text-destructive">{parseError}</p>
+          )}
+        </CardContent>
+      </Card>
 
       {rawRows.length > 0 && (
-        <div className="flex flex-col gap-3 rounded-xl border border-border p-4">
-          <p className="text-sm font-medium">3. Revisa la vista previa</p>
+        <Card>
+          <CardHeader>
+            <CardTitle>3. Revisa la vista previa</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-3">
           <div className="flex flex-wrap gap-2 text-sm">
             <Badge variant="success">{summary.validCount} válidas</Badge>
             <Badge variant="warning">
@@ -230,7 +242,8 @@ export function ImportForm({ catalogs }: { catalogs: ImportCatalogs }) {
                 : `Importar ${importableCount} pregunta${importableCount === 1 ? "" : "s"} válida${importableCount === 1 ? "" : "s"}`}
             </Button>
           </form>
-        </div>
+          </CardContent>
+        </Card>
       )}
 
       {state && "error" in state && (

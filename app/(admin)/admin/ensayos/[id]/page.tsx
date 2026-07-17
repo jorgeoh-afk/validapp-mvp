@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getEssay,
@@ -11,6 +10,7 @@ import { listSubjects } from "@/lib/data/content";
 import { listLearningObjectives } from "@/lib/data/curriculum";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { EssayForm } from "../essay-form";
 import { DistributionForm } from "./distribution-form";
 import { GeneratePanel } from "./generate-panel";
@@ -72,141 +72,152 @@ export default async function EnsayoDetallePage({
   const estimatedMinutes = Math.ceil(totalSeconds / 60);
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <Link href="/admin/ensayos" className="text-sm underline">
-        ← Ensayos
-      </Link>
-      <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
-        <h1 className="text-xl font-semibold">{essay.name}</h1>
+    <main className="mx-auto flex max-w-3xl flex-col gap-6 px-6 py-12">
+      <header className="flex flex-wrap items-center justify-between gap-2">
+        <h1 className="font-heading text-xl font-semibold text-foreground">
+          {essay.name}
+        </h1>
         <Badge>{essay.levels?.name ?? "—"}</Badge>
-      </div>
+      </header>
 
-      <section className="mt-4 flex flex-col gap-2 rounded-xl border border-border p-4">
-        <h2 className="text-sm font-semibold">Estado del ensayo</h2>
-        <div className="flex flex-wrap items-center gap-2">
-          {ESSAY_STATUSES.map((s) => (
-            <Badge key={s} variant={s === essay.status ? "default" : "outline"}>
-              {STATUS_LABEL[s]}
-            </Badge>
-          ))}
-        </div>
-        <form action={updateEssayStatus} className="flex items-center gap-2">
-          <input type="hidden" name="id" value={essay.id} />
-          <select
-            name="status"
-            defaultValue={essay.status}
-            className="h-8 rounded-lg border border-input bg-transparent px-2.5 text-sm dark:bg-input/30"
-          >
+      <Card>
+        <CardHeader>
+          <CardTitle>Estado del ensayo</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {ESSAY_STATUSES.map((s) => (
-              <option key={s} value={s}>
+              <Badge key={s} variant={s === essay.status ? "default" : "outline"}>
                 {STATUS_LABEL[s]}
-              </option>
+              </Badge>
             ))}
-          </select>
-          <Button type="submit" size="sm" variant="outline">
-            Cambiar estado
-          </Button>
-        </form>
-        <p className="text-xs text-muted-foreground">
-          La transición entre estados es manual por ahora: revisa que el
-          ensayo esté generado y sin alertas antes de marcarlo como publicado.
-        </p>
-      </section>
+          </div>
+          <form action={updateEssayStatus} className="flex items-center gap-2">
+            <input type="hidden" name="id" value={essay.id} />
+            <select
+              name="status"
+              defaultValue={essay.status}
+              className="h-8 rounded-lg border border-input bg-transparent px-2.5 text-sm dark:bg-input/30"
+            >
+              {ESSAY_STATUSES.map((s) => (
+                <option key={s} value={s}>
+                  {STATUS_LABEL[s]}
+                </option>
+              ))}
+            </select>
+            <Button type="submit" size="sm" variant="outline">
+              Cambiar estado
+            </Button>
+          </form>
+          <p className="text-xs text-muted-foreground">
+            La transición entre estados es manual por ahora: revisa que el
+            ensayo esté generado y sin alertas antes de marcarlo como publicado.
+          </p>
+        </CardContent>
+      </Card>
 
-      <div className="mt-6">
-        <h2 className="mb-2 text-sm font-semibold">Configuración base</h2>
-        <EssayForm
-          editing={{
-            id: essay.id,
-            name: essay.name,
-            level_id: essay.level_id,
-            essay_type: essay.essay_type,
-            total_questions: essay.total_questions,
-            time_limit_minutes: essay.time_limit_minutes,
-            order_mode: essay.order_mode,
-            allow_repeat_questions: essay.allow_repeat_questions,
-            available_from: essay.available_from,
-            max_attempts: essay.max_attempts,
-            feedback_mode: essay.feedback_mode,
-          }}
-          levels={[{ id: essay.level_id, name: essay.levels?.name ?? "" }]}
-        />
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Configuración base</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <EssayForm
+            editing={{
+              id: essay.id,
+              name: essay.name,
+              level_id: essay.level_id,
+              essay_type: essay.essay_type,
+              total_questions: essay.total_questions,
+              time_limit_minutes: essay.time_limit_minutes,
+              order_mode: essay.order_mode,
+              allow_repeat_questions: essay.allow_repeat_questions,
+              available_from: essay.available_from,
+              max_attempts: essay.max_attempts,
+              feedback_mode: essay.feedback_mode,
+            }}
+            levels={[{ id: essay.level_id, name: essay.levels?.name ?? "" }]}
+          />
+        </CardContent>
+      </Card>
 
-      <div className="mt-6">
-        <h2 className="mb-2 text-sm font-semibold">Distribución solicitada</h2>
-        <DistributionForm
-          essayId={essay.id}
-          subjects={subjects}
-          learningObjectives={learningObjectives}
-          initialSubjects={distributions.subjects}
-          initialObjectives={distributions.objectives}
-          initialDifficulty={distributions.difficulty}
-        />
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Distribución solicitada</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <DistributionForm
+            essayId={essay.id}
+            subjects={subjects}
+            learningObjectives={learningObjectives}
+            initialSubjects={distributions.subjects}
+            initialObjectives={distributions.objectives}
+            initialDifficulty={distributions.difficulty}
+          />
+        </CardContent>
+      </Card>
 
-      <div className="mt-6">
-        <GeneratePanel essayId={essay.id} />
-      </div>
+      <GeneratePanel essayId={essay.id} />
 
-      <div className="mt-6">
-        <h2 className="mb-2 text-sm font-semibold">
-          Vista previa de la selección
-        </h2>
-        <div className="mb-3 flex flex-wrap gap-2">
-          <Badge variant="outline">
-            {essayQuestions.length}/{essay.total_questions} preguntas
-          </Badge>
-          <Badge variant="outline">{totalPoints} puntos</Badge>
-          <Badge variant="outline">
-            ~{estimatedMinutes || essay.time_limit_minutes || 0} min estimados
-          </Badge>
-          {essay.time_limit_minutes != null && (
+      <Card>
+        <CardHeader>
+          <CardTitle>Vista previa de la selección</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-3">
+          <div className="flex flex-wrap gap-2">
             <Badge variant="outline">
-              Límite: {essay.time_limit_minutes} min
+              {essayQuestions.length}/{essay.total_questions} preguntas
             </Badge>
-          )}
-        </div>
-        <ul className="flex flex-col gap-2">
-          {essayQuestions.map((row) => {
-            const q = row.questions as unknown as {
-              prompt: string;
-              difficulty: string;
-              points: number;
-              subjects: { name: string } | null;
-              learning_objectives: { short_name: string } | null;
-            } | null;
-            if (!q) return null;
-            return (
-              <li
-                key={row.id}
-                className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
-              >
-                <div className="flex flex-col gap-1.5">
-                  <span>{q.prompt}</span>
-                  <div className="flex flex-wrap gap-1.5">
-                    <Badge variant="outline">{q.subjects?.name ?? "—"}</Badge>
-                    {q.learning_objectives?.short_name && (
-                      <Badge variant="muted">
-                        {q.learning_objectives.short_name}
-                      </Badge>
-                    )}
-                    <Badge>{DIFFICULTY_LABEL[q.difficulty] ?? q.difficulty}</Badge>
-                    <Badge variant="outline">{q.points} pts</Badge>
+            <Badge variant="outline">{totalPoints} puntos</Badge>
+            <Badge variant="outline">
+              ~{estimatedMinutes || essay.time_limit_minutes || 0} min estimados
+            </Badge>
+            {essay.time_limit_minutes != null && (
+              <Badge variant="outline">
+                Límite: {essay.time_limit_minutes} min
+              </Badge>
+            )}
+          </div>
+          <ul className="flex flex-col gap-2">
+            {essayQuestions.map((row) => {
+              const q = row.questions as unknown as {
+                prompt: string;
+                difficulty: string;
+                points: number;
+                subjects: { name: string } | null;
+                learning_objectives: { short_name: string } | null;
+              } | null;
+              if (!q) return null;
+              return (
+                <li
+                  key={row.id}
+                  className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+                >
+                  <div className="flex flex-col gap-1.5">
+                    <span>{q.prompt}</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      <Badge variant="outline">{q.subjects?.name ?? "—"}</Badge>
+                      {q.learning_objectives?.short_name && (
+                        <Badge variant="muted">
+                          {q.learning_objectives.short_name}
+                        </Badge>
+                      )}
+                      <Badge>{DIFFICULTY_LABEL[q.difficulty] ?? q.difficulty}</Badge>
+                      <Badge variant="outline">{q.points} pts</Badge>
+                    </div>
                   </div>
-                </div>
-                <ReplaceButton essayId={essay.id} essayQuestionId={row.id} />
-              </li>
-            );
-          })}
-          {essayQuestions.length === 0 && (
-            <p className="text-sm text-muted-foreground">
-              Aún no se ha generado la selección de preguntas para este
-              ensayo.
-            </p>
-          )}
-        </ul>
-      </div>
+                  <ReplaceButton essayId={essay.id} essayQuestionId={row.id} />
+                </li>
+              );
+            })}
+            {essayQuestions.length === 0 && (
+              <p className="text-sm text-muted-foreground">
+                Aún no se ha generado la selección de preguntas para este
+                ensayo.
+              </p>
+            )}
+          </ul>
+        </CardContent>
+      </Card>
     </main>
   );
 }

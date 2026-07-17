@@ -228,7 +228,7 @@ export function QuestionForm({
     <form
       ref={formRef}
       action={formAction}
-      className="flex flex-col gap-4 rounded-xl border border-border p-4"
+      className="flex flex-col gap-4"
     >
       <input type="hidden" name="id" defaultValue={editing?.id ?? ""} />
       <input type="hidden" name="subjectId" value={subjectId} />

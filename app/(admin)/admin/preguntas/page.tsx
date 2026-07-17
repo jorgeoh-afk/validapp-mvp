@@ -16,6 +16,7 @@ import {
 } from "@/lib/data/curriculum";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuestionForm, type Editing } from "./question-form";
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -150,126 +151,148 @@ export default async function PreguntasPage({
   }));
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <Link href="/admin" className="text-sm underline">
-        ← Panel admin
-      </Link>
-      <div className="mt-2 flex items-center justify-between gap-2">
-        <h1 className="text-xl font-semibold">Preguntas</h1>
-        <Link href="/admin/preguntas/importar" className="text-sm underline">
-          Importar preguntas (CSV)
-        </Link>
-      </div>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Crea preguntas paso a paso: curso y asignatura, ubicación curricular,
-        enunciado, alternativas y detalles pedagógicos.
-      </p>
+    <main className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-12">
+      <header className="flex flex-col gap-1">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h1 className="font-heading text-xl font-semibold text-foreground">
+            Preguntas
+          </h1>
+          <Link
+            href="/admin/preguntas/importar"
+            className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+          >
+            Importar preguntas (CSV)
+          </Link>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          Crea preguntas paso a paso: curso y asignatura, ubicación curricular,
+          enunciado, alternativas y detalles pedagógicos.
+        </p>
+      </header>
 
       {subjects.length === 0 || levels.length === 0 ? (
-        <p className="mt-6 text-sm text-muted-foreground">
-          Primero crea al menos una{" "}
-          <Link href="/admin/asignaturas" className="underline">
-            asignatura
-          </Link>{" "}
-          y un{" "}
-          <Link href="/admin/niveles" className="underline">
-            nivel
-          </Link>
-          .
-        </p>
+        <Card>
+          <CardContent className="pt-4">
+            <p className="text-sm text-muted-foreground">
+              Primero crea al menos una{" "}
+              <Link href="/admin/asignaturas" className="underline">
+                asignatura
+              </Link>{" "}
+              y un{" "}
+              <Link href="/admin/niveles" className="underline">
+                nivel
+              </Link>
+              .
+            </p>
+          </CardContent>
+        </Card>
       ) : (
-        <div className="mt-6">
-          <QuestionForm
-            key={editing?.id ? `edit-${editing.id}` : duplicate ? `dup-${duplicate}` : "new"}
-            editing={editing}
-            subjects={subjects}
-            levels={levels}
-            lessons={lessons}
-            strands={strandOptions}
-            units={unitOptions}
-            learningObjectives={objectiveOptions}
-            skills={skills}
-            tagSuggestions={tags.map((t) => t.name)}
-            existingQuestions={existingQuestions}
-          />
-        </div>
+        <Card>
+          <CardHeader>
+            <CardTitle>
+              {editing?.id ? "Editar pregunta" : "Nueva pregunta"}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <QuestionForm
+              key={editing?.id ? `edit-${editing.id}` : duplicate ? `dup-${duplicate}` : "new"}
+              editing={editing}
+              subjects={subjects}
+              levels={levels}
+              lessons={lessons}
+              strands={strandOptions}
+              units={unitOptions}
+              learningObjectives={objectiveOptions}
+              skills={skills}
+              tagSuggestions={tags.map((t) => t.name)}
+              existingQuestions={existingQuestions}
+            />
+          </CardContent>
+        </Card>
       )}
 
-      <ul className="mt-6 flex flex-col gap-2">
-        {questions.map((question) => (
-          <li
-            key={question.id}
-            className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
-          >
-            <div className="flex flex-col gap-1.5">
-              <span>
-                {question.prompt}{" "}
-                <span className="text-muted-foreground">
-                  ({question.subjects?.name} · {question.levels?.name}
-                  {question.lessons?.title
-                    ? ` · ${question.lessons.title}`
-                    : ""}
-                  )
-                </span>
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                <Badge variant="outline">
-                  {DIFFICULTY_LABEL[question.difficulty ?? "intermedia"]}
-                </Badge>
-                <Badge
-                  variant={
-                    REVIEW_STATUS_VARIANT[question.review_status ?? "borrador"]
-                  }
-                >
-                  {REVIEW_STATUS_LABEL[question.review_status ?? "borrador"]}
-                </Badge>
-                {(question.question_tag_assignments ?? []).map(
-                  (a: { question_tags: { id: string; name: string } | null }) =>
-                    a.question_tags ? (
-                      <Badge key={a.question_tags.id} variant="muted">
-                        {a.question_tags.name}
-                      </Badge>
-                    ) : null
-                )}
-              </div>
-            </div>
-            <div className="flex items-center gap-2 self-start">
-              <Link
-                href={`/admin/preguntas?edit=${question.id}`}
-                className="text-sm underline"
+      <Card>
+        <CardHeader>
+          <CardTitle>Preguntas registradas</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="flex flex-col gap-2">
+            {questions.map((question) => (
+              <li
+                key={question.id}
+                className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
               >
-                Editar
-              </Link>
-              <Link
-                href={`/admin/preguntas?duplicate=${question.id}`}
-                className="text-sm underline"
-              >
-                Duplicar
-              </Link>
-              {(REVIEW_STATUS_ACTIONS[question.review_status ?? "borrador"] ?? []).map(
-                (action) => (
-                  <form key={action.status} action={updateQuestionReviewStatus}>
+                <div className="flex flex-col gap-1.5">
+                  <span>
+                    {question.prompt}{" "}
+                    <span className="text-muted-foreground">
+                      ({question.subjects?.name} · {question.levels?.name}
+                      {question.lessons?.title
+                        ? ` · ${question.lessons.title}`
+                        : ""}
+                      )
+                    </span>
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    <Badge variant="outline">
+                      {DIFFICULTY_LABEL[question.difficulty ?? "intermedia"]}
+                    </Badge>
+                    <Badge
+                      variant={
+                        REVIEW_STATUS_VARIANT[question.review_status ?? "borrador"]
+                      }
+                    >
+                      {REVIEW_STATUS_LABEL[question.review_status ?? "borrador"]}
+                    </Badge>
+                    {(question.question_tag_assignments ?? []).map(
+                      (a: { question_tags: { id: string; name: string } | null }) =>
+                        a.question_tags ? (
+                          <Badge key={a.question_tags.id} variant="muted">
+                            {a.question_tags.name}
+                          </Badge>
+                        ) : null
+                    )}
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 self-start">
+                  <Link
+                    href={`/admin/preguntas?edit=${question.id}`}
+                    className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    Editar
+                  </Link>
+                  <Link
+                    href={`/admin/preguntas?duplicate=${question.id}`}
+                    className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    Duplicar
+                  </Link>
+                  {(REVIEW_STATUS_ACTIONS[question.review_status ?? "borrador"] ?? []).map(
+                    (action) => (
+                      <form key={action.status} action={updateQuestionReviewStatus}>
+                        <input type="hidden" name="id" value={question.id} />
+                        <input type="hidden" name="status" value={action.status} />
+                        <Button type="submit" variant="ghost" size="sm">
+                          {action.label}
+                        </Button>
+                      </form>
+                    )
+                  )}
+                  <form action={deleteQuestion}>
                     <input type="hidden" name="id" value={question.id} />
-                    <input type="hidden" name="status" value={action.status} />
                     <Button type="submit" variant="ghost" size="sm">
-                      {action.label}
+                      Eliminar
                     </Button>
                   </form>
-                )
-              )}
-              <form action={deleteQuestion}>
-                <input type="hidden" name="id" value={question.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
-            </div>
-          </li>
-        ))}
-        {questions.length === 0 && (
-          <p className="text-sm text-muted-foreground">Aún no hay preguntas.</p>
-        )}
-      </ul>
+                </div>
+              </li>
+            ))}
+            {questions.length === 0 && (
+              <p className="text-sm text-muted-foreground">Aún no hay preguntas.</p>
+            )}
+          </ul>
+        </CardContent>
+      </Card>
     </main>
   );
 }

@@ -97,10 +97,7 @@ export function DistributionForm({
   }
 
   return (
-    <form
-      action={formAction}
-      className="flex flex-col gap-6 rounded-xl border border-border p-4"
-    >
+    <form action={formAction} className="flex flex-col gap-6">
       <input type="hidden" name="essayId" value={essayId} />
       <input type="hidden" name="distributionsJson" value={buildPayload()} />
 

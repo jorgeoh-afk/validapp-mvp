@@ -40,10 +40,7 @@ export function EssayForm({
   const [state, formAction, pending] = useActionState(upsertEssay, null);
 
   return (
-    <form
-      action={formAction}
-      className="flex flex-col gap-4 rounded-xl border border-border p-4"
-    >
+    <form action={formAction} className="flex flex-col gap-4">
       <input type="hidden" name="id" defaultValue={editing?.id ?? ""} />
       <div className="flex flex-wrap gap-3">
         <div className="flex flex-col gap-1">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { listQuestions, listSubjects, listLevels } from "@/lib/data/content";
 import { listLearningObjectives } from "@/lib/data/curriculum";
+import { Card, CardContent } from "@/components/ui/card";
 import { ImportForm } from "./import-form";
 
 export default async function ImportarPreguntasPage() {
@@ -26,32 +27,35 @@ export default async function ImportarPreguntasPage() {
   };
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-12">
-      <Link href="/admin/preguntas" className="text-sm underline">
-        ← Preguntas
-      </Link>
-      <h1 className="mt-2 text-xl font-semibold">Importar preguntas desde CSV</h1>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Carga varias preguntas a la vez usando la plantilla. Podrás revisar
-        cada fila antes de guardar nada: nada se importa sin tu confirmación.
-      </p>
+    <main className="mx-auto flex max-w-4xl flex-col gap-6 px-6 py-12">
+      <header className="flex flex-col gap-1">
+        <h1 className="font-heading text-xl font-semibold text-foreground">
+          Importar preguntas desde CSV
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          Carga varias preguntas a la vez usando la plantilla. Podrás revisar
+          cada fila antes de guardar nada: nada se importa sin tu confirmación.
+        </p>
+      </header>
 
       {subjects.length === 0 || levels.length === 0 ? (
-        <p className="mt-6 text-sm text-muted-foreground">
-          Primero crea al menos una{" "}
-          <Link href="/admin/asignaturas" className="underline">
-            asignatura
-          </Link>{" "}
-          y un{" "}
-          <Link href="/admin/niveles" className="underline">
-            nivel
-          </Link>
-          .
-        </p>
+        <Card>
+          <CardContent className="pt-4">
+            <p className="text-sm text-muted-foreground">
+              Primero crea al menos una{" "}
+              <Link href="/admin/asignaturas" className="underline">
+                asignatura
+              </Link>{" "}
+              y un{" "}
+              <Link href="/admin/niveles" className="underline">
+                nivel
+              </Link>
+              .
+            </p>
+          </CardContent>
+        </Card>
       ) : (
-        <div className="mt-6">
-          <ImportForm catalogs={catalogs} />
-        </div>
+        <ImportForm catalogs={catalogs} />
       )}
     </main>
   );

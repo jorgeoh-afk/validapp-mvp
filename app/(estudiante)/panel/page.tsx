@@ -3,6 +3,7 @@ import {
   Award,
   BookOpenCheck,
   ChevronRight,
+  ClipboardList,
   Flame,
   ListChecks,
   Rocket,
@@ -461,6 +462,13 @@ export default async function PanelEstudiante() {
           >
             <ListChecks className="size-5 text-primary" aria-hidden="true" />
             Practicar
+          </Link>
+          <Link
+            href="/ensayos"
+            className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-4 text-center text-xs font-medium transition-colors hover:bg-muted"
+          >
+            <ClipboardList className="size-5 text-primary" aria-hidden="true" />
+            Ensayos
           </Link>
           <span className="flex flex-col items-center gap-1.5 rounded-xl border border-dashed border-border bg-muted/40 px-3 py-4 text-center text-xs font-medium text-muted-foreground">
             <BookOpenCheck className="size-5" aria-hidden="true" />

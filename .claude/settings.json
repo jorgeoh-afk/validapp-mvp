@@ -17,7 +17,21 @@
       "Bash(git push *)",
       "Bash(curl -sf https://validapp-mvp.vercel.app/ruta -o /dev/null -w \"%{http_code}\")",
       "Bash(curl -sf http://localhost:3000/ -o /dev/null -w \"home: %{http_code}\\\\n\")",
-      "Bash(curl -sf http://localhost:3000/login -o /dev/null -w \"login: %{http_code}\\\\n\")"
+      "Bash(curl -sf http://localhost:3000/login -o /dev/null -w \"login: %{http_code}\\\\n\")",
+      "Bash(node -e \"console.log\\(require\\('path'\\).resolve\\('/tmp/validapp-prod'\\)\\)\")",
+      "Bash(cygpath -w /tmp/validapp-prod)",
+      "Bash(ls -la /tmp/validapp-prod/)",
+      "Read(//c/tmp/validapp-prod/**)",
+      "Bash(npx supabase *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(node .test-diagnose.js)",
+      "Bash(curl -sf http://localhost:3000/ -o /dev/null -w \"dev server: %{http_code}\\\\n\")",
+      "Bash(rm -rf \"c:/Users/Freerider/OneDrive/Escritorio/validapp-mvp/.next\")",
+      "Bash(curl -sf http://localhost:3000/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(break)",
+      "Bash(curl -sf http://localhost:3001/ -o /dev/null -w \"3001: %{http_code}\\\\n\")",
+      "Bash(node .test-question-wizard.js)",
+      "Bash(node .test-student-flows.js)"
     ]
   }
 }

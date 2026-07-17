@@ -49,7 +49,11 @@
       "Bash(curl -sf http://localhost:3004/ -o /dev/null -w \"%{http_code}\\\\n\")",
       "Bash(node .test-essay-attempt.js)",
       "Bash(xargs grep -l \"cobertura\\\\|Ensayos\\\\|nav\")",
-      "Bash(node .test-stats.js)"
+      "Bash(node .test-stats.js)",
+      "Bash(curl -sf http://localhost:3000/ -o /dev/null -w \"3000: %{http_code}\\\\n\")",
+      "Bash(node .test-cleanup-final.js)",
+      "Bash(curl -sf http://localhost:3005/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(node .test-login-redirect.js)"
     ]
   }
 }

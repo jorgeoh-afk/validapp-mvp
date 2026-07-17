@@ -320,3 +320,15 @@ export async function deleteQuestion(formData: FormData) {
   await supabase.from("questions").delete().eq("id", id);
   revalidatePath("/admin/preguntas");
 }
+
+export async function updateQuestionReviewStatus(formData: FormData) {
+  const id = String(formData.get("id") ?? "");
+  const status = String(formData.get("status") ?? "");
+  if (!id || !QUESTION_REVIEW_STATUSES.includes(status as never)) return;
+  const supabase = await createClient();
+  await supabase
+    .from("questions")
+    .update({ review_status: status, updated_at: new Date().toISOString() })
+    .eq("id", id);
+  revalidatePath("/admin/preguntas");
+}

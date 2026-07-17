@@ -95,7 +95,15 @@ function normalizeText(value: unknown): string {
   return String(value ?? "").trim();
 }
 
-function normalizeKey(value: string): string {
+/**
+ * Normaliza un texto (enunciado, nombre, etc.) para comparaciones simples de
+ * similitud/duplicados: recorta espacios y pasa a minúsculas. No es una
+ * distancia difusa (no usa IA ni Levenshtein): dos textos se consideran
+ * "muy parecidos" cuando su forma normalizada es idéntica. Se exporta para
+ * que otras fases (p. ej. la selección automática de ensayos en
+ * `lib/data/essay-selection.ts`) reutilicen la misma noción.
+ */
+export function normalizeKey(value: string): string {
   return value.trim().toLowerCase();
 }
 

@@ -6,6 +6,7 @@ import {
   listLevels,
   listLessons,
   deleteQuestion,
+  updateQuestionReviewStatus,
 } from "@/lib/data/content";
 import {
   listStrands,
@@ -38,6 +39,17 @@ const REVIEW_STATUS_VARIANT: Record<
   en_revision: "warning",
   aprobado: "success",
   archivado: "destructive",
+};
+
+/** Próximas transiciones de estado disponibles desde cada estado actual. */
+const REVIEW_STATUS_ACTIONS: Record<string, { label: string; status: string }[]> = {
+  borrador: [{ label: "Enviar a revisión", status: "en_revision" }],
+  en_revision: [
+    { label: "Aprobar", status: "aprobado" },
+    { label: "Devolver a borrador", status: "borrador" },
+  ],
+  aprobado: [{ label: "Archivar", status: "archivado" }],
+  archivado: [{ label: "Reactivar como borrador", status: "borrador" }],
 };
 
 export default async function PreguntasPage({
@@ -234,6 +246,17 @@ export default async function PreguntasPage({
               >
                 Duplicar
               </Link>
+              {(REVIEW_STATUS_ACTIONS[question.review_status ?? "borrador"] ?? []).map(
+                (action) => (
+                  <form key={action.status} action={updateQuestionReviewStatus}>
+                    <input type="hidden" name="id" value={question.id} />
+                    <input type="hidden" name="status" value={action.status} />
+                    <Button type="submit" variant="ghost" size="sm">
+                      {action.label}
+                    </Button>
+                  </form>
+                )
+              )}
               <form action={deleteQuestion}>
                 <input type="hidden" name="id" value={question.id} />
                 <Button type="submit" variant="ghost" size="sm">

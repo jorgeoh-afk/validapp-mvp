@@ -33,7 +33,13 @@
       "Bash(node .test-question-wizard.js)",
       "Bash(node .test-student-flows.js)",
       "Bash(node .test-cleanup-check.js)",
-      "Edit(/.claude/skills/validapp-assessments/**)"
+      "Edit(/.claude/skills/validapp-assessments/**)",
+      "Bash(npm install *)",
+      "Bash(curl -sf http://localhost:3002/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(node .test-import.js)",
+      "Bash(curl -sf http://localhost:3002/ -o /dev/null -w \"3002: %{http_code}\\\\n\")",
+      "Bash(node .test-template.js)",
+      "Bash(rm -f .test-template.js)"
     ]
   }
 }

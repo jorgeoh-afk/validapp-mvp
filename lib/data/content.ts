@@ -165,7 +165,7 @@ export async function listQuestionTags() {
  * devuelve sus ids. Se normaliza a minúsculas/trim para evitar duplicados
  * como "Álgebra" y "álgebra ".
  */
-async function resolveTagIds(
+export async function resolveTagIds(
   supabase: Awaited<ReturnType<typeof createClient>>,
   tagNamesRaw: string[]
 ): Promise<{ ids: string[]; error?: string }> {

@@ -142,7 +142,12 @@ export default async function PreguntasPage({
       <Link href="/admin" className="text-sm underline">
         ← Panel admin
       </Link>
-      <h1 className="mt-2 text-xl font-semibold">Preguntas</h1>
+      <div className="mt-2 flex items-center justify-between gap-2">
+        <h1 className="text-xl font-semibold">Preguntas</h1>
+        <Link href="/admin/preguntas/importar" className="text-sm underline">
+          Importar preguntas (CSV)
+        </Link>
+      </div>
       <p className="mt-1 text-sm text-muted-foreground">
         Crea preguntas paso a paso: curso y asignatura, ubicación curricular,
         enunciado, alternativas y detalles pedagógicos.

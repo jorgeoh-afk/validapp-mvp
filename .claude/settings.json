@@ -39,7 +39,10 @@
       "Bash(node .test-import.js)",
       "Bash(curl -sf http://localhost:3002/ -o /dev/null -w \"3002: %{http_code}\\\\n\")",
       "Bash(node .test-template.js)",
-      "Bash(rm -f .test-template.js)"
+      "Bash(rm -f .test-template.js)",
+      "Edit(/.claude/skills/validapp-security/**)",
+      "Edit(/.claude/skills/validapp-devops/**)",
+      "Edit(/.claude/skills/validapp-product/**)"
     ]
   }
 }

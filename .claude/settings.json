@@ -61,7 +61,15 @@
       "Bash(cd \"c:\\\\Users\\\\Freerider\\\\OneDrive\\\\Escritorio\\\\validapp-mvp\" && ls -la \"C:/Users/Freerider/OneDrive/Escritorio/Manual-Panel-Administrador-ValidApp.pdf\")",
       "Read(//c/Users/Freerider/OneDrive/Escritorio/**)",
       "Bash(NODE_PATH=\"c:\\\\Users\\\\Freerider\\\\OneDrive\\\\Escritorio\\\\validapp-mvp\\\\node_modules\" node \"C:/Users/FREERI~1/AppData/Local/Temp/claude/c--Users-Freerider-OneDrive-Escritorio-validapp-mvp/b284f53b-3cbf-4e5e-8ba5-485ea1fbf16f/scratchpad/preview-pages.js\")",
-      "Bash(node .test-big-ideas.js)"
+      "Bash(node .test-big-ideas.js)",
+      "Bash(node .test-nivel3medio.js)",
+      "Bash(node .test-classify.js)",
+      "Bash(rm -f .test-classify.js .test-nivel3medio.js nivel3medio.png classify-after.png)",
+      "Bash(curl -sf http://localhost:3001/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(node .test-friendly-error.js)",
+      "Bash(node .test-check-levels.js)",
+      "Bash(timeout 30 node .test-classify-n4.js)",
+      "Bash(timeout 40 node .test-nivel-basica.js)"
     ]
   }
 }

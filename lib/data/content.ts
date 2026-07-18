@@ -56,17 +56,32 @@ export async function upsertLevel(
   const id = String(formData.get("id") ?? "");
   const name = String(formData.get("name") ?? "").trim();
   const orderIndex = Number(formData.get("orderIndex") ?? 0);
+  const programId = String(formData.get("programId") ?? "");
+  const educationLevelId = String(formData.get("educationLevelId") ?? "");
   if (!name) return { error: "El nombre es obligatorio." };
+  if (!programId || !educationLevelId) {
+    return { error: "Programa y nivel educativo son obligatorios." };
+  }
 
+  const record = {
+    name,
+    order_index: orderIndex,
+    program_id: programId,
+    education_level_id: educationLevelId,
+  };
   const supabase = await createClient();
   const { error } = id
-    ? await supabase
-        .from("levels")
-        .update({ name, order_index: orderIndex })
-        .eq("id", id)
-    : await supabase.from("levels").insert({ name, order_index: orderIndex });
+    ? await supabase.from("levels").update(record).eq("id", id)
+    : await supabase.from("levels").insert(record);
 
-  if (error) return { error: error.message };
+  if (error) {
+    if (error.code === "23505") {
+      return {
+        error: `Ya existe un nivel llamado "${name}". Búscalo en la lista de abajo para editarlo o clasificarlo, no hace falta crearlo de nuevo.`,
+      };
+    }
+    return { error: error.message };
+  }
   revalidatePath("/admin/niveles");
   return null;
 }

@@ -36,9 +36,27 @@ export default async function NivelesPage({
         (opcional).
       </p>
 
-      <div className="mt-6">
-        <LevelForm editing={editing} />
-      </div>
+      {programs.length === 0 || educationLevels.length === 0 ? (
+        <p className="mt-6 text-sm text-zinc-600 dark:text-zinc-400">
+          Primero crea al menos un{" "}
+          <Link href="/admin/programas" className="underline">
+            programa
+          </Link>{" "}
+          y un{" "}
+          <Link href="/admin/niveles-educativos" className="underline">
+            nivel educativo
+          </Link>{" "}
+          para poder clasificar los cursos al crearlos.
+        </p>
+      ) : (
+        <div className="mt-6">
+          <LevelForm
+            editing={editing}
+            programs={programs}
+            educationLevels={educationLevels}
+          />
+        </div>
+      )}
 
       <ul className="mt-6 flex flex-col gap-2">
         {levels.map((level) => (

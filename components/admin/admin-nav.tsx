@@ -18,6 +18,7 @@ const NAV_GROUPS: NavGroup[] = [
       { href: "/admin/asignaturas", label: "Asignaturas" },
       { href: "/admin/niveles", label: "Niveles" },
       { href: "/admin/lecciones", label: "Lecciones" },
+      { href: "/admin/importar-temario", label: "Importar temario completo" },
       { href: "/admin/preguntas", label: "Preguntas" },
       { href: "/admin/resultados", label: "Resultados" },
       { href: "/admin/ensayos", label: "Ensayos" },

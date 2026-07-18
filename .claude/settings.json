@@ -117,7 +117,8 @@
       "Bash(node .test-lecciones.js)",
       "Bash(timeout 40 node .test-template-fix.js)",
       "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
-      "Bash(taskkill //F //PID 36248)"
+      "Bash(taskkill //F //PID 36248)",
+      "Bash(timeout 30 node .test-role-escalation.js)"
     ]
   }
 }

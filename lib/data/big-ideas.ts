@@ -129,3 +129,35 @@ export async function deleteEssentialKnowledge(formData: FormData) {
   await supabase.from("essential_knowledge").delete().eq("id", id);
   revalidatePath("/admin/conocimientos-esenciales");
 }
+
+// ---------- Lectura para el estudiante ----------
+// Solo enunciados con status "aprobado": el resto (borrador, en revisión,
+// archivado) todavía no está listo para mostrarse en la experiencia de
+// aprendizaje, igual criterio que las preguntas usadas en ensayos.
+
+export async function getApprovedBigIdeas(subjectId: string, levelId: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("big_ideas")
+    .select("id, statement")
+    .eq("subject_id", subjectId)
+    .eq("level_id", levelId)
+    .eq("status", "aprobado")
+    .order("order_index");
+  return data ?? [];
+}
+
+export async function getApprovedEssentialKnowledge(
+  subjectId: string,
+  levelId: string
+) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("essential_knowledge")
+    .select("id, statement")
+    .eq("subject_id", subjectId)
+    .eq("level_id", levelId)
+    .eq("status", "aprobado")
+    .order("order_index");
+  return data ?? [];
+}

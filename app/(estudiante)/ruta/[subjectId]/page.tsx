@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { ArrowLeft, Check, Lock, Play } from "lucide-react";
+import { ArrowLeft, Check, Lightbulb, Lock, Play } from "lucide-react";
 import { getLearningPath } from "@/lib/data/progress";
-import { listSubjects } from "@/lib/data/content";
+import { listSubjects, listLevels } from "@/lib/data/content";
+import {
+  getApprovedBigIdeas,
+  getApprovedEssentialKnowledge,
+} from "@/lib/data/big-ideas";
 import { LessonNode } from "@/components/ruta/lesson-node";
 import {
   Card,
@@ -36,11 +40,13 @@ export default async function RutaPage({
   params: Promise<{ subjectId: string }>;
 }) {
   const { subjectId } = await params;
-  const [path, subjects] = await Promise.all([
+  const [path, subjects, levels] = await Promise.all([
     getLearningPath(subjectId),
     listSubjects(),
+    listLevels(),
   ]);
   const subject = subjects.find((s) => s.id === subjectId);
+  const levelIdByName = new Map(levels.map((l) => [l.name, l.id]));
 
   const total = path.length;
   const completedCount = path.filter((l) => l.status === "completada").length;
@@ -56,6 +62,26 @@ export default async function RutaPage({
       groups.push({ levelName, lessons: [lesson] });
     }
   }
+
+  // Grandes ideas y conocimientos esenciales aprobados, por curso, para dar
+  // contexto antes de las lecciones. Solo se consultan los cursos que ya
+  // tienen lecciones en esta asignatura.
+  const curriculumContextByLevel = new Map(
+    await Promise.all(
+      groups.map(async (group) => {
+        const levelId = levelIdByName.get(group.levelName);
+        if (!levelId) return [group.levelName, null] as const;
+        const [bigIdeas, essentialKnowledge] = await Promise.all([
+          getApprovedBigIdeas(subjectId, levelId),
+          getApprovedEssentialKnowledge(subjectId, levelId),
+        ]);
+        if (bigIdeas.length === 0 && essentialKnowledge.length === 0) {
+          return [group.levelName, null] as const;
+        }
+        return [group.levelName, { bigIdeas, essentialKnowledge }] as const;
+      })
+    )
+  );
 
   return (
     <main className="mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-8 sm:px-6 sm:py-12">
@@ -117,6 +143,7 @@ export default async function RutaPage({
             const levelStatusKey: keyof typeof LEVEL_STATUS_CONFIG =
               allCompleted ? "completado" : allLocked ? "bloqueado" : "en_curso";
             const levelStatus = LEVEL_STATUS_CONFIG[levelStatusKey];
+            const context = curriculumContextByLevel.get(group.levelName);
 
             return (
               <section key={group.levelName} className="flex flex-col gap-3">
@@ -134,6 +161,41 @@ export default async function RutaPage({
                     {levelStatus.label}
                   </span>
                 </div>
+
+                {context && (
+                  <Card className="border-dashed bg-muted/30">
+                    <CardContent className="flex flex-col gap-3 pt-4">
+                      {context.bigIdeas.length > 0 && (
+                        <div className="flex flex-col gap-1.5">
+                          <p className="flex items-center gap-1.5 text-xs font-semibold tracking-wide text-foreground uppercase">
+                            <Lightbulb
+                              className="size-3.5 text-warning"
+                              aria-hidden="true"
+                            />
+                            Grandes ideas de esta unidad
+                          </p>
+                          <ul className="flex flex-col gap-1 text-sm text-foreground/90">
+                            {context.bigIdeas.map((idea) => (
+                              <li key={idea.id}>• {idea.statement}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {context.essentialKnowledge.length > 0 && (
+                        <div className="flex flex-col gap-1.5">
+                          <p className="text-xs font-semibold tracking-wide text-foreground uppercase">
+                            Lo que vas a aprender
+                          </p>
+                          <ul className="flex flex-col gap-1 text-sm text-muted-foreground">
+                            {context.essentialKnowledge.map((item) => (
+                              <li key={item.id}>• {item.statement}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                )}
 
                 <ol className="flex flex-col gap-4">
                   {group.lessons.map((lesson, index) => (

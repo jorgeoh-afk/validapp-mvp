@@ -37,6 +37,11 @@ const NAV_GROUPS: NavGroup[] = [
         href: "/admin/objetivos-aprendizaje",
         label: "Objetivos de aprendizaje",
       },
+      { href: "/admin/grandes-ideas", label: "Grandes ideas" },
+      {
+        href: "/admin/conocimientos-esenciales",
+        label: "Conocimientos esenciales",
+      },
     ],
   },
 ];

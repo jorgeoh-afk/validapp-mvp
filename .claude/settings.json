@@ -53,7 +53,15 @@
       "Bash(curl -sf http://localhost:3000/ -o /dev/null -w \"3000: %{http_code}\\\\n\")",
       "Bash(node .test-cleanup-final.js)",
       "Bash(curl -sf http://localhost:3005/ -o /dev/null -w \"%{http_code}\\\\n\")",
-      "Bash(node .test-login-redirect.js)"
+      "Bash(node .test-login-redirect.js)",
+      "Bash(NODE_PATH=\"c:\\\\Users\\\\Freerider\\\\OneDrive\\\\Escritorio\\\\validapp-mvp\\\\node_modules\" node \"C:/Users/FREERI~1/AppData/Local/Temp/claude/c--Users-Freerider-OneDrive-Escritorio-validapp-mvp/b284f53b-3cbf-4e5e-8ba5-485ea1fbf16f/scratchpad/capture-manual-shots.js\")",
+      "Bash(sed -i 's#file:///SHOTS_DIR/#file:///C:/Users/FREERI~1/AppData/Local/Temp/claude/c--Users-Freerider-OneDrive-Escritorio-validapp-mvp/b284f53b-3cbf-4e5e-8ba5-485ea1fbf16f/scratchpad/manual-shots/#g' manual.html)",
+      "Bash(grep -c \"file:///C:\" manual.html)",
+      "Bash(NODE_PATH=\"c:\\\\Users\\\\Freerider\\\\OneDrive\\\\Escritorio\\\\validapp-mvp\\\\node_modules\" node \"C:/Users/FREERI~1/AppData/Local/Temp/claude/c--Users-Freerider-OneDrive-Escritorio-validapp-mvp/b284f53b-3cbf-4e5e-8ba5-485ea1fbf16f/scratchpad/render-pdf.js\")",
+      "Bash(cd \"c:\\\\Users\\\\Freerider\\\\OneDrive\\\\Escritorio\\\\validapp-mvp\" && ls -la \"C:/Users/Freerider/OneDrive/Escritorio/Manual-Panel-Administrador-ValidApp.pdf\")",
+      "Read(//c/Users/Freerider/OneDrive/Escritorio/**)",
+      "Bash(NODE_PATH=\"c:\\\\Users\\\\Freerider\\\\OneDrive\\\\Escritorio\\\\validapp-mvp\\\\node_modules\" node \"C:/Users/FREERI~1/AppData/Local/Temp/claude/c--Users-Freerider-OneDrive-Escritorio-validapp-mvp/b284f53b-3cbf-4e5e-8ba5-485ea1fbf16f/scratchpad/preview-pages.js\")",
+      "Bash(node .test-big-ideas.js)"
     ]
   }
 }

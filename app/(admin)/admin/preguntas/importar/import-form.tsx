@@ -30,8 +30,8 @@ const STATUS_VARIANT: Record<
   error: "destructive",
 };
 
-function downloadTemplate() {
-  const csv = buildTemplateCsv();
+function downloadTemplate(catalogs: ImportCatalogs) {
+  const csv = buildTemplateCsv(catalogs.subjects[0]?.name, catalogs.levels[0]?.name);
   const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -115,7 +115,7 @@ export function ImportForm({ catalogs }: { catalogs: ImportCatalogs }) {
             variant="outline"
             size="sm"
             className="w-fit"
-            onClick={downloadTemplate}
+            onClick={() => downloadTemplate(catalogs)}
           >
             Descargar plantilla CSV
           </Button>

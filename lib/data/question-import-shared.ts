@@ -333,10 +333,19 @@ export function validateImportRows(
   );
 }
 
-const TEMPLATE_ROWS: RawImportRow[] = [
+/**
+ * Filas de ejemplo de la plantilla, parametrizadas por asignatura y curso
+ * reales. No se hardcodea un nombre de curso fijo (ej. "Nivel 1 Básico"):
+ * la jerarquía curricular puede cambiar (cursos se renombran o se
+ * reemplazan por otros procesos de carga), así que la plantilla siempre usa
+ * el primer curso/asignatura que exista hoy en el catálogo, para no quedar
+ * obsoleta y fallar la validación al subirla tal cual.
+ */
+function buildTemplateRows(subjectName: string, levelName: string): RawImportRow[] {
+  return [
   {
-    asignatura: "Matemática",
-    curso: "Nivel 1 Básico",
+    asignatura: subjectName,
+    curso: levelName,
     eje: "Álgebra y funciones",
     unidad: "Ecuaciones lineales",
     objetivo_aprendizaje: "",
@@ -356,8 +365,8 @@ const TEMPLATE_ROWS: RawImportRow[] = [
     etiquetas: "álgebra, ecuaciones",
   },
   {
-    asignatura: "Lenguaje y Comunicación",
-    curso: "Nivel 1 Básico",
+    asignatura: subjectName,
+    curso: levelName,
     eje: "",
     unidad: "",
     objetivo_aprendizaje: "",
@@ -376,7 +385,8 @@ const TEMPLATE_ROWS: RawImportRow[] = [
     fuente: "",
     etiquetas: "gramática",
   },
-];
+  ];
+}
 
 /** Serializa un valor para CSV, agregando comillas si es necesario. */
 function csvEscape(value: string): string {
@@ -386,10 +396,25 @@ function csvEscape(value: string): string {
   return value;
 }
 
-/** Genera el contenido del CSV de plantilla descargable (solo cliente/servidor, sin dependencias). */
-export function buildTemplateCsv(): string {
+/**
+ * Genera el contenido del CSV de plantilla descargable. Recibe una
+ * asignatura y curso reales del catálogo vigente (obtenidos por quien la
+ * invoca, ej. `catalogs.subjects[0]?.name` en el formulario de importación)
+ * para que la plantilla siempre importe sin error de catálogo, sin importar
+ * qué cursos/asignaturas existan en un momento dado. Si no se pasa nada
+ * (catálogo vacío), usa un texto de ejemplo genérico que el admin deberá
+ * reemplazar antes de subirlo.
+ */
+export function buildTemplateCsv(
+  sampleSubjectName?: string,
+  sampleLevelName?: string
+): string {
+  const rows = buildTemplateRows(
+    sampleSubjectName || "(reemplaza por una asignatura real)",
+    sampleLevelName || "(reemplaza por un curso real)"
+  );
   const header = CSV_COLUMNS.join(",");
-  const lines = TEMPLATE_ROWS.map((row) =>
+  const lines = rows.map((row) =>
     CSV_COLUMNS.map((col) => csvEscape(row[col] ?? "")).join(",")
   );
   return [header, ...lines].join("\n");

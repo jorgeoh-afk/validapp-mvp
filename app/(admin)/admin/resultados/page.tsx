@@ -1,6 +1,32 @@
-import { getStudentResults, getSubjectResults } from "@/lib/data/admin-results";
+import {
+  getStudentResults,
+  getSubjectResults,
+  getEssayResults,
+} from "@/lib/data/admin-results";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { ProgressBar } from "@/components/ui/progress-bar";
+
+const ESSAY_STATUS_LABEL: Record<string, string> = {
+  borrador: "Borrador",
+  en_revision: "En revisión",
+  programado: "Programado",
+  publicado: "Publicado",
+  finalizado: "Finalizado",
+  archivado: "Archivado",
+};
+
+const ESSAY_STATUS_VARIANT: Record<
+  string,
+  "muted" | "warning" | "success" | "destructive"
+> = {
+  borrador: "muted",
+  en_revision: "warning",
+  programado: "warning",
+  publicado: "success",
+  finalizado: "success",
+  archivado: "destructive",
+};
 
 /** Celda compacta que muestra el porcentaje como texto y como barra. */
 function PercentCell({ value }: { value: number | null }) {
@@ -16,9 +42,10 @@ function PercentCell({ value }: { value: number | null }) {
 }
 
 export default async function ResultadosPage() {
-  const [students, subjects] = await Promise.all([
+  const [students, subjects, essays] = await Promise.all([
     getStudentResults(),
     getSubjectResults(),
+    getEssayResults(),
   ]);
 
   return (
@@ -81,6 +108,8 @@ export default async function ResultadosPage() {
                   <th className="py-2 pr-4">Diagnósticos</th>
                   <th className="py-2 pr-4">Promedio</th>
                   <th className="py-2 pr-4">Lecciones completadas</th>
+                  <th className="py-2 pr-4">Ensayos rendidos</th>
+                  <th className="py-2 pr-4">Promedio ensayos</th>
                   <th className="py-2 pr-4">Puntos</th>
                   <th className="py-2 pr-4">Racha</th>
                 </tr>
@@ -94,14 +123,63 @@ export default async function ResultadosPage() {
                       <PercentCell value={student.diagnosticsAvgPercent} />
                     </td>
                     <td className="py-2 pr-4">{student.lessonsCompleted}</td>
+                    <td className="py-2 pr-4">{student.essaysCompleted}</td>
+                    <td className="py-2 pr-4">
+                      <PercentCell value={student.essaysAvgPercent} />
+                    </td>
                     <td className="py-2 pr-4">{student.totalPoints}</td>
                     <td className="py-2 pr-4">{student.currentStreak} días</td>
                   </tr>
                 ))}
                 {students.length === 0 && (
                   <tr>
-                    <td colSpan={6} className="py-4 text-muted-foreground">
+                    <td colSpan={8} className="py-4 text-muted-foreground">
                       Aún no hay estudiantes registrados.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Por ensayo</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-border text-left">
+                  <th className="py-2 pr-4">Ensayo</th>
+                  <th className="py-2 pr-4">Curso</th>
+                  <th className="py-2 pr-4">Estado</th>
+                  <th className="py-2 pr-4">Intentos rendidos</th>
+                  <th className="py-2 pr-4">Promedio</th>
+                </tr>
+              </thead>
+              <tbody>
+                {essays.map((essay) => (
+                  <tr key={essay.id} className="border-b border-border/50">
+                    <td className="py-2 pr-4">{essay.name}</td>
+                    <td className="py-2 pr-4">{essay.levelName}</td>
+                    <td className="py-2 pr-4">
+                      <Badge variant={ESSAY_STATUS_VARIANT[essay.status]}>
+                        {ESSAY_STATUS_LABEL[essay.status] ?? essay.status}
+                      </Badge>
+                    </td>
+                    <td className="py-2 pr-4">{essay.attemptsCount}</td>
+                    <td className="py-2 pr-4">
+                      <PercentCell value={essay.avgScorePercent} />
+                    </td>
+                  </tr>
+                ))}
+                {essays.length === 0 && (
+                  <tr>
+                    <td colSpan={5} className="py-4 text-muted-foreground">
+                      Aún no hay ensayos creados.
                     </td>
                   </tr>
                 )}

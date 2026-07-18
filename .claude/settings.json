@@ -69,7 +69,9 @@
       "Bash(node .test-friendly-error.js)",
       "Bash(node .test-check-levels.js)",
       "Bash(timeout 30 node .test-classify-n4.js)",
-      "Bash(timeout 40 node .test-nivel-basica.js)"
+      "Bash(timeout 40 node .test-nivel-basica.js)",
+      "Bash(timeout 60 node .test-resultados-full.js)",
+      "Bash(timeout 30 node .test-check-current-levels.js)"
     ]
   }
 }

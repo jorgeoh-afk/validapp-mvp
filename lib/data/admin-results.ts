@@ -23,6 +23,13 @@ export async function getStudentResults() {
     .from("gamification_stats")
     .select("student_id, total_points, current_streak");
 
+  // Solo intentos cerrados (enviado/expirado) cuentan como "rendidos"; un
+  // intento en_curso todavía no tiene score/total_points definitivos.
+  const { data: essayAttempts } = await supabase
+    .from("essay_attempts")
+    .select("student_id, score, total_points, status")
+    .in("status", ["enviado", "expirado"]);
+
   const diagByStudent = new Map<
     string,
     { count: number; correct: number; total: number }
@@ -49,9 +56,28 @@ export async function getStudentResults() {
 
   const statsByStudent = new Map((stats ?? []).map((s) => [s.student_id, s]));
 
+  const essaysByStudent = new Map<
+    string,
+    { count: number; percentSum: number; percentCount: number }
+  >();
+  for (const a of essayAttempts ?? []) {
+    const entry = essaysByStudent.get(a.student_id) ?? {
+      count: 0,
+      percentSum: 0,
+      percentCount: 0,
+    };
+    entry.count += 1;
+    if (a.total_points != null && a.total_points > 0 && a.score != null) {
+      entry.percentSum += (a.score / a.total_points) * 100;
+      entry.percentCount += 1;
+    }
+    essaysByStudent.set(a.student_id, entry);
+  }
+
   return (students ?? []).map((student) => {
     const diag = diagByStudent.get(student.id);
     const gam = statsByStudent.get(student.id);
+    const essay = essaysByStudent.get(student.id);
     return {
       id: student.id,
       fullName: student.full_name || "(sin nombre)",
@@ -62,6 +88,11 @@ export async function getStudentResults() {
           ? Math.round((diag.correct / diag.total) * 100)
           : null,
       lessonsCompleted: lessonsByStudent.get(student.id) ?? 0,
+      essaysCompleted: essay?.count ?? 0,
+      essaysAvgPercent:
+        essay && essay.percentCount > 0
+          ? Math.round(essay.percentSum / essay.percentCount)
+          : null,
       totalPoints: gam?.total_points ?? 0,
       currentStreak: gam?.current_streak ?? 0,
     };
@@ -126,6 +157,66 @@ export async function getSubjectResults() {
           ? Math.round((diag.correct / diag.total) * 100)
           : null,
       lessonsCompletedCount: completedBySubject.get(subject.id) ?? 0,
+    };
+  });
+}
+
+/**
+ * Resultados agregados por ensayo. Los ensayos se agrupan por curso (no por
+ * asignatura, ya que un ensayo puede combinar preguntas de varias
+ * asignaturas), así que viven en su propia tabla separada de "Por
+ * asignatura". Solo cuenta intentos cerrados (enviado/expirado); no expone
+ * qué estudiante rindió cada intento, solo el agregado.
+ */
+export async function getEssayResults() {
+  const supabase = await createClient();
+
+  type EssayRow = {
+    id: string;
+    name: string;
+    status: string;
+    levels: { name: string } | null;
+  };
+  const { data: essaysData } = await supabase
+    .from("essays")
+    .select("id, name, status, levels(name)")
+    .order("name");
+  const essays = (essaysData ?? []) as unknown as EssayRow[];
+  const { data: attempts } = await supabase
+    .from("essay_attempts")
+    .select("essay_id, score, total_points, status")
+    .in("status", ["enviado", "expirado"]);
+
+  const byEssay = new Map<
+    string,
+    { count: number; percentSum: number; percentCount: number }
+  >();
+  for (const a of attempts ?? []) {
+    const entry = byEssay.get(a.essay_id) ?? {
+      count: 0,
+      percentSum: 0,
+      percentCount: 0,
+    };
+    entry.count += 1;
+    if (a.total_points != null && a.total_points > 0 && a.score != null) {
+      entry.percentSum += (a.score / a.total_points) * 100;
+      entry.percentCount += 1;
+    }
+    byEssay.set(a.essay_id, entry);
+  }
+
+  return essays.map((essay) => {
+    const agg = byEssay.get(essay.id);
+    return {
+      id: essay.id,
+      name: essay.name,
+      status: essay.status,
+      levelName: essay.levels?.name ?? "—",
+      attemptsCount: agg?.count ?? 0,
+      avgScorePercent:
+        agg && agg.percentCount > 0
+          ? Math.round(agg.percentSum / agg.percentCount)
+          : null,
     };
   });
 }

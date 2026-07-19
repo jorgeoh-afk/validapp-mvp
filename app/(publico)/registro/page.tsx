@@ -17,6 +17,31 @@ import {
 export default function RegistroPage() {
   const [state, formAction, pending] = useActionState(signUp, null);
 
+  if (state && "status" in state && state.status === "confirm-email") {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-zinc-50 px-4 dark:bg-black">
+        <Card className="w-full max-w-sm">
+          <CardHeader>
+            <CardTitle>Revisa tu correo</CardTitle>
+            <CardDescription>
+              Te enviamos un enlace de confirmación. Ábrelo desde tu bandeja
+              de entrada (o spam) para activar tu cuenta y poder iniciar
+              sesión.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Link
+              href="/login"
+              className="text-sm font-medium underline underline-offset-4"
+            >
+              Ir a iniciar sesión
+            </Link>
+          </CardContent>
+        </Card>
+      </main>
+    );
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-zinc-50 px-4 dark:bg-black">
       <Card className="w-full max-w-sm">
@@ -46,7 +71,7 @@ export default function RegistroPage() {
                 required
               />
             </div>
-            {state?.error && (
+            {state && "error" in state && (
               <p className="text-sm text-red-600">{state.error}</p>
             )}
             <Button type="submit" disabled={pending} className="w-full">

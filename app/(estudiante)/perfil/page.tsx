@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ProfileForm } from "./profile-form";
+import { PasswordForm } from "./password-form";
 
 export default async function PerfilEstudiante() {
   const supabase = await createClient();
@@ -109,6 +110,19 @@ export default async function PerfilEstudiante() {
         </CardHeader>
         <CardContent>
           <ProfileForm fullName={profile.full_name ?? ""} />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Seguridad de la cuenta</CardTitle>
+          <CardDescription>
+            Cambia tu contraseña. Vamos a pedirte la actual para confirmar
+            que eres tú.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <PasswordForm />
         </CardContent>
       </Card>
     </main>

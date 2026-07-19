@@ -72,10 +72,23 @@ function makeSingleResult(
   return result;
 }
 
+export type AuthMockHandlers = {
+  // Usado por `lib/data/account-security.ts` para simular la
+  // reautenticación con la contraseña actual sin tocar Supabase real.
+  signInWithPassword?: (args: {
+    email: string;
+    password: string;
+  }) => { error?: { message: string; code?: string } | null };
+  updateUser?: (args: {
+    password?: string;
+  }) => { error?: { message: string; code?: string } | null };
+};
+
 export function createSupabaseMock(opts: {
-  user?: { id: string } | null;
+  user?: { id: string; email?: string } | null;
   from?: Record<string, TableHandler>;
   rpc?: Record<string, RpcHandler>;
+  auth?: AuthMockHandlers;
 }) {
   const calls: MockCall[] = [];
 
@@ -121,6 +134,16 @@ export function createSupabaseMock(opts: {
   const client = {
     auth: {
       getUser: async () => ({ data: { user: opts.user ?? null } }),
+      signInWithPassword: async (args: { email: string; password: string }) => {
+        const handler = opts.auth?.signInWithPassword;
+        const result = handler ? handler(args) : { error: null };
+        return { data: {}, error: result.error ?? null };
+      },
+      updateUser: async (args: { password?: string }) => {
+        const handler = opts.auth?.updateUser;
+        const result = handler ? handler(args) : { error: null };
+        return { data: {}, error: result.error ?? null };
+      },
     },
     from(table: string) {
       return {

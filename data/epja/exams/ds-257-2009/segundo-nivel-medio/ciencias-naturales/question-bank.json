@@ -1,0 +1,802 @@
+[
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-001",
+    "prompt": "¿Qué se entiende por homeostasis?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El mantenimiento de un equilibrio interno estable en el organismo",
+      "El crecimiento acelerado de las células",
+      "La pérdida total de agua corporal",
+      "La división celular sin control"
+    ],
+    "correctIndex": 0,
+    "explanation": "La homeostasis es la capacidad del organismo de mantener condiciones internas estables.",
+    "objectiveShortName": "Homeostasis: sistemas nervioso, endocrino y renal",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-002",
+    "prompt": "¿Cuál es la función principal del sistema inmunológico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Defender al organismo de agentes patógenos como bacterias y virus",
+      "Transportar oxígeno por la sangre",
+      "Digerir los alimentos",
+      "Filtrar la sangre en los riñones"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sistema inmunológico protege al cuerpo de microorganismos y sustancias dañinas.",
+    "objectiveShortName": "Procesos vitales del sistema inmunológico",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-003",
+    "prompt": "¿Cuál de los siguientes sistemas participa directamente en regular el equilibrio interno del cuerpo (homeostasis)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El sistema endocrino",
+      "El sistema muscular únicamente",
+      "El sistema óseo únicamente",
+      "Ninguno de los sistemas participa"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sistema endocrino, junto al nervioso y renal, regula el equilibrio interno mediante hormonas.",
+    "objectiveShortName": "Sistemas relacionados con la homeostasis",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-004",
+    "prompt": "La diabetes es un ejemplo de una enfermedad que altera principalmente el equilibrio:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Endocrino, relacionado con la regulación de la glucosa en sangre",
+      "Óseo, relacionado con los huesos",
+      "Muscular, relacionado con los músculos",
+      "Ninguno de los anteriores"
+    ],
+    "correctIndex": 0,
+    "explanation": "La diabetes afecta la regulación hormonal (insulina) de la glucosa en sangre, un proceso endocrino.",
+    "objectiveShortName": "Enfermedades que alteran la homeostasis",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-005",
+    "prompt": "Si un gráfico muestra un aumento sostenido de casos de una enfermedad infecciosa en pocas semanas, esto sugiere:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un posible brote o contagio en expansión",
+      "Que la enfermedad ha desaparecido",
+      "Que no hay ningún cambio en la población",
+      "Que los datos son incorrectos siempre"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un aumento sostenido y rápido de casos es un indicador típico de un brote en expansión.",
+    "objectiveShortName": "Gráficos sobre enfermedades",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-006",
+    "prompt": "¿En qué estructura celular se encuentra principalmente el ADN?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En el núcleo, formando parte de los cromosomas",
+      "En la membrana celular",
+      "En el citoplasma exclusivamente",
+      "Fuera de la célula"
+    ],
+    "correctIndex": 0,
+    "explanation": "El ADN se organiza en cromosomas dentro del núcleo celular.",
+    "objectiveShortName": "Información genética y reproducción celular",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-007",
+    "prompt": "¿Qué establece el principio de Arquímedes sobre el empuje de un fluido?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que un cuerpo sumergido recibe un empuje igual al peso del fluido que desplaza",
+      "Que todos los cuerpos flotan sin excepción",
+      "Que el empuje no depende del volumen del cuerpo",
+      "Que solo los líquidos tienen empuje, no los gases"
+    ],
+    "correctIndex": 0,
+    "explanation": "El principio de Arquímedes describe el empuje como igual al peso del fluido desplazado.",
+    "objectiveShortName": "Fluidos: presión, empuje y presión atmosférica",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-008",
+    "prompt": "¿Qué es la corriente eléctrica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El flujo de carga eléctrica a través de un conductor",
+      "La acumulación de carga en un punto fijo",
+      "Un tipo de imán",
+      "Un tipo de onda sonora"
+    ],
+    "correctIndex": 0,
+    "explanation": "La corriente eléctrica es el movimiento (flujo) de cargas eléctricas a través de un conductor.",
+    "objectiveShortName": "Conceptos de electricidad",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-009",
+    "prompt": "¿Cuál es la función principal de un fusible en un circuito eléctrico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Interrumpir el circuito si la corriente es excesiva, evitando daños",
+      "Aumentar la corriente eléctrica",
+      "Almacenar energía eléctrica de forma permanente",
+      "Generar electricidad"
+    ],
+    "correctIndex": 0,
+    "explanation": "El fusible se funde y corta el circuito cuando la corriente supera un límite seguro, protegiendo el sistema.",
+    "objectiveShortName": "Componentes de circuitos eléctricos",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-010",
+    "prompt": "¿Qué característica tienen los polos magnéticos iguales (norte-norte o sur-sur)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Se repelen entre sí",
+      "Se atraen entre sí",
+      "No interactúan",
+      "Se anulan mutuamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los polos magnéticos iguales se repelen; los polos opuestos se atraen.",
+    "objectiveShortName": "Conceptos de magnetismo",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-011",
+    "prompt": "¿Por qué se recomienda no tocar aparatos eléctricos con las manos mojadas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Porque el agua facilita la conducción de electricidad, aumentando el riesgo de descarga",
+      "Porque el agua aumenta la resistencia eléctrica a cero",
+      "Porque el agua no tiene relación con la electricidad",
+      "Porque el agua apaga los aparatos automáticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "El agua es buen conductor de electricidad, lo que aumenta el riesgo de descargas eléctricas.",
+    "objectiveShortName": "Fenómenos de electricidad cotidiana",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-012",
+    "prompt": "¿Qué fenómeno describe la generación de corriente eléctrica a partir de un campo magnético variable?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Inducción electromagnética",
+      "Reflexión de la luz",
+      "Conducción térmica",
+      "Fusión nuclear"
+    ],
+    "correctIndex": 0,
+    "explanation": "La inducción electromagnética es la generación de corriente eléctrica mediante un campo magnético variable, base de generadores eléctricos.",
+    "objectiveShortName": "Fenómenos de magnetismo y electricidad",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-013",
+    "prompt": "¿Qué propone la teoría de la selección natural de Darwin?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que los individuos mejor adaptados a su ambiente tienen mayor probabilidad de sobrevivir y reproducirse",
+      "Que todas las especies fueron creadas exactamente iguales a como son hoy",
+      "Que las especies no cambian nunca con el tiempo",
+      "Que solo las plantas evolucionan"
+    ],
+    "correctIndex": 0,
+    "explanation": "La selección natural favorece la supervivencia y reproducción de los individuos mejor adaptados.",
+    "objectiveShortName": "Evolución de las especies",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-014",
+    "prompt": "En el modelo atómico actual, ¿dónde se concentra la mayor parte de la masa del átomo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En el núcleo",
+      "En los electrones",
+      "En el espacio vacío entre partículas",
+      "En la superficie externa del átomo"
+    ],
+    "correctIndex": 0,
+    "explanation": "El núcleo, formado por protones y neutrones, concentra casi toda la masa del átomo.",
+    "objectiveShortName": "Modelos atómicos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-015",
+    "prompt": "¿Qué carga eléctrica tiene un electrón?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Negativa",
+      "Positiva",
+      "Neutra",
+      "Depende del átomo"
+    ],
+    "correctIndex": 0,
+    "explanation": "El electrón tiene carga eléctrica negativa; el protón, positiva; el neutrón, neutra.",
+    "objectiveShortName": "Partículas microscópicas del átomo",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-016",
+    "prompt": "¿Qué caracteriza a un enlace iónico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La transferencia de electrones de un átomo a otro, formando iones de carga opuesta",
+      "El compartir electrones de forma equitativa entre dos átomos idénticos",
+      "La ausencia total de electrones",
+      "La fusión de dos núcleos atómicos"
+    ],
+    "correctIndex": 0,
+    "explanation": "En el enlace iónico, un átomo cede electrones y otro los recibe, formando iones con cargas opuestas que se atraen.",
+    "objectiveShortName": "Tipos de enlaces químicos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-017",
+    "prompt": "¿Qué es la radiactividad?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La emisión espontánea de partículas o energía desde núcleos atómicos inestables",
+      "Un tipo de reacción entre ácidos y bases",
+      "Un proceso exclusivo de la fotosíntesis",
+      "Un cambio de estado físico del agua"
+    ],
+    "correctIndex": 0,
+    "explanation": "La radiactividad es la emisión de partículas o energía por núcleos atómicos inestables al desintegrarse.",
+    "objectiveShortName": "Fenómenos radiactivos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-018",
+    "prompt": "En la Tabla Periódica, los elementos se ordenan principalmente según:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Su número atómico (cantidad de protones)",
+      "Su color",
+      "Su precio de mercado",
+      "Su fecha de descubrimiento únicamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Tabla Periódica ordena los elementos según su número atómico creciente.",
+    "objectiveShortName": "Tabla periódica",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-019",
+    "prompt": "¿Cuál de los siguientes es un ejemplo de molécula orgánica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La glucosa",
+      "El cloruro de sodio (sal común)",
+      "El agua",
+      "El oxígeno molecular (O2)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La glucosa es una molécula orgánica (un carbohidrato), a diferencia de sustancias inorgánicas como la sal o el agua.",
+    "objectiveShortName": "Moléculas orgánicas comunes",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-020",
+    "prompt": "El grupo funcional -OH (hidroxilo) es característico de los compuestos llamados:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Alcoholes",
+      "Ácidos carboxílicos",
+      "Hidrocarburos puros",
+      "Sales inorgánicas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El grupo hidroxilo (-OH) es el grupo funcional característico de los alcoholes.",
+    "objectiveShortName": "Grupos funcionales",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-021",
+    "prompt": "¿Cuál de los siguientes es un ejemplo de polímero natural?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La celulosa",
+      "El nailon",
+      "El poliestireno",
+      "El PVC"
+    ],
+    "correctIndex": 0,
+    "explanation": "La celulosa es un polímero natural presente en las plantas; el nailon, poliestireno y PVC son sintéticos.",
+    "objectiveShortName": "Polímeros sintéticos y naturales",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-022",
+    "prompt": "¿Qué sistema actúa mediante señales eléctricas rápidas para coordinar respuestas del cuerpo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El sistema nervioso",
+      "El sistema endocrino exclusivamente",
+      "El sistema renal exclusivamente",
+      "El sistema óseo"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sistema nervioso transmite señales eléctricas rápidas para coordinar respuestas; el endocrino usa hormonas, más lento.",
+    "objectiveShortName": "Homeostasis: sistemas nervioso, endocrino y renal",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Biológicas-023",
+    "prompt": "¿Qué son los anticuerpos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Proteínas del sistema inmunológico que ayudan a neutralizar agentes patógenos",
+      "Un tipo de hormona digestiva",
+      "Células óseas especializadas",
+      "Un tipo de grasa corporal"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los anticuerpos son proteínas producidas por el sistema inmunológico para combatir patógenos específicos.",
+    "objectiveShortName": "Procesos vitales del sistema inmunológico",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Físicas-024",
+    "prompt": "¿Qué mide la resistencia eléctrica de un material?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La oposición que ofrece al paso de la corriente eléctrica",
+      "La cantidad de carga almacenada",
+      "La velocidad de la luz en ese material",
+      "El color del material"
+    ],
+    "correctIndex": 0,
+    "explanation": "La resistencia eléctrica mide la oposición de un material al flujo de corriente.",
+    "objectiveShortName": "Conceptos de electricidad",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-Ciencias Químicas-025",
+    "prompt": "¿Qué partículas subatómicas tienen aproximadamente la misma masa entre sí?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El protón y el neutrón",
+      "El electrón y el protón",
+      "El electrón y el neutrón",
+      "Ninguna, todas tienen masas muy distintas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El protón y el neutrón tienen masas similares, mucho mayores que la del electrón.",
+    "objectiveShortName": "Modelos atómicos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-026",
+    "prompt": "¿Qué glándula regula gran parte de la actividad del sistema endocrino, actuando como coordinadora?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La hipófisis",
+      "El estómago",
+      "El pulmón",
+      "El músculo bíceps"
+    ],
+    "correctIndex": 0,
+    "explanation": "La hipófisis (o pituitaria) regula la actividad de otras glándulas endocrinas.",
+    "objectiveShortName": "Sistemas relacionados con la homeostasis",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-027",
+    "prompt": "¿A qué sistema afecta principalmente una enfermedad autoinmune?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Al sistema inmunológico, que ataca erróneamente células propias",
+      "Solo al sistema óseo",
+      "Solo al sistema muscular",
+      "No afecta ningún sistema en particular"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una enfermedad autoinmune ocurre cuando el sistema inmunológico ataca por error tejidos propios del cuerpo.",
+    "objectiveShortName": "Enfermedades que alteran la homeostasis",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-028",
+    "prompt": "Si un gráfico muestra que los casos de una enfermedad disminuyen tras una campaña de vacunación, ¿qué se puede inferir?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que la vacunación podría estar asociada a la reducción de casos",
+      "Que la enfermedad desapareció por completo sin ninguna causa",
+      "Que los datos no tienen relación con la vacunación",
+      "Que la enfermedad aumentará de todas formas"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una disminución de casos tras una campaña de vacunación sugiere una posible asociación, aunque se requiere más análisis para confirmar causalidad.",
+    "objectiveShortName": "Gráficos sobre enfermedades",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-029",
+    "prompt": "¿Qué proceso de división celular da origen a las células reproductivas (óvulos y espermatozoides)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La meiosis",
+      "La mitosis",
+      "La ósmosis",
+      "La difusión"
+    ],
+    "correctIndex": 0,
+    "explanation": "La meiosis es el proceso de división celular que origina las células reproductivas o gametos.",
+    "objectiveShortName": "Información genética y reproducción celular",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-030",
+    "prompt": "¿Qué es la presión atmosférica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El peso del aire de la atmósfera ejercido sobre una superficie",
+      "La fuerza que ejerce el agua exclusivamente",
+      "Un tipo de energía eléctrica",
+      "Una unidad de temperatura"
+    ],
+    "correctIndex": 0,
+    "explanation": "La presión atmosférica es la fuerza que ejerce el peso del aire de la atmósfera sobre una superficie.",
+    "objectiveShortName": "Fluidos: presión, empuje y presión atmosférica",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-031",
+    "prompt": "¿Qué función cumple un interruptor en un circuito eléctrico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Abrir o cerrar el circuito, permitiendo o interrumpiendo el paso de corriente",
+      "Aumentar el voltaje del circuito",
+      "Almacenar energía de forma permanente",
+      "Generar electricidad"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un interruptor permite abrir o cerrar el circuito, controlando el paso de la corriente.",
+    "objectiveShortName": "Componentes de circuitos eléctricos",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-032",
+    "prompt": "¿Por qué se recomienda usar zapatillas con suela de goma al manipular aparatos eléctricos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Porque la goma es un material aislante que reduce el riesgo de descarga",
+      "Porque la goma es buena conductora de electricidad",
+      "Porque el color de la suela afecta la electricidad",
+      "No existe ninguna razón relacionada con la electricidad"
+    ],
+    "correctIndex": 0,
+    "explanation": "La goma es un material aislante, lo que reduce el riesgo de que la corriente pase a través del cuerpo.",
+    "objectiveShortName": "Fenómenos de electricidad cotidiana",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-033",
+    "prompt": "¿Qué aporte importante hizo el modelo atómico de Bohr respecto a modelos anteriores?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Propuso que los electrones giran en órbitas o niveles de energía definidos alrededor del núcleo",
+      "Afirmó que el átomo no tiene núcleo",
+      "Eliminó el concepto de electrón",
+      "Propuso que toda la masa está en los electrones"
+    ],
+    "correctIndex": 0,
+    "explanation": "El modelo de Bohr introdujo la idea de niveles de energía definidos (órbitas) para los electrones.",
+    "objectiveShortName": "Modelos atómicos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-034",
+    "prompt": "¿Qué caracteriza a un enlace covalente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Dos átomos comparten uno o más pares de electrones",
+      "Un átomo cede todos sus electrones a otro",
+      "No hay ningún tipo de interacción entre átomos",
+      "Solo ocurre entre átomos metálicos"
+    ],
+    "correctIndex": 0,
+    "explanation": "En el enlace covalente, dos átomos comparten pares de electrones, a diferencia del enlace iónico donde hay transferencia.",
+    "objectiveShortName": "Tipos de enlaces químicos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-035",
+    "prompt": "Los elementos de un mismo grupo (columna) en la Tabla Periódica suelen compartir:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Propiedades químicas similares",
+      "Exactamente el mismo número atómico",
+      "El mismo estado físico siempre",
+      "Ningún tipo de similitud"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los elementos de un mismo grupo comparten propiedades químicas similares debido a su configuración electrónica.",
+    "objectiveShortName": "Tabla periódica",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-036",
+    "prompt": "¿Qué grupo funcional caracteriza a los ácidos carboxílicos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El grupo carboxilo (-COOH)",
+      "El grupo hidroxilo (-OH)",
+      "El grupo amino (-NH2)",
+      "Ningún grupo en particular"
+    ],
+    "correctIndex": 0,
+    "explanation": "El grupo carboxilo (-COOH) es el grupo funcional característico de los ácidos carboxílicos.",
+    "objectiveShortName": "Grupos funcionales",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-037",
+    "prompt": "¿Cuál es una diferencia relevante entre los polímeros sintéticos y los naturales en términos ambientales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Muchos polímeros sintéticos (como algunos plásticos) tardan mucho más tiempo en degradarse que los naturales",
+      "No existe ninguna diferencia ambiental entre ambos",
+      "Los polímeros naturales nunca se degradan",
+      "Los polímeros sintéticos siempre son biodegradables"
+    ],
+    "correctIndex": 0,
+    "explanation": "Muchos polímeros sintéticos, como ciertos plásticos, tardan mucho tiempo en degradarse en comparación con polímeros naturales como la celulosa.",
+    "objectiveShortName": "Polímeros sintéticos y naturales",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-038",
+    "prompt": "¿Qué función cumple el riñón en la homeostasis del cuerpo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Regula el equilibrio de agua y sales, filtrando la sangre para formar orina",
+      "Bombea la sangre por el cuerpo",
+      "Produce insulina exclusivamente",
+      "Transporta oxígeno a los tejidos"
+    ],
+    "correctIndex": 0,
+    "explanation": "El riñón filtra la sangre y regula el equilibrio de agua y sales, eliminando desechos mediante la orina.",
+    "objectiveShortName": "Homeostasis: sistemas nervioso, endocrino y renal",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-039",
+    "prompt": "¿Qué establece la Ley de Ohm sobre la relación entre voltaje, corriente y resistencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El voltaje es igual a la corriente multiplicada por la resistencia (V = I × R)",
+      "El voltaje no tiene relación con la corriente ni la resistencia",
+      "La resistencia siempre es igual a cero",
+      "La corriente es independiente del voltaje"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Ley de Ohm establece que V = I × R, relacionando voltaje, corriente y resistencia.",
+    "objectiveShortName": "Conceptos de electricidad",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-040",
+    "prompt": "¿Qué ocurre con la aguja de una brújula cerca de un imán?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Se orienta según el campo magnético del imán",
+      "No se ve afectada en absoluto",
+      "Se derrite por el calor del imán",
+      "Cambia de color"
+    ],
+    "correctIndex": 0,
+    "explanation": "La aguja de la brújula, que es magnética, se orienta según el campo magnético presente, incluido el de un imán cercano.",
+    "objectiveShortName": "Conceptos de magnetismo",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-041",
+    "prompt": "¿Qué dispositivo cotidiano funciona basándose en la relación entre electricidad y magnetismo (electromagnetismo)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un motor eléctrico",
+      "Un termómetro de mercurio",
+      "Una regla plástica",
+      "Un vaso de vidrio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un motor eléctrico funciona gracias al electromagnetismo, convirtiendo energía eléctrica en movimiento mediante campos magnéticos.",
+    "objectiveShortName": "Fenómenos de magnetismo y electricidad",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-042",
+    "prompt": "¿Qué es la adaptación, en el contexto de la evolución biológica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una característica que mejora la capacidad de un organismo de sobrevivir y reproducirse en su ambiente",
+      "Un cambio que ocurre en un solo individuo y se pierde de inmediato",
+      "La desaparición total de una especie",
+      "Un proceso que ocurre solo en animales domésticos"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una adaptación es una característica heredable que mejora la supervivencia y reproducción de un organismo en su ambiente.",
+    "objectiveShortName": "Evolución de las especies",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-043",
+    "prompt": "¿Qué partícula subatómica no tiene carga eléctrica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El neutrón",
+      "El protón",
+      "El electrón",
+      "Todas tienen carga"
+    ],
+    "correctIndex": 0,
+    "explanation": "El neutrón es la partícula subatómica sin carga eléctrica (neutra).",
+    "objectiveShortName": "Partículas microscópicas del átomo",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-044",
+    "prompt": "¿Qué tipo de emisión radiactiva tiene mayor capacidad de penetración?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La radiación gamma",
+      "La radiación alfa",
+      "La radiación beta",
+      "Ninguna emisión radiactiva penetra materiales"
+    ],
+    "correctIndex": 0,
+    "explanation": "La radiación gamma tiene mayor poder de penetración que la alfa o la beta, requiriendo materiales densos para bloquearla.",
+    "objectiveShortName": "Fenómenos radiactivos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra-045",
+    "prompt": "¿Qué elemento químico está siempre presente en las moléculas orgánicas, dándoles su característica fundamental?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El carbono",
+      "El sodio",
+      "El cloro",
+      "El helio"
+    ],
+    "correctIndex": 0,
+    "explanation": "El carbono es el elemento fundamental presente en todas las moléculas orgánicas.",
+    "objectiveShortName": "Moléculas orgánicas comunes",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra-046",
+    "prompt": "¿Qué son los glóbulos blancos (leucocitos)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Células de la sangre encargadas de la defensa inmunológica del organismo",
+      "Células que transportan oxígeno",
+      "Células que forman los huesos",
+      "Células exclusivas del sistema digestivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los glóbulos blancos son células sanguíneas especializadas en la defensa inmunológica del cuerpo.",
+    "objectiveShortName": "Procesos vitales del sistema inmunológico",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra2-047",
+    "prompt": "¿Qué grupo funcional es característico de las cetonas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El grupo carbonilo (C=O) unido a dos carbonos",
+      "El grupo hidroxilo (-OH)",
+      "El grupo amino (-NH2)",
+      "El grupo carboxilo (-COOH)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las cetonas se caracterizan por un grupo carbonilo unido a dos átomos de carbono.",
+    "objectiveShortName": "Grupos funcionales",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra2-048",
+    "prompt": "¿Qué es la vida media de un isótopo radiactivo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El tiempo que tarda en desintegrarse la mitad de una muestra radiactiva",
+      "El tiempo total de existencia de un átomo",
+      "La temperatura a la que se desintegra un átomo",
+      "El peso de un átomo radiactivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La vida media es el tiempo necesario para que se desintegre la mitad de los átomos de una muestra radiactiva.",
+    "objectiveShortName": "Fenómenos radiactivos",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm2-extra2-049",
+    "prompt": "¿Qué representan las filas horizontales de la Tabla Periódica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los períodos",
+      "Los grupos",
+      "Los isótopos",
+      "Los iones"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las filas horizontales de la Tabla Periódica se llaman períodos; las columnas verticales, grupos.",
+    "objectiveShortName": "Tabla periódica",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm2-extra2-050",
+    "prompt": "¿Qué evidencia se utiliza comúnmente para respaldar la teoría de la evolución?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El registro fósil y las similitudes anatómicas entre especies",
+      "Las leyendas populares sobre animales",
+      "La opinión de una sola persona",
+      "El color de los animales únicamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "El registro fósil y las similitudes anatómicas entre especies son evidencias ampliamente utilizadas para respaldar la evolución biológica.",
+    "objectiveShortName": "Evolución de las especies",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  }
+]

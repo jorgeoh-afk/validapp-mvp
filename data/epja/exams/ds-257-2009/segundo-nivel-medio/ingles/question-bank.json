@@ -1,0 +1,962 @@
+[
+  {
+    "localId": "ing-nm2-comprension-001",
+    "prompt": "Read the text and answer the question.\n\n\"How Solar Panels Work\"\nSolar panels capture energy from sunlight and convert it into electricity. Each panel contains many small cells made of silicon. When sunlight hits these cells, it creates an electric current. This electricity can power homes, schools, and small businesses. Solar energy is a renewable resource, which means it will not run out like coal or oil.\n\nQuestion: What material are the small cells inside a solar panel made of?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Copper",
+      "Silicon",
+      "Glass",
+      "Plastic"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Each panel contains many small cells made of silicon\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-002",
+    "prompt": "Read the text and answer the question.\n\n\"How Solar Panels Work\"\nSolar panels capture energy from sunlight and convert it into electricity. Each panel contains many small cells made of silicon. When sunlight hits these cells, it creates an electric current. This electricity can power homes, schools, and small businesses. Solar energy is a renewable resource, which means it will not run out like coal or oil.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How to install a solar panel",
+      "How solar panels produce electricity",
+      "The cost of solar energy",
+      "The history of electricity"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto explica el proceso por el cual los paneles solares generan electricidad.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-003",
+    "prompt": "Read the text and answer the question.\n\n\"How Solar Panels Work\"\nSolar panels capture energy from sunlight and convert it into electricity. Each panel contains many small cells made of silicon. When sunlight hits these cells, it creates an electric current. This electricity can power homes, schools, and small businesses. Solar energy is a renewable resource, which means it will not run out like coal or oil.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To sell solar panels",
+      "To explain a natural process",
+      "To criticize renewable energy",
+      "To tell a personal story"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto tiene un propósito informativo/explicativo sobre un proceso.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-004",
+    "prompt": "Read the text and answer the question.\n\n\"How Solar Panels Work\"\nSolar panels capture energy from sunlight and convert it into electricity. Each panel contains many small cells made of silicon. When sunlight hits these cells, it creates an electric current. This electricity can power homes, schools, and small businesses. Solar energy is a renewable resource, which means it will not run out like coal or oil.\n\nQuestion: In the text, \"renewable\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "expensive",
+      "that can be naturally replaced and does not run out",
+      "dangerous",
+      "artificial"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Renewable resource\" se explica en el propio texto: \"it will not run out\".",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-005",
+    "prompt": "Read the text and answer the question.\n\n\"How Solar Panels Work\"\nSolar panels capture energy from sunlight and convert it into electricity. Each panel contains many small cells made of silicon. When sunlight hits these cells, it creates an electric current. This electricity can power homes, schools, and small businesses. Solar energy is a renewable resource, which means it will not run out like coal or oil.\n\nQuestion: Why is solar energy different from coal or oil, according to the text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "It is more expensive",
+      "It is a renewable resource that will not run out",
+      "It only works at night",
+      "It cannot power homes"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto contrasta explícitamente la energía solar (renovable) con el carbón o el petróleo.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-006",
+    "prompt": "Read the text and answer the question.\n\n\"How Solar Panels Work\"\nSolar panels capture energy from sunlight and convert it into electricity. Each panel contains many small cells made of silicon. When sunlight hits these cells, it creates an electric current. This electricity can power homes, schools, and small businesses. Solar energy is a renewable resource, which means it will not run out like coal or oil.\n\nQuestion: According to the text, what can solar electricity power?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Only large factories",
+      "Homes, schools, and small businesses",
+      "Only cars",
+      "Nothing yet"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"This electricity can power homes, schools, and small businesses\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-007",
+    "prompt": "Read the text and answer the question.\n\n\"News Brief: New Recycling Program\"\nStarting next month, the city will begin a new recycling program. Residents will receive a blue bin for paper and cardboard, and a green bin for plastic and glass. Bins should be placed outside every Tuesday morning. The city hopes this program will reduce waste by twenty percent within a year.\n\nQuestion: What color bin is for paper and cardboard?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Green",
+      "Blue",
+      "Red",
+      "Yellow"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"a blue bin for paper and cardboard\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-008",
+    "prompt": "Read the text and answer the question.\n\n\"News Brief: New Recycling Program\"\nStarting next month, the city will begin a new recycling program. Residents will receive a blue bin for paper and cardboard, and a green bin for plastic and glass. Bins should be placed outside every Tuesday morning. The city hopes this program will reduce waste by twenty percent within a year.\n\nQuestion: What is this news brief mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A new tax",
+      "A new recycling program",
+      "A new bus route",
+      "A new park"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto anuncia un nuevo programa municipal de reciclaje.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-009",
+    "prompt": "Read the text and answer the question.\n\n\"News Brief: New Recycling Program\"\nStarting next month, the city will begin a new recycling program. Residents will receive a blue bin for paper and cardboard, and a green bin for plastic and glass. Bins should be placed outside every Tuesday morning. The city hopes this program will reduce waste by twenty percent within a year.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To inform residents about a new program",
+      "To sell recycling bins",
+      "To complain about waste",
+      "To tell a story"
+    ],
+    "correctIndex": 0,
+    "explanation": "El propósito es informativo, dirigido a los residentes de la ciudad.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-010",
+    "prompt": "Read the text and answer the question.\n\n\"News Brief: New Recycling Program\"\nStarting next month, the city will begin a new recycling program. Residents will receive a blue bin for paper and cardboard, and a green bin for plastic and glass. Bins should be placed outside every Tuesday morning. The city hopes this program will reduce waste by twenty percent within a year.\n\nQuestion: In the text, \"residents\" refers to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Visitors to the city",
+      "People who live in the city",
+      "City workers only",
+      "Business owners only"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Residents\" significa las personas que viven en la ciudad.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-011",
+    "prompt": "Read the text and answer the question.\n\n\"News Brief: New Recycling Program\"\nStarting next month, the city will begin a new recycling program. Residents will receive a blue bin for paper and cardboard, and a green bin for plastic and glass. Bins should be placed outside every Tuesday morning. The city hopes this program will reduce waste by twenty percent within a year.\n\nQuestion: Why is the city starting this program, based on the text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To reduce waste",
+      "To increase taxes",
+      "To create more traffic",
+      "To close local businesses"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice que se espera \"reduce waste by twenty percent within a year\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-012",
+    "prompt": "Read the text and answer the question.\n\n\"News Brief: New Recycling Program\"\nStarting next month, the city will begin a new recycling program. Residents will receive a blue bin for paper and cardboard, and a green bin for plastic and glass. Bins should be placed outside every Tuesday morning. The city hopes this program will reduce waste by twenty percent within a year.\n\nQuestion: When should the bins be placed outside?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Every Tuesday morning",
+      "Every Friday night",
+      "Once a month",
+      "It does not say"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto indica \"Bins should be placed outside every Tuesday morning\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-013",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Power Drill\"\nBefore using this power drill, read all instructions carefully. Always wear safety glasses. Choose the correct drill bit for your material: wood, metal, or concrete. Hold the drill firmly with both hands. Start at a low speed, then increase gradually. After use, unplug the drill and store it in a dry place.\n\nQuestion: What should you wear before using the drill?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Gloves only",
+      "Safety glasses",
+      "A helmet",
+      "Nothing special"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Always wear safety glasses\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-014",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Power Drill\"\nBefore using this power drill, read all instructions carefully. Always wear safety glasses. Choose the correct drill bit for your material: wood, metal, or concrete. Hold the drill firmly with both hands. Start at a low speed, then increase gradually. After use, unplug the drill and store it in a dry place.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The history of power tools",
+      "How to safely use a power drill",
+      "How to repair a drill",
+      "The price of drills"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto entrega instrucciones de uso seguro de un taladro.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-015",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Power Drill\"\nBefore using this power drill, read all instructions carefully. Always wear safety glasses. Choose the correct drill bit for your material: wood, metal, or concrete. Hold the drill firmly with both hands. Start at a low speed, then increase gradually. After use, unplug the drill and store it in a dry place.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To advertise a new tool",
+      "To give safety instructions for a tool",
+      "To tell a story about construction",
+      "To compare tool brands"
+    ],
+    "correctIndex": 1,
+    "explanation": "El propósito es dar instrucciones de seguridad para el uso del taladro.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-016",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Power Drill\"\nBefore using this power drill, read all instructions carefully. Always wear safety glasses. Choose the correct drill bit for your material: wood, metal, or concrete. Hold the drill firmly with both hands. Start at a low speed, then increase gradually. After use, unplug the drill and store it in a dry place.\n\nQuestion: In the text, \"firmly\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "loosely",
+      "with a strong, steady grip",
+      "slowly",
+      "carelessly"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Hold firmly\" significa sostener con firmeza, de forma segura.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-017",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Power Drill\"\nBefore using this power drill, read all instructions carefully. Always wear safety glasses. Choose the correct drill bit for your material: wood, metal, or concrete. Hold the drill firmly with both hands. Start at a low speed, then increase gradually. After use, unplug the drill and store it in a dry place.\n\nQuestion: Why should you start the drill at a low speed?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The text implies it is safer to increase speed gradually",
+      "Because low speed uses less electricity",
+      "Because it is required by law",
+      "It does not matter"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Start at a low speed, then increase gradually\", sugiriendo un uso progresivo y seguro.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-018",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Power Drill\"\nBefore using this power drill, read all instructions carefully. Always wear safety glasses. Choose the correct drill bit for your material: wood, metal, or concrete. Hold the drill firmly with both hands. Start at a low speed, then increase gradually. After use, unplug the drill and store it in a dry place.\n\nQuestion: What should you do with the drill after use?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Leave it plugged in",
+      "Unplug it and store it in a dry place",
+      "Leave it outside",
+      "Give it to a neighbor"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica \"unplug the drill and store it in a dry place\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-019",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Job Interview\"\nCarlos arrived at the office thirty minutes early for his job interview. He was nervous, so he practiced his answers one more time. When the manager called his name, Carlos took a deep breath and walked in with a smile. The interview lasted twenty minutes. Two days later, Carlos received a phone call: he got the job.\n\nQuestion: How early did Carlos arrive for the interview?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ten minutes",
+      "Thirty minutes",
+      "One hour",
+      "He was late"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Carlos arrived at the office thirty minutes early\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-020",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Job Interview\"\nCarlos arrived at the office thirty minutes early for his job interview. He was nervous, so he practiced his answers one more time. When the manager called his name, Carlos took a deep breath and walked in with a smile. The interview lasted twenty minutes. Two days later, Carlos received a phone call: he got the job.\n\nQuestion: What is this story mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A man losing his job",
+      "A man's successful job interview",
+      "A manager's daily routine",
+      "A phone call about a delivery"
+    ],
+    "correctIndex": 1,
+    "explanation": "La historia trata sobre la entrevista de trabajo de Carlos, que termina bien.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-021",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Job Interview\"\nCarlos arrived at the office thirty minutes early for his job interview. He was nervous, so he practiced his answers one more time. When the manager called his name, Carlos took a deep breath and walked in with a smile. The interview lasted twenty minutes. Two days later, Carlos received a phone call: he got the job.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To give interview tips",
+      "To tell a short personal story",
+      "To advertise a company",
+      "To describe an office building"
+    ],
+    "correctIndex": 1,
+    "explanation": "Es un relato breve sobre un evento personal de Carlos.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-022",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Job Interview\"\nCarlos arrived at the office thirty minutes early for his job interview. He was nervous, so he practiced his answers one more time. When the manager called his name, Carlos took a deep breath and walked in with a smile. The interview lasted twenty minutes. Two days later, Carlos received a phone call: he got the job.\n\nQuestion: In the text, \"nervous\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "confident",
+      "worried or anxious",
+      "angry",
+      "tired"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Nervous\" describe el sentimiento de ansiedad antes de la entrevista.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-023",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Job Interview\"\nCarlos arrived at the office thirty minutes early for his job interview. He was nervous, so he practiced his answers one more time. When the manager called his name, Carlos took a deep breath and walked in with a smile. The interview lasted twenty minutes. Two days later, Carlos received a phone call: he got the job.\n\nQuestion: How do we know the interview went well?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Carlos smiled the whole time",
+      "Carlos received a phone call saying he got the job",
+      "The manager was late",
+      "The text does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El desenlace del texto confirma que le ofrecieron el trabajo.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-024",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Job Interview\"\nCarlos arrived at the office thirty minutes early for his job interview. He was nervous, so he practiced his answers one more time. When the manager called his name, Carlos took a deep breath and walked in with a smile. The interview lasted twenty minutes. Two days later, Carlos received a phone call: he got the job.\n\nQuestion: How long did the interview last?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ten minutes",
+      "Twenty minutes",
+      "One hour",
+      "It does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"The interview lasted twenty minutes\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-025",
+    "prompt": "Read the text and answer the question.\n\n\"Caring for Natural Resources\"\nFresh water is a limited natural resource. Many communities depend on rivers and lakes for drinking water, farming, and industry. When factories release waste into rivers, the water becomes polluted and unsafe. Local governments now require companies to treat their waste water before releasing it. This helps protect rivers for future generations.\n\nQuestion: What do many communities use rivers and lakes for?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Only recreation",
+      "Drinking water, farming, and industry",
+      "Only fishing",
+      "Nothing important"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice que se usan \"for drinking water, farming, and industry\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-026",
+    "prompt": "Read the text and answer the question.\n\n\"Caring for Natural Resources\"\nFresh water is a limited natural resource. Many communities depend on rivers and lakes for drinking water, farming, and industry. When factories release waste into rivers, the water becomes polluted and unsafe. Local governments now require companies to treat their waste water before releasing it. This helps protect rivers for future generations.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How to build a factory",
+      "The importance of protecting water resources",
+      "How to fish in rivers",
+      "The history of a city"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto trata sobre la importancia de cuidar el agua como recurso natural.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-027",
+    "prompt": "Read the text and answer the question.\n\n\"Caring for Natural Resources\"\nFresh water is a limited natural resource. Many communities depend on rivers and lakes for drinking water, farming, and industry. When factories release waste into rivers, the water becomes polluted and unsafe. Local governments now require companies to treat their waste water before releasing it. This helps protect rivers for future generations.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To inform about a natural resource issue",
+      "To advertise bottled water",
+      "To tell a personal story",
+      "To sell factory equipment"
+    ],
+    "correctIndex": 0,
+    "explanation": "El propósito es informar sobre un tema de recursos naturales y su protección.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-028",
+    "prompt": "Read the text and answer the question.\n\n\"Caring for Natural Resources\"\nFresh water is a limited natural resource. Many communities depend on rivers and lakes for drinking water, farming, and industry. When factories release waste into rivers, the water becomes polluted and unsafe. Local governments now require companies to treat their waste water before releasing it. This helps protect rivers for future generations.\n\nQuestion: In the text, \"polluted\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "clean",
+      "dirty or contaminated",
+      "cold",
+      "deep"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Polluted and unsafe\" describe agua contaminada, no apta para consumo.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-029",
+    "prompt": "Read the text and answer the question.\n\n\"Caring for Natural Resources\"\nFresh water is a limited natural resource. Many communities depend on rivers and lakes for drinking water, farming, and industry. When factories release waste into rivers, the water becomes polluted and unsafe. Local governments now require companies to treat their waste water before releasing it. This helps protect rivers for future generations.\n\nQuestion: Why do local governments now require companies to treat waste water?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To protect rivers for future generations",
+      "To increase factory profits",
+      "To create more jobs",
+      "The text does not explain"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto concluye: \"This helps protect rivers for future generations\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-030",
+    "prompt": "Read the text and answer the question.\n\n\"Caring for Natural Resources\"\nFresh water is a limited natural resource. Many communities depend on rivers and lakes for drinking water, farming, and industry. When factories release waste into rivers, the water becomes polluted and unsafe. Local governments now require companies to treat their waste water before releasing it. This helps protect rivers for future generations.\n\nQuestion: What happens when factories release untreated waste into rivers?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The water becomes cleaner",
+      "The water becomes polluted and unsafe",
+      "Nothing changes",
+      "The river disappears"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"the water becomes polluted and unsafe\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-031",
+    "prompt": "Read the text and answer the question.\n\n\"Using a Fire Alarm System\"\nThis building is equipped with an automatic fire alarm system. If smoke is detected, the alarm will sound and lights will flash in every hallway. When you hear the alarm, walk calmly to the nearest exit. Do not use the elevators during an alarm. Wait outside at the designated meeting point until staff confirm it is safe to return.\n\nQuestion: What happens when smoke is detected?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Nothing happens automatically",
+      "The alarm sounds and lights flash",
+      "The elevators start working faster",
+      "The building closes for the day"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"the alarm will sound and lights will flash in every hallway\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-032",
+    "prompt": "Read the text and answer the question.\n\n\"Using a Fire Alarm System\"\nThis building is equipped with an automatic fire alarm system. If smoke is detected, the alarm will sound and lights will flash in every hallway. When you hear the alarm, walk calmly to the nearest exit. Do not use the elevators during an alarm. Wait outside at the designated meeting point until staff confirm it is safe to return.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How to install a fire alarm",
+      "What to do when the fire alarm sounds",
+      "The history of fire alarms",
+      "How much a fire alarm costs"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto explica qué hacer cuando suena la alarma de incendio.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-033",
+    "prompt": "Read the text and answer the question.\n\n\"Using a Fire Alarm System\"\nThis building is equipped with an automatic fire alarm system. If smoke is detected, the alarm will sound and lights will flash in every hallway. When you hear the alarm, walk calmly to the nearest exit. Do not use the elevators during an alarm. Wait outside at the designated meeting point until staff confirm it is safe to return.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To give safety instructions",
+      "To advertise a building",
+      "To tell a story",
+      "To sell alarm systems"
+    ],
+    "correctIndex": 0,
+    "explanation": "El propósito es dar instrucciones de seguridad ante una alarma de incendio.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-034",
+    "prompt": "Read the text and answer the question.\n\n\"Using a Fire Alarm System\"\nThis building is equipped with an automatic fire alarm system. If smoke is detected, the alarm will sound and lights will flash in every hallway. When you hear the alarm, walk calmly to the nearest exit. Do not use the elevators during an alarm. Wait outside at the designated meeting point until staff confirm it is safe to return.\n\nQuestion: In the text, \"designated\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "forbidden",
+      "specifically chosen for a purpose",
+      "hidden",
+      "temporary"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Designated meeting point\" es el punto específicamente asignado para reunirse.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-035",
+    "prompt": "Read the text and answer the question.\n\n\"Using a Fire Alarm System\"\nThis building is equipped with an automatic fire alarm system. If smoke is detected, the alarm will sound and lights will flash in every hallway. When you hear the alarm, walk calmly to the nearest exit. Do not use the elevators during an alarm. Wait outside at the designated meeting point until staff confirm it is safe to return.\n\nQuestion: Why should you not use the elevators during an alarm?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The text implies it is unsafe during an emergency",
+      "Elevators are always broken",
+      "Elevators are too slow",
+      "It does not say"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una instrucción de seguridad estándar implícita en el contexto de una alarma de incendio.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-036",
+    "prompt": "Read the text and answer the question.\n\n\"Using a Fire Alarm System\"\nThis building is equipped with an automatic fire alarm system. If smoke is detected, the alarm will sound and lights will flash in every hallway. When you hear the alarm, walk calmly to the nearest exit. Do not use the elevators during an alarm. Wait outside at the designated meeting point until staff confirm it is safe to return.\n\nQuestion: Where should you wait after leaving the building?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Near the elevators",
+      "At the designated meeting point",
+      "Inside the lobby",
+      "In the parking lot"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica \"Wait outside at the designated meeting point\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-037",
+    "prompt": "Read the text and answer the question.\n\n\"How Bread Is Made in a Factory\"\nIn a bread factory, the process begins with mixing flour, water, yeast, and salt into dough. Machines knead the dough for several minutes. Then the dough rests so it can rise. After rising, it is shaped into loaves and baked in large ovens at high temperature. Finally, the bread is cooled, sliced, and packaged for stores.\n\nQuestion: What ingredients are mixed to make the dough?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Flour, water, yeast, and salt",
+      "Flour, sugar, and eggs",
+      "Water, oil, and salt",
+      "Yeast and milk only"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"mixing flour, water, yeast, and salt into dough\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-038",
+    "prompt": "Read the text and answer the question.\n\n\"How Bread Is Made in a Factory\"\nIn a bread factory, the process begins with mixing flour, water, yeast, and salt into dough. Machines knead the dough for several minutes. Then the dough rests so it can rise. After rising, it is shaped into loaves and baked in large ovens at high temperature. Finally, the bread is cooled, sliced, and packaged for stores.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The steps to make bread in a factory",
+      "The history of bread",
+      "The price of bread",
+      "How to bake bread at home"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto describe el proceso productivo del pan en una fábrica.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-039",
+    "prompt": "Read the text and answer the question.\n\n\"How Bread Is Made in a Factory\"\nIn a bread factory, the process begins with mixing flour, water, yeast, and salt into dough. Machines knead the dough for several minutes. Then the dough rests so it can rise. After rising, it is shaped into loaves and baked in large ovens at high temperature. Finally, the bread is cooled, sliced, and packaged for stores.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To describe an industrial process",
+      "To sell bread",
+      "To tell a personal story",
+      "To complain about factories"
+    ],
+    "correctIndex": 0,
+    "explanation": "El propósito es describir un proceso productivo, de forma informativa.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-040",
+    "prompt": "Read the text and answer the question.\n\n\"How Bread Is Made in a Factory\"\nIn a bread factory, the process begins with mixing flour, water, yeast, and salt into dough. Machines knead the dough for several minutes. Then the dough rests so it can rise. After rising, it is shaped into loaves and baked in large ovens at high temperature. Finally, the bread is cooled, sliced, and packaged for stores.\n\nQuestion: In the text, \"knead\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "to cut",
+      "to press and work dough with force",
+      "to bake",
+      "to cool"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Knead the dough\" significa amasar, trabajar la masa con fuerza.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-041",
+    "prompt": "Read the text and answer the question.\n\n\"How Bread Is Made in a Factory\"\nIn a bread factory, the process begins with mixing flour, water, yeast, and salt into dough. Machines knead the dough for several minutes. Then the dough rests so it can rise. After rising, it is shaped into loaves and baked in large ovens at high temperature. Finally, the bread is cooled, sliced, and packaged for stores.\n\nQuestion: Why does the dough need to rest, according to the text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "So it can rise",
+      "So it becomes cold",
+      "So it can be cut",
+      "The text does not say"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"the dough rests so it can rise\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-042",
+    "prompt": "Read the text and answer the question.\n\n\"How Bread Is Made in a Factory\"\nIn a bread factory, the process begins with mixing flour, water, yeast, and salt into dough. Machines knead the dough for several minutes. Then the dough rests so it can rise. After rising, it is shaped into loaves and baked in large ovens at high temperature. Finally, the bread is cooled, sliced, and packaged for stores.\n\nQuestion: What is the last step in the process described?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Mixing the ingredients",
+      "Baking the bread",
+      "Cooling, slicing, and packaging",
+      "Kneading the dough"
+    ],
+    "correctIndex": 2,
+    "explanation": "El texto termina con \"the bread is cooled, sliced, and packaged for stores\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-043",
+    "prompt": "Read the text and answer the question.\n\n\"Weather Report\"\nGood morning. Today will be mostly cloudy with a high chance of rain in the afternoon. Temperatures will reach a maximum of eighteen degrees. Winds will be moderate from the west. Tomorrow, the weather will improve, with clear skies and warmer temperatures expected throughout the day.\n\nQuestion: What is the maximum temperature expected today?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ten degrees",
+      "Eighteen degrees",
+      "Twenty-five degrees",
+      "It does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Temperatures will reach a maximum of eighteen degrees\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-044",
+    "prompt": "Read the text and answer the question.\n\n\"Weather Report\"\nGood morning. Today will be mostly cloudy with a high chance of rain in the afternoon. Temperatures will reach a maximum of eighteen degrees. Winds will be moderate from the west. Tomorrow, the weather will improve, with clear skies and warmer temperatures expected throughout the day.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A weather forecast",
+      "A traffic report",
+      "A sports update",
+      "A news story about a storm"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un pronóstico del tiempo para hoy y mañana.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-045",
+    "prompt": "Read the text and answer the question.\n\n\"Weather Report\"\nGood morning. Today will be mostly cloudy with a high chance of rain in the afternoon. Temperatures will reach a maximum of eighteen degrees. Winds will be moderate from the west. Tomorrow, the weather will improve, with clear skies and warmer temperatures expected throughout the day.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To inform listeners about the weather",
+      "To advertise a product",
+      "To tell a personal story",
+      "To give safety instructions"
+    ],
+    "correctIndex": 0,
+    "explanation": "El propósito es informar sobre las condiciones climáticas esperadas.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-046",
+    "prompt": "Read the text and answer the question.\n\n\"Weather Report\"\nGood morning. Today will be mostly cloudy with a high chance of rain in the afternoon. Temperatures will reach a maximum of eighteen degrees. Winds will be moderate from the west. Tomorrow, the weather will improve, with clear skies and warmer temperatures expected throughout the day.\n\nQuestion: In the text, \"moderate\" (describing the wind) is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "extremely strong",
+      "medium in strength",
+      "completely calm",
+      "unpredictable"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Moderate winds\" describe vientos de intensidad media, ni muy fuertes ni calmos.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-047",
+    "prompt": "Read the text and answer the question.\n\n\"Weather Report\"\nGood morning. Today will be mostly cloudy with a high chance of rain in the afternoon. Temperatures will reach a maximum of eighteen degrees. Winds will be moderate from the west. Tomorrow, the weather will improve, with clear skies and warmer temperatures expected throughout the day.\n\nQuestion: How will the weather change tomorrow, according to the report?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "It will get colder and rainier",
+      "It will improve, with clear skies and warmer temperatures",
+      "It will stay exactly the same",
+      "There will be a storm"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Tomorrow, the weather will improve, with clear skies and warmer temperatures\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-048",
+    "prompt": "Read the text and answer the question.\n\n\"Weather Report\"\nGood morning. Today will be mostly cloudy with a high chance of rain in the afternoon. Temperatures will reach a maximum of eighteen degrees. Winds will be moderate from the west. Tomorrow, the weather will improve, with clear skies and warmer temperatures expected throughout the day.\n\nQuestion: When is rain most likely to happen today?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "In the morning",
+      "In the afternoon",
+      "At night",
+      "It will not rain"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica \"a high chance of rain in the afternoon\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-049",
+    "prompt": "Read the text and answer the question.\n\n\"How Wind Turbines Generate Electricity\"\nWind turbines use large blades to capture the energy of moving air. When wind pushes the blades, they spin a shaft connected to a generator. The generator converts this mechanical movement into electricity. Wind farms are often built in open areas or near coastlines, where wind blows steadily. Like solar power, wind energy is a clean, renewable resource.\n\nQuestion: What do the blades of a wind turbine capture?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The energy of moving air",
+      "Sunlight",
+      "Water pressure",
+      "Heat from the ground"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Wind turbines use large blades to capture the energy of moving air\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-050",
+    "prompt": "Read the text and answer the question.\n\n\"How Wind Turbines Generate Electricity\"\nWind turbines use large blades to capture the energy of moving air. When wind pushes the blades, they spin a shaft connected to a generator. The generator converts this mechanical movement into electricity. Wind farms are often built in open areas or near coastlines, where wind blows steadily. Like solar power, wind energy is a clean, renewable resource.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How wind turbines produce electricity",
+      "How to build a house",
+      "The history of windmills",
+      "The cost of electricity"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto explica el proceso por el cual los aerogeneradores producen electricidad.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-051",
+    "prompt": "Read the text and answer the question.\n\n\"How Wind Turbines Generate Electricity\"\nWind turbines use large blades to capture the energy of moving air. When wind pushes the blades, they spin a shaft connected to a generator. The generator converts this mechanical movement into electricity. Wind farms are often built in open areas or near coastlines, where wind blows steadily. Like solar power, wind energy is a clean, renewable resource.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To explain a natural/technical process",
+      "To sell wind turbines",
+      "To criticize renewable energy",
+      "To tell a personal story"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto tiene un propósito explicativo sobre cómo funciona un proceso.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-052",
+    "prompt": "Read the text and answer the question.\n\n\"How Wind Turbines Generate Electricity\"\nWind turbines use large blades to capture the energy of moving air. When wind pushes the blades, they spin a shaft connected to a generator. The generator converts this mechanical movement into electricity. Wind farms are often built in open areas or near coastlines, where wind blows steadily. Like solar power, wind energy is a clean, renewable resource.\n\nQuestion: In the text, \"steadily\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "rarely",
+      "in a constant, regular way",
+      "violently",
+      "unpredictably"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Blows steadily\" describe un viento constante y regular.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-053",
+    "prompt": "Read the text and answer the question.\n\n\"How Wind Turbines Generate Electricity\"\nWind turbines use large blades to capture the energy of moving air. When wind pushes the blades, they spin a shaft connected to a generator. The generator converts this mechanical movement into electricity. Wind farms are often built in open areas or near coastlines, where wind blows steadily. Like solar power, wind energy is a clean, renewable resource.\n\nQuestion: Why are wind farms often built near coastlines?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because the wind blows steadily there",
+      "Because it is cheaper to build there",
+      "Because the government requires it",
+      "The text does not explain"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice que se construyen \"where wind blows steadily\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-054",
+    "prompt": "Read the text and answer the question.\n\n\"How Wind Turbines Generate Electricity\"\nWind turbines use large blades to capture the energy of moving air. When wind pushes the blades, they spin a shaft connected to a generator. The generator converts this mechanical movement into electricity. Wind farms are often built in open areas or near coastlines, where wind blows steadily. Like solar power, wind energy is a clean, renewable resource.\n\nQuestion: According to the text, what do wind and solar energy have in common?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Both are clean, renewable resources",
+      "Both require burning fuel",
+      "Both only work at night",
+      "Both are non-renewable"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Like solar power, wind energy is a clean, renewable resource\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-055",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Lost Wallet\"\nWhile walking home, Diego found a wallet on the sidewalk. Inside, he saw some money and an identification card with a name and address. He thought about keeping the money, but he decided to return the wallet instead. He walked to the address on the card and knocked on the door. An older man opened the door and, seeing his wallet, thanked Diego with a big smile.\n\nQuestion: What did Diego find on the sidewalk?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A wallet",
+      "A phone",
+      "A set of keys",
+      "A book"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Diego found a wallet on the sidewalk\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-056",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Lost Wallet\"\nWhile walking home, Diego found a wallet on the sidewalk. Inside, he saw some money and an identification card with a name and address. He thought about keeping the money, but he decided to return the wallet instead. He walked to the address on the card and knocked on the door. An older man opened the door and, seeing his wallet, thanked Diego with a big smile.\n\nQuestion: What is this story mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A man who lost his job",
+      "A man who returns a lost wallet to its owner",
+      "A robbery in the city",
+      "A trip to another country"
+    ],
+    "correctIndex": 1,
+    "explanation": "La historia trata sobre Diego devolviendo una billetera perdida a su dueño.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm2-comprension-057",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Lost Wallet\"\nWhile walking home, Diego found a wallet on the sidewalk. Inside, he saw some money and an identification card with a name and address. He thought about keeping the money, but he decided to return the wallet instead. He walked to the address on the card and knocked on the door. An older man opened the door and, seeing his wallet, thanked Diego with a big smile.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To tell a short personal story",
+      "To give safety instructions",
+      "To advertise a product",
+      "To describe a recipe"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un relato breve sobre un evento cotidiano.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-058",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Lost Wallet\"\nWhile walking home, Diego found a wallet on the sidewalk. Inside, he saw some money and an identification card with a name and address. He thought about keeping the money, but he decided to return the wallet instead. He walked to the address on the card and knocked on the door. An older man opened the door and, seeing his wallet, thanked Diego with a big smile.\n\nQuestion: In the text, \"identification card\" refers to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A card that shows a person's identity information",
+      "A credit card",
+      "A bus ticket",
+      "A restaurant menu"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una \"identification card\" es un documento que identifica a una persona.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm2-comprension-059",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Lost Wallet\"\nWhile walking home, Diego found a wallet on the sidewalk. Inside, he saw some money and an identification card with a name and address. He thought about keeping the money, but he decided to return the wallet instead. He walked to the address on the card and knocked on the door. An older man opened the door and, seeing his wallet, thanked Diego with a big smile.\n\nQuestion: Why did Diego decide to return the wallet instead of keeping the money?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The text does not give a direct reason, but shows his decision through his actions",
+      "Because the money was fake",
+      "Because someone forced him to",
+      "Because he needed the exercise"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto muestra su decisión a través de sus acciones, sin explicar directamente sus motivos internos.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm2-comprension-060",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Lost Wallet\"\nWhile walking home, Diego found a wallet on the sidewalk. Inside, he saw some money and an identification card with a name and address. He thought about keeping the money, but he decided to return the wallet instead. He walked to the address on the card and knocked on the door. An older man opened the door and, seeing his wallet, thanked Diego with a big smile.\n\nQuestion: How did the older man react when he got his wallet back?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "He thanked Diego with a big smile",
+      "He was angry",
+      "He did not notice",
+      "He called the police"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"thanked Diego with a big smile\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  }
+]

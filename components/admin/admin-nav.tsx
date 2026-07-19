@@ -24,6 +24,7 @@ const NAV_GROUPS: NavGroup[] = [
       { href: "/admin/ensayos", label: "Ensayos" },
       { href: "/admin/cobertura", label: "Cobertura curricular" },
       { href: "/admin/estadisticas", label: "Estadísticas de preguntas" },
+      { href: "/admin/curriculum-epja", label: "Currículum EPJA" },
     ],
   },
   {

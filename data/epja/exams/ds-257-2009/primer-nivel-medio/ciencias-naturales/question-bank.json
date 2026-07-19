@@ -1,0 +1,802 @@
+[
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-001",
+    "prompt": "¿Cuál estructura celular controla la mayoría de las actividades de la célula y contiene el material genético?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El núcleo",
+      "La membrana celular",
+      "El citoplasma",
+      "La pared celular"
+    ],
+    "correctIndex": 0,
+    "explanation": "El núcleo contiene el ADN y regula la actividad celular.",
+    "objectiveShortName": "Componentes y funciones de la célula",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-002",
+    "prompt": "¿Qué función cumple la membrana celular?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Controlar el paso de sustancias hacia dentro y fuera de la célula",
+      "Producir energía únicamente",
+      "Almacenar el material genético",
+      "Dar color a la célula"
+    ],
+    "correctIndex": 0,
+    "explanation": "La membrana celular regula el intercambio de sustancias entre la célula y su entorno.",
+    "objectiveShortName": "Componentes y funciones de la célula",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-003",
+    "prompt": "¿Cómo se llama el proceso por el cual el agua se mueve a través de una membrana desde una zona de menor concentración de soluto a una de mayor concentración?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ósmosis",
+      "Fotosíntesis",
+      "Mitosis",
+      "Respiración"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ósmosis es el paso de agua a través de una membrana semipermeable según la concentración de solutos.",
+    "objectiveShortName": "Intercambio entre célula y ambiente",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-004",
+    "prompt": "El metabolismo se refiere a:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El conjunto de reacciones químicas que ocurren en un organismo para obtener y usar energía",
+      "Solo el proceso de respirar",
+      "Solo el proceso de digerir alimentos",
+      "El tamaño de las células"
+    ],
+    "correctIndex": 0,
+    "explanation": "El metabolismo incluye todas las reacciones químicas del organismo relacionadas con la energía.",
+    "objectiveShortName": "Conceptos de metabolismo",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-005",
+    "prompt": "¿Cuál de las siguientes es una molécula orgánica presente en la célula?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Las proteínas",
+      "El agua",
+      "El cloruro de sodio",
+      "El oxígeno atómico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las proteínas son moléculas orgánicas, a diferencia del agua o las sales, que son inorgánicas.",
+    "objectiveShortName": "Composición química de la célula",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-006",
+    "prompt": "¿Cuál sistema del cuerpo humano se encarga de transportar nutrientes y oxígeno a través de la sangre?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El sistema circulatorio",
+      "El sistema digestivo",
+      "El sistema respiratorio",
+      "El sistema excretor"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sistema circulatorio transporta sangre, con nutrientes y oxígeno, por todo el cuerpo.",
+    "objectiveShortName": "Sistemas del cuerpo humano y nutrición",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-007",
+    "prompt": "¿En qué órgano del sistema digestivo comienza principalmente la digestión de los alimentos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En la boca",
+      "En el estómago solamente",
+      "En el hígado",
+      "En los riñones"
+    ],
+    "correctIndex": 0,
+    "explanation": "La digestión comienza en la boca, con la masticación y la saliva.",
+    "objectiveShortName": "Procesos vitales de nutrición",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-008",
+    "prompt": "¿Dónde ocurre principalmente el intercambio de oxígeno y dióxido de carbono entre la sangre y el aire?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En los alvéolos pulmonares",
+      "En el estómago",
+      "En el hígado",
+      "En los riñones"
+    ],
+    "correctIndex": 0,
+    "explanation": "El intercambio gaseoso ocurre en los alvéolos, pequeños sacos de aire en los pulmones.",
+    "objectiveShortName": "Circulación y respiración sanguínea",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-009",
+    "prompt": "Si un gráfico muestra que el consumo de calorías de una persona ha aumentado sin aumentar su actividad física, ¿qué se puede inferir?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Es probable que aumente su peso corporal si la tendencia continúa",
+      "Su peso disminuirá seguro",
+      "No hay relación entre calorías y peso",
+      "El gráfico no permite ninguna inferencia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un exceso sostenido de calorías sin gasto energético equivalente tiende a aumentar el peso corporal.",
+    "objectiveShortName": "Interpretación de gráficos sobre nutrición",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-010",
+    "prompt": "Una dieta equilibrada se caracteriza principalmente por:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Incluir variedad de nutrientes en proporciones adecuadas para el organismo",
+      "Consumir solo proteínas",
+      "Eliminar completamente las grasas",
+      "Comer una sola vez al día"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una dieta equilibrada aporta los distintos nutrientes (carbohidratos, proteínas, grasas, vitaminas) en proporciones adecuadas.",
+    "objectiveShortName": "Concepto de dieta equilibrada",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-011",
+    "prompt": "¿Qué es una comunidad, en el sentido ecológico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El conjunto de poblaciones de distintas especies que viven en un mismo lugar",
+      "Un solo individuo de una especie",
+      "Solo las plantas de un lugar",
+      "Un tipo de célula"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una comunidad ecológica es el conjunto de poblaciones de diferentes especies que coexisten en un área.",
+    "objectiveShortName": "Población, comunidad, ecosistema, biodiversidad",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-012",
+    "prompt": "¿Qué efecto tiene la desaparición de una especie depredadora sobre la población de sus presas, generalmente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La población de presas tiende a aumentar, al menos inicialmente",
+      "La población de presas desaparece de inmediato",
+      "No tiene ningún efecto",
+      "Las presas se convierten en depredadores"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sin depredadores que las controlen, la población de presas suele crecer, al menos en el corto plazo.",
+    "objectiveShortName": "Interdependencia de los seres vivos",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-013",
+    "prompt": "En un gráfico de crecimiento poblacional que muestra una curva que sube y luego se estabiliza en una línea horizontal, ¿qué representa esa parte horizontal?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La capacidad de carga del ambiente, donde la población deja de crecer",
+      "El inicio del crecimiento poblacional",
+      "La extinción de la especie",
+      "Un error en los datos"
+    ],
+    "correctIndex": 0,
+    "explanation": "La parte horizontal representa la capacidad de carga: el tamaño máximo que el ambiente puede sostener.",
+    "objectiveShortName": "Gráficos sobre tamaño de poblaciones",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-014",
+    "prompt": "¿Cuál de las siguientes acciones humanas afecta negativamente el equilibrio de un ecosistema?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La deforestación de grandes áreas de bosque nativo",
+      "La creación de áreas protegidas",
+      "El reciclaje de residuos",
+      "La reforestación con especies nativas"
+    ],
+    "correctIndex": 0,
+    "explanation": "La deforestación reduce el hábitat de muchas especies y altera el equilibrio del ecosistema.",
+    "objectiveShortName": "Conservación del medioambiente",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-015",
+    "prompt": "Un movimiento rectilíneo uniforme se caracteriza por:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Mantener una velocidad constante en línea recta",
+      "Cambiar de dirección constantemente",
+      "Acelerar todo el tiempo",
+      "Detenerse y partir repetidamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "El movimiento rectilíneo uniforme mantiene velocidad constante en trayectoria recta.",
+    "objectiveShortName": "Movimientos rectilíneos y circulares",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-016",
+    "prompt": "Según las leyes del movimiento, ¿qué ocurre con un objeto en reposo si no actúa ninguna fuerza sobre él?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Permanece en reposo",
+      "Comienza a moverse solo",
+      "Se acelera espontáneamente",
+      "Cambia de masa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Por inercia, un objeto en reposo permanece en reposo si no actúa una fuerza neta sobre él.",
+    "objectiveShortName": "Conceptos de movimiento o fuerza",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-017",
+    "prompt": "Si un auto recorre 120 km en 2 horas a velocidad constante, ¿cuál es su velocidad?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "60 km/h",
+      "120 km/h",
+      "240 km/h",
+      "30 km/h"
+    ],
+    "correctIndex": 0,
+    "explanation": "Velocidad = distancia / tiempo = 120 km / 2 h = 60 km/h.",
+    "objectiveShortName": "Problemas de movimiento rectilíneo/circular",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-018",
+    "prompt": "¿Qué tipo de onda necesita un medio material (como el aire) para propagarse?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El sonido",
+      "La luz",
+      "Las ondas de radio",
+      "Los rayos X"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sonido es una onda mecánica y necesita un medio material para propagarse; la luz no.",
+    "objectiveShortName": "Origen y propagación de ondas",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-019",
+    "prompt": "Según la ley de reflexión de la luz, el ángulo de incidencia es:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Igual al ángulo de reflexión",
+      "El doble del ángulo de reflexión",
+      "La mitad del ángulo de reflexión",
+      "Independiente del ángulo de reflexión"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ley de reflexión establece que el ángulo de incidencia es igual al ángulo de reflexión.",
+    "objectiveShortName": "Ley de reflexión de la luz y óptica del ojo",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-020",
+    "prompt": "Un instrumento musical que produce un sonido más agudo tiene, en comparación con uno más grave:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Mayor frecuencia de vibración",
+      "Menor frecuencia de vibración",
+      "La misma frecuencia siempre",
+      "No tiene relación con la frecuencia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los sonidos agudos corresponden a mayor frecuencia de vibración que los sonidos graves.",
+    "objectiveShortName": "Ondas sonoras o luminosas y aplicaciones",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-021",
+    "prompt": "La energía cinética de un objeto depende de:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Su masa y su velocidad",
+      "Solo de su color",
+      "Solo de su temperatura",
+      "Solo de su forma"
+    ],
+    "correctIndex": 0,
+    "explanation": "La energía cinética depende de la masa y el cuadrado de la velocidad del objeto.",
+    "objectiveShortName": "Conceptos de energía",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-022",
+    "prompt": "Según el principio de conservación de la energía, la energía en un sistema aislado:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "No se crea ni se destruye, solo se transforma",
+      "Siempre aumenta con el tiempo",
+      "Siempre disminuye con el tiempo",
+      "Desaparece gradualmente"
+    ],
+    "correctIndex": 0,
+    "explanation": "La energía se transforma de una forma a otra, pero la cantidad total se conserva en un sistema aislado.",
+    "objectiveShortName": "Conservación de la energía o momentum",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-023",
+    "prompt": "Si aplicas una fuerza para levantar una caja, ¿qué tipo de energía gana la caja al subir?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Energía potencial gravitatoria",
+      "Energía química",
+      "Energía eléctrica",
+      "Energía nuclear"
+    ],
+    "correctIndex": 0,
+    "explanation": "Al subir un objeto, gana energía potencial gravitatoria debido a su nueva posición.",
+    "objectiveShortName": "Problemas de trabajo y energía",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-024",
+    "prompt": "¿Cuál es la diferencia principal entre calor y temperatura?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El calor es energía que se transfiere; la temperatura mide qué tan caliente está algo",
+      "Son exactamente lo mismo",
+      "El calor mide el tamaño de un objeto",
+      "La temperatura es un tipo de fuerza"
+    ],
+    "correctIndex": 0,
+    "explanation": "El calor es una forma de energía en tránsito, mientras que la temperatura es una medida del estado térmico.",
+    "objectiveShortName": "Calor y temperatura",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-025",
+    "prompt": "En una disolución, la sustancia que se disuelve en menor cantidad se llama:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Soluto",
+      "Solvente",
+      "Precipitado",
+      "Catalizador"
+    ],
+    "correctIndex": 0,
+    "explanation": "El soluto es la sustancia que se disuelve, generalmente en menor cantidad que el solvente.",
+    "objectiveShortName": "Tipos de disoluciones y concentración",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-026",
+    "prompt": "Si se disuelven 20 gramos de sal en 100 gramos de solución total, ¿cuál es el porcentaje en peso de la sal?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "20%",
+      "80%",
+      "5%",
+      "100%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Porcentaje en peso = (masa de soluto / masa total de solución) × 100 = (20/100) × 100 = 20%.",
+    "objectiveShortName": "Problemas de concentración de disoluciones",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-027",
+    "prompt": "¿Qué efecto tiene generalmente aumentar la temperatura sobre la solubilidad de un sólido en agua?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Generalmente la aumenta",
+      "Siempre la elimina por completo",
+      "No tiene ningún efecto",
+      "Siempre la reduce a cero"
+    ],
+    "correctIndex": 0,
+    "explanation": "En general, la solubilidad de sólidos en agua aumenta con la temperatura.",
+    "objectiveShortName": "Solubilidad y factores que la afectan",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-028",
+    "prompt": "Una sustancia con pH menor a 7 se considera:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ácida",
+      "Básica",
+      "Neutra",
+      "Sin carga eléctrica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un pH menor a 7 indica que la sustancia es ácida; mayor a 7, básica; igual a 7, neutra.",
+    "objectiveShortName": "Ácidos, bases y neutralización",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-029",
+    "prompt": "En una reacción de óxido-reducción, la sustancia que pierde electrones sufre:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Oxidación",
+      "Reducción",
+      "Neutralización",
+      "Sublimación"
+    ],
+    "correctIndex": 0,
+    "explanation": "La oxidación es la pérdida de electrones; la reducción es la ganancia de electrones.",
+    "objectiveShortName": "Reacciones de óxido-reducción",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-030",
+    "prompt": "¿Qué efecto tiene generalmente aumentar la temperatura sobre la velocidad de una reacción química?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Generalmente la aumenta",
+      "Siempre la detiene por completo",
+      "No tiene ningún efecto",
+      "Siempre la vuelve negativa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un aumento de temperatura generalmente acelera la velocidad de las reacciones químicas.",
+    "objectiveShortName": "Velocidad de una reacción química",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-031",
+    "prompt": "Una reacción de combustión típica necesita, además de un combustible:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Oxígeno",
+      "Solo agua",
+      "Solo sal",
+      "Solo luz solar"
+    ],
+    "correctIndex": 0,
+    "explanation": "La combustión requiere combustible y oxígeno (comburente) para producir la reacción.",
+    "objectiveShortName": "Reacciones de combustión",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-032",
+    "prompt": "¿Cuál es la diferencia principal entre una célula animal y una célula vegetal?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La célula vegetal tiene pared celular y cloroplastos, que la célula animal no tiene",
+      "La célula animal es siempre más grande",
+      "Solo la célula vegetal tiene núcleo",
+      "No existe ninguna diferencia entre ambas"
+    ],
+    "correctIndex": 0,
+    "explanation": "La célula vegetal posee pared celular y cloroplastos, estructuras ausentes en la célula animal.",
+    "objectiveShortName": "Componentes y funciones de la célula",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-033",
+    "prompt": "¿Qué función cumple la difusión en el intercambio celular?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Permite el movimiento de sustancias desde zonas de mayor a menor concentración",
+      "Impide cualquier movimiento de sustancias",
+      "Solo ocurre en plantas",
+      "Solo ocurre durante la reproducción celular"
+    ],
+    "correctIndex": 0,
+    "explanation": "La difusión es el movimiento pasivo de sustancias desde zonas de mayor a menor concentración.",
+    "objectiveShortName": "Intercambio entre célula y ambiente",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-034",
+    "prompt": "¿Qué diferencia hay entre anabolismo y catabolismo, ambos parte del metabolismo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El anabolismo construye moléculas complejas; el catabolismo las descompone, liberando energía",
+      "Son exactamente lo mismo",
+      "El catabolismo solo ocurre en plantas",
+      "El anabolismo detiene toda actividad celular"
+    ],
+    "correctIndex": 0,
+    "explanation": "El anabolismo construye moléculas (gasta energía); el catabolismo las descompone (libera energía).",
+    "objectiveShortName": "Conceptos de metabolismo",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-035",
+    "prompt": "¿Cuál es la función principal de los lípidos en la célula?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Forman parte de las membranas celulares y almacenan energía",
+      "Transmiten el material genético exclusivamente",
+      "Solo dan color a la célula",
+      "No cumplen ninguna función biológica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los lípidos forman las membranas celulares y son una importante reserva de energía.",
+    "objectiveShortName": "Composición química de la célula",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-036",
+    "prompt": "¿Cuál es la función principal del sistema excretor?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Eliminar los desechos metabólicos del cuerpo, principalmente a través de los riñones",
+      "Transportar oxígeno por la sangre",
+      "Digerir los alimentos en el estómago",
+      "Producir hormonas exclusivamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sistema excretor elimina desechos metabólicos, principalmente mediante los riñones y la orina.",
+    "objectiveShortName": "Sistemas del cuerpo humano y nutrición",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-037",
+    "prompt": "¿Qué función cumple el hígado en el proceso de nutrición?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Participa en la producción de bilis, que ayuda a digerir las grasas",
+      "Bombea la sangre por el cuerpo",
+      "Produce el aire que respiramos",
+      "Almacena únicamente agua"
+    ],
+    "correctIndex": 0,
+    "explanation": "El hígado produce bilis, sustancia que ayuda a digerir las grasas en el intestino.",
+    "objectiveShortName": "Procesos vitales de nutrición",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-038",
+    "prompt": "¿Qué se entiende por biodiversidad?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La variedad de especies de seres vivos que existen en un ecosistema o en el planeta",
+      "La cantidad de agua disponible en un lugar",
+      "El número de ríos de un país",
+      "La temperatura promedio de una región"
+    ],
+    "correctIndex": 0,
+    "explanation": "La biodiversidad se refiere a la variedad de especies vivas presentes en un ecosistema o planeta.",
+    "objectiveShortName": "Población, comunidad, ecosistema, biodiversidad",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-039",
+    "prompt": "¿Qué es una relación de simbiosis en ecología?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una interacción cercana y duradera entre dos especies distintas, que puede beneficiar a una o a ambas",
+      "La competencia total entre dos especies iguales",
+      "La extinción de una especie",
+      "La ausencia de cualquier interacción entre especies"
+    ],
+    "correctIndex": 0,
+    "explanation": "La simbiosis es una relación cercana y sostenida entre especies distintas, con distintos tipos de beneficio.",
+    "objectiveShortName": "Interdependencia de los seres vivos",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Biológicas-040",
+    "prompt": "¿Cuál de las siguientes es una medida efectiva para la conservación del medioambiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La creación de áreas silvestres protegidas",
+      "El aumento de la contaminación industrial sin control",
+      "La eliminación de todas las especies depredadoras",
+      "La tala indiscriminada de bosques"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las áreas silvestres protegidas son una medida reconocida de conservación ambiental.",
+    "objectiveShortName": "Conservación del medioambiente",
+    "strandName": "Ciencias Biológicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-041",
+    "prompt": "En un movimiento circular uniforme, ¿qué característica se mantiene constante?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La rapidez (magnitud de la velocidad)",
+      "La dirección del movimiento",
+      "La posición del objeto",
+      "La aceleración es siempre cero"
+    ],
+    "correctIndex": 0,
+    "explanation": "En el movimiento circular uniforme la rapidez es constante, aunque la dirección cambia continuamente.",
+    "objectiveShortName": "Movimientos rectilíneos y circulares",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-042",
+    "prompt": "Según la segunda ley de Newton, la aceleración de un objeto es:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Directamente proporcional a la fuerza neta aplicada e inversamente proporcional a su masa",
+      "Siempre constante sin importar la fuerza aplicada",
+      "Independiente de la masa del objeto",
+      "Siempre igual a cero"
+    ],
+    "correctIndex": 0,
+    "explanation": "La segunda ley de Newton establece que a = F/m: la aceleración depende de la fuerza aplicada y la masa.",
+    "objectiveShortName": "Conceptos de movimiento o fuerza",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-043",
+    "prompt": "¿Qué diferencia hay entre una onda longitudinal y una onda transversal?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En la longitudinal, la vibración es paralela a la dirección de propagación; en la transversal, es perpendicular",
+      "Son exactamente el mismo tipo de onda",
+      "La longitudinal solo existe en el vacío",
+      "La transversal no puede transportar energía"
+    ],
+    "correctIndex": 0,
+    "explanation": "En ondas longitudinales la vibración es paralela a la propagación (como el sonido); en las transversales, perpendicular (como la luz).",
+    "objectiveShortName": "Origen y propagación de ondas",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-044",
+    "prompt": "¿Qué es el roce o fricción, en términos físicos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una fuerza que se opone al movimiento relativo entre dos superficies en contacto",
+      "Una forma de energía eléctrica",
+      "Un tipo de onda sonora",
+      "Un cambio de estado de la materia"
+    ],
+    "correctIndex": 0,
+    "explanation": "El roce es una fuerza que se opone al deslizamiento entre superficies en contacto.",
+    "objectiveShortName": "Conceptos de energía",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-045",
+    "prompt": "¿Qué característica del sonido determina su volumen (qué tan fuerte se escucha)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La amplitud de la onda sonora",
+      "El color de la fuente sonora",
+      "La temperatura del aire únicamente",
+      "El tamaño del objeto que la produce"
+    ],
+    "correctIndex": 0,
+    "explanation": "La amplitud de la onda sonora determina su volumen o intensidad.",
+    "objectiveShortName": "Ondas sonoras o luminosas y aplicaciones",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Físicas-046",
+    "prompt": "En una colisión donde no actúan fuerzas externas, ¿qué cantidad física se conserva, según el principio de conservación del momentum?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El momentum (cantidad de movimiento) total del sistema",
+      "La temperatura del sistema",
+      "El color de los objetos",
+      "El volumen de los objetos"
+    ],
+    "correctIndex": 0,
+    "explanation": "El principio de conservación del momentum indica que, sin fuerzas externas, el momentum total del sistema se mantiene constante.",
+    "objectiveShortName": "Conservación de la energía o momentum",
+    "strandName": "Ciencias Físicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-047",
+    "prompt": "¿Qué diferencia hay entre una disolución diluida y una concentrada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La diluida tiene poca cantidad de soluto respecto al solvente; la concentrada tiene una cantidad mayor",
+      "Son exactamente lo mismo",
+      "La diluida no contiene ningún soluto",
+      "La concentrada nunca puede disolverse más"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una disolución diluida tiene poco soluto en relación al solvente; una concentrada, una proporción mayor.",
+    "objectiveShortName": "Tipos de disoluciones y concentración",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-048",
+    "prompt": "¿Qué ocurre en una reacción de neutralización entre un ácido y una base?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Reaccionan para formar una sal y agua, generalmente acercando el pH a un valor neutro",
+      "Se produce una explosión siempre",
+      "No ocurre ninguna reacción química",
+      "Ambas sustancias se congelan"
+    ],
+    "correctIndex": 0,
+    "explanation": "En una neutralización, ácido y base reaccionan formando sal y agua, acercando el pH al valor neutro.",
+    "objectiveShortName": "Ácidos, bases y neutralización",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-049",
+    "prompt": "En una reacción de óxido-reducción, la sustancia que gana electrones sufre:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Reducción",
+      "Oxidación",
+      "Sublimación",
+      "Neutralización"
+    ],
+    "correctIndex": 0,
+    "explanation": "La reducción es la ganancia de electrones por parte de una sustancia en la reacción.",
+    "objectiveShortName": "Reacciones de óxido-reducción",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "cnat-nm1-Ciencias Químicas-050",
+    "prompt": "¿Qué efecto tiene un catalizador sobre la velocidad de una reacción química?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Aumenta la velocidad de la reacción sin consumirse en el proceso",
+      "Siempre detiene la reacción por completo",
+      "Cambia el color de los reactivos únicamente",
+      "No tiene ningún efecto sobre la reacción"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un catalizador acelera la reacción sin consumirse, disminuyendo la energía de activación necesaria.",
+    "objectiveShortName": "Velocidad de una reacción química",
+    "strandName": "Ciencias Químicas",
+    "difficulty": "avanzada"
+  }
+]

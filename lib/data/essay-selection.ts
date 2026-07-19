@@ -25,6 +25,7 @@ export type EssayDifficulty = "inicial" | "intermedia" | "avanzada";
 export type CandidateQuestion = {
   id: string;
   subjectId: string;
+  strandId: string | null;
   learningObjectiveId: string | null;
   difficulty: EssayDifficulty;
   prompt: string;
@@ -35,6 +36,7 @@ export type CandidateQuestion = {
 };
 
 export type SubjectRequirement = { subjectId: string; count: number };
+export type StrandRequirement = { strandId: string; count: number };
 export type ObjectiveRequirement = {
   learningObjectiveId: string;
   subjectId: string;
@@ -42,11 +44,17 @@ export type ObjectiveRequirement = {
 };
 export type DifficultyRequirement = { difficulty: EssayDifficulty; count: number };
 
-export type RequirementAxis = "objetivo" | "asignatura" | "dificultad" | "libre";
+export type RequirementAxis =
+  | "objetivo"
+  | "eje"
+  | "asignatura"
+  | "dificultad"
+  | "libre";
 
 export type SelectedEssayQuestion = {
   questionId: string;
   subjectId: string;
+  strandId: string | null;
   learningObjectiveId: string | null;
   difficulty: EssayDifficulty;
   prompt: string;
@@ -57,6 +65,7 @@ export type SelectedEssayQuestion = {
 
 export type MissingRequirement = {
   subjectName: string | null;
+  strandName: string | null;
   objectiveName: string | null;
   difficulty: EssayDifficulty | null;
   available: number;
@@ -70,6 +79,7 @@ export type EssaySelectionResult = {
 
 type NameMaps = {
   subjectNames: Record<string, string>;
+  strandNames: Record<string, string>;
   objectiveNames: Record<string, string>;
 };
 
@@ -140,6 +150,7 @@ function toSelected(
   return {
     questionId: c.id,
     subjectId: c.subjectId,
+    strandId: c.strandId,
     learningObjectiveId: c.learningObjectiveId,
     difficulty: c.difficulty,
     prompt: c.prompt,
@@ -165,6 +176,7 @@ export function selectEssayQuestions(params: {
   candidates: CandidateQuestion[];
   totalQuestions: number;
   subjectRequirements: SubjectRequirement[];
+  strandRequirements?: StrandRequirement[];
   objectiveRequirements: ObjectiveRequirement[];
   difficultyRequirements: DifficultyRequirement[];
   excludeQuestionIds?: string[];
@@ -174,9 +186,11 @@ export function selectEssayQuestions(params: {
     candidates,
     totalQuestions,
     subjectRequirements,
+    strandRequirements = [],
     objectiveRequirements,
     difficultyRequirements,
     subjectNames,
+    strandNames,
     objectiveNames,
     excludeQuestionIds = [],
     rng = Math.random,
@@ -210,6 +224,7 @@ export function selectEssayQuestions(params: {
       ).length;
       missing.push({
         subjectName: subjectNames[req.subjectId] ?? null,
+        strandName: null,
         objectiveName: objectiveNames[req.learningObjectiveId] ?? null,
         difficulty: null,
         available,
@@ -218,7 +233,41 @@ export function selectEssayQuestions(params: {
     }
   }
 
-  // Pase 2: por asignatura, descontando lo ya cubierto por objetivos de esa
+  // Pase 2: por eje temático, descontando lo ya cubierto por objetivos que
+  // pertenezcan a ese eje (un objetivo cuelga de una unidad, que cuelga de
+  // un eje). Va antes que asignatura porque es más específico (asignatura
+  // engloba varios ejes).
+  for (const req of strandRequirements) {
+    const alreadyForStrand = selected.filter(
+      (s) => s.strandId === req.strandId
+    ).length;
+    const remaining = req.count - alreadyForStrand;
+    if (remaining <= 0) continue;
+    const picked = pickFromPool(
+      approved,
+      remaining,
+      (c) => c.strandId === req.strandId,
+      usedIds,
+      usedPrompts,
+      rng
+    );
+    selected.push(...picked.map((c) => toSelected(c, "eje")));
+    if (picked.length < remaining) {
+      const available = approved.filter(
+        (c) => c.strandId === req.strandId && !usedIds.has(c.id)
+      ).length;
+      missing.push({
+        subjectName: null,
+        strandName: strandNames[req.strandId] ?? null,
+        objectiveName: null,
+        difficulty: null,
+        available,
+        missing: remaining - picked.length,
+      });
+    }
+  }
+
+  // Pase 3 (asignatura): descuenta lo ya cubierto por objetivos/ejes de esa
   // misma asignatura.
   for (const req of subjectRequirements) {
     const alreadyForSubject = selected.filter(
@@ -241,6 +290,7 @@ export function selectEssayQuestions(params: {
       ).length;
       missing.push({
         subjectName: subjectNames[req.subjectId] ?? null,
+        strandName: null,
         objectiveName: null,
         difficulty: null,
         available,
@@ -249,7 +299,7 @@ export function selectEssayQuestions(params: {
     }
   }
 
-  // Pase 3: por dificultad, descontando lo ya seleccionado con esa dificultad.
+  // Pase 4: por dificultad, descontando lo ya seleccionado con esa dificultad.
   for (const req of difficultyRequirements) {
     const alreadyForDifficulty = selected.filter(
       (s) => s.difficulty === req.difficulty
@@ -271,6 +321,7 @@ export function selectEssayQuestions(params: {
       ).length;
       missing.push({
         subjectName: null,
+        strandName: null,
         objectiveName: null,
         difficulty: req.difficulty,
         available,
@@ -325,6 +376,9 @@ export function replaceEssaySelectionSlot(params: {
       filterFn = (c) =>
         c.learningObjectiveId === slotToReplace.learningObjectiveId;
       break;
+    case "eje":
+      filterFn = (c) => c.strandId === slotToReplace.strandId;
+      break;
     case "asignatura":
       filterFn = (c) => c.subjectId === slotToReplace.subjectId;
       break;
@@ -344,4 +398,118 @@ export function replaceEssaySelectionSlot(params: {
     rng
   );
   return picked ? toSelected(picked, slotToReplace.matchedAxis) : null;
+}
+
+// ---------- Requisitos derivados del historial del estudiante ----------
+// `practica_errores` y `refuerzo_objetivos` (declarados en el check de
+// `essays.essay_type` desde 0012) no tenían, hasta ahora, ninguna lógica que
+// construyera requisitos a partir del desempeño del alumno: el resto del
+// módulo es agnóstico al tipo de ensayo y solo sabe consumir
+// `ObjectiveRequirement[]`. Estas dos funciones traducen el historial de
+// respuestas (ya cargado por quien las llama, típicamente uniendo
+// `essay_attempt_answers`/`diagnostic_answers` con `questions`) a esa misma
+// forma, para poder pasarlas tal cual a `selectEssayQuestions`.
+
+export type StudentAnswerRecord = {
+  learningObjectiveId: string | null;
+  subjectId: string;
+  isCorrect: boolean;
+};
+
+/**
+ * Reparte `totalQuestions` proporcionalmente al peso de cada objetivo,
+ * usando el método del mayor resto para que la suma final coincida siempre
+ * con `totalQuestions` (o menos, si hay menos objetivos con peso que
+ * preguntas por asignar). Ordena de mayor a menor peso primero para que,
+ * cuando `totalQuestions` es chico, se prioricen los objetivos con más
+ * errores / peor desempeño en vez de repartir en partes iguales.
+ */
+function distributeByWeight(
+  weighted: Map<string, { subjectId: string; weight: number }>,
+  totalQuestions: number
+): ObjectiveRequirement[] {
+  const entries = [...weighted.entries()]
+    .filter(([, v]) => v.weight > 0)
+    .sort((a, b) => b[1].weight - a[1].weight);
+  const totalWeight = entries.reduce((sum, [, v]) => sum + v.weight, 0);
+  if (totalWeight <= 0 || entries.length === 0) return [];
+
+  const raw = entries.map(([objectiveId, v]) => {
+    const exact = (v.weight / totalWeight) * totalQuestions;
+    return { objectiveId, subjectId: v.subjectId, exact, base: Math.floor(exact) };
+  });
+  let remainder = totalQuestions - raw.reduce((sum, r) => sum + r.base, 0);
+  const byRemainderDesc = [...raw].sort(
+    (a, b) => b.exact - b.base - (a.exact - a.base)
+  );
+  for (const r of byRemainderDesc) {
+    if (remainder <= 0) break;
+    r.base += 1;
+    remainder -= 1;
+  }
+
+  return raw
+    .filter((r) => r.base > 0)
+    .map((r) => ({
+      learningObjectiveId: r.objectiveId,
+      subjectId: r.subjectId,
+      count: r.base,
+    }));
+}
+
+/**
+ * `practica_errores`: prioriza los objetivos donde el estudiante más se ha
+ * equivocado (peso = cantidad de respuestas incorrectas registradas por
+ * objetivo). Objetivos sin ningún error no entran.
+ */
+export function buildErrorPracticeRequirements(
+  answers: StudentAnswerRecord[],
+  totalQuestions: number
+): ObjectiveRequirement[] {
+  const weighted = new Map<string, { subjectId: string; weight: number }>();
+  for (const a of answers) {
+    if (a.isCorrect || !a.learningObjectiveId) continue;
+    const entry = weighted.get(a.learningObjectiveId) ?? {
+      subjectId: a.subjectId,
+      weight: 0,
+    };
+    entry.weight += 1;
+    weighted.set(a.learningObjectiveId, entry);
+  }
+  return distributeByWeight(weighted, totalQuestions);
+}
+
+/**
+ * `refuerzo_objetivos`: prioriza los objetivos con MENOR tasa de acierto
+ * (peso = 1 - aciertos/total respuestas), entre los objetivos con al menos
+ * una respuesta registrada. Un objetivo con 100% de acierto tiene peso 0 y
+ * no entra.
+ */
+export function buildReinforcementRequirements(
+  answers: StudentAnswerRecord[],
+  totalQuestions: number
+): ObjectiveRequirement[] {
+  const statsByObjective = new Map<
+    string,
+    { subjectId: string; correct: number; total: number }
+  >();
+  for (const a of answers) {
+    if (!a.learningObjectiveId) continue;
+    const entry = statsByObjective.get(a.learningObjectiveId) ?? {
+      subjectId: a.subjectId,
+      correct: 0,
+      total: 0,
+    };
+    entry.total += 1;
+    if (a.isCorrect) entry.correct += 1;
+    statsByObjective.set(a.learningObjectiveId, entry);
+  }
+  const weighted = new Map<string, { subjectId: string; weight: number }>();
+  for (const [objectiveId, s] of statsByObjective) {
+    weighted.set(objectiveId, {
+      subjectId: s.subjectId,
+      weight: 1 - s.correct / s.total,
+    });
+  }
+  return distributeByWeight(weighted, totalQuestions);
 }

@@ -11,10 +11,14 @@ import { createClient } from "@/lib/supabase/server";
 import {
   selectEssayQuestions,
   replaceEssaySelectionSlot,
+  buildErrorPracticeRequirements,
+  buildReinforcementRequirements,
   type CandidateQuestion,
   type SelectedEssayQuestion,
   type MissingRequirement,
   type EssayDifficulty,
+  type ObjectiveRequirement,
+  type StudentAnswerRecord,
 } from "./essay-selection";
 import {
   ESSAY_TYPES,
@@ -120,6 +124,14 @@ export async function upsertEssay(
   return null;
 }
 
+/**
+ * Antes de esta fase, cualquier ensayo podía pasar a `publicado` sin
+ * verificar que el banco de preguntas realmente alcanzara para cumplir sus
+ * reglas de distribución — ese es un cambio de comportamiento nuevo de esta
+ * etapa. Si el destino es `publicado` y `checkEssayAvailability` no
+ * devuelve `ready`, se bloquea la transición: se guarda el `coverage_status`
+ * calculado (visible en el panel admin) pero NO se cambia `essays.status`.
+ */
 export async function updateEssayStatus(formData: FormData) {
   const id = String(formData.get("id") ?? "");
   const status = String(formData.get("status") ?? "");
@@ -127,9 +139,31 @@ export async function updateEssayStatus(formData: FormData) {
     return;
   }
   const supabase = await createClient();
+
+  if (status === "publicado") {
+    const { checkEssayAvailability } = await import("./essay-coverage");
+    const coverage = await checkEssayAvailability(id);
+    await supabase
+      .from("essays")
+      .update({
+        coverage_status: coverage.status,
+        coverage_checked_at: new Date().toISOString(),
+      })
+      .eq("id", id);
+    if (coverage.status !== "ready") {
+      revalidatePath("/admin/ensayos");
+      revalidatePath(`/admin/ensayos/${id}`);
+      return;
+    }
+  }
+
   await supabase
     .from("essays")
-    .update({ status, updated_at: new Date().toISOString() })
+    .update({
+      status,
+      coverage_status: status === "publicado" ? "published" : undefined,
+      updated_at: new Date().toISOString(),
+    })
     .eq("id", id);
   revalidatePath("/admin/ensayos");
   revalidatePath(`/admin/ensayos/${id}`);
@@ -146,10 +180,14 @@ export async function deleteEssay(formData: FormData) {
 
 export async function listEssayDistributions(essayId: string) {
   const supabase = await createClient();
-  const [subjects, objectives, difficulty] = await Promise.all([
+  const [subjects, strands, objectives, difficulty] = await Promise.all([
     supabase
       .from("essay_subjects")
       .select("*, subjects(name)")
+      .eq("essay_id", essayId),
+    supabase
+      .from("essay_strand_distribution")
+      .select("*, strands(name, subject_id)")
       .eq("essay_id", essayId),
     supabase
       .from("essay_objectives")
@@ -162,6 +200,7 @@ export async function listEssayDistributions(essayId: string) {
   ]);
   return {
     subjects: subjects.data ?? [],
+    strands: strands.data ?? [],
     objectives: objectives.data ?? [],
     difficulty: difficulty.data ?? [],
   };
@@ -184,6 +223,7 @@ export async function saveEssayDistributions(
 
   let payload: {
     subjects: ({ subjectId: string } & DistributionRow)[];
+    strands?: ({ strandId: string; isRequired?: boolean } & DistributionRow)[];
     objectives: ({ learningObjectiveId: string } & DistributionRow)[];
     difficulty: ({ difficulty: EssayDifficulty } & DistributionRow)[];
   };
@@ -196,12 +236,25 @@ export async function saveEssayDistributions(
   const supabase = await createClient();
 
   await supabase.from("essay_subjects").delete().eq("essay_id", essayId);
+  await supabase.from("essay_strand_distribution").delete().eq("essay_id", essayId);
   await supabase.from("essay_objectives").delete().eq("essay_id", essayId);
   await supabase
     .from("essay_difficulty_distribution")
     .delete()
     .eq("essay_id", essayId);
 
+  if (payload.strands?.length) {
+    const { error } = await supabase.from("essay_strand_distribution").insert(
+      payload.strands.map((s) => ({
+        essay_id: essayId,
+        strand_id: s.strandId,
+        question_count: s.count,
+        question_percent: s.percent,
+        is_required: s.isRequired ?? false,
+      }))
+    );
+    if (error) return { error: error.message };
+  }
   if (payload.subjects?.length) {
     const { error } = await supabase.from("essay_subjects").insert(
       payload.subjects.map((s) => ({
@@ -251,18 +304,45 @@ function resolveCount(
   return 0;
 }
 
-async function buildCandidatePool(levelId: string): Promise<CandidateQuestion[]> {
+/**
+ * `requirePublishable`: cuando es `true`, restringe el pool a preguntas
+ * `is_active=true` + `validation_status='approved_for_exam'` (además del
+ * `review_status='aprobado'` que ya filtra `selectEssayQuestions`), y —si se
+ * pasa `frameworkId`— a esa versión curricular exacta. Lo usa
+ * `essay-coverage.ts` para calcular disponibilidad REAL de publicación; la
+ * generación administrativa normal (`generateEssay`) sigue usando el pool
+ * amplio (incluye preguntas en revisión, para que el admin vea el estado
+ * real del banco al generar una vista previa).
+ */
+export async function buildCandidatePool(
+  levelId: string,
+  options?: { requirePublishable?: boolean; frameworkId?: string | null }
+): Promise<CandidateQuestion[]> {
   const supabase = await createClient();
-  const { data } = await supabase
+  let query = supabase
     .from("questions")
     .select(
-      "id, subject_id, learning_objective_id, difficulty, prompt, points, estimated_seconds, review_status, question_usage_stats(times_used)"
+      "id, subject_id, learning_objective_id, difficulty, prompt, points, estimated_seconds, review_status, question_usage_stats(times_used), learning_objectives(units(strand_id))"
     )
     .eq("level_id", levelId);
+
+  if (options?.requirePublishable) {
+    query = query
+      .eq("is_active", true)
+      .eq("validation_status", "approved_for_exam");
+    if (options.frameworkId) {
+      query = query.eq("framework_id", options.frameworkId);
+    }
+  }
+
+  const { data } = await query;
+
+  type StrandJoin = { units: { strand_id: string } | null } | null;
 
   return (data ?? []).map((q) => ({
     id: q.id,
     subjectId: q.subject_id,
+    strandId: (q.learning_objectives as unknown as StrandJoin)?.units?.strand_id ?? null,
     learningObjectiveId: q.learning_objective_id,
     difficulty: (q.difficulty ?? "intermedia") as EssayDifficulty,
     prompt: q.prompt,
@@ -275,18 +355,52 @@ async function buildCandidatePool(levelId: string): Promise<CandidateQuestion[]>
   }));
 }
 
-async function buildNameMaps(essayId: string) {
+export async function buildNameMaps(essayId: string) {
   const supabase = await createClient();
-  const [subjects, objectives] = await Promise.all([
+  const [subjects, strands, objectives] = await Promise.all([
     supabase.from("subjects").select("id, name"),
+    supabase.from("strands").select("id, name"),
     supabase.from("learning_objectives").select("id, short_name"),
   ]);
   const subjectNames: Record<string, string> = {};
   for (const s of subjects.data ?? []) subjectNames[s.id] = s.name;
+  const strandNames: Record<string, string> = {};
+  for (const s of strands.data ?? []) strandNames[s.id] = s.name;
   const objectiveNames: Record<string, string> = {};
   for (const o of objectives.data ?? []) objectiveNames[o.id] = o.short_name;
   void essayId;
-  return { subjectNames, objectiveNames };
+  return { subjectNames, strandNames, objectiveNames };
+}
+
+/**
+ * Carga el historial de respuestas de un estudiante (ensayos + diagnóstico)
+ * con su objetivo de aprendizaje y asignatura, para alimentar
+ * `buildErrorPracticeRequirements`/`buildReinforcementRequirements`.
+ * Solo incluye respuestas ya calificadas (`is_correct` no nulo).
+ */
+export async function buildStudentAnswerHistory(
+  studentId: string
+): Promise<StudentAnswerRecord[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("essay_attempt_answers")
+    .select(
+      "is_correct, questions(subject_id, learning_objective_id), essay_attempts!inner(student_id)"
+    )
+    .eq("essay_attempts.student_id", studentId)
+    .not("is_correct", "is", null);
+
+  type Row = {
+    is_correct: boolean | null;
+    questions: { subject_id: string; learning_objective_id: string | null } | null;
+  };
+  return ((data ?? []) as unknown as Row[])
+    .filter((r) => r.questions != null)
+    .map((r) => ({
+      isCorrect: Boolean(r.is_correct),
+      subjectId: r.questions!.subject_id,
+      learningObjectiveId: r.questions!.learning_objective_id,
+    }));
 }
 
 export type GenerateEssayState = {
@@ -294,6 +408,104 @@ export type GenerateEssayState = {
   missing?: MissingRequirement[];
   generatedCount?: number;
 } | null;
+
+export type EssayRow = {
+  id: string;
+  level_id: string;
+  essay_type: string;
+  total_questions: number;
+  framework_id: string | null;
+  target_student_id: string | null;
+};
+
+export type ResolvedEssayRequirements =
+  | {
+      error: null;
+      subjectRequirements: { subjectId: string; count: number }[];
+      strandRequirements: { strandId: string; count: number }[];
+      objectiveRequirements: ObjectiveRequirement[];
+      difficultyRequirements: { difficulty: EssayDifficulty; count: number }[];
+    }
+  | { error: string };
+
+/**
+ * Resuelve las 4 distribuciones de un ensayo a la forma que consume
+ * `selectEssayQuestions`. Compartido por `generateEssay` (persiste la
+ * selección) y `checkEssayAvailability` en `essay-coverage.ts` (solo cuenta
+ * disponibilidad, no persiste nada) para no duplicar la lógica de
+ * `practica_errores`/`refuerzo_objetivos` en dos lugares.
+ */
+export async function resolveEssayRequirements(
+  essay: EssayRow
+): Promise<ResolvedEssayRequirements> {
+  const { subjects, strands, objectives, difficulty } =
+    await listEssayDistributions(essay.id);
+
+  const subjectRequirements = subjects.map((s) => ({
+    subjectId: s.subject_id as string,
+    count: resolveCount(
+      { count: s.question_count, percent: s.question_percent },
+      essay.total_questions
+    ),
+  }));
+  const strandRequirements = strands.map((s) => ({
+    strandId: s.strand_id as string,
+    count: resolveCount(
+      { count: s.question_count, percent: s.question_percent },
+      essay.total_questions
+    ),
+  }));
+  const difficultyRequirements = difficulty.map((d) => ({
+    difficulty: d.difficulty as EssayDifficulty,
+    count: resolveCount(
+      { count: d.question_count, percent: d.question_percent },
+      essay.total_questions
+    ),
+  }));
+
+  // `practica_errores`/`refuerzo_objetivos`: los requisitos por objetivo no
+  // los configura el administrador manualmente (no tiene sentido: dependen
+  // del historial de un estudiante puntual, `essay.target_student_id`) sino
+  // que se derivan de su historial de respuestas. Para el resto de los
+  // tipos de ensayo, los requisitos por objetivo siguen viniendo de
+  // `essay_objectives`, configurados a mano.
+  let objectiveRequirements: ObjectiveRequirement[];
+  if (essay.essay_type === "practica_errores" || essay.essay_type === "refuerzo_objetivos") {
+    if (!essay.target_student_id) {
+      return {
+        error:
+          "Este ensayo es de práctica personalizada pero no tiene un estudiante asignado (target_student_id).",
+      };
+    }
+    const history = await buildStudentAnswerHistory(essay.target_student_id);
+    objectiveRequirements =
+      essay.essay_type === "practica_errores"
+        ? buildErrorPracticeRequirements(history, essay.total_questions)
+        : buildReinforcementRequirements(history, essay.total_questions);
+  } else {
+    objectiveRequirements = objectives.map((o) => ({
+      learningObjectiveId: o.learning_objective_id as string,
+      subjectId:
+        (
+          o.learning_objectives as {
+            units: { strands: { subject_id: string } | null } | null;
+          } | null
+        )?.units?.strands?.subject_id ?? "",
+      count: resolveCount(
+        { count: o.question_count, percent: o.question_percent },
+        essay.total_questions
+      ),
+    }));
+  }
+
+  return {
+    error: null,
+    subjectRequirements,
+    strandRequirements,
+    objectiveRequirements,
+    difficultyRequirements,
+  };
+}
 
 export async function generateEssay(
   _prevState: GenerateEssayState,
@@ -310,48 +522,29 @@ export async function generateEssay(
     .single();
   if (essayError || !essay) return { error: "No se encontró el ensayo." };
 
-  const { subjects, objectives, difficulty } = await listEssayDistributions(
-    essayId
-  );
-
-  const subjectRequirements = subjects.map((s) => ({
-    subjectId: s.subject_id as string,
-    count: resolveCount(
-      { count: s.question_count, percent: s.question_percent },
-      essay.total_questions
-    ),
-  }));
-  const objectiveRequirements = objectives.map((o) => ({
-    learningObjectiveId: o.learning_objective_id as string,
-    subjectId:
-      (
-        o.learning_objectives as {
-          units: { strands: { subject_id: string } | null } | null;
-        } | null
-      )?.units?.strands?.subject_id ?? "",
-    count: resolveCount(
-      { count: o.question_count, percent: o.question_percent },
-      essay.total_questions
-    ),
-  }));
-  const difficultyRequirements = difficulty.map((d) => ({
-    difficulty: d.difficulty as EssayDifficulty,
-    count: resolveCount(
-      { count: d.question_count, percent: d.question_percent },
-      essay.total_questions
-    ),
-  }));
+  const requirements = await resolveEssayRequirements(essay);
+  if (requirements.error !== null) return { error: requirements.error };
+  const {
+    subjectRequirements,
+    strandRequirements,
+    objectiveRequirements,
+    difficultyRequirements,
+  } = requirements;
 
   const candidates = await buildCandidatePool(essay.level_id);
-  const { subjectNames, objectiveNames } = await buildNameMaps(essayId);
+  const { subjectNames, strandNames, objectiveNames } = await buildNameMaps(
+    essayId
+  );
 
   const result = selectEssayQuestions({
     candidates,
     totalQuestions: essay.total_questions,
     subjectRequirements,
+    strandRequirements,
     objectiveRequirements,
     difficultyRequirements,
     subjectNames,
+    strandNames,
     objectiveNames,
   });
 
@@ -381,7 +574,7 @@ export async function listEssayQuestionsWithDetails(essayId: string) {
   const { data } = await supabase
     .from("essay_questions")
     .select(
-      "id, position, question_id, questions(prompt, subject_id, learning_objective_id, difficulty, points, estimated_seconds, subjects(name), learning_objectives(short_name))"
+      "id, position, question_id, questions(prompt, subject_id, learning_objective_id, difficulty, points, estimated_seconds, subjects(name), learning_objectives(short_name, units(strand_id)))"
     )
     .eq("essay_id", essayId)
     .order("position");
@@ -417,15 +610,18 @@ export async function replaceEssayQuestion(
     difficulty: EssayDifficulty;
     points: number;
     estimated_seconds: number | null;
+    learning_objectives: { units: { strand_id: string } | null } | null;
   };
   const q = currentRow.questions as unknown as QuestionJoin | null;
   if (!q) return { error: "La pregunta original ya no existe." };
+  const strandIdOf = (rq: QuestionJoin) => rq.learning_objectives?.units?.strand_id ?? null;
 
   const currentSelection: SelectedEssayQuestion[] = current.map((r) => {
     const rq = r.questions as unknown as QuestionJoin;
     return {
       questionId: r.question_id,
       subjectId: rq.subject_id,
+      strandId: strandIdOf(rq),
       learningObjectiveId: rq.learning_objective_id,
       difficulty: rq.difficulty,
       prompt: rq.prompt,
@@ -435,14 +631,16 @@ export async function replaceEssayQuestion(
     };
   });
   // El eje real de la pregunta a reemplazar se infiere de si coincide con
-  // algún requisito guardado (objetivo primero, luego asignatura, luego
-  // dificultad); si no coincide con ninguno, se trata como "libre".
-  const { subjects, objectives, difficulty } = await listEssayDistributions(
-    essayId
-  );
+  // algún requisito guardado (objetivo primero, luego eje, luego
+  // asignatura, luego dificultad); si no coincide con ninguno, se trata
+  // como "libre".
+  const { subjects, strands, objectives, difficulty } =
+    await listEssayDistributions(essayId);
+  const questionStrandId = strandIdOf(q);
   const slotToReplace: SelectedEssayQuestion = {
     questionId: currentRow.question_id,
     subjectId: q.subject_id,
+    strandId: questionStrandId,
     learningObjectiveId: q.learning_objective_id,
     difficulty: q.difficulty,
     prompt: q.prompt,
@@ -452,11 +650,13 @@ export async function replaceEssayQuestion(
       (o) => o.learning_objective_id === q.learning_objective_id
     )
       ? "objetivo"
-      : subjects.some((s) => s.subject_id === q.subject_id)
-        ? "asignatura"
-        : difficulty.some((d) => d.difficulty === q.difficulty)
-          ? "dificultad"
-          : "libre",
+      : strands.some((s) => s.strand_id === questionStrandId)
+        ? "eje"
+        : subjects.some((s) => s.subject_id === q.subject_id)
+          ? "asignatura"
+          : difficulty.some((d) => d.difficulty === q.difficulty)
+            ? "dificultad"
+            : "libre",
   };
 
   const candidates = await buildCandidatePool(essay.level_id);

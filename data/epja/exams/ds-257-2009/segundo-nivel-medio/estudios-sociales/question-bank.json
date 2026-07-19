@@ -1,0 +1,802 @@
+[
+  {
+    "localId": "soc-nm2-Dimensión Histórica-001",
+    "prompt": "¿Cuál de los siguientes fue un hito histórico ocurrido durante el siglo XX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La Segunda Guerra Mundial",
+      "La caída del Imperio Romano",
+      "La Revolución Francesa",
+      "El descubrimiento de América"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Segunda Guerra Mundial (1939-1945) es uno de los grandes hitos del siglo XX.",
+    "objectiveShortName": "Hitos y procesos del siglo XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-002",
+    "prompt": "Tras la Segunda Guerra Mundial, ¿qué caracterizó el período conocido como Guerra Fría?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La tensión política y militar entre dos bloques, liderados por Estados Unidos y la Unión Soviética, sin enfrentamiento militar directo entre ambos",
+      "Una guerra mundial con combates directos entre todas las potencias",
+      "Un período sin ningún conflicto internacional",
+      "La unificación política de todo el mundo bajo un solo gobierno"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Guerra Fría fue una rivalidad geopolítica entre dos bloques (liderados por EE. UU. y la URSS) sin guerra directa entre ambas potencias.",
+    "objectiveShortName": "Segunda Guerra Mundial y Guerra Fría",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-003",
+    "prompt": "¿Cuál es uno de los principales objetivos de la Organización de las Naciones Unidas (ONU)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Promover la paz y la cooperación internacional entre los países",
+      "Administrar el comercio de un solo país",
+      "Reemplazar a los gobiernos nacionales",
+      "Fabricar armamento militar"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ONU fue creada para promover la paz, la seguridad y la cooperación internacional entre los Estados.",
+    "objectiveShortName": "Creación de la ONU",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-004",
+    "prompt": "¿Qué transformación geopolítica se asocia al fin de la Guerra Fría, hacia comienzos de la década de 1990?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El fin del sistema bipolar y la disolución de la Unión Soviética",
+      "El inicio de la Segunda Guerra Mundial",
+      "La creación de la ONU",
+      "El descubrimiento de América"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hacia comienzos de los años noventa se disolvió la Unión Soviética, terminando el sistema bipolar de la Guerra Fría.",
+    "objectiveShortName": "Caída de los socialismos reales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-005",
+    "prompt": "¿Cómo ha influido el desarrollo de internet en la sociedad contemporánea?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ha aumentado significativamente la interconexión y el acceso a información entre personas de distintos lugares del mundo",
+      "Ha eliminado por completo la comunicación entre países",
+      "No ha tenido ningún impacto en la sociedad",
+      "Solo afecta a un país en particular"
+    ],
+    "correctIndex": 0,
+    "explanation": "Internet ha facilitado una interconexión global sin precedentes en el acceso a información y comunicación.",
+    "objectiveShortName": "Desarrollo tecnológico e interconectividad global",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-006",
+    "prompt": "¿Qué rol cumplen los medios de comunicación masivos en la sociedad actual?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Difundir información y patrones culturales a gran escala entre distintas poblaciones",
+      "No tienen ningún rol social relevante",
+      "Solo transmiten contenido a nivel local muy reducido",
+      "Impiden completamente el acceso a la información"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los medios de comunicación masivos difunden información y patrones culturales a gran escala, incluso globalmente.",
+    "objectiveShortName": "Medios de comunicación y patrones culturales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-007",
+    "prompt": "¿Qué se entiende por \"internacionalización de la economía\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El aumento de las relaciones comerciales y financieras entre distintos países",
+      "El cierre total de fronteras comerciales",
+      "La eliminación del comercio internacional",
+      "La producción exclusivamente para el mercado interno, sin ningún intercambio externo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La internacionalización económica implica un aumento de las relaciones comerciales y financieras entre países.",
+    "objectiveShortName": "Internacionalización de las economías",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-008",
+    "prompt": "¿Qué es un acuerdo de libre comercio entre países?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un acuerdo que busca reducir barreras (como aranceles) al comercio entre los países firmantes",
+      "Un tratado que prohíbe todo intercambio comercial",
+      "Un acuerdo exclusivamente militar",
+      "Un tipo de moneda única mundial"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un acuerdo de libre comercio busca reducir barreras arancelarias y facilitar el intercambio comercial entre países.",
+    "objectiveShortName": "Acuerdos de libre comercio",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-009",
+    "prompt": "¿Cuál de las siguientes es considerada una problemática social relevante a nivel mundial en la actualidad?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La pobreza y la desigualdad social",
+      "La ausencia total de tecnología",
+      "El exceso de recursos naturales sin uso",
+      "La falta de población mundial"
+    ],
+    "correctIndex": 0,
+    "explanation": "La pobreza y la desigualdad social son problemáticas ampliamente reconocidas a nivel mundial en la actualidad.",
+    "objectiveShortName": "Problemas sociales del mundo actual",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-010",
+    "prompt": "En economía, ¿qué se entiende por \"oferta y demanda\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La relación entre la cantidad de un bien disponible y la cantidad que los consumidores desean comprar",
+      "Un tipo de impuesto estatal",
+      "Un tratado internacional",
+      "Una ley de tránsito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Oferta y demanda describen, respectivamente, la disponibilidad de un bien y el interés de los consumidores por adquirirlo.",
+    "objectiveShortName": "Conceptos básicos de economía",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-011",
+    "prompt": "¿Qué característica se asocia frecuentemente al empleo actual en muchos países, según el proceso de \"flexibilización laboral\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Contratos y jornadas más variables, con menor estabilidad que en décadas anteriores",
+      "Empleos exclusivamente de por vida sin ningún cambio",
+      "La desaparición completa del trabajo remunerado",
+      "La prohibición de cualquier tipo de contrato"
+    ],
+    "correctIndex": 0,
+    "explanation": "La flexibilización laboral se asocia a contratos y jornadas más variables, con menor estabilidad relativa.",
+    "objectiveShortName": "Características del empleo actual",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-012",
+    "prompt": "En el sistema capitalista, ¿qué rol cumple generalmente la propiedad privada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los medios de producción pertenecen mayoritariamente a personas o empresas privadas",
+      "Todos los medios de producción son estatales sin excepción",
+      "No existe ningún tipo de propiedad",
+      "Solo el Estado puede vender productos"
+    ],
+    "correctIndex": 0,
+    "explanation": "En el capitalismo, la propiedad privada de los medios de producción es una característica central.",
+    "objectiveShortName": "Modalidades de organización del capitalismo",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-013",
+    "prompt": "¿Qué factor NO influye directamente en el crecimiento de la población de un país?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El color de la bandera nacional",
+      "La natalidad",
+      "La mortalidad",
+      "Las migraciones"
+    ],
+    "correctIndex": 0,
+    "explanation": "El crecimiento poblacional depende de natalidad, mortalidad y migraciones; el color de la bandera no tiene relación demográfica.",
+    "objectiveShortName": "Población mundial y migraciones",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-014",
+    "prompt": "En Chile, ¿qué tendencia demográfica ha predominado en las últimas décadas respecto a la vida urbana y rural?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un predominio de la población viviendo en ciudades (zonas urbanas)",
+      "Un predominio total de la población rural",
+      "Una población dividida exactamente a la mitad sin ninguna tendencia",
+      "La desaparición completa de las zonas rurales"
+    ],
+    "correctIndex": 0,
+    "explanation": "En Chile predomina la población urbana por sobre la rural desde hace varias décadas.",
+    "objectiveShortName": "Asentamientos urbanos y rurales en Chile",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-015",
+    "prompt": "¿Cuál de los siguientes es un problema asociado al crecimiento desordenado de las grandes ciudades latinoamericanas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El aumento de los tiempos de desplazamiento y la contaminación",
+      "La desaparición total del tráfico vehicular",
+      "La reducción a cero de la población urbana",
+      "La eliminación completa de la necesidad de transporte"
+    ],
+    "correctIndex": 0,
+    "explanation": "El crecimiento urbano desordenado suele generar mayores tiempos de desplazamiento y problemas de contaminación.",
+    "objectiveShortName": "Expansión física de las ciudades latinoamericanas",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Geográfica y Económica-016",
+    "prompt": "¿Qué relación existe entre la explotación de recursos naturales y el impacto ambiental?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La explotación de recursos naturales puede generar impactos ambientales si no se maneja de forma sustentable",
+      "No existe ninguna relación entre ambos aspectos",
+      "La explotación de recursos siempre mejora el ambiente",
+      "El impacto ambiental solo depende del clima, no de la actividad humana"
+    ],
+    "correctIndex": 0,
+    "explanation": "La explotación de recursos naturales puede tener impactos ambientales significativos si no se gestiona de forma sustentable.",
+    "objectiveShortName": "Medio natural y actividades productivas",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-017",
+    "prompt": "¿Qué proceso histórico del siglo XX se refiere a la independencia de numerosos países de África y Asia respecto de potencias coloniales europeas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La descolonización",
+      "La Revolución Industrial",
+      "El Renacimiento",
+      "La caída del Imperio Romano"
+    ],
+    "correctIndex": 0,
+    "explanation": "La descolonización fue el proceso, principalmente tras la Segunda Guerra Mundial, por el cual muchos territorios coloniales lograron su independencia.",
+    "objectiveShortName": "Hitos y procesos del siglo XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-018",
+    "prompt": "¿Qué caracteriza a un \"sistema bipolar\" en relaciones internacionales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La existencia de dos potencias o bloques dominantes que concentran gran parte del poder mundial",
+      "La existencia de un único país que domina todo el mundo sin ninguna rivalidad",
+      "La ausencia total de potencias con influencia internacional",
+      "Un sistema donde todos los países tienen exactamente el mismo poder"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un sistema bipolar se caracteriza por la existencia de dos bloques o potencias dominantes, como ocurrió durante la Guerra Fría.",
+    "objectiveShortName": "Segunda Guerra Mundial y Guerra Fría",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-019",
+    "prompt": "Además de la paz, ¿en qué otro ámbito busca generar acuerdos la ONU entre los países miembros?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En acuerdos políticos y económicos internacionales",
+      "Únicamente en competencias deportivas",
+      "Solo en asuntos de un único país",
+      "En ningún otro ámbito además del militar"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ONU también promueve la cooperación en materia económica, social y de derechos humanos, además de la paz.",
+    "objectiveShortName": "Creación de la ONU",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-020",
+    "prompt": "Tras el fin de la Guerra Fría, ¿qué se entiende por un orden internacional más \"unipolar\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un escenario donde una sola potencia concentra una influencia global predominante",
+      "Un escenario donde no existe ninguna potencia influyente",
+      "Un escenario con exactamente diez potencias iguales",
+      "La desaparición completa de las relaciones internacionales"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un sistema unipolar se caracteriza por la predominancia de una única potencia a nivel global.",
+    "objectiveShortName": "Caída de los socialismos reales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-021",
+    "prompt": "¿Qué se entiende por \"interconectividad global\" en el contexto tecnológico actual?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La capacidad de personas y sistemas de comunicarse e intercambiar información a través de redes que abarcan todo el mundo",
+      "La desconexión total entre países",
+      "Un fenómeno exclusivo de un solo continente",
+      "La eliminación de las telecomunicaciones"
+    ],
+    "correctIndex": 0,
+    "explanation": "La interconectividad global se refiere a la capacidad de comunicación e intercambio de información a escala mundial mediante redes tecnológicas.",
+    "objectiveShortName": "Desarrollo tecnológico e interconectividad global",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-022",
+    "prompt": "¿Cómo puede el transporte moderno (aéreo, marítimo) influir en la difusión de patrones culturales entre países?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Facilita el intercambio de personas, bienes e ideas entre distintas regiones del mundo",
+      "Impide por completo cualquier intercambio cultural",
+      "Solo permite el transporte de mercancías, nunca de personas",
+      "No tiene relación alguna con la cultura"
+    ],
+    "correctIndex": 0,
+    "explanation": "El transporte moderno facilita el movimiento de personas y bienes, lo que favorece el intercambio cultural entre regiones.",
+    "objectiveShortName": "Medios de comunicación y patrones culturales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-023",
+    "prompt": "¿Qué rol cumplen las empresas transnacionales en la economía internacionalizada actual?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Operan en múltiples países, integrando distintas economías nacionales",
+      "Solo pueden operar dentro de un único país",
+      "No tienen ninguna influencia económica",
+      "Están prohibidas en todos los países"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las empresas transnacionales operan en varios países, contribuyendo a la integración económica internacional.",
+    "objectiveShortName": "Internacionalización de las economías",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-024",
+    "prompt": "¿Qué es un \"bloque económico\" formado por varios países?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una agrupación de países que coordinan políticas económicas y comerciales entre sí",
+      "Un solo país que actúa de forma aislada",
+      "Una organización exclusivamente militar",
+      "Un tipo de moneda sin respaldo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un bloque económico es una agrupación de países que coordinan políticas comerciales y económicas comunes.",
+    "objectiveShortName": "Acuerdos de libre comercio",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-Dimensión Histórica-025",
+    "prompt": "¿Cuál de las siguientes problemáticas se relaciona con el deterioro medioambiental a nivel mundial?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La contaminación y la pérdida de biodiversidad",
+      "El aumento sin límites de bosques nativos en todo el planeta",
+      "La ausencia total de industrias en el mundo",
+      "La desaparición completa del uso de energía"
+    ],
+    "correctIndex": 0,
+    "explanation": "La contaminación y la pérdida de biodiversidad son problemáticas centrales del deterioro medioambiental actual.",
+    "objectiveShortName": "Problemas sociales del mundo actual",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-026",
+    "prompt": "¿Cuál de los siguientes procesos también ocurrió durante el siglo XX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La descolonización de gran parte de África y Asia",
+      "La caída del Imperio Romano",
+      "La invención de la escritura",
+      "El Renacimiento europeo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La descolonización de numerosos territorios africanos y asiáticos ocurrió principalmente en el siglo XX.",
+    "objectiveShortName": "Hitos y procesos del siglo XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-027",
+    "prompt": "¿Qué bloque de países lideró Estados Unidos durante la Guerra Fría?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El bloque occidental o capitalista",
+      "El bloque socialista liderado por la URSS",
+      "Ningún bloque, actuó siempre en solitario",
+      "El bloque de países no alineados exclusivamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Estados Unidos lideró el bloque occidental (capitalista) durante la Guerra Fría, en contraposición al bloque liderado por la URSS.",
+    "objectiveShortName": "Segunda Guerra Mundial y Guerra Fría",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-028",
+    "prompt": "¿En qué década del siglo XX fue creada la Organización de las Naciones Unidas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En la década de 1940, tras la Segunda Guerra Mundial",
+      "En la década de 1990",
+      "En la década de 1800",
+      "En la década de 2000"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ONU fue creada en 1945, en la década de 1940, tras el fin de la Segunda Guerra Mundial.",
+    "objectiveShortName": "Creación de la ONU",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-029",
+    "prompt": "¿Qué país fue el centro del bloque socialista que se disolvió hacia comienzos de los años noventa?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La Unión Soviética",
+      "Estados Unidos",
+      "Francia",
+      "Japón"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Unión Soviética, centro del bloque socialista, se disolvió hacia comienzos de la década de 1990.",
+    "objectiveShortName": "Caída de los socialismos reales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-030",
+    "prompt": "¿Qué tecnología ha sido especialmente relevante para aumentar la interconectividad global en las últimas décadas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Internet",
+      "La rueda",
+      "La imprenta del siglo XV",
+      "El fuego"
+    ],
+    "correctIndex": 0,
+    "explanation": "Internet ha sido una tecnología clave para el aumento de la interconectividad global reciente.",
+    "objectiveShortName": "Desarrollo tecnológico e interconectividad global",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-031",
+    "prompt": "¿Qué efecto pueden tener los medios de comunicación masivos sobre las culturas locales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Pueden influir en la difusión de patrones culturales globales, afectando a culturas locales",
+      "No tienen ninguna influencia cultural",
+      "Solo afectan a un único país",
+      "Eliminan completamente la cultura local de forma inmediata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los medios de comunicación masivos pueden influir en la difusión de patrones culturales globales, con efectos sobre culturas locales.",
+    "objectiveShortName": "Medios de comunicación y patrones culturales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-032",
+    "prompt": "¿Qué es la inversión extranjera directa?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La inversión que realizan empresas o personas de un país en actividades productivas de otro país",
+      "Un tipo de impuesto interno",
+      "Un préstamo entre bancos del mismo país",
+      "Un tipo de moneda"
+    ],
+    "correctIndex": 0,
+    "explanation": "La inversión extranjera directa es la inversión de empresas o personas de un país en actividades productivas de otro.",
+    "objectiveShortName": "Internacionalización de las economías",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-033",
+    "prompt": "¿Qué busca reducir generalmente un acuerdo de libre comercio entre países?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los aranceles y otras barreras al comercio internacional",
+      "La cantidad de turistas",
+      "El número de embajadas",
+      "La cantidad de idiomas oficiales"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los acuerdos de libre comercio buscan reducir aranceles y barreras comerciales entre los países firmantes.",
+    "objectiveShortName": "Acuerdos de libre comercio",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-034",
+    "prompt": "¿Qué relación existe entre pobreza y acceso a servicios básicos, según problemáticas sociales actuales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La pobreza suele asociarse a un menor acceso a servicios básicos como salud y educación",
+      "No existe ninguna relación entre ambos aspectos",
+      "La pobreza siempre garantiza mejor acceso a servicios",
+      "Los servicios básicos no dependen de las condiciones económicas"
+    ],
+    "correctIndex": 0,
+    "explanation": "La pobreza suele asociarse a un menor acceso a servicios básicos como salud, educación y vivienda adecuada.",
+    "objectiveShortName": "Problemas sociales del mundo actual",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-035",
+    "prompt": "¿Qué se entiende por \"mercado\", en términos económicos generales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El espacio (físico o virtual) donde se encuentran oferta y demanda de bienes o servicios",
+      "Un edificio de gobierno",
+      "Un tipo de moneda",
+      "Una ley específica"
+    ],
+    "correctIndex": 0,
+    "explanation": "El mercado es el espacio, físico o virtual, donde se encuentran la oferta y la demanda de bienes o servicios.",
+    "objectiveShortName": "Conceptos básicos de economía",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-036",
+    "prompt": "¿Qué se entiende por \"terciarización\" del empleo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El aumento de la proporción de empleos en el sector servicios respecto a otros sectores económicos",
+      "La eliminación completa del empleo",
+      "El aumento exclusivo del empleo agrícola",
+      "La reducción del sector servicios a cero"
+    ],
+    "correctIndex": 0,
+    "explanation": "La terciarización se refiere al aumento de empleos en el sector servicios (terciario) en la economía.",
+    "objectiveShortName": "Características del empleo actual",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-037",
+    "prompt": "¿Qué rol puede cumplir el Estado como regulador en una economía capitalista?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Establecer normas y políticas que regulan la actividad económica y protegen a los consumidores",
+      "No tiene ningún rol posible en la economía",
+      "Solo puede prohibir toda actividad económica",
+      "Su única función es fijar todos los precios"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Estado, como regulador, establece normas que regulan la actividad económica, incluso en un sistema capitalista.",
+    "objectiveShortName": "Modalidades de organización del capitalismo",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-038",
+    "prompt": "¿Qué es el envejecimiento de la población, como fenómeno demográfico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El aumento de la proporción de personas mayores respecto al total de la población",
+      "El aumento exclusivo de la población infantil",
+      "La disminución total de la población mundial a cero",
+      "Un fenómeno que solo ocurre en un país"
+    ],
+    "correctIndex": 0,
+    "explanation": "El envejecimiento poblacional es el aumento de la proporción de personas mayores en relación al total de la población.",
+    "objectiveShortName": "Población mundial y migraciones",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-039",
+    "prompt": "¿Qué factor ha contribuido históricamente al éxodo desde zonas rurales hacia zonas urbanas en Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La búsqueda de mejores oportunidades laborales y de servicios en las ciudades",
+      "La ausencia total de ciudades en Chile",
+      "La prohibición de vivir en zonas rurales",
+      "El aumento exclusivo de la actividad agrícola"
+    ],
+    "correctIndex": 0,
+    "explanation": "La búsqueda de mejores oportunidades laborales y acceso a servicios ha impulsado históricamente la migración campo-ciudad en Chile.",
+    "objectiveShortName": "Asentamientos urbanos y rurales en Chile",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-040",
+    "prompt": "¿Qué se entiende por \"segregación socioespacial\" en el contexto urbano?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La separación de grupos sociales en distintas zonas de la ciudad según su nivel socioeconómico",
+      "La mezcla total y equitativa de todos los grupos sociales en toda la ciudad",
+      "Un tipo de transporte público",
+      "Una ley de tránsito vehicular"
+    ],
+    "correctIndex": 0,
+    "explanation": "La segregación socioespacial es la separación de grupos sociales en distintas áreas urbanas según su nivel socioeconómico.",
+    "objectiveShortName": "Expansión física de las ciudades latinoamericanas",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra-041",
+    "prompt": "¿Qué se entiende por un manejo \"sustentable\" de los recursos naturales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un uso de los recursos que satisface necesidades actuales sin comprometer la capacidad de futuras generaciones",
+      "Un uso sin ninguna limitación ni consideración futura",
+      "La prohibición total de usar cualquier recurso natural",
+      "Un concepto que no tiene relación con el medioambiente"
+    ],
+    "correctIndex": 0,
+    "explanation": "El manejo sustentable busca satisfacer necesidades actuales sin comprometer los recursos para las generaciones futuras.",
+    "objectiveShortName": "Medio natural y actividades productivas",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-042",
+    "prompt": "¿Qué caracteriza a un proceso de descolonización?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un territorio colonial obtiene su independencia política de la potencia colonizadora",
+      "Una potencia colonizadora aumenta su control sobre un territorio",
+      "La fusión de dos países independientes",
+      "La creación de una nueva colonia"
+    ],
+    "correctIndex": 0,
+    "explanation": "La descolonización es el proceso por el cual un territorio colonial obtiene su independencia política.",
+    "objectiveShortName": "Hitos y procesos del siglo XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra-043",
+    "prompt": "¿Qué diferencia hay entre \"propiedad privada\" y \"propiedad pública\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La propiedad privada pertenece a personas o empresas particulares; la pública, al Estado o la comunidad",
+      "Son exactamente lo mismo",
+      "La propiedad pública no puede existir en ningún sistema económico",
+      "La propiedad privada siempre pertenece al Estado"
+    ],
+    "correctIndex": 0,
+    "explanation": "La propiedad privada pertenece a particulares; la propiedad pública pertenece al Estado o a la comunidad.",
+    "objectiveShortName": "Conceptos básicos de economía",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra2-044",
+    "prompt": "¿Qué rol cumplió tradicionalmente la televisión en la difusión de información y cultura a nivel masivo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Fue un medio central para difundir información y contenidos culturales a audiencias masivas",
+      "No tuvo ningún rol en la difusión cultural",
+      "Solo existió en un país del mundo",
+      "Reemplazó por completo a todos los demás medios desde su creación"
+    ],
+    "correctIndex": 0,
+    "explanation": "La televisión fue históricamente un medio central para la difusión masiva de información y cultura.",
+    "objectiveShortName": "Medios de comunicación y patrones culturales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra2-045",
+    "prompt": "¿Qué es una empresa transnacional?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una empresa que opera y tiene presencia en varios países",
+      "Una empresa que solo opera en un único país pequeño",
+      "Un organismo exclusivamente gubernamental",
+      "Una empresa que no puede vender fuera de su país de origen"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una empresa transnacional es aquella que opera y tiene presencia en varios países.",
+    "objectiveShortName": "Internacionalización de las economías",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra2-046",
+    "prompt": "¿Qué ejemplo representa un bloque de integración económica entre países?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La Unión Europea",
+      "Un club deportivo local",
+      "Una familia",
+      "Una escuela municipal"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Unión Europea es un ejemplo reconocido de bloque de integración económica y política entre países.",
+    "objectiveShortName": "Acuerdos de libre comercio",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra2-047",
+    "prompt": "¿Qué implica la \"flexibilización laboral\" mencionada frecuentemente en el mundo del trabajo actual?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Contratos y condiciones laborales más variables y adaptables que en el pasado",
+      "La eliminación completa de todos los contratos de trabajo",
+      "La obligación de trabajar exactamente el mismo horario en cualquier empleo",
+      "La prohibición de cualquier tipo de contrato temporal"
+    ],
+    "correctIndex": 0,
+    "explanation": "La flexibilización laboral implica contratos y condiciones más variables, en contraste con esquemas laborales más rígidos del pasado.",
+    "objectiveShortName": "Características del empleo actual",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra2-048",
+    "prompt": "¿Qué caracterizaba históricamente al sistema económico feudal, en contraste con el capitalismo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Se basaba en relaciones de servidumbre y tierras controladas por señores feudales, no en la propiedad privada moderna ni el mercado libre",
+      "Era exactamente igual al capitalismo actual",
+      "No existía ningún tipo de trabajo agrícola",
+      "Se basaba en empresas tecnológicas modernas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El feudalismo se basaba en relaciones de servidumbre y tierras controladas por señores feudales, distinto al capitalismo moderno.",
+    "objectiveShortName": "Modalidades de organización del capitalismo",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm2-extra2-049",
+    "prompt": "¿Qué es la tasa de natalidad?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El número de nacimientos ocurridos en una población durante un período determinado",
+      "El número total de habitantes de un país",
+      "La cantidad de personas que emigran",
+      "El número de matrimonios registrados"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tasa de natalidad mide el número de nacimientos en una población durante un período determinado.",
+    "objectiveShortName": "Población mundial y migraciones",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm2-extra2-050",
+    "prompt": "¿Qué características suele tener un asentamiento rural en comparación con uno urbano?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Menor densidad poblacional y actividades económicas más ligadas a la agricultura",
+      "Mayor densidad poblacional siempre",
+      "Ausencia total de población",
+      "Actividades exclusivamente industriales"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los asentamientos rurales suelen tener menor densidad poblacional y actividades más ligadas a la agricultura, a diferencia de los urbanos.",
+    "objectiveShortName": "Asentamientos urbanos y rurales en Chile",
+    "strandName": "Dimensión Geográfica y Económica",
+    "difficulty": "intermedia"
+  }
+]

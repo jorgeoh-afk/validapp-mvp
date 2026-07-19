@@ -39,6 +39,14 @@ export async function importSyllabus(
     return { error: "No hay filas para importar." };
   }
 
+  // Opcionales: cuando la carga corresponde a una versión curricular EPJA
+  // con fuente oficial identificada (ver `curriculum-epja-pilot.ts`), se
+  // estampan en TODAS las filas insertadas de este lote. El formato del CSV
+  // (`syllabus-import-shared.ts`) no lleva estas columnas por fila porque un
+  // mismo archivo siempre corresponde a una sola versión curricular/fuente.
+  const frameworkId = String(formData.get("frameworkId") ?? "").trim() || null;
+  const sourceId = String(formData.get("sourceId") ?? "").trim() || null;
+
   const supabase = await createClient();
 
   const [{ data: subjects }, { data: levels }, { data: strands }, { data: units }] =
@@ -91,12 +99,17 @@ export async function importSyllabus(
       if (record.kind === "eje") {
         const { data, error } = await supabase
           .from("strands")
-          .insert({
-            subject_id: record.subjectId,
-            name: record.name,
-            description: record.description,
-            order_index: record.orderIndex,
-          })
+          .upsert(
+            {
+              subject_id: record.subjectId,
+              name: record.name,
+              description: record.description,
+              order_index: record.orderIndex,
+              framework_id: frameworkId,
+              source_id: sourceId,
+            },
+            { onConflict: "subject_id,name" }
+          )
           .select("id")
           .single();
         if (error || !data) throw new Error(error?.message ?? "sin id devuelto");
@@ -109,12 +122,17 @@ export async function importSyllabus(
         if (!strandId) throw new Error("el eje referenciado no se pudo resolver");
         const { data, error } = await supabase
           .from("units")
-          .insert({
-            strand_id: strandId,
-            name: record.name,
-            description: record.description,
-            order_index: record.orderIndex,
-          })
+          .upsert(
+            {
+              strand_id: strandId,
+              name: record.name,
+              description: record.description,
+              order_index: record.orderIndex,
+              framework_id: frameworkId,
+              source_id: sourceId,
+            },
+            { onConflict: "strand_id,name" }
+          )
           .select("id")
           .single();
         if (error || !data) throw new Error(error?.message ?? "sin id devuelto");
@@ -125,39 +143,61 @@ export async function importSyllabus(
       } else if (record.kind === "objetivo") {
         const unitId = unitIdByKey.get(record.unitKey);
         if (!unitId) throw new Error("la unidad referenciada no se pudo resolver");
-        const { error } = await supabase.from("learning_objectives").insert({
-          unit_id: unitId,
-          level_id: record.levelId,
-          code: record.code,
-          short_name: record.shortName,
-          description: record.description,
-          priority: record.priority,
-          status: record.status,
-          curricular_source: record.curricularSource,
-          reference_year: record.referenceYear,
-          order_index: record.orderIndex,
-        });
+        // Dos índices únicos complementarios (0014 + 0021): uno cuando la
+        // fila trae `code`, otro cuando no. `upsert` necesita saber contra
+        // cuál conflicto resolver, así que se elige según el caso.
+        const { error } = await supabase.from("learning_objectives").upsert(
+          {
+            unit_id: unitId,
+            level_id: record.levelId,
+            code: record.code,
+            short_name: record.shortName,
+            description: record.description,
+            priority: record.priority,
+            status: record.status,
+            curricular_source: record.curricularSource,
+            reference_year: record.referenceYear,
+            order_index: record.orderIndex,
+            framework_id: frameworkId,
+            source_id: sourceId,
+          },
+          {
+            onConflict: record.code
+              ? "unit_id,level_id,code"
+              : "unit_id,level_id,short_name",
+          }
+        );
         if (error) throw new Error(error.message);
       } else if (record.kind === "gran_idea" || record.kind === "conocimiento_esencial") {
         const table = record.kind === "gran_idea" ? "big_ideas" : "essential_knowledge";
-        const { error } = await supabase.from(table).insert({
-          subject_id: record.subjectId,
-          level_id: record.levelId,
-          statement: record.statement,
-          status: record.status,
-          curricular_source: record.curricularSource,
-          reference_year: record.referenceYear,
-          order_index: record.orderIndex,
-        });
+        const { error } = await supabase.from(table).upsert(
+          {
+            subject_id: record.subjectId,
+            level_id: record.levelId,
+            statement: record.statement,
+            status: record.status,
+            curricular_source: record.curricularSource,
+            reference_year: record.referenceYear,
+            order_index: record.orderIndex,
+            framework_id: frameworkId,
+            source_id: sourceId,
+          },
+          { onConflict: "subject_id,level_id,statement" }
+        );
         if (error) throw new Error(error.message);
       } else if (record.kind === "leccion") {
-        const { error } = await supabase.from("lessons").insert({
-          subject_id: record.subjectId,
-          level_id: record.levelId,
-          title: record.title,
-          content: record.content,
-          order_index: record.orderIndex,
-        });
+        const { error } = await supabase.from("lessons").upsert(
+          {
+            subject_id: record.subjectId,
+            level_id: record.levelId,
+            title: record.title,
+            content: record.content,
+            order_index: record.orderIndex,
+            framework_id: frameworkId,
+            source_id: sourceId,
+          },
+          { onConflict: "subject_id,level_id,title" }
+        );
         if (error) throw new Error(error.message);
       }
       insertedCount += 1;

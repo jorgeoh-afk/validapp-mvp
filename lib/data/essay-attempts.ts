@@ -17,6 +17,50 @@ import {
 
 type SupabaseClient = Awaited<ReturnType<typeof createClient>>;
 
+// ---------- Formas de retorno de las funciones RPC de la migración 0019 ----------
+// El cliente de Supabase se crea sin un tipo `Database` generado (ver
+// `lib/supabase/server.ts`), así que `.rpc(...)` no puede inferir la forma
+// de la fila por sí solo. `.returns<>()`/`.overrideTypes<>()` no sirven aquí
+// porque, sin schema de `Database`, esta versión de postgrest-js no puede
+// determinar si el resultado de `.rpc()` es un arreglo o un solo objeto y
+// devuelve un tipo de error de compilación en vez de inferir. Se usa en su
+// lugar un cast explícito desde `unknown` (mismo criterio que ya usan los
+// `as unknown as {...}` existentes en este archivo para las columnas
+// embebidas de Supabase).
+function asRpcRows<T>(data: unknown): T[] | null {
+  return (data as T[] | null) ?? null;
+}
+function asRpcRow<T>(data: unknown): T | null {
+  return (data as T | null) ?? null;
+}
+type AttemptQuestionChoiceRow = {
+  question_id: string;
+  position: number;
+  prompt: string;
+  choices: string[];
+  resource_url: string | null;
+  points: number;
+};
+
+type GradeEssayAnswerRow = {
+  is_correct: boolean;
+  correct_index: number;
+  explanation: string | null;
+};
+
+type AttemptResultAnswerRow = {
+  question_id: string;
+  display_position: number;
+  shuffled_choice_order: number[];
+  selected_index: number | null;
+  is_correct: boolean | null;
+  prompt: string;
+  choices: string[];
+  correct_index: number;
+  explanation: string | null;
+  points: number;
+};
+
 // ---------- Determinación del curso/nivel del estudiante ----------
 //
 // Decisión de diseño: hoy no existe un campo confiable de "curso actual" del
@@ -275,13 +319,17 @@ export async function startEssayAttempt(
     return { error: "Ya usaste todos tus intentos disponibles para este ensayo." };
   }
 
-  const { data: essayQuestions } = await supabase
+  // Solo se necesita saber si el ensayo tiene preguntas generadas; el
+  // contenido (`choices`) se trae después, vía RPC, una vez creado el
+  // intento (ver `get_attempt_question_choices` en la migración 0019: exige
+  // que el intento ya exista y sea del usuario autenticado). Esta cuenta no
+  // toca `questions`, así que no depende de la política RLS endurecida.
+  const { count: essayQuestionCount } = await supabase
     .from("essay_questions")
-    .select("question_id, position, questions(choices)")
-    .eq("essay_id", essayId)
-    .order("position");
+    .select("id", { count: "exact", head: true })
+    .eq("essay_id", essayId);
 
-  if (!essayQuestions || essayQuestions.length === 0) {
+  if (!essayQuestionCount) {
     return { error: "Este ensayo todavía no tiene preguntas generadas." };
   }
 
@@ -294,22 +342,38 @@ export async function startEssayAttempt(
     return { error: attemptError?.message ?? "No se pudo iniciar el intento." };
   }
 
+  // A partir de aquí ya existe el intento, así que `get_attempt_question_choices`
+  // puede validar ownership (`essay_attempts.student_id = auth.uid()`) y
+  // devolver las preguntas SIN `correct_index` ni `explanation`, ya
+  // ordenadas por `essay_questions.position`.
+  const { data: questionChoicesRaw, error: choicesError } = await supabase.rpc(
+    "get_attempt_question_choices",
+    { p_attempt_id: attempt.id }
+  );
+  const questionChoices = asRpcRows<AttemptQuestionChoiceRow>(questionChoicesRaw);
+  if (choicesError || !questionChoices || questionChoices.length === 0) {
+    return {
+      error: choicesError?.message ?? "No se pudieron cargar las preguntas del ensayo.",
+    };
+  }
+
   // Orden de presentación de las preguntas: 'fijo' respeta la posición
-  // congelada en essay_questions; 'aleatorio' se baraja una sola vez, aquí,
-  // por intento (ver decisión de diseño en la migración 0013).
+  // congelada en essay_questions (ya reflejada en el orden devuelto por la
+  // función); 'aleatorio' se baraja una sola vez, aquí, por intento (ver
+  // decisión de diseño en la migración 0013).
   const orderedIndexes =
     essay.order_mode === "aleatorio"
-      ? shuffleArray(essayQuestions.map((_, i) => i))
-      : essayQuestions.map((_, i) => i);
+      ? shuffleArray(questionChoices.map((_, i) => i))
+      : questionChoices.map((_, i) => i);
 
-  const rows = essayQuestions.map((eq, originalIndex) => {
-    const choices = (eq.questions as unknown as { choices: string[] } | null)?.choices ?? [];
+  const rows = questionChoices.map((qc, originalIndex) => {
+    const choicesLength = Array.isArray(qc.choices) ? qc.choices.length : 0;
     const displayPosition = orderedIndexes.indexOf(originalIndex);
     return {
       attempt_id: attempt.id,
-      question_id: eq.question_id,
+      question_id: qc.question_id,
       display_position: displayPosition,
-      shuffled_choice_order: shuffleIndices(choices.length),
+      shuffled_choice_order: shuffleIndices(choicesLength),
       selected_index: null,
       is_correct: null,
       answered_at: null,
@@ -373,10 +437,22 @@ export async function getAttemptView(attemptId: string): Promise<AttemptView> {
   const { data: answers } = await supabase
     .from("essay_attempt_answers")
     .select(
-      "id, question_id, display_position, shuffled_choice_order, selected_index, is_correct, questions(prompt, choices, points)"
+      "id, question_id, display_position, shuffled_choice_order, selected_index, is_correct"
     )
     .eq("attempt_id", attemptId)
     .order("display_position");
+
+  // `prompt`/`choices`/`points` ya no se leen con un join directo a
+  // `questions` (bloqueado para estudiantes por la política RLS de la
+  // migración 0019): se obtienen vía la misma función usada al iniciar el
+  // intento, que ya valida que el intento es del usuario autenticado.
+  const { data: questionMetaRaw } = await supabase.rpc("get_attempt_question_choices", {
+    p_attempt_id: attemptId,
+  });
+  const questionMeta = asRpcRows<AttemptQuestionChoiceRow>(questionMetaRaw);
+  const metaByQuestion = new Map(
+    (questionMeta ?? []).map((q) => [q.question_id, q])
+  );
 
   const essay = attempt.essays as unknown as {
     name: string;
@@ -385,13 +461,9 @@ export async function getAttemptView(attemptId: string): Promise<AttemptView> {
   } | null;
 
   const questions: AttemptQuestionView[] = (answers ?? []).map((a) => {
-    const q = a.questions as unknown as {
-      prompt: string;
-      choices: string[];
-      points: number;
-    } | null;
+    const meta = metaByQuestion.get(a.question_id);
     const shuffledOrder = (a.shuffled_choice_order as number[] | null) ?? [];
-    const choices = applyShuffledOrder(q?.choices ?? [], shuffledOrder);
+    const choices = applyShuffledOrder(meta?.choices ?? [], shuffledOrder);
     const selectedVisualPosition =
       a.selected_index != null
         ? visualPositionFromOriginal(shuffledOrder, a.selected_index)
@@ -400,9 +472,9 @@ export async function getAttemptView(attemptId: string): Promise<AttemptView> {
       answerId: a.id,
       questionId: a.question_id,
       displayPosition: a.display_position,
-      prompt: q?.prompt ?? "",
+      prompt: meta?.prompt ?? "",
       choices,
-      points: q?.points ?? 1,
+      points: meta?.points ?? 1,
       selectedVisualPosition,
       isCorrect: a.is_correct,
       answered: a.selected_index != null,
@@ -446,21 +518,15 @@ export async function submitEssayAnswer(
   } = await supabase.auth.getUser();
   if (!user) return { error: "Debes iniciar sesión." };
 
-  const { data: attempt } = await supabase
-    .from("essay_attempts")
-    .select("id, student_id, status")
-    .eq("id", attemptId)
-    .maybeSingle();
-  if (!attempt || attempt.student_id !== user.id) {
-    return { error: "Intento no encontrado." };
-  }
-  if (attempt.status !== "en_curso") {
-    return { error: "Este intento ya fue cerrado." };
-  }
-
+  // Ownership del intento (defensa en profundidad: `essay_attempt_answers`
+  // conserva su propia RLS `_select_own`, ajena al cambio de esta migración,
+  // así que esta lectura ya filtra por el usuario dueño del intento). La
+  // comprobación de `status en_curso` la repite igual `grade_essay_answer`
+  // dentro de la base de datos, para que no sea posible saltársela llamando
+  // al RPC directamente sin pasar por esta Server Action.
   const { data: answer } = await supabase
     .from("essay_attempt_answers")
-    .select("id, question_id, shuffled_choice_order, questions(correct_index, explanation)")
+    .select("id, question_id, shuffled_choice_order")
     .eq("id", answerId)
     .eq("attempt_id", attemptId)
     .maybeSingle();
@@ -468,26 +534,28 @@ export async function submitEssayAnswer(
 
   const shuffledOrder = (answer.shuffled_choice_order as number[] | null) ?? [];
   const originalIndex = originalIndexFromVisual(shuffledOrder, selectedVisualPosition);
-  const q = answer.questions as unknown as {
-    correct_index: number;
-    explanation: string | null;
-  } | null;
-  const isCorrect = q != null && originalIndex === q.correct_index;
 
-  const { error } = await supabase
-    .from("essay_attempt_answers")
-    .update({
-      selected_index: originalIndex,
-      is_correct: isCorrect,
-      answered_at: new Date().toISOString(),
+  // `grade_essay_answer` compara internamente contra `correct_index` (que
+  // nunca sale de la función salvo en este valor de retorno, YA calificado)
+  // y actualiza `essay_attempt_answers`. Verifica de nuevo, dentro de la
+  // base de datos, que el intento es del usuario autenticado y está
+  // `en_curso` antes de calificar.
+  const { data: gradedRaw, error } = await supabase
+    .rpc("grade_essay_answer", {
+      p_attempt_id: attemptId,
+      p_question_id: answer.question_id,
+      p_selected_original_index: originalIndex,
     })
-    .eq("id", answerId);
-  if (error) return { error: error.message };
+    .maybeSingle();
+  const graded = asRpcRow<GradeEssayAnswerRow>(gradedRaw);
+  if (error || !graded) {
+    return { error: error?.message ?? "No se pudo calificar la respuesta." };
+  }
 
   return {
-    correct: isCorrect,
-    correctVisualPosition: q ? visualPositionFromOriginal(shuffledOrder, q.correct_index) : -1,
-    explanation: q?.explanation ?? null,
+    correct: graded.is_correct,
+    correctVisualPosition: visualPositionFromOriginal(shuffledOrder, graded.correct_index),
+    explanation: graded.explanation ?? null,
   };
 }
 
@@ -530,13 +598,23 @@ export async function submitEssayAttempt(
 
   const { data: answers } = await supabase
     .from("essay_attempt_answers")
-    .select("is_correct, questions(points)")
+    .select("question_id, is_correct")
     .eq("attempt_id", attemptId);
+
+  // `points` ya no se lee con un join directo a `questions`: se reutiliza la
+  // misma función security-definer que ya valida ownership del intento.
+  const { data: questionMetaRaw } = await supabase.rpc("get_attempt_question_choices", {
+    p_attempt_id: attemptId,
+  });
+  const questionMeta = asRpcRows<AttemptQuestionChoiceRow>(questionMetaRaw);
+  const pointsByQuestion = new Map(
+    (questionMeta ?? []).map((q) => [q.question_id, q.points ?? 1])
+  );
 
   let score = 0;
   let totalPoints = 0;
   for (const a of answers ?? []) {
-    const points = (a.questions as unknown as { points: number } | null)?.points ?? 1;
+    const points = pointsByQuestion.get(a.question_id) ?? 1;
     totalPoints += points;
     if (a.is_correct) score += points;
   }
@@ -606,36 +684,29 @@ export async function getAttemptResult(attemptId: string): Promise<AttemptResult
   if (!attempt || attempt.student_id !== user.id) return null;
   if (attempt.status === "en_curso") return null;
 
-  const { data: answers } = await supabase
-    .from("essay_attempt_answers")
-    .select(
-      "shuffled_choice_order, selected_index, is_correct, questions(prompt, choices, correct_index, explanation, points)"
-    )
-    .eq("attempt_id", attemptId)
-    .order("display_position");
+  // Intento ya cerrado (verificado arriba): `get_attempt_result_answers`
+  // revela `correct_index`/`explanation` solo bajo esa condición (la función
+  // vuelve a comprobarlo dentro de la base de datos, no confía únicamente en
+  // esta verificación de TypeScript) — un intento `en_curso` nunca puede
+  // llegar aquí a ver respuestas correctas de preguntas sin responder.
+  const { data: answersRaw } = await supabase.rpc("get_attempt_result_answers", {
+    p_attempt_id: attemptId,
+  });
+  const answers = asRpcRows<AttemptResultAnswerRow>(answersRaw);
 
   const questions: AttemptResultQuestion[] = (answers ?? []).map((a) => {
-    const q = a.questions as unknown as {
-      prompt: string;
-      choices: string[];
-      correct_index: number;
-      explanation: string | null;
-      points: number;
-    } | null;
     const shuffledOrder = (a.shuffled_choice_order as number[] | null) ?? [];
     return {
-      prompt: q?.prompt ?? "",
-      choices: applyShuffledOrder(q?.choices ?? [], shuffledOrder),
+      prompt: a.prompt ?? "",
+      choices: applyShuffledOrder(a.choices ?? [], shuffledOrder),
       selectedVisualPosition:
         a.selected_index != null
           ? visualPositionFromOriginal(shuffledOrder, a.selected_index)
           : null,
-      correctVisualPosition: q
-        ? visualPositionFromOriginal(shuffledOrder, q.correct_index)
-        : -1,
+      correctVisualPosition: visualPositionFromOriginal(shuffledOrder, a.correct_index),
       isCorrect: Boolean(a.is_correct),
-      explanation: q?.explanation ?? null,
-      points: q?.points ?? 1,
+      explanation: a.explanation ?? null,
+      points: a.points ?? 1,
     };
   });
 

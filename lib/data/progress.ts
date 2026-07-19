@@ -209,11 +209,19 @@ export async function getDashboardSummary(): Promise<DashboardSummary | null> {
     const lesson = nextSubjectWithActivity.path.find(
       (l) => l.status === "disponible"
     )!;
-    const { count: questionCount } = await supabase
-      .from("questions")
-      .select("id", { count: "exact", head: true })
-      .eq("lesson_id", lesson.id);
-    const total = questionCount ?? 0;
+    // La lectura directa de `questions` está restringida a administradores
+    // (migración 0019, endurecimiento de RLS): se reutiliza la función
+    // security-definer `get_lesson_questions` (misma que usa
+    // `lib/data/lessons.ts` para la práctica) solo para contar cuántas
+    // preguntas tiene la próxima lección disponible.
+    // El cliente de Supabase no tiene un tipo `Database` generado, así que
+    // `.rpc(...)` no infiere la forma de la fila por sí solo; se castea
+    // desde `unknown` (solo se necesita `.length`, no el contenido).
+    const { data: nextLessonQuestionsRaw } = await supabase.rpc("get_lesson_questions", {
+      p_lesson_id: lesson.id,
+    });
+    const nextLessonQuestions = nextLessonQuestionsRaw as unknown[] | null;
+    const total = nextLessonQuestions?.length ?? 0;
     nextActivity = {
       subjectId: nextSubjectWithActivity.subject.id,
       subjectName: nextSubjectWithActivity.subject.name,

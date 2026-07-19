@@ -1,0 +1,930 @@
+[
+  {
+    "localId": "len-nm1-comprension-001",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿A qué hora se sentaba el abuelo frente al reloj?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A las cinco de la tarde",
+      "A las seis de la tarde",
+      "A las siete de la tarde",
+      "No se especifica"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"a las seis de la tarde, se sentaba frente a él\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-002",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De cómo reparar relojes antiguos",
+      "Del recuerdo de una rutina compartida con el abuelo",
+      "De la historia de la relojería",
+      "De un viaje familiar"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto describe una rutina del abuelo y cómo se convirtió en un recuerdo familiar.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-003",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Por qué la familia guardó el reloj aunque no funcionaba bien?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Porque pensaban repararlo y venderlo",
+      "Porque era un recuerdo importante del abuelo",
+      "Porque era muy valioso económicamente",
+      "Porque no tenían espacio para botarlo"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice que lo guardaron \"como un recuerdo silencioso de esas tardes de café\".",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-004",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un texto narrativo",
+      "Una receta de cocina",
+      "Un aviso publicitario",
+      "Un informe científico"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto relata una historia con personajes y un desarrollo en el tiempo: es narrativo.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-005",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Qué se dice sobre el abuelo en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que sus manos temblaban y sus ojos brillaban de alegría",
+      "Que era muy alto y fuerte",
+      "Que odiaba el café",
+      "Que nunca sonreía"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Sus manos temblaban un poco, pero sus ojos brillaban de alegría\".",
+    "objectiveShortName": "Identifica aspectos de los personajes",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-006",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: En el texto, la expresión \"recuerdo silencioso\" sugiere que el reloj:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Hacía mucho ruido",
+      "Representaba una memoria callada y afectuosa",
+      "Estaba roto por dentro",
+      "Era un regalo caro"
+    ],
+    "correctIndex": 1,
+    "explanation": "La expresión \"recuerdo silencioso\" transmite algo que evoca memoria sin necesidad de palabras.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-007",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Cuál palabra podría reemplazar \"antiguo\" en el texto sin cambiar el sentido?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Moderno",
+      "Viejo",
+      "Roto",
+      "Pequeño"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Antiguo\" y \"viejo\" son sinónimos en este contexto (algo de mucho tiempo de uso).",
+    "objectiveShortName": "Reemplaza palabra por sinónimo según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-008",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Cuál de las siguientes es un HECHO, no una opinión, según el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El reloj era de madera oscura y números romanos",
+      "El reloj era el objeto más bonito del mundo",
+      "El café del abuelo era el mejor",
+      "La familia debió haber vendido el reloj"
+    ],
+    "correctIndex": 0,
+    "explanation": "Que el reloj era de madera oscura y números romanos es una descripción objetiva, no una opinión.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-009",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Qué función cumple la frase \"sus ojos brillaban de alegría\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Da un dato exacto sobre la edad del abuelo",
+      "Transmite la emoción del abuelo de forma expresiva",
+      "Explica cómo funciona el reloj",
+      "Introduce un nuevo personaje"
+    ],
+    "correctIndex": 1,
+    "explanation": "Es un recurso expresivo que comunica la emoción del abuelo, más allá de un dato objetivo.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-010",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Qué tipo de mundo literario presenta este relato?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un mundo fantástico con magia",
+      "Un mundo cotidiano y realista",
+      "Un mundo de ciencia ficción",
+      "Un mundo de terror"
+    ],
+    "correctIndex": 1,
+    "explanation": "La historia ocurre en un ambiente familiar y realista, sin elementos fantásticos.",
+    "objectiveShortName": "Fundamenta el tipo de mundo literario",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-011",
+    "prompt": "Lee el texto y responde.\n\n\"El Reloj de mi Abuelo\"\nMi abuelo tenía un reloj de pared muy antiguo, de madera oscura y números romanos. Todos los días, a las seis de la tarde, se sentaba frente a él con una taza de café y esperaba la campanada. Sus manos temblaban un poco, pero sus ojos brillaban de alegría cada vez que el reloj sonaba. Cuando él murió, nadie en la familia quiso vender el reloj, aunque ya no funcionaba bien. Mi madre lo guardó en la sala, como un recuerdo silencioso de esas tardes de café.\n\nPregunta: ¿Cuál de las siguientes opiniones está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El texto es triste porque el abuelo temblaba mucho\"",
+      "\"El texto transmite cariño familiar, como muestra el hecho de que guardaron el reloj como recuerdo\"",
+      "\"El texto habla sobre relojería industrial\"",
+      "\"El texto no tiene ningún personaje\""
+    ],
+    "correctIndex": 1,
+    "explanation": "Esta opción usa un dato explícito del texto (guardar el reloj como recuerdo) para fundamentar la interpretación.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-012",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Cuántos árboles se pueden ahorrar al reciclar una tonelada de papel?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Cinco",
+      "Diecisiete",
+      "Cincuenta",
+      "No se especifica"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"puede ahorrar hasta diecisiete árboles\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-013",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De cómo se fabrica papel nuevo desde cero",
+      "Del proceso de reciclaje del papel",
+      "De la historia de la escritura",
+      "De los tipos de árboles"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto describe paso a paso el proceso de reciclaje de papel.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-014",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Por qué se limpia la pasta de papel antes de secarla?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Para quitarle las tintas e impurezas",
+      "Para que pese menos",
+      "Para cambiarle el color",
+      "El texto no lo explica"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Esta pasta se limpia de tintas e impurezas\".",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-015",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Qué parte del texto funciona como introducción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El papel es uno de los materiales más reciclados en el mundo\"",
+      "\"Reciclar una tonelada de papel puede ahorrar...\"",
+      "\"Esta pasta se limpia de tintas e impurezas\"",
+      "No tiene introducción"
+    ],
+    "correctIndex": 0,
+    "explanation": "La primera oración presenta el tema general antes de entrar en el detalle del proceso.",
+    "objectiveShortName": "Reconoce estructura del texto expositivo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-016",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: Cuando el texto explica los pasos del proceso de reciclaje uno por uno, ¿qué forma de discurso expositivo está usando?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una descripción de un proceso",
+      "Un diálogo entre personajes",
+      "Una opinión personal",
+      "Una narración de un viaje"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto describe ordenadamente los pasos de un proceso, típico de la descripción expositiva.",
+    "objectiveShortName": "Identifica formas del discurso expositivo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-017",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: En el texto, \"impurezas\" se refiere a:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Elementos no deseados que hay que quitar",
+      "El color del papel",
+      "El tamaño de las hojas",
+      "El precio del papel"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las impurezas son elementos no deseados que se eliminan durante el proceso de limpieza.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-018",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Qué palabra puede reemplazar \"recolección\" sin cambiar el sentido del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Destrucción",
+      "Reunión/recogida",
+      "Venta",
+      "Impresión"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Recolección\" significa el acto de reunir o recoger algo, como el papel usado.",
+    "objectiveShortName": "Reemplaza palabra por sinónimo según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-019",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Cuál de las siguientes es un HECHO según el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El papel es uno de los materiales más reciclados del mundo",
+      "Reciclar papel es la actividad más importante del planeta",
+      "Todos deberían reciclar papel obligatoriamente",
+      "El papel reciclado es más bonito que el nuevo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un dato objetivo presentado por el texto, no una opinión valorativa.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-020",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Qué función cumple mencionar el dato de \"diecisiete árboles\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Da un ejemplo concreto que refuerza la importancia del reciclaje",
+      "Introduce un nuevo personaje",
+      "Cambia el tema del texto",
+      "No tiene ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "El dato numérico concreto refuerza, con evidencia, la importancia del reciclaje mencionada en el texto.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-021",
+    "prompt": "Lee el texto y responde.\n\n\"El Reciclaje del Papel\"\nEl papel es uno de los materiales más reciclados en el mundo. El proceso comienza con la recolección de papel usado, que luego se separa según su tipo y calidad. Después, el papel se mezcla con agua para formar una pasta. Esta pasta se limpia de tintas e impurezas, y finalmente se seca y se convierte en nuevas hojas. Reciclar una tonelada de papel puede ahorrar hasta diecisiete árboles.\n\nPregunta: ¿Cuál opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"Reciclar papel es beneficioso, ya que según el texto ahorra árboles\"",
+      "\"Reciclar papel es una moda reciente\"",
+      "\"El texto no aporta ningún dato útil\"",
+      "\"El papel reciclado no sirve para nada\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Esta opción usa el dato del texto (ahorro de árboles) para fundamentar la afirmación.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-022",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿Quién acompañó a Carla hasta su escritorio?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Su compañero de trabajo",
+      "La recepcionista",
+      "Su jefe",
+      "Nadie la acompañó"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"La recepcionista... la acompañó hasta su escritorio\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-023",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿De qué trata este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Del primer día de trabajo de Carla y cómo se sintió",
+      "De una receta de cocina",
+      "De un viaje al extranjero",
+      "De un problema técnico grave"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto narra la experiencia de Carla en su primer día de trabajo.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-024",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿Por qué Carla tenía las manos frías al llegar?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Porque hacía mucho frío afuera",
+      "Porque estaba nerviosa",
+      "Porque estaba enferma",
+      "El texto no lo explica"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"con las manos frías por los nervios\".",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-025",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿Cómo se describe a la recepcionista?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Como una persona de sonrisa amable",
+      "Como una persona muy seria y fría",
+      "Como una persona apurada",
+      "El texto no la describe"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"una mujer de sonrisa amable\".",
+    "objectiveShortName": "Identifica aspectos de los personajes",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-026",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: En el texto, \"sin hacerla sentir mal\" sugiere que el compañero fue:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Grosero y cortante",
+      "Amable y comprensivo",
+      "Indiferente",
+      "Muy exigente"
+    ],
+    "correctIndex": 1,
+    "explanation": "El compañero ayudó de forma amable, sin criticar el error de Carla.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-027",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Carla cometió un pequeño error al usar el sistema",
+      "Ese trabajo era el mejor lugar del mundo",
+      "La recepcionista era la persona más amable del planeta",
+      "Carla nunca debió haber aceptado el trabajo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un evento objetivo narrado en el texto, no una valoración.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-028",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿Qué tipo de mundo literario presenta este relato?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un mundo cotidiano y realista",
+      "Un mundo de fantasía con criaturas mágicas",
+      "Un mundo futurista con robots",
+      "Un mundo de aventuras piratas"
+    ],
+    "correctIndex": 0,
+    "explanation": "La historia ocurre en un contexto laboral cotidiano, sin elementos fantásticos.",
+    "objectiveShortName": "Fundamenta el tipo de mundo literario",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-029",
+    "prompt": "Lee el texto y responde.\n\n\"El Primer Día\"\nCarla llegó temprano a su nuevo trabajo, con las manos frías por los nervios. La recepcionista, una mujer de sonrisa amable, la acompañó hasta su escritorio. Durante la mañana, Carla cometió un pequeño error al usar el sistema, pero su compañero de al lado la ayudó sin hacerla sentir mal. Al final del día, Carla caminó a casa sintiéndose, por primera vez en semanas, un poco más tranquila.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El ambiente de trabajo de Carla parece acogedor, ya que sus compañeros la trataron con amabilidad\"",
+      "\"A Carla no le gustó nada su primer día\"",
+      "\"El texto trata sobre un examen escolar\"",
+      "\"Carla renunció al final del día\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Esta opción se apoya en hechos del texto (la recepcionista amable, el compañero que ayudó sin criticar).",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-030",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Con qué se deben limpiar las hojas de la planta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Con un paño húmedo",
+      "Con agua hirviendo",
+      "Con alcohol",
+      "No es necesario limpiarlas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"limpiar las hojas con un paño húmedo\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-031",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿De qué trata este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De cómo cuidar una planta de interior",
+      "De cómo decorar una casa",
+      "De la historia de la jardinería",
+      "De cómo vender plantas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto entrega recomendaciones de cuidado para plantas de interior.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-032",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Qué puede significar que las hojas se pongan amarillas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que falta luz solar directa",
+      "Que hay exceso de agua",
+      "Que la planta necesita más tierra",
+      "El texto no lo explica"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Si las hojas se ponen amarillas, puede ser señal de exceso de agua\".",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-033",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Qué función cumple la última oración del texto (sobre las hojas amarillas)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Presenta el tema general",
+      "Agrega una advertencia final relacionada al cuidado",
+      "No tiene relación con el resto del texto",
+      "Es el título del texto"
+    ],
+    "correctIndex": 1,
+    "explanation": "La última oración agrega una advertencia práctica que cierra el desarrollo del tema.",
+    "objectiveShortName": "Reconoce estructura del texto expositivo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-034",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Qué forma de discurso expositivo predomina en este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Instrucciones o recomendaciones de cuidado",
+      "Un diálogo entre dos personas",
+      "Una narración de aventuras",
+      "Una opinión sin fundamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto entrega recomendaciones prácticas de cuidado, propias del discurso instructivo/expositivo.",
+    "objectiveShortName": "Identifica formas del discurso expositivo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-035",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: En el texto, \"al tacto\" se refiere a:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Al oír un sonido",
+      "Al tocar con la mano",
+      "Al ver con los ojos",
+      "Al oler algo"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Al tacto\" significa que se comprueba tocando con la mano, no observando.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-036",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Qué palabra puede reemplazar \"exceso\" en el texto sin cambiar el sentido?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Falta",
+      "Demasía / demasiado",
+      "Ausencia",
+      "Medida exacta"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Exceso\" significa una cantidad mayor a la necesaria, similar a \"demasiado\".",
+    "objectiveShortName": "Reemplaza palabra por sinónimo según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-037",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Las plantas de interior necesitan luz indirecta",
+      "Las plantas son lo más hermoso del mundo",
+      "Cuidar plantas es aburrido",
+      "Todos deberían tener plantas en casa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una recomendación práctica objetiva, no una valoración personal.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-038",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Qué función cumple la expresión \"generalmente una o dos veces por semana\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Da una referencia aproximada y útil para el cuidado",
+      "Introduce un personaje nuevo",
+      "Cambia completamente el tema",
+      "No aporta ninguna información"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aporta una referencia práctica aproximada para aplicar la recomendación de riego.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-039",
+    "prompt": "Lee el texto y responde.\n\n\"Cómo Cuidar una Planta de Interior\"\nLas plantas de interior necesitan luz indirecta, no sol directo todo el día. Se deben regar cuando la tierra esté seca al tacto, generalmente una o dos veces por semana. Es importante limpiar las hojas con un paño húmedo para quitar el polvo, ya que esto ayuda a la planta a respirar mejor. Si las hojas se ponen amarillas, puede ser señal de exceso de agua.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"Cuidar una planta de interior requiere atención regular, como el riego y la limpieza de hojas que menciona el texto\"",
+      "\"Las plantas de interior no necesitan ningún cuidado\"",
+      "\"El texto habla sobre plantas de exterior\"",
+      "\"Regar todos los días es lo recomendado\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Esta opción se apoya en las recomendaciones concretas que da el texto.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-040",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿Quién se cayó en la escalera?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La vecina nueva",
+      "Don Pedro",
+      "Un niño del edificio",
+      "Nadie se cayó"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"don Pedro se cayó en la escalera\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-041",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De cómo una vecina se ganó la confianza del edificio",
+      "De la construcción de un edificio",
+      "De una fiesta de cumpleaños",
+      "De un problema legal entre vecinos"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto narra cómo la vecina nueva se ganó la confianza de los demás gracias a su ayuda.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-042",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿Por qué los vecinos empezaron a saludarla con más confianza?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Porque ayudó a don Pedro cuando se cayó",
+      "Porque hizo una fiesta",
+      "Porque les regaló algo",
+      "El texto no lo explica"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto conecta la ayuda que dio a don Pedro con el cambio de actitud de los vecinos.",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-043",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿Cómo se describe a la vecina nueva?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Como una mujer mayor, de voz suave y pasos lentos",
+      "Como una mujer joven y muy activa",
+      "Como alguien antipático",
+      "El texto no la describe"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Era una mujer mayor, de voz suave y pasos lentos\".",
+    "objectiveShortName": "Identifica aspectos de los personajes",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-044",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: En el texto, \"sin dudarlo un segundo\" sugiere que la vecina actuó:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Con mucha desconfianza",
+      "De forma inmediata y decidida",
+      "Con mucho miedo",
+      "Muy lentamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "La expresión indica que actuó de inmediato, sin vacilar.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-045",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La vecina ayudó a don Pedro cuando se cayó",
+      "La vecina era la persona más generosa del mundo",
+      "Los vecinos siempre fueron muy amables",
+      "El edificio era el más bonito de la ciudad"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un evento concreto narrado en el texto, no una valoración.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-046",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿Qué tipo de mundo literario presenta este relato?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un mundo cotidiano y realista",
+      "Un mundo de ciencia ficción",
+      "Un mundo de cuento de hadas",
+      "Un mundo de terror"
+    ],
+    "correctIndex": 0,
+    "explanation": "La historia transcurre en un contexto vecinal cotidiano y realista.",
+    "objectiveShortName": "Fundamenta el tipo de mundo literario",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-047",
+    "prompt": "Lee el texto y responde.\n\n\"La Vecina Nueva\"\nCuando la nueva vecina llegó al edificio, nadie sabía mucho de ella. Era una mujer mayor, de voz suave y pasos lentos, que siempre saludaba con una sonrisa breve. Un día, don Pedro se cayó en la escalera y ella fue la primera en ayudarlo, sin dudarlo un segundo. Desde entonces, los vecinos comenzaron a saludarla con más confianza, y ella, poco a poco, empezó a sentirse parte del edificio.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"La vecina generó confianza gracias a un acto concreto de ayuda, como cuenta el texto\"",
+      "\"La vecina nunca se llevó bien con nadie\"",
+      "\"El texto trata sobre una mudanza al extranjero\"",
+      "\"Don Pedro y la vecina eran enemigos\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Esta opción usa el hecho concreto narrado (la ayuda a don Pedro) para fundamentar la interpretación.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-048",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Cuántos libros tendrá la nueva biblioteca?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Más de dos mil",
+      "Menos de cien",
+      "Exactamente mil",
+      "No se especifica"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"más de dos mil libros\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-049",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De la apertura de una nueva biblioteca comunitaria",
+      "De un problema en el barrio",
+      "De una feria de comida",
+      "De una elección municipal"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto anuncia la apertura de una biblioteca comunitaria en el barrio.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-050",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Qué esperan lograr los organizadores con la nueva biblioteca?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que se fomente el hábito de la lectura entre los vecinos",
+      "Que se cierre el barrio",
+      "Que se construyan más calles",
+      "El texto no lo explica"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos\".",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-051",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una noticia informativa",
+      "Un cuento de terror",
+      "Una receta de cocina",
+      "Una carta personal"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto informa sobre un hecho reciente y de interés público, propio de una noticia.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm1-comprension-052",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Qué función cumple la primera oración del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Presenta el hecho principal de la noticia",
+      "Cierra el texto con una opinión",
+      "Describe a un personaje",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "La primera oración presenta el hecho central (la apertura de la biblioteca), típico de la introducción de una noticia.",
+    "objectiveShortName": "Reconoce estructura del texto expositivo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-053",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: Cuando el texto menciona \"salas de estudio y talleres gratuitos de lectura\", ¿qué forma de discurso está usando?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una descripción de las características del lugar",
+      "Un diálogo entre personajes",
+      "Una narración de un viaje",
+      "Una opinión sin fundamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto describe las características y servicios del nuevo espacio.",
+    "objectiveShortName": "Identifica formas del discurso expositivo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-054",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: En el texto, \"horario continuado\" sugiere que la biblioteca:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Cierra al mediodía por varias horas",
+      "Funciona sin interrupción durante el horario de atención",
+      "Solo abre los fines de semana",
+      "No tiene horario definido"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Horario continuado\" significa que atiende sin interrupciones durante su jornada.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-055",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Qué palabra puede reemplazar \"fomente\" en el texto sin cambiar el sentido?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Elimine",
+      "Impulse/promueva",
+      "Ignore",
+      "Prohíba"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Fomente\" significa impulsar o promover algo, en este caso el hábito de la lectura.",
+    "objectiveShortName": "Reemplaza palabra por sinónimo según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm1-comprension-056",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La biblioteca funcionará de lunes a sábado",
+      "La biblioteca será el lugar más importante del barrio",
+      "Todos los vecinos amarán la biblioteca",
+      "Fue la mejor decisión de la historia del barrio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un dato objetivo (el horario de funcionamiento), no una valoración.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-057",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Qué función cumple mencionar la cantidad exacta de libros (\"más de dos mil\")?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Da un dato concreto que refuerza la magnitud del nuevo espacio",
+      "Introduce un nuevo personaje",
+      "Cambia el tema del texto",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "El dato numérico concreto refuerza, con evidencia, la magnitud e importancia de la nueva biblioteca.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm1-comprension-058",
+    "prompt": "Lee el texto y responde.\n\n\"Nueva Biblioteca Comunitaria\"\nLa próxima semana abrirá sus puertas la nueva biblioteca comunitaria del barrio Los Aromos. El espacio contará con más de dos mil libros, salas de estudio y talleres gratuitos de lectura para adultos. La biblioteca funcionará de lunes a sábado, en horario continuado. Sus organizadores esperan que este nuevo espacio fomente el hábito de la lectura entre los vecinos del sector.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"La nueva biblioteca parece un aporte valioso para el barrio, ya que ofrecerá talleres gratuitos de lectura\"",
+      "\"La biblioteca no servirá para nada\"",
+      "\"El texto habla sobre un hospital nuevo\"",
+      "\"La biblioteca costará mucho dinero a los vecinos\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Esta opción usa un dato explícito del texto (talleres gratuitos) para fundamentar la interpretación positiva.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  }
+]

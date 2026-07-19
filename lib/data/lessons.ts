@@ -22,13 +22,40 @@ export async function getLesson(lessonId: string) {
   return data;
 }
 
+// ---------- Formas de retorno de las funciones RPC de la migración 0019 ----------
+// El cliente de Supabase se crea sin un tipo `Database` generado (ver
+// `lib/supabase/server.ts`), así que `.rpc(...)` no puede inferir la forma
+// de la fila por sí solo. `.returns<>()`/`.overrideTypes<>()` no sirven aquí
+// porque, sin schema de `Database`, esta versión de postgrest-js no puede
+// determinar si el resultado de `.rpc()` es un arreglo o un solo objeto y
+// devuelve un tipo de error de compilación en vez de inferir. Se usa en su
+// lugar un cast explícito desde `unknown`.
+type LessonQuestionRow = { id: string; prompt: string; choices: string[] };
+type GradePracticeQuestionRow = { is_correct: boolean; correct_index: number };
+type GradeLessonPracticeRow = {
+  question_id: string;
+  prompt: string;
+  choices: string[];
+  correct_index: number;
+  is_correct: boolean;
+};
+
+function asRpcRows<T>(data: unknown): T[] | null {
+  return (data as T[] | null) ?? null;
+}
+function asRpcRow<T>(data: unknown): T | null {
+  return (data as T | null) ?? null;
+}
+
 export async function getLessonQuestions(lessonId: string) {
   const supabase = await createClient();
-  const { data } = await supabase
-    .from("questions")
-    .select("id, prompt, choices")
-    .eq("lesson_id", lessonId);
-  return data ?? [];
+  // La lectura directa de `questions` está restringida a administradores
+  // (migración 0019); esta función security-definer devuelve las preguntas
+  // de práctica sin `correct_index`.
+  const { data } = await supabase.rpc("get_lesson_questions", {
+    p_lesson_id: lessonId,
+  });
+  return asRpcRows<LessonQuestionRow>(data) ?? [];
 }
 
 export type CheckPracticeAnswerResult =
@@ -40,16 +67,20 @@ export async function checkPracticeAnswer(
   selectedIndex: number
 ): Promise<CheckPracticeAnswerResult> {
   const supabase = await createClient();
-  const { data: question } = await supabase
-    .from("questions")
-    .select("correct_index")
-    .eq("id", questionId)
-    .single();
+  // Compara internamente contra `correct_index` dentro de la base de datos
+  // y solo devuelve el resultado, ya calificado.
+  const { data: questionRaw, error } = await supabase
+    .rpc("grade_practice_question", {
+      p_question_id: questionId,
+      p_selected_index: selectedIndex,
+    })
+    .maybeSingle();
+  const question = asRpcRow<GradePracticeQuestionRow>(questionRaw);
 
-  if (!question) return { error: "Pregunta no encontrada." };
+  if (error || !question) return { error: "Pregunta no encontrada." };
 
   return {
-    correct: selectedIndex === question.correct_index,
+    correct: question.is_correct,
     correctIndex: question.correct_index,
   };
 }
@@ -98,23 +129,29 @@ export async function submitLessonPractice(
   let score = 0;
 
   if (questionIds.length > 0) {
-    const { data: questions } = await supabase
-      .from("questions")
-      .select("id, prompt, choices, correct_index")
-      .in("id", questionIds);
+    // `grade_lesson_practice_questions` compara internamente contra
+    // `correct_index` y devuelve el detalle ya calificado (prompt/choices/
+    // correct_index se revelan recién en esta respuesta, igual que antes).
+    const { data: gradedRaw } = await supabase.rpc("grade_lesson_practice_questions", {
+      p_question_ids: questionIds,
+      p_selected_indexes: questionIds.map((id) => {
+        const raw = formData.get(`answer_${id}`);
+        return raw === null ? -1 : Number(raw);
+      }),
+    });
+    const graded = asRpcRows<GradeLessonPracticeRow>(gradedRaw);
 
-    for (const q of questions ?? []) {
-      const selectedRaw = formData.get(`answer_${q.id}`);
+    for (const q of graded ?? []) {
+      const selectedRaw = formData.get(`answer_${q.question_id}`);
       const selectedIndex = selectedRaw === null ? -1 : Number(selectedRaw);
-      const isCorrect = selectedIndex === q.correct_index;
-      if (isCorrect) score += 1;
+      if (q.is_correct) score += 1;
       results.push({
-        id: q.id,
+        id: q.question_id,
         prompt: q.prompt,
         choices: q.choices,
         selectedIndex,
         correctIndex: q.correct_index,
-        isCorrect,
+        isCorrect: q.is_correct,
       });
     }
   }

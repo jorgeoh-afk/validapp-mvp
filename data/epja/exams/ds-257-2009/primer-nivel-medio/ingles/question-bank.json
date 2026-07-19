@@ -1,0 +1,1234 @@
+[
+  {
+    "localId": "ing-nm1-comprension-001",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: According to the recipe, how many apples are needed?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"wash two apples\", por lo tanto se necesitan dos manzanas.",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-002",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How to grow fruit trees",
+      "How to prepare a fruit salad",
+      "How to store vegetables",
+      "How to bake a cake"
+    ],
+    "correctIndex": 1,
+    "explanation": "Todo el texto describe los pasos para preparar una ensalada de frutas.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-003",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To sell fruit at a market",
+      "To give step-by-step instructions",
+      "To describe a restaurant menu",
+      "To tell a personal story"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto da instrucciones paso a paso (lavar, cortar, mezclar, refrigerar).",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-004",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: In the text, the word \"gently\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "quickly",
+      "carefully",
+      "loudly",
+      "rarely"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Mix gently\" en el contexto de mezclar fruta sugiere hacerlo con cuidado, no bruscamente.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-005",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: Why does the recipe add lemon juice to the fruit?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To make the fruit sweeter",
+      "To add more color",
+      "To stop the fruit from turning brown",
+      "To make the salad colder"
+    ],
+    "correctIndex": 2,
+    "explanation": "El texto dice \"so the fruit does not turn brown\", indicando la razón directa.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-006",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: How long should the salad stay in the fridge before serving?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ten minutes",
+      "Twenty minutes",
+      "One hour",
+      "It does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto especifica \"twenty minutes before serving\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-007",
+    "prompt": "Read the text and answer the question.\n\n\"A Simple Recipe\"\nTo make a fruit salad, wash two apples, one banana, and a handful of grapes. Cut the apples and banana into small pieces. Put all the fruit in a bowl. Add the juice of one lemon so the fruit does not turn brown. Mix everything gently with a spoon. Keep the bowl in the fridge for twenty minutes before serving.\n\nQuestion: What does \"a handful of grapes\" mean?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A small amount of grapes, about what fits in one hand",
+      "A whole box of grapes",
+      "No grapes at all",
+      "Grapes that are very expensive"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"A handful of\" es una expresión cotidiana que significa \"un puñado\", una cantidad pequeña.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-008",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: What must workers wear in this area?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Only gloves",
+      "Only safety glasses",
+      "Safety glasses and gloves",
+      "A helmet"
+    ],
+    "correctIndex": 2,
+    "explanation": "El texto dice \"must wear safety glasses and gloves\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-009",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A job advertisement",
+      "Safety rules for a work area",
+      "A list of machine prices",
+      "A schedule for workers"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto entrega reglas de seguridad para un área de trabajo.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-010",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: What is the purpose of this notice?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To advertise new equipment",
+      "To warn and instruct workers about safety",
+      "To announce a holiday",
+      "To describe a company's history"
+    ],
+    "correctIndex": 1,
+    "explanation": "El propósito es advertir e instruir sobre seguridad laboral.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-011",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: In the text, \"immediately\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "later",
+      "never",
+      "right away",
+      "sometimes"
+    ],
+    "correctIndex": 2,
+    "explanation": "\"Immediately\" significa \"de inmediato / sin demora\".",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-012",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: Why should workers walk slowly near the machines?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because the machines are very loud",
+      "Because the floor can be wet",
+      "Because the area is very small",
+      "Because supervisors are watching"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto explica: \"The floor can be wet, so please walk slowly\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-013",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: Who should workers tell if they see a problem?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A customer",
+      "Their supervisor",
+      "Another company",
+      "No one"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica: \"tell your supervisor immediately\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-014",
+    "prompt": "Read the text and answer the question.\n\n\"Workplace Safety Notice\"\nAll workers must wear safety glasses and gloves in this area. The floor can be wet, so please walk slowly near the machines. Do not use your phone while operating equipment. If you see a problem, tell your supervisor immediately. This notice is posted for everyone's safety.\n\nQuestion: What does \"operating equipment\" mean in this context?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Cleaning the floor",
+      "Using or running a machine",
+      "Answering the phone",
+      "Writing a report"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Operating equipment\" significa usar o manejar una máquina.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-015",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: How long did Maria wait at the bus stop?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Five minutes",
+      "Fifteen minutes",
+      "Thirty minutes",
+      "One hour"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"She waited at the bus stop for fifteen minutes\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-016",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: What is this story mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A woman planning a trip",
+      "A woman who was late but arrived in time for her meeting",
+      "A bus driver's daily routine",
+      "A meeting between two companies"
+    ],
+    "correctIndex": 1,
+    "explanation": "La historia sigue a María, que llega tarde al paradero pero alcanza a llegar a tiempo a su reunión.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-017",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To give safety instructions",
+      "To tell a short personal story",
+      "To describe a recipe",
+      "To advertise a bus company"
+    ],
+    "correctIndex": 1,
+    "explanation": "Es un relato breve sobre un evento cotidiano en la vida de María.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-018",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: In the text, \"relieved\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "angry",
+      "less worried",
+      "confused",
+      "tired"
+    ],
+    "correctIndex": 1,
+    "explanation": "Después de saber que no llegó tarde, María se sintió \"relieved\" (aliviada, menos preocupada).",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-019",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: Why did Maria have to stand on the second bus?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because she wanted to",
+      "Because the bus was full of people",
+      "Because the bus had no seats installed",
+      "Because she was near the door"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"it was full of people. She had to stand the whole way\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-020",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: According to the story, when does the meeting start?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "In ten minutes",
+      "In one hour",
+      "It already started",
+      "Tomorrow"
+    ],
+    "correctIndex": 0,
+    "explanation": "El jefe le dice: \"the meeting starts in ten minutes\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-021",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The Late Bus\"\nMaria woke up late and missed her usual bus to work. She waited at the bus stop for fifteen minutes, checking her watch again and again. Finally, another bus arrived, but it was full of people. She had to stand the whole way. When she got to the office, her boss smiled and said, 'Don't worry, the meeting starts in ten minutes.' Maria felt relieved.\n\nQuestion: What does \"missed her usual bus\" mean?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "She took a different bus on purpose",
+      "She did not catch the bus she normally takes",
+      "She enjoyed the bus ride",
+      "She bought a bus ticket"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Missed the bus\" es una expresión cotidiana que significa no alcanzar a tomar el bus.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-022",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: What are the three ingredients listed on the label?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Mint, chamomile, and lemon peel",
+      "Mint, sugar, and honey",
+      "Chamomile, cinnamon, and lemon",
+      "Lemon peel, sugar, and mint"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto lista: \"dried mint, chamomile flowers, and lemon peel\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-023",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A story about drinking tea",
+      "Instructions and information for a tea product",
+      "A comparison between different teas",
+      "A history of herbal medicine"
+    ],
+    "correctIndex": 1,
+    "explanation": "Es una etiqueta de producto con ingredientes e instrucciones de preparación.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-024",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: What is the purpose of this label?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To entertain the reader",
+      "To inform how to prepare and store the tea",
+      "To sell a different product",
+      "To describe a restaurant"
+    ],
+    "correctIndex": 1,
+    "explanation": "Informa cómo preparar y almacenar el té correctamente.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-025",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: In the text, \"store\" (as used here) is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "a shop",
+      "to keep something",
+      "to sell",
+      "to drink"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aquí \"store\" es verbo, significa \"guardar/almacenar\", no \"tienda\".",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-026",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: Why shouldn't you add sugar, according to the label?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because sugar is expensive",
+      "Because it changes the natural flavor",
+      "Because sugar is bad for the tea leaves",
+      "The label does not explain why"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Do not add sugar if you want the natural flavor\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-027",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: How long should you wait before drinking the tea?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "One minute",
+      "Five minutes",
+      "Ten minutes",
+      "It does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica \"Wait five minutes before drinking\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-028",
+    "prompt": "Read the text and answer the question.\n\n\"Product Label: Herbal Tea\"\nHerbal Tea Blend. Ingredients: dried mint, chamomile flowers, and lemon peel. Instructions: Add one teaspoon of tea to a cup of hot water. Wait five minutes before drinking. Do not add sugar if you want the natural flavor. Store in a cool, dry place, away from sunlight.\n\nQuestion: What does \"away from sunlight\" mean in everyday English?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "In a place that gets a lot of sun",
+      "In a place that does not get direct sun",
+      "Outside during the day",
+      "Near a window"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Away from sunlight\" significa lejos de la luz solar directa.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-029",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: How full can the machine be, according to the instructions?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Completely full",
+      "Three-quarters full",
+      "Half full",
+      "Only one item"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Do not fill it more than three-quarters full\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-030",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How to buy a washing machine",
+      "How to use a washing machine",
+      "How to repair a washing machine",
+      "The history of washing machines"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto explica paso a paso cómo usar la lavadora.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-031",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To advertise a new product",
+      "To give instructions for an everyday task",
+      "To complain about a broken machine",
+      "To compare prices"
+    ],
+    "correctIndex": 1,
+    "explanation": "Da instrucciones para una tarea cotidiana (lavar ropa).",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-032",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: In the text, \"detergent\" refers to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A type of clothing",
+      "A cleaning product used for washing",
+      "A part of the machine",
+      "A washing cycle"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Detergent\" es el producto de limpieza que se agrega para lavar la ropa.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-033",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: Why should you choose a wash cycle?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because it changes the color of the clothes",
+      "Because it matches the wash type to your clothes",
+      "Because it is required by law",
+      "The text does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Choose the wash cycle for your type of clothes: normal, delicate, or heavy\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-034",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: What happens when the wash cycle is finished?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "You must press stop",
+      "The machine stops automatically",
+      "The machine restarts",
+      "Nothing happens"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica: \"The machine will stop automatically when the cycle is finished\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-035",
+    "prompt": "Read the text and answer the question.\n\n\"How to Use the Washing Machine\"\nFirst, put your clothes inside the machine. Do not fill it more than three-quarters full. Add the correct amount of detergent to the small drawer. Choose the wash cycle for your type of clothes: normal, delicate, or heavy. Press the start button. The machine will stop automatically when the cycle is finished.\n\nQuestion: What does \"press the start button\" mean?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Push the button to begin",
+      "Remove the button",
+      "Clean the button",
+      "Wait for the button to light up"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Press the button\" es una expresión cotidiana que significa presionar/apretar el botón.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-036",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: Where does Ana work?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "At a school",
+      "At a small bakery",
+      "At a hospital",
+      "At a bank"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"I started a new job last month at a small bakery\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-037",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: What is this letter mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ana's complaints about her job",
+      "Ana sharing news about her life with a friend",
+      "Instructions for baking bread",
+      "A business proposal"
+    ],
+    "correctIndex": 1,
+    "explanation": "Es una carta personal donde Ana comparte novedades de su vida con su amiga Sofía.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-038",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To give safety instructions",
+      "To stay in touch with a friend and share news",
+      "To sell bread",
+      "To complain to a manager"
+    ],
+    "correctIndex": 1,
+    "explanation": "El propósito es mantener el contacto y compartir noticias personales.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-039",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: In the text, \"patient\" (describing the owner) is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "angry",
+      "calm and understanding",
+      "very busy",
+      "far away"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Patient\" describe a alguien calmado y comprensivo, no que se enoja fácilmente.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-040",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: Why does Ana wake up early?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because she lives far from work",
+      "Because she makes bread every morning at the bakery",
+      "Because she visits her parents daily",
+      "The text does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El contexto liga \"wake up early\" con \"making bread every morning\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-041",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: What is Ana planning to do next weekend?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Start a new job",
+      "Visit her parents in the south",
+      "Write a book",
+      "Open her own bakery"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Next weekend, I am planning to visit my parents in the south\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-042",
+    "prompt": "Read the text and answer the question.\n\n\"A Letter to a Friend\"\nDear Sofia, I hope you are doing well. I started a new job last month at a small bakery near my house. I wake up early, but I really enjoy making bread every morning. The owner is very kind and patient with me. Next weekend, I am planning to visit my parents in the south. I will write again soon. Take care, Ana.\n\nQuestion: What does \"take care\" mean at the end of a letter?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A way to say goodbye and wish someone well",
+      "An instruction to be careful with money",
+      "A request for help",
+      "A formal business term"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Take care\" es una expresión cotidiana usada para despedirse cariñosamente.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-043",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: Which bus route is affected by the street repairs?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Route 5",
+      "Route 12",
+      "Route 20",
+      "Route 8"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Bus Route 12 will not stop at Main Street this week\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-044",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: What is this announcement mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A change in a bus route because of street repairs",
+      "A new bus fare",
+      "A bus company closing",
+      "A schedule for holidays"
+    ],
+    "correctIndex": 0,
+    "explanation": "El anuncio informa un cambio temporal de recorrido por reparaciones en la calle.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-045",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To inform passengers about a temporary change",
+      "To advertise a new bus company",
+      "To sell bus tickets",
+      "To tell a story about a trip"
+    ],
+    "correctIndex": 0,
+    "explanation": "Informa a los pasajeros sobre un cambio temporal en el servicio.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-046",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: In the text, \"inconvenience\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "a celebration",
+      "a problem or difficulty",
+      "a discount",
+      "a schedule"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Inconvenience\" significa una molestia o dificultad causada por el cambio.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-047",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: Where should passengers wait for the bus this week?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Main Street",
+      "Second Avenue",
+      "The bus station",
+      "It does not say"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"Please use the stop on Second Avenue instead\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-048",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: When will Bus Route 12 return to its normal route?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Tomorrow",
+      "Next Monday",
+      "Next month",
+      "It never will"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto indica \"Bus Route 12 will return to its normal route next Monday\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-049",
+    "prompt": "Read the text and answer the question.\n\n\"Public Transport Announcement\"\nAttention passengers: due to street repairs, Bus Route 12 will not stop at Main Street this week. Please use the stop on Second Avenue instead. Bus Route 12 will return to its normal route next Monday. We apologize for any inconvenience and thank you for your understanding.\n\nQuestion: What does \"we apologize\" express in this announcement?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The company is proud of the change",
+      "The company is sorry for the trouble caused",
+      "The company is offering a refund",
+      "The company is closing permanently"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"We apologize\" es una expresión cotidiana usada para pedir disculpas.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-050",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: What is the first step to use the fire extinguisher?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Squeeze the handle",
+      "Pull the safety pin",
+      "Call for help",
+      "Leave the building"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"First, pull the safety pin\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-051",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How to prevent fires",
+      "How to use a fire extinguisher",
+      "The history of fire safety",
+      "How to build a fireplace"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto explica los pasos para usar un extintor de incendios.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-052",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To entertain the reader",
+      "To give emergency instructions",
+      "To sell fire extinguishers",
+      "To describe a fire station"
+    ],
+    "correctIndex": 1,
+    "explanation": "Da instrucciones de emergencia para usar el extintor correctamente.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-053",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: In the text, \"aim\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "to point toward a target",
+      "to clean",
+      "to throw away",
+      "to measure"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Aim the hose at the base\" significa apuntar la manguera hacia la base del fuego.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-054",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: Why should you aim at the base of the fire, not the flames?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The text does not explain, but it is the correct technique described",
+      "Because the flames are too hot",
+      "Because the base burns faster",
+      "Because it uses less water"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto da la instrucción directamente, sin explicar la razón técnica; se debe interpretar solo lo que dice el texto.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-055",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: What should you do if the fire grows too large?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Keep trying to put it out",
+      "Leave the building immediately and call for help",
+      "Close all the doors",
+      "Wait for it to stop by itself"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"If the fire grows too large, leave the building immediately and call for help\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-056",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a Fire Extinguisher\"\nIn case of a small fire, follow these steps. First, pull the safety pin. Second, aim the hose at the base of the fire, not the flames. Third, squeeze the handle slowly. Fourth, sweep the hose from side to side until the fire is out. If the fire grows too large, leave the building immediately and call for help.\n\nQuestion: What does \"sweep the hose from side to side\" mean?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Move the hose back and forth",
+      "Clean the floor with the hose",
+      "Hold the hose still",
+      "Point the hose upward"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Sweep from side to side\" es una expresión cotidiana que significa mover algo de un lado a otro.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-057",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: When is this song traditionally sung?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "At harvest time",
+      "On New Year's Eve",
+      "During a wedding",
+      "At school graduations"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"This old song is sung at harvest time\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-058",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A traditional song and its meaning",
+      "A recipe for bread",
+      "A type of farming equipment",
+      "A modern pop song"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto describe una canción tradicional y su significado cultural.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-059",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To describe a cultural tradition",
+      "To sell tickets to a concert",
+      "To give safety instructions",
+      "To compare two songs"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto describe una tradición cultural, con propósito informativo/descriptivo.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-060",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: In the text, \"passed down\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "forgotten completely",
+      "shared from one generation to the next",
+      "sold for money",
+      "written in a new book"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Passed down\" significa transmitido de una generación a otra.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-061",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: What do the words of the song describe?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A farmer thanking the earth for a good year of crops",
+      "A story about a king",
+      "A trip to the city",
+      "A football match"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"The words describe a farmer thanking the earth for a good year of crops\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-062",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: What do families share while singing in the evening?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A simple meal of bread and cheese",
+      "A large formal dinner",
+      "Only water",
+      "Nothing, they only sing"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"share a simple meal of bread and cheese\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-063",
+    "prompt": "Read the text and answer the question.\n\n\"A Traditional Song\"\nThis old song is sung at harvest time in many small towns. The words describe a farmer thanking the earth for a good year of crops. Families gather in the evening, sing together, and share a simple meal of bread and cheese. Children learn the song from their grandparents, and it has been passed down for many generations without ever being written in a book.\n\nQuestion: What does \"generations\" mean in this context?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Groups of people born and living at about the same time (grandparents, parents, children)",
+      "A type of musical instrument",
+      "A season of the year",
+      "A type of crop"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Generations\" es una expresión cotidiana que se refiere a los distintos grupos de edad de una familia (abuelos, padres, hijos).",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-064",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: What tool is mentioned for measuring body temperature?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A thermometer",
+      "A scale",
+      "A clock",
+      "A ruler"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto lista \"bandages, antiseptic cream, scissors, and a thermometer\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-065",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: What is this text mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "What a first aid kit should contain and how to keep it",
+      "How to treat a broken bone",
+      "The history of medicine",
+      "How to call an ambulance"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto explica qué debe contener un botiquín y cómo mantenerlo.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-066",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To give practical instructions about a first aid kit",
+      "To sell medical insurance",
+      "To tell a story about an accident",
+      "To advertise a hospital"
+    ],
+    "correctIndex": 0,
+    "explanation": "Da instrucciones prácticas sobre el botiquín de primeros auxilios.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-067",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: In the text, \"expired\" is closest in meaning to:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "new and fresh",
+      "no longer safe or effective to use",
+      "very expensive",
+      "colorful"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Expired\" significa que un producto ya no es seguro o efectivo para usar.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-068",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: Why should the kit be kept out of the reach of small children?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The text implies it is for safety reasons",
+      "Because children like to play with bandages",
+      "Because it is too heavy for them",
+      "The text does not mention children"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una instrucción de seguridad implícita: evitar que los niños accedan a productos médicos sin supervisión.",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-069",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: How often should you check the first aid kit?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Every few months",
+      "Every day",
+      "Once a year only",
+      "Never"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Check the kit every few months\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-070",
+    "prompt": "Read the text and answer the question.\n\n\"Instructions for a First Aid Kit\"\nEvery home should have a basic first aid kit. It should include bandages, antiseptic cream, scissors, and a thermometer. Keep the kit in a cool, dry place that is easy to reach in an emergency, but out of the reach of small children. Check the kit every few months and replace any items that have expired or been used.\n\nQuestion: What does \"out of the reach of small children\" mean?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "In a place children cannot easily access",
+      "In the kitchen only",
+      "Inside a toy box",
+      "In a place only children can access"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Out of reach\" es una expresión cotidiana que significa fuera del alcance.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-071",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: What did Mrs. Lopez bring to Mr. Soto's door?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A flashlight and some hot soup",
+      "A book and some tea",
+      "Only a flashlight",
+      "Nothing, she just knocked"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"knocked on his door with a flashlight and some hot soup\".",
+    "objectiveShortName": "Identificar información específica",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-072",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: What is this story mainly about?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "How two neighbors became friends after a power outage",
+      "A storm that destroyed a building",
+      "A trip to another city",
+      "A disagreement between neighbors"
+    ],
+    "correctIndex": 0,
+    "explanation": "La historia trata sobre cómo dos vecinos se hicieron amigos tras un corte de luz.",
+    "objectiveShortName": "Inferir el sentido global",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "ing-nm1-comprension-073",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: What is the purpose of this text?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "To tell a short personal story",
+      "To give safety instructions",
+      "To advertise an apartment",
+      "To describe a recipe"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un relato breve sobre un evento cotidiano entre vecinos.",
+    "objectiveShortName": "Inferir el propósito",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-074",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: In the text, \"kept to himself\" means that Mr. Soto:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Was social and talked to everyone",
+      "Stayed private and did not interact much with others",
+      "Left the building immediately",
+      "Was very loud and noisy"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Kept to himself\" es una expresión cotidiana que significa que una persona es reservada, no socializa mucho.",
+    "objectiveShortName": "Deducir significado de palabra según contexto",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-075",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: Why was Mrs. Lopez worried during the power outage?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Because Mr. Soto was an elderly man living alone",
+      "Because she lost her keys",
+      "Because it was very cold outside",
+      "The text does not say"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice que estaba \"worried about the elderly man living alone\".",
+    "objectiveShortName": "Interpretar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "ing-nm1-comprension-076",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: What did the two neighbors start doing together after that day?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Sharing coffee on Sunday mornings",
+      "Traveling together every month",
+      "Working at the same job",
+      "Cooking dinner every night"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"often sharing coffee on Sunday mornings\".",
+    "objectiveShortName": "Complementar información",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "ing-nm1-comprension-077",
+    "prompt": "Read the text and answer the question.\n\n\"A Short Story: The New Neighbor\"\nWhen Mr. Soto moved into the apartment next door, he kept to himself for the first few weeks. One rainy afternoon, the power went out in the building. Mrs. Lopez, worried about the elderly man living alone, knocked on his door with a flashlight and some hot soup. From that day, they became good friends, often sharing coffee on Sunday mornings.\n\nQuestion: What does \"power went out\" mean?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "The electricity stopped working",
+      "Someone left the building",
+      "A storm started",
+      "The neighbors had an argument"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"Power went out\" es una expresión cotidiana que significa que se cortó la electricidad.",
+    "objectiveShortName": "Inferir sentido de palabras y expresiones cotidianas",
+    "strandName": "Comprensión Lectora en Inglés",
+    "difficulty": "avanzada"
+  }
+]

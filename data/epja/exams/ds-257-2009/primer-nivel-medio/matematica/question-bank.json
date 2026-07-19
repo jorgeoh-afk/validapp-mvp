@@ -1,0 +1,1814 @@
+[
+  {
+    "localId": "mat-nm1-numeros-001",
+    "prompt": "Si una cuenta bancaria que tenía $-8.000 y recibe un depósito de $15.000, ¿cuál es el resultado final expresado como número entero?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7",
+      "8",
+      "-23",
+      "6"
+    ],
+    "correctIndex": 0,
+    "explanation": "-8 + 15 = 7. Se suman los enteros respetando su signo.",
+    "objectiveShortName": "Números enteros en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-002",
+    "prompt": "Si una temperatura de 12°C que desciende 20°C, ¿cuál es el resultado final expresado como número entero?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-9",
+      "-8",
+      "-7",
+      "32"
+    ],
+    "correctIndex": 1,
+    "explanation": "12 - 20 = -8. Se suman los enteros respetando su signo.",
+    "objectiveShortName": "Números enteros en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-003",
+    "prompt": "Si un buzo que está a -15 m y desciende 7 m más, ¿cuál es el resultado final expresado como número entero?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-21",
+      "-22",
+      "-23",
+      "-8"
+    ],
+    "correctIndex": 1,
+    "explanation": "-15 - 7 = -22. Se suman los enteros respetando su signo.",
+    "objectiveShortName": "Números enteros en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-004",
+    "prompt": "Si una deuda de $-30.000 que se paga con un abono de $45.000, ¿cuál es el resultado final expresado como número entero?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "15",
+      "14",
+      "16",
+      "-75"
+    ],
+    "correctIndex": 0,
+    "explanation": "-30 + 45 = 15. Se suman los enteros respetando su signo.",
+    "objectiveShortName": "Números enteros en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-005",
+    "prompt": "Si un ascensor que está en el piso 18 y baja 25 pisos, ¿cuál es el resultado final expresado como número entero?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-7",
+      "-8",
+      "43",
+      "-6"
+    ],
+    "correctIndex": 0,
+    "explanation": "18 - 25 = -7. Se suman los enteros respetando su signo.",
+    "objectiveShortName": "Números enteros en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-006",
+    "prompt": "Si una temperatura de -12°C que desciende 9°C más, ¿cuál es el resultado final expresado como número entero?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-22",
+      "-20",
+      "-21",
+      "-3"
+    ],
+    "correctIndex": 2,
+    "explanation": "-12 - 9 = -21. Se suman los enteros respetando su signo.",
+    "objectiveShortName": "Números enteros en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-007",
+    "prompt": "Un producto cuesta $12.000 y tiene un descuento del 25%. ¿Cuál es el precio final?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "$12.000",
+      "$3.000",
+      "$10.500",
+      "$9.000"
+    ],
+    "correctIndex": 3,
+    "explanation": "El 25% de $12.000 es $3.000. Precio final = $12.000 - $3.000 = $9.000.",
+    "objectiveShortName": "Proporcionalidad directa, inversa y porcentual",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-008",
+    "prompt": "Un producto cuesta $8.500 y tiene un descuento del 10%. ¿Cuál es el precio final?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "$850",
+      "$8.500",
+      "$8.075",
+      "$7.650"
+    ],
+    "correctIndex": 3,
+    "explanation": "El 10% de $8.500 es $850. Precio final = $8.500 - $850 = $7.650.",
+    "objectiveShortName": "Proporcionalidad directa, inversa y porcentual",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-009",
+    "prompt": "Un producto cuesta $30.000 y tiene un descuento del 15%. ¿Cuál es el precio final?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "$25.500",
+      "$30.000",
+      "$27.750",
+      "$4.500"
+    ],
+    "correctIndex": 0,
+    "explanation": "El 15% de $30.000 es $4.500. Precio final = $30.000 - $4.500 = $25.500.",
+    "objectiveShortName": "Proporcionalidad directa, inversa y porcentual",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-010",
+    "prompt": "Un producto cuesta $16.000 y tiene un descuento del 20%. ¿Cuál es el precio final?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "$12.800",
+      "$14.400",
+      "$3.200",
+      "$16.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "El 20% de $16.000 es $3.200. Precio final = $16.000 - $3.200 = $12.800.",
+    "objectiveShortName": "Proporcionalidad directa, inversa y porcentual",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-011",
+    "prompt": "Un producto cuesta $9.000 y tiene un descuento del 30%. ¿Cuál es el precio final?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "$9.000",
+      "$7.650",
+      "$2.700",
+      "$6.300"
+    ],
+    "correctIndex": 3,
+    "explanation": "El 30% de $9.000 es $2.700. Precio final = $9.000 - $2.700 = $6.300.",
+    "objectiveShortName": "Proporcionalidad directa, inversa y porcentual",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-012",
+    "prompt": "Un producto cuesta $24.000 y tiene un descuento del 5%. ¿Cuál es el precio final?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "$22.800",
+      "$24.000",
+      "$1.200",
+      "$23.400"
+    ],
+    "correctIndex": 0,
+    "explanation": "El 5% de $24.000 es $1.200. Precio final = $24.000 - $1.200 = $22.800.",
+    "objectiveShortName": "Proporcionalidad directa, inversa y porcentual",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-013",
+    "prompt": "¿Cuál es el resultado de 3/4 + 5/8, expresado como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11/8",
+      "44/32",
+      "8/12",
+      "12/8"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se amplifican ambas fracciones al denominador común 8: 3/4 = 6/8 y 5/8 = 5/8. Sumando: 11/8, que simplificado es 11/8.",
+    "objectiveShortName": "Números racionales en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-014",
+    "prompt": "¿Cuál es el resultado de 2/3 + 1/6, expresado como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3/9",
+      "6/6",
+      "5/6",
+      "15/18"
+    ],
+    "correctIndex": 2,
+    "explanation": "Se amplifican ambas fracciones al denominador común 6: 2/3 = 4/6 y 1/6 = 1/6. Sumando: 5/6, que simplificado es 5/6.",
+    "objectiveShortName": "Números racionales en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-015",
+    "prompt": "¿Cuál es el resultado de 7/10 + 3/5, expresado como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10/15",
+      "14/10",
+      "65/50",
+      "13/10"
+    ],
+    "correctIndex": 3,
+    "explanation": "Se amplifican ambas fracciones al denominador común 10: 7/10 = 7/10 y 3/5 = 6/10. Sumando: 13/10, que simplificado es 13/10.",
+    "objectiveShortName": "Números racionales en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-016",
+    "prompt": "¿Cuál es el resultado de 1/2 + 3/8, expresado como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8/8",
+      "4/10",
+      "7/8",
+      "14/16"
+    ],
+    "correctIndex": 2,
+    "explanation": "Se amplifican ambas fracciones al denominador común 8: 1/2 = 4/8 y 3/8 = 3/8. Sumando: 7/8, que simplificado es 7/8.",
+    "objectiveShortName": "Números racionales en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-017",
+    "prompt": "¿Cuál es el resultado de 5/6 + 1/4, expresado como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "26/24",
+      "14/12",
+      "6/10",
+      "13/12"
+    ],
+    "correctIndex": 3,
+    "explanation": "Se amplifican ambas fracciones al denominador común 12: 5/6 = 10/12 y 1/4 = 3/12. Sumando: 13/12, que simplificado es 13/12.",
+    "objectiveShortName": "Números racionales en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-018",
+    "prompt": "¿Cuál es el resultado de 2/5 + 3/10, expresado como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5/15",
+      "8/10",
+      "35/50",
+      "7/10"
+    ],
+    "correctIndex": 3,
+    "explanation": "Se amplifican ambas fracciones al denominador común 10: 2/5 = 4/10 y 3/10 = 3/10. Sumando: 7/10, que simplificado es 7/10.",
+    "objectiveShortName": "Números racionales en contextos cotidianos",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-019",
+    "prompt": "¿Entre qué dos números enteros consecutivos se ubica √10 en la recta numérica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3 y 4",
+      "3 y 5",
+      "4 y 5",
+      "2 y 3"
+    ],
+    "correctIndex": 0,
+    "explanation": "3² = 9 y 4² = 16. Como 9 < 10 < 16, entonces 3 < √10 < 4.",
+    "objectiveShortName": "Aproximación de números irracionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-020",
+    "prompt": "¿Entre qué dos números enteros consecutivos se ubica √20 en la recta numérica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3 y 4",
+      "4 y 5",
+      "5 y 6",
+      "4 y 6"
+    ],
+    "correctIndex": 1,
+    "explanation": "4² = 16 y 5² = 25. Como 16 < 20 < 25, entonces 4 < √20 < 5.",
+    "objectiveShortName": "Aproximación de números irracionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-021",
+    "prompt": "¿Entre qué dos números enteros consecutivos se ubica √50 en la recta numérica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8 y 9",
+      "7 y 9",
+      "6 y 7",
+      "7 y 8"
+    ],
+    "correctIndex": 3,
+    "explanation": "7² = 49 y 8² = 64. Como 49 < 50 < 64, entonces 7 < √50 < 8.",
+    "objectiveShortName": "Aproximación de números irracionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-022",
+    "prompt": "¿Entre qué dos números enteros consecutivos se ubica √30 en la recta numérica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5 y 6",
+      "5 y 7",
+      "4 y 5",
+      "6 y 7"
+    ],
+    "correctIndex": 0,
+    "explanation": "5² = 25 y 6² = 36. Como 25 < 30 < 36, entonces 5 < √30 < 6.",
+    "objectiveShortName": "Aproximación de números irracionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-023",
+    "prompt": "¿Entre qué dos números enteros consecutivos se ubica √70 en la recta numérica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7 y 8",
+      "8 y 10",
+      "9 y 10",
+      "8 y 9"
+    ],
+    "correctIndex": 3,
+    "explanation": "8² = 64 y 9² = 81. Como 64 < 70 < 81, entonces 8 < √70 < 9.",
+    "objectiveShortName": "Aproximación de números irracionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-024",
+    "prompt": "¿Entre qué dos números enteros consecutivos se ubica √90 en la recta numérica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "9 y 10",
+      "10 y 11",
+      "8 y 9",
+      "9 y 11"
+    ],
+    "correctIndex": 0,
+    "explanation": "9² = 81 y 10² = 100. Como 81 < 90 < 100, entonces 9 < √90 < 10.",
+    "objectiveShortName": "Aproximación de números irracionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-025",
+    "prompt": "¿Cuál es el valor de 2^5?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "16",
+      "10",
+      "64",
+      "32"
+    ],
+    "correctIndex": 3,
+    "explanation": "2^5 significa multiplicar 2 por sí mismo 5 veces: 2 × 2 × 2 × 2 × 2 = 32.",
+    "objectiveShortName": "Potencias de base racional y exponente entero",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-026",
+    "prompt": "¿Cuál es el valor de 3^4?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "12",
+      "27",
+      "81",
+      "243"
+    ],
+    "correctIndex": 2,
+    "explanation": "3^4 significa multiplicar 3 por sí mismo 4 veces: 3 × 3 × 3 × 3 = 81.",
+    "objectiveShortName": "Potencias de base racional y exponente entero",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-027",
+    "prompt": "¿Cuál es el valor de 5^3?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "625",
+      "25",
+      "125",
+      "15"
+    ],
+    "correctIndex": 2,
+    "explanation": "5^3 significa multiplicar 5 por sí mismo 3 veces: 5 × 5 × 5 = 125.",
+    "objectiveShortName": "Potencias de base racional y exponente entero",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-028",
+    "prompt": "¿Cuál es el valor de 4^3?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "12",
+      "64",
+      "16",
+      "256"
+    ],
+    "correctIndex": 1,
+    "explanation": "4^3 significa multiplicar 4 por sí mismo 3 veces: 4 × 4 × 4 = 64.",
+    "objectiveShortName": "Potencias de base racional y exponente entero",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-029",
+    "prompt": "¿Cuál es el valor de 2^6?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "128",
+      "64",
+      "32",
+      "12"
+    ],
+    "correctIndex": 1,
+    "explanation": "2^6 significa multiplicar 2 por sí mismo 6 veces: 2 × 2 × 2 × 2 × 2 × 2 = 64.",
+    "objectiveShortName": "Potencias de base racional y exponente entero",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-030",
+    "prompt": "¿Cuál es el valor de 10^3?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10000",
+      "100",
+      "30",
+      "1000"
+    ],
+    "correctIndex": 3,
+    "explanation": "10^3 significa multiplicar 10 por sí mismo 3 veces: 10 × 10 × 10 = 1000.",
+    "objectiveShortName": "Potencias de base racional y exponente entero",
+    "strandName": "Números",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-numeros-031",
+    "prompt": "Al multiplicar 2^3 × 2^4, ¿cuál es el resultado expresado como una sola potencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2^1",
+      "4^7",
+      "2^12",
+      "2^7"
+    ],
+    "correctIndex": 3,
+    "explanation": "Al multiplicar potencias de igual base, se mantiene la base y se suman los exponentes: 2^3 × 2^4 = 2^(3+4) = 2^7.",
+    "objectiveShortName": "Potencia como multiplicación iterada y propiedades",
+    "strandName": "Números",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-numeros-032",
+    "prompt": "Al multiplicar 3^2 × 3^5, ¿cuál es el resultado expresado como una sola potencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "6^7",
+      "3^3",
+      "3^7",
+      "3^10"
+    ],
+    "correctIndex": 2,
+    "explanation": "Al multiplicar potencias de igual base, se mantiene la base y se suman los exponentes: 3^2 × 3^5 = 3^(2+5) = 3^7.",
+    "objectiveShortName": "Potencia como multiplicación iterada y propiedades",
+    "strandName": "Números",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-numeros-033",
+    "prompt": "Al multiplicar 5^4 × 5^2, ¿cuál es el resultado expresado como una sola potencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5^6",
+      "5^8",
+      "10^6",
+      "5^2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Al multiplicar potencias de igual base, se mantiene la base y se suman los exponentes: 5^4 × 5^2 = 5^(4+2) = 5^6.",
+    "objectiveShortName": "Potencia como multiplicación iterada y propiedades",
+    "strandName": "Números",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-numeros-034",
+    "prompt": "Al multiplicar 2^5 × 2^2, ¿cuál es el resultado expresado como una sola potencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2^7",
+      "2^3",
+      "4^7",
+      "2^10"
+    ],
+    "correctIndex": 0,
+    "explanation": "Al multiplicar potencias de igual base, se mantiene la base y se suman los exponentes: 2^5 × 2^2 = 2^(5+2) = 2^7.",
+    "objectiveShortName": "Potencia como multiplicación iterada y propiedades",
+    "strandName": "Números",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-numeros-035",
+    "prompt": "Al multiplicar 4^3 × 4^3, ¿cuál es el resultado expresado como una sola potencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8^6",
+      "4^6",
+      "4^9",
+      "4^0"
+    ],
+    "correctIndex": 1,
+    "explanation": "Al multiplicar potencias de igual base, se mantiene la base y se suman los exponentes: 4^3 × 4^3 = 4^(3+3) = 4^6.",
+    "objectiveShortName": "Potencia como multiplicación iterada y propiedades",
+    "strandName": "Números",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-numeros-036",
+    "prompt": "Al multiplicar 10^2 × 10^4, ¿cuál es el resultado expresado como una sola potencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "20^6",
+      "10^6",
+      "10^2",
+      "10^8"
+    ],
+    "correctIndex": 1,
+    "explanation": "Al multiplicar potencias de igual base, se mantiene la base y se suman los exponentes: 10^2 × 10^4 = 10^(2+4) = 10^6.",
+    "objectiveShortName": "Potencia como multiplicación iterada y propiedades",
+    "strandName": "Números",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-numeros-037",
+    "prompt": "¿Cuál es el resultado de -6 - 4 × -3, respetando la prioridad de las operaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "30",
+      "0",
+      "-6",
+      "6"
+    ],
+    "correctIndex": 3,
+    "explanation": "Primero se resuelve la multiplicación: 4 × -3 = -12. Luego: -6 - (-12) = 6.",
+    "objectiveShortName": "Operatoria con enteros y racionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-038",
+    "prompt": "¿Cuál es el resultado de 8 - -3 × 5, respetando la prioridad de las operaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "23",
+      "-23",
+      "33",
+      "55"
+    ],
+    "correctIndex": 0,
+    "explanation": "Primero se resuelve la multiplicación: -3 × 5 = -15. Luego: 8 - (-15) = 23.",
+    "objectiveShortName": "Operatoria con enteros y racionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-039",
+    "prompt": "¿Cuál es el resultado de -10 - -5 × 3, respetando la prioridad de las operaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11",
+      "-15",
+      "-5",
+      "5"
+    ],
+    "correctIndex": 3,
+    "explanation": "Primero se resuelve la multiplicación: -5 × 3 = -15. Luego: -10 - (-15) = 5.",
+    "objectiveShortName": "Operatoria con enteros y racionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-040",
+    "prompt": "¿Cuál es el resultado de 7 - 2 × -4, respetando la prioridad de las operaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-20",
+      "15",
+      "-15",
+      "7"
+    ],
+    "correctIndex": 1,
+    "explanation": "Primero se resuelve la multiplicación: 2 × -4 = -8. Luego: 7 - (-8) = 15.",
+    "objectiveShortName": "Operatoria con enteros y racionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-041",
+    "prompt": "¿Cuál es el resultado de -9 - 6 × 2, respetando la prioridad de las operaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "21",
+      "-17",
+      "-30",
+      "-21"
+    ],
+    "correctIndex": 3,
+    "explanation": "Primero se resuelve la multiplicación: 6 × 2 = 12. Luego: -9 - (12) = -21.",
+    "objectiveShortName": "Operatoria con enteros y racionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-numeros-042",
+    "prompt": "¿Cuál es el resultado de 15 - -4 × -3, respetando la prioridad de las operaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-57",
+      "-2",
+      "3",
+      "-3"
+    ],
+    "correctIndex": 2,
+    "explanation": "Primero se resuelve la multiplicación: -4 × -3 = 12. Luego: 15 - (12) = 3.",
+    "objectiveShortName": "Operatoria con enteros y racionales",
+    "strandName": "Números",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-043",
+    "prompt": "¿Cuál expresión algebraica representa \"el triple de un número aumentado en 5\" (usa x para el número)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5x + 3",
+      "3x + 5",
+      "3(x + 5)",
+      "x + 5/3"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"el triple de un número aumentado en 5\" se traduce paso a paso al lenguaje algebraico como 3x + 5.",
+    "objectiveShortName": "Lenguaje algebraico y relaciones entre variables",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-044",
+    "prompt": "¿Cuál expresión algebraica representa \"la mitad de un número disminuido en 7\" (usa x para el número)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2x - 7",
+      "x - 7/2",
+      "7 - x/2",
+      "x/2 - 7"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"la mitad de un número disminuido en 7\" se traduce paso a paso al lenguaje algebraico como x/2 - 7.",
+    "objectiveShortName": "Lenguaje algebraico y relaciones entre variables",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-045",
+    "prompt": "¿Cuál expresión algebraica representa \"el doble de la suma de un número y 4\" (usa x para el número)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x + 8",
+      "2x + 4",
+      "2(x + 4)",
+      "2x - 4"
+    ],
+    "correctIndex": 2,
+    "explanation": "\"el doble de la suma de un número y 4\" se traduce paso a paso al lenguaje algebraico como 2(x + 4).",
+    "objectiveShortName": "Lenguaje algebraico y relaciones entre variables",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-046",
+    "prompt": "¿Cuál expresión algebraica representa \"el cuádruple de un número disminuido en 3\" (usa x para el número)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x - 3/4",
+      "4x - 3",
+      "4(x - 3)",
+      "3 - 4x"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"el cuádruple de un número disminuido en 3\" se traduce paso a paso al lenguaje algebraico como 4x - 3.",
+    "objectiveShortName": "Lenguaje algebraico y relaciones entre variables",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-047",
+    "prompt": "¿Cuál expresión algebraica representa \"la suma entre un número y su mitad\" (usa x para el número)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2x + x/2",
+      "x/2",
+      "2(x + x/2)",
+      "x + x/2"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"la suma entre un número y su mitad\" se traduce paso a paso al lenguaje algebraico como x + x/2.",
+    "objectiveShortName": "Lenguaje algebraico y relaciones entre variables",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-048",
+    "prompt": "¿Cuál expresión algebraica representa \"el triple de la diferencia entre un número y 6\" (usa x para el número)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x - 18",
+      "6 - 3x",
+      "3(x - 6)",
+      "3x - 6"
+    ],
+    "correctIndex": 2,
+    "explanation": "\"el triple de la diferencia entre un número y 6\" se traduce paso a paso al lenguaje algebraico como 3(x - 6).",
+    "objectiveShortName": "Lenguaje algebraico y relaciones entre variables",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-049",
+    "prompt": "¿Cuál es el desarrollo de (3x + 2)²?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "9x² + 6x + 4",
+      "9x² - 12x + 4",
+      "9x² + 12x + 4",
+      "9x² + 4"
+    ],
+    "correctIndex": 2,
+    "explanation": "(3x + 2)² = (3x)² + 2·3x·2 + 2² = 9x² + 12x + 4, aplicando el cuadrado de binomio.",
+    "objectiveShortName": "Operatoria de expresiones algebraicas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-050",
+    "prompt": "¿Cuál es el desarrollo de (1x + 4)²?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "1x² + 8x + 16",
+      "1x² + 16",
+      "1x² - 8x + 16",
+      "1x² + 4x + 16"
+    ],
+    "correctIndex": 0,
+    "explanation": "(1x + 4)² = (1x)² + 2·1x·4 + 4² = 1x² + 8x + 16, aplicando el cuadrado de binomio.",
+    "objectiveShortName": "Operatoria de expresiones algebraicas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-051",
+    "prompt": "¿Cuál es el desarrollo de (5x + 1)²?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "25x² + 1",
+      "25x² + 5x + 1",
+      "25x² + 10x + 1",
+      "25x² - 10x + 1"
+    ],
+    "correctIndex": 2,
+    "explanation": "(5x + 1)² = (5x)² + 2·5x·1 + 1² = 25x² + 10x + 1, aplicando el cuadrado de binomio.",
+    "objectiveShortName": "Operatoria de expresiones algebraicas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-052",
+    "prompt": "¿Cuál es el desarrollo de (2x + 3)²?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4x² - 12x + 9",
+      "4x² + 6x + 9",
+      "4x² + 9",
+      "4x² + 12x + 9"
+    ],
+    "correctIndex": 3,
+    "explanation": "(2x + 3)² = (2x)² + 2·2x·3 + 3² = 4x² + 12x + 9, aplicando el cuadrado de binomio.",
+    "objectiveShortName": "Operatoria de expresiones algebraicas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-053",
+    "prompt": "¿Cuál es el desarrollo de (4x + 2)²?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "16x² + 16x + 4",
+      "16x² + 8x + 4",
+      "16x² + 4",
+      "16x² - 16x + 4"
+    ],
+    "correctIndex": 0,
+    "explanation": "(4x + 2)² = (4x)² + 2·4x·2 + 2² = 16x² + 16x + 4, aplicando el cuadrado de binomio.",
+    "objectiveShortName": "Operatoria de expresiones algebraicas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-054",
+    "prompt": "¿Cuál es el desarrollo de (1x + 6)²?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "1x² - 12x + 36",
+      "1x² + 12x + 36",
+      "1x² + 6x + 36",
+      "1x² + 36"
+    ],
+    "correctIndex": 1,
+    "explanation": "(1x + 6)² = (1x)² + 2·1x·6 + 6² = 1x² + 12x + 36, aplicando el cuadrado de binomio.",
+    "objectiveShortName": "Operatoria de expresiones algebraicas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-055",
+    "prompt": "Una recta pasa por los puntos (0, 2) y (4, 10). ¿Cuál es su pendiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/8",
+      "-2",
+      "2",
+      "4"
+    ],
+    "correctIndex": 2,
+    "explanation": "La pendiente es (y₂ - y₁)/(x₂ - x₁) = (10 - 2)/(4 - 0) = 8/4 = 2.",
+    "objectiveShortName": "Función lineal y función afín",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-056",
+    "prompt": "Una recta pasa por los puntos (1, 5) y (3, 1). ¿Cuál es su pendiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2",
+      "-6",
+      "-2",
+      "2/-4"
+    ],
+    "correctIndex": 2,
+    "explanation": "La pendiente es (y₂ - y₁)/(x₂ - x₁) = (1 - 5)/(3 - 1) = -4/2 = -2.",
+    "objectiveShortName": "Función lineal y función afín",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-057",
+    "prompt": "Una recta pasa por los puntos (-2, -1) y (2, 7). ¿Cuál es su pendiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-2",
+      "4/8",
+      "2",
+      "4"
+    ],
+    "correctIndex": 2,
+    "explanation": "La pendiente es (y₂ - y₁)/(x₂ - x₁) = (7 - -1)/(2 - -2) = 8/4 = 2.",
+    "objectiveShortName": "Función lineal y función afín",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-058",
+    "prompt": "Una recta pasa por los puntos (0, 1) y (5, 11). ¿Cuál es su pendiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5/10",
+      "-2",
+      "5",
+      "2"
+    ],
+    "correctIndex": 3,
+    "explanation": "La pendiente es (y₂ - y₁)/(x₂ - x₁) = (11 - 1)/(5 - 0) = 10/5 = 2.",
+    "objectiveShortName": "Función lineal y función afín",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-059",
+    "prompt": "Una recta pasa por los puntos (3, 10) y (7, 2). ¿Cuál es su pendiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-12",
+      "-2",
+      "2",
+      "4/-8"
+    ],
+    "correctIndex": 1,
+    "explanation": "La pendiente es (y₂ - y₁)/(x₂ - x₁) = (2 - 10)/(7 - 3) = -8/4 = -2.",
+    "objectiveShortName": "Función lineal y función afín",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-060",
+    "prompt": "Una recta pasa por los puntos (-1, 3) y (4, 18). ¿Cuál es su pendiente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10",
+      "5/15",
+      "3",
+      "-3"
+    ],
+    "correctIndex": 2,
+    "explanation": "La pendiente es (y₂ - y₁)/(x₂ - x₁) = (18 - 3)/(4 - -1) = 15/5 = 3.",
+    "objectiveShortName": "Función lineal y función afín",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-algebra-061",
+    "prompt": "Resuelve la ecuación 3x + 7 = 22. ¿Cuál es el valor de x?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5",
+      "-5",
+      "29/3",
+      "15"
+    ],
+    "correctIndex": 0,
+    "explanation": "3x + 7 = 22  →  3x = 22 - 7 = 15  →  x = 15/3 = 5.",
+    "objectiveShortName": "Ecuaciones de primer grado con una incógnita",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-062",
+    "prompt": "Resuelve la ecuación 5x + -4 = 26. ¿Cuál es el valor de x?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "22/5",
+      "-6",
+      "30",
+      "6"
+    ],
+    "correctIndex": 3,
+    "explanation": "5x + -4 = 26  →  5x = 26 - -4 = 30  →  x = 30/5 = 6.",
+    "objectiveShortName": "Ecuaciones de primer grado con una incógnita",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-063",
+    "prompt": "Resuelve la ecuación 2x + 9 = 1. ¿Cuál es el valor de x?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5",
+      "-4",
+      "4",
+      "-8"
+    ],
+    "correctIndex": 1,
+    "explanation": "2x + 9 = 1  →  2x = 1 - 9 = -8  →  x = -8/2 = -4.",
+    "objectiveShortName": "Ecuaciones de primer grado con una incógnita",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-064",
+    "prompt": "Resuelve la ecuación 4x + 5 = 33. ¿Cuál es el valor de x?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "38/4",
+      "-7",
+      "28",
+      "7"
+    ],
+    "correctIndex": 3,
+    "explanation": "4x + 5 = 33  →  4x = 33 - 5 = 28  →  x = 28/4 = 7.",
+    "objectiveShortName": "Ecuaciones de primer grado con una incógnita",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-065",
+    "prompt": "Resuelve la ecuación 6x + -2 = 34. ¿Cuál es el valor de x?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "6",
+      "-6",
+      "32/6",
+      "36"
+    ],
+    "correctIndex": 0,
+    "explanation": "6x + -2 = 34  →  6x = 34 - -2 = 36  →  x = 36/6 = 6.",
+    "objectiveShortName": "Ecuaciones de primer grado con una incógnita",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-066",
+    "prompt": "Resuelve la ecuación 3x + 12 = -3. ¿Cuál es el valor de x?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-15",
+      "5",
+      "3",
+      "-5"
+    ],
+    "correctIndex": 3,
+    "explanation": "3x + 12 = -3  →  3x = -3 - 12 = -15  →  x = -15/3 = -5.",
+    "objectiveShortName": "Ecuaciones de primer grado con una incógnita",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-algebra-067",
+    "prompt": "Resuelve el sistema: x + y = 5; x - y = 1. ¿Cuáles son los valores de x e y?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 4, y = 1",
+      "x = 3, y = 2",
+      "x = 5, y = 1",
+      "x = 2, y = 3"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sumando ambas ecuaciones: 2x = 6, entonces x = 3. Reemplazando en x + y = 5: y = 5 - 3 = 2.",
+    "objectiveShortName": "Sistemas de ecuaciones de primer grado con dos incógnitas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-068",
+    "prompt": "Resuelve el sistema: x + y = 4; x - y = 6. ¿Cuáles son los valores de x e y?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 4, y = 6",
+      "x = 5, y = -1",
+      "x = -1, y = 5",
+      "x = 6, y = -2"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sumando ambas ecuaciones: 2x = 10, entonces x = 5. Reemplazando en x + y = 4: y = 4 - 5 = -1.",
+    "objectiveShortName": "Sistemas de ecuaciones de primer grado con dos incógnitas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-069",
+    "prompt": "Resuelve el sistema: x + y = 8; x - y = 4. ¿Cuáles son los valores de x e y?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 8, y = 4",
+      "x = 6, y = 2",
+      "x = 7, y = 1",
+      "x = 2, y = 6"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sumando ambas ecuaciones: 2x = 12, entonces x = 6. Reemplazando en x + y = 8: y = 8 - 6 = 2.",
+    "objectiveShortName": "Sistemas de ecuaciones de primer grado con dos incógnitas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-070",
+    "prompt": "Resuelve el sistema: x + y = 11; x - y = 3. ¿Cuáles son los valores de x e y?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 8, y = 3",
+      "x = 4, y = 7",
+      "x = 7, y = 4",
+      "x = 11, y = 3"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sumando ambas ecuaciones: 2x = 14, entonces x = 7. Reemplazando en x + y = 11: y = 11 - 7 = 4.",
+    "objectiveShortName": "Sistemas de ecuaciones de primer grado con dos incógnitas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-071",
+    "prompt": "Resuelve el sistema: x + y = 5; x - y = 11. ¿Cuáles son los valores de x e y?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 9, y = -4",
+      "x = 5, y = 11",
+      "x = -3, y = 8",
+      "x = 8, y = -3"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sumando ambas ecuaciones: 2x = 16, entonces x = 8. Reemplazando en x + y = 5: y = 5 - 8 = -3.",
+    "objectiveShortName": "Sistemas de ecuaciones de primer grado con dos incógnitas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-algebra-072",
+    "prompt": "Resuelve el sistema: x + y = 14; x - y = 4. ¿Cuáles son los valores de x e y?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 10, y = 4",
+      "x = 9, y = 5",
+      "x = 14, y = 4",
+      "x = 5, y = 9"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sumando ambas ecuaciones: 2x = 18, entonces x = 9. Reemplazando en x + y = 14: y = 14 - 9 = 5.",
+    "objectiveShortName": "Sistemas de ecuaciones de primer grado con dos incógnitas",
+    "strandName": "Álgebra y Funciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm1-geometria-073",
+    "prompt": "Un ángulo mide 45°. ¿Cómo se clasifica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Obtuso",
+      "Agudo",
+      "Recto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un ángulo menor a 90° se clasifica como agudo.",
+    "objectiveShortName": "Conceptos geométricos básicos",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-074",
+    "prompt": "Un ángulo mide 90°. ¿Cómo se clasifica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Obtuso",
+      "Recto",
+      "Agudo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un ángulo igual a 90° se clasifica como recto.",
+    "objectiveShortName": "Conceptos geométricos básicos",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-075",
+    "prompt": "Un ángulo mide 135°. ¿Cómo se clasifica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Recto",
+      "Agudo",
+      "Obtuso"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un ángulo mayor a 90° y menor a 180° se clasifica como obtuso.",
+    "objectiveShortName": "Conceptos geométricos básicos",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-076",
+    "prompt": "Un ángulo mide 30°. ¿Cómo se clasifica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Agudo",
+      "Recto",
+      "Obtuso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un ángulo menor a 90° se clasifica como agudo.",
+    "objectiveShortName": "Conceptos geométricos básicos",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-077",
+    "prompt": "Un ángulo mide 100°. ¿Cómo se clasifica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Agudo",
+      "Obtuso",
+      "Recto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un ángulo mayor a 90° y menor a 180° se clasifica como obtuso.",
+    "objectiveShortName": "Conceptos geométricos básicos",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-078",
+    "prompt": "Un ángulo mide 170°. ¿Cómo se clasifica?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Agudo",
+      "Obtuso",
+      "Recto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un ángulo mayor a 90° y menor a 180° se clasifica como obtuso.",
+    "objectiveShortName": "Conceptos geométricos básicos",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-079",
+    "prompt": "Una figura mide 20 cm de base y 8 cm de altura. Se dibuja a escala con una base de 5 cm. ¿Cuánto debe medir su altura para mantener la proporción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3",
+      "2",
+      "13",
+      "32"
+    ],
+    "correctIndex": 1,
+    "explanation": "La razón de escala es 5/20 = 0.25. La nueva altura es 8 × 0.25 = 2 cm.",
+    "objectiveShortName": "Semejanza, escala y teorema de Thales",
+    "strandName": "Geometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-geometria-080",
+    "prompt": "Una figura mide 30 cm de base y 12 cm de altura. Se dibuja a escala con una base de 6 cm. ¿Cuánto debe medir su altura para mantener la proporción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2.4000000000000004",
+      "18",
+      "60",
+      "6"
+    ],
+    "correctIndex": 0,
+    "explanation": "La razón de escala es 6/30 = 0.2. La nueva altura es 12 × 0.2 = 2.4000000000000004 cm.",
+    "objectiveShortName": "Semejanza, escala y teorema de Thales",
+    "strandName": "Geometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-geometria-081",
+    "prompt": "Una figura mide 16 cm de base y 10 cm de altura. Se dibuja a escala con una base de 4 cm. ¿Cuánto debe medir su altura para mantener la proporción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "6",
+      "14",
+      "2.5",
+      "40"
+    ],
+    "correctIndex": 2,
+    "explanation": "La razón de escala es 4/16 = 0.25. La nueva altura es 10 × 0.25 = 2.5 cm.",
+    "objectiveShortName": "Semejanza, escala y teorema de Thales",
+    "strandName": "Geometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-geometria-082",
+    "prompt": "Una figura mide 24 cm de base y 9 cm de altura. Se dibuja a escala con una base de 8 cm. ¿Cuánto debe medir su altura para mantener la proporción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "1",
+      "27",
+      "3",
+      "17"
+    ],
+    "correctIndex": 2,
+    "explanation": "La razón de escala es 8/24 = 0.3333333333333333. La nueva altura es 9 × 0.3333333333333333 = 3 cm.",
+    "objectiveShortName": "Semejanza, escala y teorema de Thales",
+    "strandName": "Geometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-geometria-083",
+    "prompt": "Una figura mide 40 cm de base y 15 cm de altura. Se dibuja a escala con una base de 8 cm. ¿Cuánto debe medir su altura para mantener la proporción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3",
+      "7",
+      "23",
+      "75"
+    ],
+    "correctIndex": 0,
+    "explanation": "La razón de escala es 8/40 = 0.2. La nueva altura es 15 × 0.2 = 3 cm.",
+    "objectiveShortName": "Semejanza, escala y teorema de Thales",
+    "strandName": "Geometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-geometria-084",
+    "prompt": "Una figura mide 18 cm de base y 6 cm de altura. Se dibuja a escala con una base de 9 cm. ¿Cuánto debe medir su altura para mantener la proporción?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "15",
+      "3",
+      "-3",
+      "12"
+    ],
+    "correctIndex": 1,
+    "explanation": "La razón de escala es 9/18 = 0.5. La nueva altura es 6 × 0.5 = 3 cm.",
+    "objectiveShortName": "Semejanza, escala y teorema de Thales",
+    "strandName": "Geometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-geometria-085",
+    "prompt": "Si una figura se desplaza 5 unidades hacia la derecha sin girar ni cambiar de tamaño, ¿qué transformación isométrica corresponde?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Traslación",
+      "Rotación",
+      "Reflexión"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una figura se desplaza 5 unidades hacia la derecha sin girar ni cambiar de tamaño corresponde a una traslación.",
+    "objectiveShortName": "Transformaciones isométricas",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-086",
+    "prompt": "Si una figura se refleja como en un espejo respecto a una recta, ¿qué transformación isométrica corresponde?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Traslación",
+      "Rotación",
+      "Reflexión"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una figura se refleja como en un espejo respecto a una recta corresponde a una reflexión.",
+    "objectiveShortName": "Transformaciones isométricas",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-087",
+    "prompt": "Si una figura gira 90° en torno a un punto fijo, ¿qué transformación isométrica corresponde?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Rotación",
+      "Reflexión",
+      "Traslación"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una figura gira 90° en torno a un punto fijo corresponde a una rotación.",
+    "objectiveShortName": "Transformaciones isométricas",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-088",
+    "prompt": "Si una figura se mueve 3 unidades hacia arriba manteniendo su forma y orientación, ¿qué transformación isométrica corresponde?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Reflexión",
+      "Traslación",
+      "Rotación"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una figura se mueve 3 unidades hacia arriba manteniendo su forma y orientación corresponde a una traslación.",
+    "objectiveShortName": "Transformaciones isométricas",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-089",
+    "prompt": "Si una figura queda invertida como su imagen especular al otro lado de un eje, ¿qué transformación isométrica corresponde?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Reflexión",
+      "Traslación",
+      "Rotación"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una figura queda invertida como su imagen especular al otro lado de un eje corresponde a una reflexión.",
+    "objectiveShortName": "Transformaciones isométricas",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-090",
+    "prompt": "Si una figura cambia de orientación al girar 180° alrededor de su centro, ¿qué transformación isométrica corresponde?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Reflexión",
+      "Traslación",
+      "Rotación"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una figura cambia de orientación al girar 180° alrededor de su centro corresponde a una rotación.",
+    "objectiveShortName": "Transformaciones isométricas",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-091",
+    "prompt": "Un rectángulo mide 8 cm de largo y 5 cm de ancho. ¿Cuál es su área?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "80 cm²",
+      "13 cm²",
+      "40 cm²",
+      "26 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "El área de un rectángulo es largo × ancho = 8 × 5 = 40 cm².",
+    "objectiveShortName": "Perímetro, área y volumen",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-092",
+    "prompt": "Un rectángulo mide 12 cm de largo y 7 cm de ancho. ¿Cuál es su área?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "168 cm²",
+      "38 cm²",
+      "19 cm²",
+      "84 cm²"
+    ],
+    "correctIndex": 3,
+    "explanation": "El área de un rectángulo es largo × ancho = 12 × 7 = 84 cm².",
+    "objectiveShortName": "Perímetro, área y volumen",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-093",
+    "prompt": "Un rectángulo mide 10 cm de largo y 6 cm de ancho. ¿Cuál es su área?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "32 cm²",
+      "120 cm²",
+      "60 cm²",
+      "16 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "El área de un rectángulo es largo × ancho = 10 × 6 = 60 cm².",
+    "objectiveShortName": "Perímetro, área y volumen",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-094",
+    "prompt": "Un rectángulo mide 9 cm de largo y 4 cm de ancho. ¿Cuál es su área?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "26 cm²",
+      "72 cm²",
+      "36 cm²",
+      "13 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "El área de un rectángulo es largo × ancho = 9 × 4 = 36 cm².",
+    "objectiveShortName": "Perímetro, área y volumen",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-095",
+    "prompt": "Un rectángulo mide 15 cm de largo y 6 cm de ancho. ¿Cuál es su área?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "90 cm²",
+      "42 cm²",
+      "180 cm²",
+      "21 cm²"
+    ],
+    "correctIndex": 0,
+    "explanation": "El área de un rectángulo es largo × ancho = 15 × 6 = 90 cm².",
+    "objectiveShortName": "Perímetro, área y volumen",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-geometria-096",
+    "prompt": "Un rectángulo mide 11 cm de largo y 8 cm de ancho. ¿Cuál es su área?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "38 cm²",
+      "88 cm²",
+      "176 cm²",
+      "19 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "El área de un rectángulo es largo × ancho = 11 × 8 = 88 cm².",
+    "objectiveShortName": "Perímetro, área y volumen",
+    "strandName": "Geometría",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-097",
+    "prompt": "Un conjunto de datos es: 4, 8, 6, 8, 9. ¿Cuál es su media (promedio)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5",
+      "8",
+      "35",
+      "7"
+    ],
+    "correctIndex": 3,
+    "explanation": "La media es la suma de los datos dividida por la cantidad de datos: (4 + 8 + 6 + 8 + 9) / 5 = 35 / 5 = 7.",
+    "objectiveShortName": "Medidas de tendencia central",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-098",
+    "prompt": "Un conjunto de datos es: 3, 7, 7, 10, 3, 7. ¿Cuál es su media (promedio)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "6",
+      "6.2",
+      "37",
+      "7"
+    ],
+    "correctIndex": 1,
+    "explanation": "La media es la suma de los datos dividida por la cantidad de datos: (3 + 7 + 7 + 10 + 3 + 7) / 6 = 37 / 6 = 6.2.",
+    "objectiveShortName": "Medidas de tendencia central",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-099",
+    "prompt": "Un conjunto de datos es: 12, 15, 12, 18, 20, 15, 15. ¿Cuál es su media (promedio)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "15",
+      "7",
+      "107",
+      "15.3"
+    ],
+    "correctIndex": 3,
+    "explanation": "La media es la suma de los datos dividida por la cantidad de datos: (12 + 15 + 12 + 18 + 20 + 15 + 15) / 7 = 107 / 7 = 15.3.",
+    "objectiveShortName": "Medidas de tendencia central",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-100",
+    "prompt": "Un conjunto de datos es: 5, 9, 5, 13. ¿Cuál es su media (promedio)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "32",
+      "9",
+      "4",
+      "8"
+    ],
+    "correctIndex": 3,
+    "explanation": "La media es la suma de los datos dividida por la cantidad de datos: (5 + 9 + 5 + 13) / 4 = 32 / 4 = 8.",
+    "objectiveShortName": "Medidas de tendencia central",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-101",
+    "prompt": "Un conjunto de datos es: 20, 22, 18, 25, 20, 19. ¿Cuál es su media (promedio)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "20.7",
+      "124",
+      "6",
+      "21"
+    ],
+    "correctIndex": 0,
+    "explanation": "La media es la suma de los datos dividida por la cantidad de datos: (20 + 22 + 18 + 25 + 20 + 19) / 6 = 124 / 6 = 20.7.",
+    "objectiveShortName": "Medidas de tendencia central",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-102",
+    "prompt": "Un conjunto de datos es: 6, 6, 10, 14, 8, 6, 10. ¿Cuál es su media (promedio)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7",
+      "8.6",
+      "60",
+      "9"
+    ],
+    "correctIndex": 1,
+    "explanation": "La media es la suma de los datos dividida por la cantidad de datos: (6 + 6 + 10 + 14 + 8 + 6 + 10) / 7 = 60 / 7 = 8.6.",
+    "objectiveShortName": "Medidas de tendencia central",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-103",
+    "prompt": "Al lanzar/sacar al azar de un dado de 6 caras y quieres obtener el número 4, ¿cuál es la probabilidad de obtenerlo, expresada como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "1/6",
+      "6/1",
+      "2/6",
+      "5/6"
+    ],
+    "correctIndex": 0,
+    "explanation": "Regla de Laplace: P = casos favorables / casos totales = 1/6, que simplificado es 1/6.",
+    "objectiveShortName": "Probabilidad de un suceso (regla de Laplace)",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-104",
+    "prompt": "Al lanzar/sacar al azar de un mazo de 52 cartas y quieres obtener un As, ¿cuál es la probabilidad de obtenerlo, expresada como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "1/13",
+      "13/1",
+      "48/52",
+      "4/52"
+    ],
+    "correctIndex": 0,
+    "explanation": "Regla de Laplace: P = casos favorables / casos totales = 4/52, que simplificado es 1/13.",
+    "objectiveShortName": "Probabilidad de un suceso (regla de Laplace)",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-105",
+    "prompt": "Al lanzar/sacar al azar de una bolsa con 10 bolitas numeradas del 1 al 10 y quieres obtener un número mayor a 7, ¿cuál es la probabilidad de obtenerlo, expresada como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7/10",
+      "3/10",
+      "4/10",
+      "10/3"
+    ],
+    "correctIndex": 1,
+    "explanation": "Regla de Laplace: P = casos favorables / casos totales = 3/10, que simplificado es 3/10.",
+    "objectiveShortName": "Probabilidad de un suceso (regla de Laplace)",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-106",
+    "prompt": "Al lanzar/sacar al azar de un dado de 6 caras y quieres obtener un número par menor a 5, ¿cuál es la probabilidad de obtenerlo, expresada como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3/1",
+      "4/6",
+      "1/3",
+      "2/6"
+    ],
+    "correctIndex": 2,
+    "explanation": "Regla de Laplace: P = casos favorables / casos totales = 2/6, que simplificado es 1/3.",
+    "objectiveShortName": "Probabilidad de un suceso (regla de Laplace)",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-107",
+    "prompt": "Al lanzar/sacar al azar de un mazo de 52 cartas y quieres obtener una carta de corazones, ¿cuál es la probabilidad de obtenerlo, expresada como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "13/52",
+      "39/52",
+      "4/1",
+      "1/4"
+    ],
+    "correctIndex": 3,
+    "explanation": "Regla de Laplace: P = casos favorables / casos totales = 13/52, que simplificado es 1/4.",
+    "objectiveShortName": "Probabilidad de un suceso (regla de Laplace)",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-108",
+    "prompt": "Al lanzar/sacar al azar de una rifa con 20 números y quieres que salga uno de los 5 números que compraste, ¿cuál es la probabilidad de obtenerlo, expresada como fracción simplificada?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5/20",
+      "1/4",
+      "4/1",
+      "15/20"
+    ],
+    "correctIndex": 1,
+    "explanation": "Regla de Laplace: P = casos favorables / casos totales = 5/20, que simplificado es 1/4.",
+    "objectiveShortName": "Probabilidad de un suceso (regla de Laplace)",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-109",
+    "prompt": "La siguiente tabla de frecuencias muestra datos registrados (Lunes: 12, Martes: 18, Miércoles: 9, Jueves: 15, total = 54). ¿Cuál categoría tiene la frecuencia absoluta más alta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Lunes",
+      "Jueves",
+      "Martes",
+      "Miércoles"
+    ],
+    "correctIndex": 2,
+    "explanation": "Comparando las frecuencias (Lunes: 12, Martes: 18, Miércoles: 9, Jueves: 15), la mayor es 18, que corresponde a \"Martes\".",
+    "objectiveShortName": "Tablas de frecuencia y gráficos",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-110",
+    "prompt": "La siguiente tabla de frecuencias muestra datos registrados (Rojo: 8, Azul: 14, Verde: 6, Amarillo: 10, total = 38). ¿Cuál categoría tiene la frecuencia absoluta más alta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Verde",
+      "Amarillo",
+      "Azul",
+      "Rojo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Comparando las frecuencias (Rojo: 8, Azul: 14, Verde: 6, Amarillo: 10), la mayor es 14, que corresponde a \"Azul\".",
+    "objectiveShortName": "Tablas de frecuencia y gráficos",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-111",
+    "prompt": "La siguiente tabla de frecuencias muestra datos registrados (A: 20, B: 12, C: 25, D: 18, total = 75). ¿Cuál categoría tiene la frecuencia absoluta más alta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "D",
+      "C",
+      "A",
+      "B"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comparando las frecuencias (A: 20, B: 12, C: 25, D: 18), la mayor es 25, que corresponde a \"C\".",
+    "objectiveShortName": "Tablas de frecuencia y gráficos",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-112",
+    "prompt": "La siguiente tabla de frecuencias muestra datos registrados (Fútbol: 22, Básquetbol: 16, Vóleibol: 9, Tenis: 13, total = 60). ¿Cuál categoría tiene la frecuencia absoluta más alta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Vóleibol",
+      "Básquetbol",
+      "Tenis",
+      "Fútbol"
+    ],
+    "correctIndex": 3,
+    "explanation": "Comparando las frecuencias (Fútbol: 22, Básquetbol: 16, Vóleibol: 9, Tenis: 13), la mayor es 22, que corresponde a \"Fútbol\".",
+    "objectiveShortName": "Tablas de frecuencia y gráficos",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-113",
+    "prompt": "La siguiente tabla de frecuencias muestra datos registrados (Norte: 30, Sur: 27, Este: 41, Oeste: 19, total = 117). ¿Cuál categoría tiene la frecuencia absoluta más alta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Norte",
+      "Oeste",
+      "Este",
+      "Sur"
+    ],
+    "correctIndex": 2,
+    "explanation": "Comparando las frecuencias (Norte: 30, Sur: 27, Este: 41, Oeste: 19), la mayor es 41, que corresponde a \"Este\".",
+    "objectiveShortName": "Tablas de frecuencia y gráficos",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm1-probabilidad-114",
+    "prompt": "La siguiente tabla de frecuencias muestra datos registrados (Enero: 10, Febrero: 14, Marzo: 8, Abril: 17, total = 49). ¿Cuál categoría tiene la frecuencia absoluta más alta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Marzo",
+      "Abril",
+      "Enero",
+      "Febrero"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comparando las frecuencias (Enero: 10, Febrero: 14, Marzo: 8, Abril: 17), la mayor es 17, que corresponde a \"Abril\".",
+    "objectiveShortName": "Tablas de frecuencia y gráficos",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "inicial"
+  }
+]

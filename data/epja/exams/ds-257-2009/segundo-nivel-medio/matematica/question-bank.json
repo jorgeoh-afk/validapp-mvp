@@ -1,0 +1,1570 @@
+[
+  {
+    "localId": "mat-nm2-funciones-001",
+    "prompt": "¿Cuál es el valor de √16?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "16",
+      "5",
+      "4",
+      "8"
+    ],
+    "correctIndex": 2,
+    "explanation": "√16 es el número que multiplicado por sí mismo da 16: 4 × 4 = 16.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-002",
+    "prompt": "¿Cuál es el valor de √25?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "12.5",
+      "5",
+      "25",
+      "6"
+    ],
+    "correctIndex": 1,
+    "explanation": "√25 es el número que multiplicado por sí mismo da 25: 5 × 5 = 25.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-003",
+    "prompt": "¿Cuál es el valor de √49?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8",
+      "49",
+      "24.5",
+      "7"
+    ],
+    "correctIndex": 3,
+    "explanation": "√49 es el número que multiplicado por sí mismo da 49: 7 × 7 = 49.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-004",
+    "prompt": "¿Cuál es el valor de √81?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "81",
+      "9",
+      "40.5",
+      "10"
+    ],
+    "correctIndex": 1,
+    "explanation": "√81 es el número que multiplicado por sí mismo da 81: 9 × 9 = 81.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-005",
+    "prompt": "¿Cuál es el valor de √9?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3",
+      "4",
+      "9",
+      "4.5"
+    ],
+    "correctIndex": 0,
+    "explanation": "√9 es el número que multiplicado por sí mismo da 9: 3 × 3 = 9.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-006",
+    "prompt": "¿Cuál es el valor de √64?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "32",
+      "64",
+      "9",
+      "8"
+    ],
+    "correctIndex": 3,
+    "explanation": "√64 es el número que multiplicado por sí mismo da 64: 8 × 8 = 64.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-007",
+    "prompt": "¿Cuál es el valor de √100?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11",
+      "10",
+      "100",
+      "50"
+    ],
+    "correctIndex": 1,
+    "explanation": "√100 es el número que multiplicado por sí mismo da 100: 10 × 10 = 100.",
+    "objectiveShortName": "Raíz cuadrada como proceso inverso de potencias",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "mat-nm2-funciones-008",
+    "prompt": "¿Cuál es el resultado de √4 × √9?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "36",
+      "6",
+      "5",
+      "7"
+    ],
+    "correctIndex": 1,
+    "explanation": "√4 × √9 = √(4×9) = √36 = 6, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-009",
+    "prompt": "¿Cuál es el resultado de √16 × √4?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8",
+      "6",
+      "9",
+      "64"
+    ],
+    "correctIndex": 0,
+    "explanation": "√16 × √4 = √(16×4) = √64 = 8, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-010",
+    "prompt": "¿Cuál es el resultado de √25 × √4?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7",
+      "10",
+      "100",
+      "11"
+    ],
+    "correctIndex": 1,
+    "explanation": "√25 × √4 = √(25×4) = √100 = 10, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-011",
+    "prompt": "¿Cuál es el resultado de √9 × √16?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "144",
+      "7",
+      "13",
+      "12"
+    ],
+    "correctIndex": 3,
+    "explanation": "√9 × √16 = √(9×16) = √144 = 12, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-012",
+    "prompt": "¿Cuál es el resultado de √36 × √4?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "13",
+      "12",
+      "8",
+      "144"
+    ],
+    "correctIndex": 1,
+    "explanation": "√36 × √4 = √(36×4) = √144 = 12, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-013",
+    "prompt": "¿Cuál es el resultado de √4 × √25?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11",
+      "10",
+      "100",
+      "7"
+    ],
+    "correctIndex": 1,
+    "explanation": "√4 × √25 = √(4×25) = √100 = 10, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-014",
+    "prompt": "¿Cuál es el resultado de √49 × √4?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "15",
+      "196",
+      "9",
+      "14"
+    ],
+    "correctIndex": 3,
+    "explanation": "√49 × √4 = √(49×4) = √196 = 14, aplicando la propiedad del producto de raíces.",
+    "objectiveShortName": "Propiedades de las raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-015",
+    "prompt": "Un terreno cuadrado tiene un área de 49 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "14 m",
+      "7 m",
+      "3.5 m",
+      "49 m"
+    ],
+    "correctIndex": 1,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √49 = 7 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-016",
+    "prompt": "Un terreno cuadrado tiene un área de 144 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "24 m",
+      "144 m",
+      "6 m",
+      "12 m"
+    ],
+    "correctIndex": 3,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √144 = 12 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-017",
+    "prompt": "Un terreno cuadrado tiene un área de 225 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7.5 m",
+      "225 m",
+      "15 m",
+      "30 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √225 = 15 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-018",
+    "prompt": "Un terreno cuadrado tiene un área de 400 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "40 m",
+      "400 m",
+      "20 m",
+      "10 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √400 = 20 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-019",
+    "prompt": "Un terreno cuadrado tiene un área de 81 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "9 m",
+      "4.5 m",
+      "81 m",
+      "18 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √81 = 9 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-020",
+    "prompt": "Un terreno cuadrado tiene un área de 121 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11 m",
+      "22 m",
+      "121 m",
+      "5.5 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √121 = 11 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-021",
+    "prompt": "Un terreno cuadrado tiene un área de 169 m². ¿Cuánto mide cada lado?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "169 m",
+      "6.5 m",
+      "13 m",
+      "26 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "El lado de un cuadrado es la raíz cuadrada de su área: √169 = 13 m.",
+    "objectiveShortName": "Problemas con raíces cuadradas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-022",
+    "prompt": "Si f(x) = 2^x, ¿cuál es el valor de f(4)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "9",
+      "8",
+      "32",
+      "16"
+    ],
+    "correctIndex": 3,
+    "explanation": "f(4) = 2^4 = 16.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-023",
+    "prompt": "Si f(x) = 3^x, ¿cuál es el valor de f(3)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "27",
+      "10",
+      "9",
+      "81"
+    ],
+    "correctIndex": 0,
+    "explanation": "f(3) = 3^3 = 27.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-024",
+    "prompt": "Si f(x) = 2^x, ¿cuál es el valor de f(6)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "128",
+      "32",
+      "12",
+      "64"
+    ],
+    "correctIndex": 3,
+    "explanation": "f(6) = 2^6 = 64.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-025",
+    "prompt": "Si f(x) = 5^x, ¿cuál es el valor de f(2)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5",
+      "10",
+      "125",
+      "25"
+    ],
+    "correctIndex": 3,
+    "explanation": "f(2) = 5^2 = 25.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-026",
+    "prompt": "Si f(x) = 3^x, ¿cuál es el valor de f(4)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "12",
+      "243",
+      "81",
+      "27"
+    ],
+    "correctIndex": 2,
+    "explanation": "f(4) = 3^4 = 81.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-027",
+    "prompt": "Si f(x) = 2^x, ¿cuál es el valor de f(7)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "14",
+      "128",
+      "64",
+      "256"
+    ],
+    "correctIndex": 1,
+    "explanation": "f(7) = 2^7 = 128.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-028",
+    "prompt": "Si f(x) = 4^x, ¿cuál es el valor de f(3)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "12",
+      "16",
+      "256",
+      "64"
+    ],
+    "correctIndex": 3,
+    "explanation": "f(3) = 4^3 = 64.",
+    "objectiveShortName": "Función logaritmo y función exponencial",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-029",
+    "prompt": "Una población de 100 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 3 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "400",
+      "600",
+      "800",
+      "106"
+    ],
+    "correctIndex": 2,
+    "explanation": "Población = 100 × 2^3 = 100 × 8 = 800.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-030",
+    "prompt": "Una población de 50 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 4 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "400",
+      "800",
+      "401",
+      "58"
+    ],
+    "correctIndex": 1,
+    "explanation": "Población = 50 × 2^4 = 50 × 16 = 800.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-031",
+    "prompt": "Una población de 200 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 2 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "204",
+      "400",
+      "800",
+      "801"
+    ],
+    "correctIndex": 2,
+    "explanation": "Población = 200 × 2^2 = 200 × 4 = 800.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-032",
+    "prompt": "Una población de 80 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 3 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "640",
+      "320",
+      "86",
+      "480"
+    ],
+    "correctIndex": 0,
+    "explanation": "Población = 80 × 2^3 = 80 × 8 = 640.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-033",
+    "prompt": "Una población de 150 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 2 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "601",
+      "300",
+      "600",
+      "154"
+    ],
+    "correctIndex": 2,
+    "explanation": "Población = 150 × 2^2 = 150 × 4 = 600.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-034",
+    "prompt": "Una población de 40 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 5 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "400",
+      "50",
+      "1280",
+      "640"
+    ],
+    "correctIndex": 2,
+    "explanation": "Población = 40 × 2^5 = 40 × 32 = 1280.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-035",
+    "prompt": "Una población de 60 bacterias se duplica cada hora. ¿Cuántas bacterias habrá después de 3 horas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "360",
+      "66",
+      "480",
+      "240"
+    ],
+    "correctIndex": 2,
+    "explanation": "Población = 60 × 2^3 = 60 × 8 = 480.",
+    "objectiveShortName": "Problemas con funciones exponenciales",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-036",
+    "prompt": "¿Cuál es el valor de log2(8)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2",
+      "8",
+      "4",
+      "3"
+    ],
+    "correctIndex": 3,
+    "explanation": "log2(8) pregunta \"¿a qué exponente hay que elevar 2 para obtener 8?\". Como 2^3 = 8, log2(8) = 3.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-037",
+    "prompt": "¿Cuál es el valor de log3(9)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2",
+      "4",
+      "3",
+      "9"
+    ],
+    "correctIndex": 0,
+    "explanation": "log3(9) pregunta \"¿a qué exponente hay que elevar 3 para obtener 9?\". Como 3^2 = 9, log3(9) = 2.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-038",
+    "prompt": "¿Cuál es el valor de log10(100)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2",
+      "100",
+      "10",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "log10(100) pregunta \"¿a qué exponente hay que elevar 10 para obtener 100?\". Como 10^2 = 100, log10(100) = 2.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-039",
+    "prompt": "¿Cuál es el valor de log2(32)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "2",
+      "6",
+      "5",
+      "32"
+    ],
+    "correctIndex": 2,
+    "explanation": "log2(32) pregunta \"¿a qué exponente hay que elevar 2 para obtener 32?\". Como 2^5 = 32, log2(32) = 5.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-040",
+    "prompt": "¿Cuál es el valor de log5(25)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3",
+      "5",
+      "25",
+      "2"
+    ],
+    "correctIndex": 3,
+    "explanation": "log5(25) pregunta \"¿a qué exponente hay que elevar 5 para obtener 25?\". Como 5^2 = 25, log5(25) = 2.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-041",
+    "prompt": "¿Cuál es el valor de log2(16)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "5",
+      "4",
+      "2",
+      "16"
+    ],
+    "correctIndex": 1,
+    "explanation": "log2(16) pregunta \"¿a qué exponente hay que elevar 2 para obtener 16?\". Como 2^4 = 16, log2(16) = 4.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-042",
+    "prompt": "¿Cuál es el valor de log10(1000)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "1000",
+      "4",
+      "3",
+      "10"
+    ],
+    "correctIndex": 2,
+    "explanation": "log10(1000) pregunta \"¿a qué exponente hay que elevar 10 para obtener 1000?\". Como 10^3 = 1000, log10(1000) = 3.",
+    "objectiveShortName": "Problemas con funciones logarítmicas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-043",
+    "prompt": "Si f(x) = 2x² + 3, ¿cuál es el valor de f(4)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "35",
+      "11",
+      "32",
+      "44"
+    ],
+    "correctIndex": 0,
+    "explanation": "f(4) = 2×4² + 3 = 2×16 + 3 = 35.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-044",
+    "prompt": "Si f(x) = 1x² - 5, ¿cuál es el valor de f(6)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "31",
+      "36",
+      "6",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "f(6) = 1×6² - 5 = 1×36 - 5 = 31.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-045",
+    "prompt": "Si f(x) = 3x² + 1, ¿cuál es el valor de f(2)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "7",
+      "14",
+      "12",
+      "13"
+    ],
+    "correctIndex": 3,
+    "explanation": "f(2) = 3×2² + 1 = 3×4 + 1 = 13.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-046",
+    "prompt": "Si f(x) = 2x² - 1, ¿cuál es el valor de f(5)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "49",
+      "45",
+      "50",
+      "9"
+    ],
+    "correctIndex": 0,
+    "explanation": "f(5) = 2×5² - 1 = 2×25 - 1 = 49.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-047",
+    "prompt": "Si f(x) = 1x² + 4, ¿cuál es el valor de f(3)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "9",
+      "21",
+      "7",
+      "13"
+    ],
+    "correctIndex": 3,
+    "explanation": "f(3) = 1×3² + 4 = 1×9 + 4 = 13.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-048",
+    "prompt": "Si f(x) = 4x² + 2, ¿cuál es el valor de f(2)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10",
+      "20",
+      "18",
+      "16"
+    ],
+    "correctIndex": 2,
+    "explanation": "f(2) = 4×2² + 2 = 4×4 + 2 = 18.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-049",
+    "prompt": "Si f(x) = 2x² + 0, ¿cuál es el valor de f(7)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "99",
+      "14",
+      "98",
+      "101"
+    ],
+    "correctIndex": 2,
+    "explanation": "f(7) = 2×7² + 0 = 2×49 + 0 = 98.",
+    "objectiveShortName": "Problemas con funciones cuadráticas",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-funciones-050",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² - 5x + 6 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 2 o x = 3",
+      "x = -2 o x = -3",
+      "x = 5",
+      "x = 2"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ecuación se factoriza como (x - 2)(x - 3) = 0, por lo tanto x = 2 o x = 3.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-051",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² - 6x + 5 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 6",
+      "x = -1 o x = -5",
+      "x = 1",
+      "x = 1 o x = 5"
+    ],
+    "correctIndex": 3,
+    "explanation": "La ecuación se factoriza como (x - 1)(x - 5) = 0, por lo tanto x = 1 o x = 5.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-052",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² - 2x - 8 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = -2 o x = 4",
+      "x = -2",
+      "x = 2",
+      "x = 2 o x = -4"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ecuación se factoriza como (x - -2)(x - 4) = 0, por lo tanto x = -2 o x = 4.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-053",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² - 9x + 18 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = -3 o x = -6",
+      "x = 9",
+      "x = 3",
+      "x = 3 o x = 6"
+    ],
+    "correctIndex": 3,
+    "explanation": "La ecuación se factoriza como (x - 3)(x - 6) = 0, por lo tanto x = 3 o x = 6.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-054",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² + 7x + 12 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 3 o x = 4",
+      "x = -7",
+      "x = -3 o x = -4",
+      "x = -3"
+    ],
+    "correctIndex": 2,
+    "explanation": "La ecuación se factoriza como (x - -3)(x - -4) = 0, por lo tanto x = -3 o x = -4.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-055",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² - 8x + 7 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 1",
+      "x = 1 o x = 7",
+      "x = 8",
+      "x = -1 o x = -7"
+    ],
+    "correctIndex": 1,
+    "explanation": "La ecuación se factoriza como (x - 1)(x - 7) = 0, por lo tanto x = 1 o x = 7.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-056",
+    "prompt": "¿Cuáles son las soluciones de la ecuación x² - 7x - 8 = 0?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "x = 1 o x = -8",
+      "x = -1",
+      "x = -1 o x = 8",
+      "x = 7"
+    ],
+    "correctIndex": 2,
+    "explanation": "La ecuación se factoriza como (x - -1)(x - 8) = 0, por lo tanto x = -1 o x = 8.",
+    "objectiveShortName": "Soluciones de ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-057",
+    "prompt": "Un rectángulo tiene un largo que es 3 metros mayor que su ancho, y su área es 40 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8 m",
+      "40 m",
+      "5 m",
+      "2 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si el ancho es x, el largo es x + 3, y x(x + 3) = 40. Probando x = 5: 5 × 8 = 40. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-058",
+    "prompt": "Un rectángulo tiene un largo que es 5 metros mayor que su ancho, y su área es 36 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10 m",
+      "36 m",
+      "4 m",
+      "9 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si el ancho es x, el largo es x + 5, y x(x + 5) = 36. Probando x = 4: 4 × 9 = 36. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-059",
+    "prompt": "Un rectángulo tiene un largo que es 2 metros mayor que su ancho, y su área es 48 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "6 m",
+      "48 m",
+      "4 m",
+      "8 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si el ancho es x, el largo es x + 2, y x(x + 2) = 48. Probando x = 6: 6 × 8 = 48. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-060",
+    "prompt": "Un rectángulo tiene un largo que es 7 metros mayor que su ancho, y su área es 30 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10 m",
+      "11 m",
+      "30 m",
+      "3 m"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si el ancho es x, el largo es x + 7, y x(x + 7) = 30. Probando x = 3: 3 × 10 = 30. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-061",
+    "prompt": "Un rectángulo tiene un largo que es 1 metros mayor que su ancho, y su área es 56 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "6 m",
+      "56 m",
+      "7 m",
+      "8 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si el ancho es x, el largo es x + 1, y x(x + 1) = 56. Probando x = 7: 7 × 8 = 56. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-062",
+    "prompt": "Un rectángulo tiene un largo que es 3 metros mayor que su ancho, y su área es 88 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11 m",
+      "88 m",
+      "5 m",
+      "8 m"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si el ancho es x, el largo es x + 3, y x(x + 3) = 88. Probando x = 8: 8 × 11 = 88. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-funciones-063",
+    "prompt": "Un rectángulo tiene un largo que es 8 metros mayor que su ancho, y su área es 48 m². ¿Cuánto mide el ancho?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "13 m",
+      "48 m",
+      "4 m",
+      "12 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si el ancho es x, el largo es x + 8, y x(x + 8) = 48. Probando x = 4: 4 × 12 = 48. ✓",
+    "objectiveShortName": "Problemas con ecuación de segundo grado",
+    "strandName": "Funciones y Ecuaciones",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-064",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 3 cm, el cateto adyacente mide 4 cm y la hipotenusa mide 5 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/3",
+      "4/5",
+      "3/5",
+      "3/4"
+    ],
+    "correctIndex": 2,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 3/5 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-065",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 6 cm, el cateto adyacente mide 8 cm y la hipotenusa mide 10 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/3",
+      "3/5",
+      "3/4",
+      "4/5"
+    ],
+    "correctIndex": 1,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 6/10 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-066",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 9 cm, el cateto adyacente mide 12 cm y la hipotenusa mide 15 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "3/4",
+      "4/5",
+      "3/5",
+      "4/3"
+    ],
+    "correctIndex": 2,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 9/15 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-067",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 12 cm, el cateto adyacente mide 16 cm y la hipotenusa mide 20 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/5",
+      "4/3",
+      "3/4",
+      "3/5"
+    ],
+    "correctIndex": 3,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 12/20 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-068",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 15 cm, el cateto adyacente mide 20 cm y la hipotenusa mide 25 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/5",
+      "4/3",
+      "3/4",
+      "3/5"
+    ],
+    "correctIndex": 3,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 15/25 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-069",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 18 cm, el cateto adyacente mide 24 cm y la hipotenusa mide 30 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/5",
+      "4/3",
+      "3/5",
+      "3/4"
+    ],
+    "correctIndex": 2,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 18/30 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-070",
+    "prompt": "En un triángulo rectángulo, el cateto opuesto a un ángulo mide 21 cm, el cateto adyacente mide 28 cm y la hipotenusa mide 35 cm. ¿Cuál es el seno de ese ángulo?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "4/5",
+      "3/4",
+      "4/3",
+      "3/5"
+    ],
+    "correctIndex": 3,
+    "explanation": "El seno es cateto opuesto / hipotenusa = 21/35 = 3/5 (simplificado).",
+    "objectiveShortName": "Razones trigonométricas en triángulo rectángulo",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-geotrig-071",
+    "prompt": "Desde un punto ubicado a 20 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "40 m (revisar duplicado)",
+      "10 m",
+      "20 m",
+      "40 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "altura = distancia × tan(45°) = 20 × 1 = 20 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-072",
+    "prompt": "Desde un punto ubicado a 30 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "60 m",
+      "30 m",
+      "60 m (revisar duplicado)",
+      "15 m"
+    ],
+    "correctIndex": 1,
+    "explanation": "altura = distancia × tan(45°) = 30 × 1 = 30 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-073",
+    "prompt": "Desde un punto ubicado a 10 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "10 m",
+      "20 m (revisar duplicado)",
+      "20 m",
+      "5 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "altura = distancia × tan(45°) = 10 × 1 = 10 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-074",
+    "prompt": "Desde un punto ubicado a 40 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "40 m",
+      "80 m",
+      "80 m (revisar duplicado)",
+      "20 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "altura = distancia × tan(45°) = 40 × 1 = 40 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-075",
+    "prompt": "Desde un punto ubicado a 15 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "8 m",
+      "30 m (revisar duplicado)",
+      "15 m",
+      "30 m"
+    ],
+    "correctIndex": 2,
+    "explanation": "altura = distancia × tan(45°) = 15 × 1 = 15 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-076",
+    "prompt": "Desde un punto ubicado a 25 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "25 m",
+      "13 m",
+      "50 m (revisar duplicado)",
+      "50 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "altura = distancia × tan(45°) = 25 × 1 = 25 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-geotrig-077",
+    "prompt": "Desde un punto ubicado a 50 m de la base de un edificio, el ángulo de elevación hasta la punta del edificio es de 45°. ¿Cuál es, aproximadamente, la altura del edificio? (usa tan(45°) = 1)",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "50 m",
+      "100 m",
+      "25 m",
+      "100 m (revisar duplicado)"
+    ],
+    "correctIndex": 0,
+    "explanation": "altura = distancia × tan(45°) = 50 × 1 = 50 m.",
+    "objectiveShortName": "Problemas de alturas o distancias inaccesibles",
+    "strandName": "Geometría y Trigonometría",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-078",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 5, 11-20: 12, 21-30: 8, 31-40: 3. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "31-40",
+      "11-20",
+      "0-10",
+      "21-30"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comparando las frecuencias (0-10: 5, 11-20: 12, 21-30: 8, 31-40: 3), la mayor es 12, correspondiente al intervalo 11-20.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-079",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 3, 11-20: 9, 21-30: 15, 31-40: 6. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "31-40",
+      "11-20",
+      "0-10",
+      "21-30"
+    ],
+    "correctIndex": 3,
+    "explanation": "Comparando las frecuencias (0-10: 3, 11-20: 9, 21-30: 15, 31-40: 6), la mayor es 15, correspondiente al intervalo 21-30.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-080",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 10, 11-20: 4, 21-30: 6, 31-40: 2. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0-10",
+      "11-20",
+      "31-40",
+      "21-30"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comparando las frecuencias (0-10: 10, 11-20: 4, 21-30: 6, 31-40: 2), la mayor es 10, correspondiente al intervalo 0-10.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-081",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 2, 11-20: 18, 21-30: 5, 31-40: 7. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11-20",
+      "31-40",
+      "0-10",
+      "21-30"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comparando las frecuencias (0-10: 2, 11-20: 18, 21-30: 5, 31-40: 7), la mayor es 18, correspondiente al intervalo 11-20.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-082",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 7, 11-20: 7, 21-30: 20, 31-40: 3. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "21-30",
+      "11-20",
+      "31-40",
+      "0-10"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comparando las frecuencias (0-10: 7, 11-20: 7, 21-30: 20, 31-40: 3), la mayor es 20, correspondiente al intervalo 21-30.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-083",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 14, 11-20: 6, 21-30: 3, 31-40: 9. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "11-20",
+      "31-40",
+      "0-10",
+      "21-30"
+    ],
+    "correctIndex": 2,
+    "explanation": "Comparando las frecuencias (0-10: 14, 11-20: 6, 21-30: 3, 31-40: 9), la mayor es 14, correspondiente al intervalo 0-10.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-084",
+    "prompt": "Un histograma agrupa edades en intervalos con las siguientes frecuencias absolutas: 0-10: 4, 11-20: 5, 21-30: 6, 31-40: 22. ¿Cuál intervalo tiene la mayor frecuencia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0-10",
+      "21-30",
+      "11-20",
+      "31-40"
+    ],
+    "correctIndex": 3,
+    "explanation": "Comparando las frecuencias (0-10: 4, 11-20: 5, 21-30: 6, 31-40: 22), la mayor es 22, correspondiente al intervalo 31-40.",
+    "objectiveShortName": "Tablas de frecuencia e histogramas",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-085",
+    "prompt": "Una muestra de una población registró los siguientes datos: 8, 9, 8, 10, 7, 8, 9. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 8 (revisar duplicado)",
+      "La moda es 8.4",
+      "La moda es 10",
+      "La moda es 8"
+    ],
+    "correctIndex": 3,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 8 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-086",
+    "prompt": "Una muestra de una población registró los siguientes datos: 15, 18, 15, 20, 15, 17. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 15 (revisar duplicado)",
+      "La moda es 16.7",
+      "La moda es 20",
+      "La moda es 15"
+    ],
+    "correctIndex": 3,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 15 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-087",
+    "prompt": "Una muestra de una población registró los siguientes datos: 4, 5, 4, 4, 6, 5. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 4 (revisar duplicado)",
+      "La moda es 4.7",
+      "La moda es 4",
+      "La moda es 6"
+    ],
+    "correctIndex": 2,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 4 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-088",
+    "prompt": "Una muestra de una población registró los siguientes datos: 22, 25, 22, 22, 28. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 28",
+      "La moda es 23.8",
+      "La moda es 22",
+      "La moda es 22 (revisar duplicado)"
+    ],
+    "correctIndex": 2,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 22 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-089",
+    "prompt": "Una muestra de una población registró los siguientes datos: 11, 12, 11, 13, 11, 14. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 11 (revisar duplicado)",
+      "La moda es 14",
+      "La moda es 12",
+      "La moda es 11"
+    ],
+    "correctIndex": 3,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 11 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-090",
+    "prompt": "Una muestra de una población registró los siguientes datos: 30, 32, 30, 30, 35, 31. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 30",
+      "La moda es 30 (revisar duplicado)",
+      "La moda es 35",
+      "La moda es 31.3"
+    ],
+    "correctIndex": 0,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 30 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-091",
+    "prompt": "Una muestra de una población registró los siguientes datos: 6, 7, 6, 6, 8, 7. ¿Cuál es la moda de esta muestra?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La moda es 6",
+      "La moda es 6 (revisar duplicado)",
+      "La moda es 6.7",
+      "La moda es 8"
+    ],
+    "correctIndex": 0,
+    "explanation": "La moda es el valor que se repite con mayor frecuencia. En esta muestra, 6 aparece 3 veces, más que cualquier otro valor.",
+    "objectiveShortName": "Caracterización de una población por muestra",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-092",
+    "prompt": "Dos sucesos independientes A y B tienen probabilidades P(A) = 0.5 y P(B) = 0.4. ¿Cuál es la probabilidad de que ocurran ambos (A y B)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0.1",
+      "0.45",
+      "0.2",
+      "0.9"
+    ],
+    "correctIndex": 2,
+    "explanation": "Para sucesos independientes, P(A y B) = P(A) × P(B) = 0.5 × 0.4 = 0.2.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-093",
+    "prompt": "Dos sucesos independientes A y B tienen probabilidades P(A) = 0.3 y P(B) = 0.6. ¿Cuál es la probabilidad de que ocurran ambos (A y B)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0.18",
+      "-0.3",
+      "0.9",
+      "0.45"
+    ],
+    "correctIndex": 0,
+    "explanation": "Para sucesos independientes, P(A y B) = P(A) × P(B) = 0.3 × 0.6 = 0.18.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-094",
+    "prompt": "Dos sucesos mutuamente excluyentes A y B tienen probabilidades P(A) = 0.2 y P(B) = 0.5. ¿Cuál es la probabilidad de que ocurra A o B?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0.1",
+      "-0.3",
+      "0.7",
+      "0.35"
+    ],
+    "correctIndex": 2,
+    "explanation": "Para sucesos mutuamente excluyentes, P(A o B) = P(A) + P(B) = 0.2 + 0.5 = 0.7.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-095",
+    "prompt": "Dos sucesos mutuamente excluyentes A y B tienen probabilidades P(A) = 0.4 y P(B) = 0.3. ¿Cuál es la probabilidad de que ocurra A o B?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0.35",
+      "0.7",
+      "0.12",
+      "0.1"
+    ],
+    "correctIndex": 1,
+    "explanation": "Para sucesos mutuamente excluyentes, P(A o B) = P(A) + P(B) = 0.4 + 0.3 = 0.7.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-096",
+    "prompt": "Dos sucesos independientes A y B tienen probabilidades P(A) = 0.6 y P(B) = 0.2. ¿Cuál es la probabilidad de que ocurran ambos (A y B)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0.12",
+      "0.4",
+      "0.8",
+      "1.4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Para sucesos independientes, P(A y B) = P(A) × P(B) = 0.6 × 0.2 = 0.12.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-097",
+    "prompt": "Dos sucesos mutuamente excluyentes A y B tienen probabilidades P(A) = 0.1 y P(B) = 0.7. ¿Cuál es la probabilidad de que ocurra A o B?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "0.07",
+      "0.8",
+      "-0.6",
+      "0.4"
+    ],
+    "correctIndex": 1,
+    "explanation": "Para sucesos mutuamente excluyentes, P(A o B) = P(A) + P(B) = 0.1 + 0.7 = 0.8.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "mat-nm2-probestadistica-098",
+    "prompt": "Dos sucesos independientes A y B tienen probabilidades P(A) = 0.25 y P(B) = 0.4. ¿Cuál es la probabilidad de que ocurran ambos (A y B)?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "-0.15",
+      "0.1",
+      "0.65",
+      "0.325"
+    ],
+    "correctIndex": 1,
+    "explanation": "Para sucesos independientes, P(A y B) = P(A) × P(B) = 0.25 × 0.4 = 0.1.",
+    "objectiveShortName": "Probabilidad condicional, suma o producto",
+    "strandName": "Probabilidad y Estadística",
+    "difficulty": "avanzada"
+  }
+]

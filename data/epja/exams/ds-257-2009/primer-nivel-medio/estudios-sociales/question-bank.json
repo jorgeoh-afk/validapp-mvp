@@ -1,0 +1,802 @@
+[
+  {
+    "localId": "soc-nm1-Dimensión Histórica-001",
+    "prompt": "¿Cuál es el orden correcto de estos períodos de la historia de Chile, del más antiguo al más reciente?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Conquista, Colonia, Independencia, República",
+      "República, Colonia, Conquista, Independencia",
+      "Independencia, Conquista, Colonia, República",
+      "Colonia, República, Conquista, Independencia"
+    ],
+    "correctIndex": 0,
+    "explanation": "El orden histórico es: Conquista, Colonia, proceso de Independencia y luego la República.",
+    "objectiveShortName": "Períodos, procesos e hitos de Chile",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-002",
+    "prompt": "¿Cuál de los siguientes es un pueblo indígena originario reconocido en el territorio actual de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El pueblo mapuche",
+      "Los vikingos",
+      "Los fenicios",
+      "Los normandos"
+    ],
+    "correctIndex": 0,
+    "explanation": "El pueblo mapuche es uno de los pueblos originarios reconocidos en el territorio chileno.",
+    "objectiveShortName": "Pueblos indígenas originarios",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-003",
+    "prompt": "Durante la Colonia, ¿qué institución obligaba a los indígenas a trabajar para los colonizadores españoles a cambio de supuesta protección y evangelización?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La encomienda",
+      "El cabildo abierto",
+      "La junta de gobierno",
+      "El congreso nacional"
+    ],
+    "correctIndex": 0,
+    "explanation": "La encomienda era el sistema colonial que obligaba a los indígenas a trabajar para un encomendero español.",
+    "objectiveShortName": "Relaciones españoles-indígenas en la Colonia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-004",
+    "prompt": "¿Cuál de los siguientes fue un factor que impulsó los procesos de independencia en América, incluido Chile, a comienzos del siglo XIX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La invasión napoleónica a España y la crisis de la monarquía española",
+      "La llegada de los primeros colonizadores españoles",
+      "El fin de la Segunda Guerra Mundial",
+      "La invención de internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "La crisis de la monarquía española tras la invasión napoleónica debilitó el control colonial y favoreció los procesos independentistas americanos.",
+    "objectiveShortName": "Factores del proceso de Independencia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-005",
+    "prompt": "¿Qué característica define a una organización republicana de gobierno?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Las autoridades son elegidas y ejercen el poder por un período limitado, no de forma hereditaria",
+      "El poder se hereda de padres a hijos como en una monarquía",
+      "No existen leyes ni constitución",
+      "El poder lo ejerce una sola persona de forma vitalicia sin elecciones"
+    ],
+    "correctIndex": 0,
+    "explanation": "En una república, las autoridades son elegidas y gobiernan por períodos definidos, a diferencia de una monarquía hereditaria.",
+    "objectiveShortName": "Características del republicanismo",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-006",
+    "prompt": "¿Qué conflicto del siglo XIX involucró a Chile, Perú y Bolivia, y tuvo consecuencias territoriales importantes para Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La Guerra del Pacífico",
+      "La Segunda Guerra Mundial",
+      "La Guerra Fría",
+      "La Guerra de los Cien Años"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Guerra del Pacífico (Chile contra Perú y Bolivia) fue un conflicto del siglo XIX con consecuencias territoriales para los países involucrados.",
+    "objectiveShortName": "Configuración del territorio de Chile en el s. XIX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-007",
+    "prompt": "A fines del siglo XIX y comienzos del XX, ¿qué actividad económica fue especialmente relevante para la economía chilena en el norte del país?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La explotación minera del salitre",
+      "La producción de tecnología digital",
+      "La industria automotriz",
+      "El turismo espacial"
+    ],
+    "correctIndex": 0,
+    "explanation": "La explotación del salitre en el norte fue una actividad económica central para Chile en ese período.",
+    "objectiveShortName": "Transición del siglo XIX al XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-008",
+    "prompt": "¿A qué se refiere el concepto histórico de \"cuestión social\" en Chile a comienzos del siglo XX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Al conjunto de problemas relacionados con las malas condiciones de vida y trabajo de los sectores populares y obreros",
+      "A un tratado internacional de límites",
+      "A una celebración religiosa nacional",
+      "A un tipo de moneda"
+    ],
+    "correctIndex": 0,
+    "explanation": "La \"cuestión social\" refiere a los problemas de pobreza, vivienda y condiciones laborales de los sectores populares en ese período.",
+    "objectiveShortName": "La cuestión social y el régimen presidencial",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-009",
+    "prompt": "¿Qué caracteriza al modelo de industrialización sustitutiva de importaciones?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Producir internamente bienes que antes se importaban, para reducir la dependencia externa",
+      "Depender completamente de la importación de todos los bienes",
+      "Eliminar toda la industria nacional",
+      "Exportar exclusivamente materias primas sin procesar"
+    ],
+    "correctIndex": 0,
+    "explanation": "Este modelo buscaba producir localmente lo que antes se importaba, fomentando la industria nacional.",
+    "objectiveShortName": "Industrialización sustitutiva y Estado Benefactor",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-010",
+    "prompt": "¿Qué significa la \"ampliación del sufragio\" en un proceso histórico?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que más grupos de la población, antes excluidos, obtienen el derecho a votar",
+      "Que se elimina el derecho a votar",
+      "Que solo pueden votar los más ricos",
+      "Que las elecciones se cancelan"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ampliación del sufragio implica extender el derecho a voto a grupos que antes no lo tenían, como las mujeres.",
+    "objectiveShortName": "Ampliación del sufragio y reformas estructurales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-011",
+    "prompt": "¿Qué se entiende por un \"régimen militar\" en el contexto de un quiebre democrático?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un gobierno ejercido por las fuerzas armadas tras la interrupción del orden constitucional",
+      "Un gobierno elegido democráticamente en elecciones libres",
+      "Un tipo de sistema educativo",
+      "Un tratado comercial internacional"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un régimen militar es un gobierno ejercido por las fuerzas armadas, generalmente tras interrumpir el orden constitucional y democrático.",
+    "objectiveShortName": "Quiebre de la democracia y transición",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Formación Ciudadana-012",
+    "prompt": "¿Cuál de las siguientes es una característica de un régimen democrático?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La elección periódica de autoridades por parte de la ciudadanía",
+      "El poder ejercido por una sola persona sin elecciones",
+      "La ausencia total de leyes",
+      "La prohibición de cualquier forma de participación ciudadana"
+    ],
+    "correctIndex": 0,
+    "explanation": "La elección periódica de autoridades es un rasgo esencial de la democracia.",
+    "objectiveShortName": "Características del régimen democrático",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Formación Ciudadana-013",
+    "prompt": "¿Qué función cumple una Constitución Política dentro de un país?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Establece los derechos fundamentales de las personas y organiza los poderes del Estado",
+      "Regula únicamente el precio de los productos",
+      "Define solo el himno nacional",
+      "No tiene ninguna función legal"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Constitución es la norma jurídica fundamental que organiza el Estado y garantiza derechos.",
+    "objectiveShortName": "Artículos constitucionales y tratados internacionales",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Formación Ciudadana-014",
+    "prompt": "¿Cuál de las siguientes situaciones representa un atropello a los derechos de las personas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Discriminar a alguien por su origen étnico al momento de contratarlo",
+      "Respetar la libertad de expresión de todos",
+      "Permitir el acceso igualitario a la educación",
+      "Garantizar el derecho a voto de toda la ciudadanía"
+    ],
+    "correctIndex": 0,
+    "explanation": "Discriminar por origen étnico vulnera el derecho a la igualdad y no discriminación.",
+    "objectiveShortName": "Situaciones de violencia o atropello de derechos",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Formación Ciudadana-015",
+    "prompt": "¿Cuál de las siguientes es una forma de participación ciudadana?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Votar en una elección",
+      "No informarse nunca sobre temas públicos",
+      "Evitar cualquier contacto con instituciones públicas",
+      "Rechazar el uso de derechos civiles"
+    ],
+    "correctIndex": 0,
+    "explanation": "Votar es una de las formas más directas de participación ciudadana en democracia.",
+    "objectiveShortName": "Ciudadanía y participación ciudadana",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-016",
+    "prompt": "¿Qué palabra describe mejor el período previo a la llegada de los españoles al territorio actual de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Prehispánico",
+      "Republicano",
+      "Contemporáneo",
+      "Post-industrial"
+    ],
+    "correctIndex": 0,
+    "explanation": "El período anterior a la llegada española se conoce como prehispánico o precolombino.",
+    "objectiveShortName": "Períodos, procesos e hitos de Chile",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-017",
+    "prompt": "¿Qué elemento suele caracterizar la herencia cultural de los pueblos originarios que persiste en la actualidad?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Elementos de su lengua, tradiciones y cosmovisión",
+      "La ausencia total de cualquier tradición",
+      "Solo su presencia en libros de historia extranjeros",
+      "Ningún elemento persiste hoy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Muchos pueblos originarios mantienen hoy su lengua, tradiciones y cosmovisión como parte de su identidad cultural.",
+    "objectiveShortName": "Pueblos indígenas originarios",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-018",
+    "prompt": "El \"mestizaje\" durante la Colonia se refiere a:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La mezcla biológica y cultural entre españoles e indígenas (y otros grupos)",
+      "Un tipo de moneda colonial",
+      "Un tratado de límites",
+      "Una institución religiosa exclusivamente europea"
+    ],
+    "correctIndex": 0,
+    "explanation": "El mestizaje describe la mezcla biológica y cultural entre distintos grupos durante la Colonia.",
+    "objectiveShortName": "Relaciones españoles-indígenas en la Colonia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-019",
+    "prompt": "¿Qué entienden los historiadores por \"Primera Junta de Gobierno\" en el proceso de independencia chileno?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un cabildo que asumió funciones de gobierno ante el vacío de poder de la monarquía española",
+      "Un tratado firmado con Estados Unidos",
+      "Una institución creada por España para reforzar su control colonial",
+      "Un partido político actual"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Primera Junta de Gobierno surgió ante la crisis de la monarquía española, asumiendo funciones de gobierno de forma autónoma.",
+    "objectiveShortName": "Factores del proceso de Independencia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-020",
+    "prompt": "¿Cuál de los siguientes es un principio típico de la organización republicana del poder?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La división de poderes entre distintos órganos del Estado (ejecutivo, legislativo, judicial)",
+      "La concentración de todo el poder en una sola persona sin control",
+      "La ausencia de tribunales de justicia",
+      "La eliminación de toda ley escrita"
+    ],
+    "correctIndex": 0,
+    "explanation": "La división de poderes es un principio característico de las repúblicas modernas.",
+    "objectiveShortName": "Características del republicanismo",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-021",
+    "prompt": "¿Qué proceso histórico se refiere a la incorporación del territorio de la Araucanía al Estado chileno durante el siglo XIX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La ocupación o incorporación de la Araucanía",
+      "La independencia de Bolivia",
+      "La firma del Tratado de Versalles",
+      "La fundación de la ONU"
+    ],
+    "correctIndex": 0,
+    "explanation": "Durante el siglo XIX, el Estado chileno llevó a cabo procesos de incorporación territorial de la Araucanía.",
+    "objectiveShortName": "Configuración del territorio de Chile en el s. XIX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-022",
+    "prompt": "¿Qué consecuencia tuvo la crisis económica mundial de 1929 sobre la economía chilena, fuertemente dependiente del salitre?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Afectó gravemente las exportaciones y los ingresos del país",
+      "No tuvo ningún efecto en Chile",
+      "Hizo que el salitre se volviera aún más rentable",
+      "Provocó un auge industrial inmediato"
+    ],
+    "correctIndex": 0,
+    "explanation": "La crisis de 1929 golpeó fuertemente a economías dependientes de la exportación de materias primas como el salitre.",
+    "objectiveShortName": "Transición del siglo XIX al XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Histórica-023",
+    "prompt": "¿Qué caracterizó al \"régimen presidencial\" que se consolidó en Chile en el siglo XX, en contraste con el período anterior?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un mayor protagonismo del Presidente frente al Congreso en la conducción del gobierno",
+      "La eliminación completa del cargo de Presidente",
+      "El regreso a una monarquía",
+      "La desaparición del Congreso Nacional"
+    ],
+    "correctIndex": 0,
+    "explanation": "El régimen presidencial fortaleció el rol del Presidente en la conducción política, a diferencia del período parlamentarista previo.",
+    "objectiveShortName": "La cuestión social y el régimen presidencial",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Formación Ciudadana-024",
+    "prompt": "¿Qué son los derechos humanos, en términos generales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Derechos fundamentales que corresponden a toda persona por su condición humana, sin distinción",
+      "Beneficios exclusivos para un grupo social específico",
+      "Privilegios que se compran",
+      "Normas que solo aplican en un país determinado"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los derechos humanos son derechos fundamentales reconocidos internacionalmente para toda persona, sin distinción.",
+    "objectiveShortName": "Artículos constitucionales y tratados internacionales",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-Dimensión Formación Ciudadana-025",
+    "prompt": "¿Cuál de las siguientes organizaciones permite canalizar la participación ciudadana en la vida pública?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los partidos políticos y las organizaciones sociales",
+      "Ninguna organización permite participar",
+      "Solo las empresas privadas",
+      "Solo las fuerzas armadas"
+    ],
+    "correctIndex": 0,
+    "explanation": "Los partidos políticos y organizaciones sociales son canales reconocidos de participación ciudadana.",
+    "objectiveShortName": "Ciudadanía y participación ciudadana",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra-026",
+    "prompt": "¿Qué consecuencia tuvo la Guerra del Pacífico para el territorio de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Chile incorporó territorios en el norte tras el conflicto",
+      "Chile perdió todo su territorio norte",
+      "No hubo ningún cambio territorial",
+      "Chile se dividió en dos países"
+    ],
+    "correctIndex": 0,
+    "explanation": "Como resultado de la Guerra del Pacífico, Chile incorporó territorios del norte que antes pertenecían a Perú y Bolivia.",
+    "objectiveShortName": "Configuración del territorio de Chile en el s. XIX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra-027",
+    "prompt": "¿En qué consistió la Reforma Agraria realizada en Chile en el siglo XX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un proceso de redistribución de la propiedad de la tierra agrícola",
+      "La construcción de nuevas carreteras",
+      "Una reforma al sistema educativo únicamente",
+      "Un cambio en la moneda nacional"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Reforma Agraria fue un proceso de redistribución de tierras agrícolas llevado a cabo en Chile en el siglo XX.",
+    "objectiveShortName": "Ampliación del sufragio y reformas estructurales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra-028",
+    "prompt": "¿Qué función cumple la fiscalización de las autoridades en un régimen democrático?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Permite controlar y supervisar que las autoridades actúen conforme a la ley",
+      "Elimina la necesidad de elecciones",
+      "Impide que existan tribunales de justicia",
+      "No tiene ninguna función relevante"
+    ],
+    "correctIndex": 0,
+    "explanation": "La fiscalización permite controlar que las autoridades ejerzan el poder conforme a la ley, un elemento clave de la democracia.",
+    "objectiveShortName": "Características del régimen democrático",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra-029",
+    "prompt": "¿Qué institución en Chile puede recibir denuncias sobre presuntas vulneraciones de derechos humanos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El Instituto Nacional de Derechos Humanos (INDH) u organismos similares",
+      "Un supermercado",
+      "Una tienda de ropa",
+      "Un club deportivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "El INDH es un organismo chileno encargado de la promoción y protección de los derechos humanos.",
+    "objectiveShortName": "Situaciones de violencia o atropello de derechos",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra-030",
+    "prompt": "¿Qué elemento cultural suele asociarse a la cosmovisión de los pueblos indígenas originarios de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una estrecha relación espiritual con la naturaleza y el territorio",
+      "El uso exclusivo de tecnología moderna",
+      "La ausencia total de tradiciones orales",
+      "El desinterés por la naturaleza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Muchos pueblos indígenas originarios mantienen una cosmovisión que enfatiza la relación espiritual con la naturaleza y el territorio.",
+    "objectiveShortName": "Pueblos indígenas originarios",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra-031",
+    "prompt": "¿Qué se entiende por \"sincretismo cultural\" durante la Colonia?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La mezcla o fusión de elementos culturales de distintos orígenes, como el indígena y el europeo",
+      "La eliminación total de una cultura",
+      "Un tipo de moneda colonial",
+      "Un tratado militar"
+    ],
+    "correctIndex": 0,
+    "explanation": "El sincretismo cultural es la mezcla de elementos culturales de distintos orígenes, común durante la Colonia.",
+    "objectiveShortName": "Relaciones españoles-indígenas en la Colonia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra-032",
+    "prompt": "¿Qué figura histórica es reconocida como una de las principales lideresas del proceso de independencia en Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Javiera Carrera",
+      "Isabel la Católica",
+      "Cleopatra",
+      "Eva Perón"
+    ],
+    "correctIndex": 0,
+    "explanation": "Javiera Carrera es reconocida como una figura destacada en el proceso independentista chileno.",
+    "objectiveShortName": "Factores del proceso de Independencia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra-033",
+    "prompt": "¿Qué diferencia a una monarquía constitucional de una república?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En la república no existe un rey o reina hereditario que ejerza como jefe de Estado",
+      "En la república el poder es completamente hereditario",
+      "No existe ninguna diferencia entre ambas",
+      "En la monarquía siempre hay elecciones libres para elegir al rey"
+    ],
+    "correctIndex": 0,
+    "explanation": "En una república, el jefe de Estado es elegido, a diferencia de la monarquía, donde el cargo es hereditario.",
+    "objectiveShortName": "Características del republicanismo",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra-034",
+    "prompt": "¿Qué es la Declaración Universal de los Derechos Humanos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un documento internacional que establece derechos fundamentales para todas las personas",
+      "Un tratado comercial entre dos países",
+      "Una ley exclusiva de un solo país",
+      "Un reglamento deportivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Declaración Universal de los Derechos Humanos es un documento internacional adoptado por la ONU que establece derechos fundamentales.",
+    "objectiveShortName": "Artículos constitucionales y tratados internacionales",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra-035",
+    "prompt": "¿Qué es un plebiscito o referéndum?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Una consulta directa a la ciudadanía sobre un tema específico mediante votación",
+      "Una reunión privada de un partido político",
+      "Un tipo de impuesto",
+      "Una ley que no requiere votación"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un plebiscito o referéndum es una consulta directa a la ciudadanía mediante votación sobre un tema específico.",
+    "objectiveShortName": "Ciudadanía y participación ciudadana",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra2-036",
+    "prompt": "¿Qué evento histórico marca tradicionalmente el inicio del período de la Independencia de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La Primera Junta Nacional de Gobierno de 1810",
+      "La llegada de Colón a América",
+      "La Segunda Guerra Mundial",
+      "La fundación de la ONU"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Primera Junta Nacional de Gobierno de 1810 es reconocida como el hito de inicio del proceso independentista chileno.",
+    "objectiveShortName": "Períodos, procesos e hitos de Chile",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-037",
+    "prompt": "¿Qué impacto tuvo el fin del auge del salitre sobre la economía chilena a comienzos del siglo XX?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Generó una crisis económica al perder su principal fuente de ingresos",
+      "No tuvo ningún impacto económico",
+      "Hizo que la economía chilena creciera aún más rápido",
+      "Provocó que Chile dejara de tener relaciones comerciales"
+    ],
+    "correctIndex": 0,
+    "explanation": "El fin del auge salitrero provocó una crisis económica importante, dado que era la principal fuente de ingresos del país en ese período.",
+    "objectiveShortName": "Transición del siglo XIX al XX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-038",
+    "prompt": "¿Qué se entiende por \"Estado Benefactor\" o \"Estado de Bienestar\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un modelo en que el Estado asume un rol activo en la provisión de servicios sociales como salud, educación y previsión",
+      "Un Estado que no interviene en absoluto en la economía",
+      "Un modelo exclusivamente militar de gobierno",
+      "Un sistema sin ningún tipo de impuestos"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Estado Benefactor es un modelo en que el Estado asume un rol activo en la provisión de servicios sociales.",
+    "objectiveShortName": "Industrialización sustitutiva y Estado Benefactor",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-039",
+    "prompt": "¿Qué se entiende por \"transición a la democracia\" en la historia reciente de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El proceso de retorno a un gobierno civil elegido democráticamente tras un período de régimen militar",
+      "El paso de una república a una monarquía",
+      "Un cambio de la moneda nacional",
+      "Un tratado de límites con otro país"
+    ],
+    "correctIndex": 0,
+    "explanation": "La transición a la democracia se refiere al proceso de retorno a un gobierno civil elegido tras el régimen militar.",
+    "objectiveShortName": "Quiebre de la democracia y transición",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-040",
+    "prompt": "Además de la Guerra del Pacífico, ¿qué otro proceso del siglo XIX contribuyó a la configuración del territorio chileno en el extremo sur?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La afirmación de la soberanía chilena en el extremo austral",
+      "La independencia de Bolivia",
+      "La creación de la Unión Europea",
+      "La firma de la Carta de la ONU"
+    ],
+    "correctIndex": 0,
+    "explanation": "Durante el siglo XIX Chile también afirmó su soberanía en el extremo austral del territorio.",
+    "objectiveShortName": "Configuración del territorio de Chile en el s. XIX",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra2-041",
+    "prompt": "¿Qué tipo de organizaciones surgieron entre los trabajadores como respuesta a la \"cuestión social\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Sindicatos y mutuales de trabajadores",
+      "Empresas multinacionales",
+      "Bancos internacionales",
+      "Organismos internacionales de comercio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Como respuesta a la cuestión social surgieron organizaciones de trabajadores como sindicatos y mutuales.",
+    "objectiveShortName": "La cuestión social y el régimen presidencial",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra2-042",
+    "prompt": "¿Cuál de los siguientes es un poder del Estado en un régimen democrático con separación de poderes?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El poder judicial",
+      "El poder militar exclusivo",
+      "El poder religioso oficial",
+      "El poder de una sola familia"
+    ],
+    "correctIndex": 0,
+    "explanation": "El poder judicial es uno de los tres poderes clásicos del Estado (junto al ejecutivo y legislativo) en una democracia.",
+    "objectiveShortName": "Características del régimen democrático",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-043",
+    "prompt": "¿Cuál de las siguientes situaciones constituye una vulneración del derecho a la educación?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Impedir el acceso a la escuela a un niño por su condición socioeconómica",
+      "Garantizar becas de estudio a estudiantes vulnerables",
+      "Construir nuevas escuelas públicas",
+      "Ofrecer educación gratuita"
+    ],
+    "correctIndex": 0,
+    "explanation": "Impedir el acceso a la educación por condición socioeconómica constituye una vulneración de ese derecho.",
+    "objectiveShortName": "Situaciones de violencia o atropello de derechos",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-044",
+    "prompt": "¿Qué rol cumplió el Ejército Libertador de los Andes en el proceso de independencia de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Contribuyó militarmente a consolidar la independencia de Chile",
+      "Se opuso a la independencia de Chile",
+      "Perteneció exclusivamente a otro continente",
+      "No tuvo relación con el proceso independentista chileno"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Ejército Libertador de los Andes, liderado por San Martín y O'Higgins, contribuyó decisivamente a la independencia de Chile.",
+    "objectiveShortName": "Factores del proceso de Independencia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra2-045",
+    "prompt": "¿En qué zona geográfica de Chile se ubica principalmente, históricamente, el pueblo mapuche?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "En la zona centro-sur del territorio",
+      "Exclusivamente en el extremo norte desértico",
+      "Solo en zonas urbanas modernas",
+      "Fuera del territorio chileno"
+    ],
+    "correctIndex": 0,
+    "explanation": "El pueblo mapuche se ubica históricamente, de forma predominante, en la zona centro-sur de Chile.",
+    "objectiveShortName": "Pueblos indígenas originarios",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-046",
+    "prompt": "¿Qué función cumple el Poder Judicial respecto a la Constitución y las leyes?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Aplicar justicia resolviendo conflictos conforme a la Constitución y las leyes vigentes",
+      "Aprobar el presupuesto nacional",
+      "Elegir al Presidente de la República",
+      "Fabricar las leyes sin ninguna revisión"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Poder Judicial resuelve conflictos y aplica justicia conforme a la Constitución y las leyes.",
+    "objectiveShortName": "Artículos constitucionales y tratados internacionales",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra2-047",
+    "prompt": "¿A partir de qué edad los ciudadanos chilenos adquieren, en general, el derecho a votar?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "18 años",
+      "12 años",
+      "25 años",
+      "40 años"
+    ],
+    "correctIndex": 0,
+    "explanation": "En Chile, el derecho a voto se adquiere en general a partir de los 18 años de edad.",
+    "objectiveShortName": "Ciudadanía y participación ciudadana",
+    "strandName": "Dimensión Formación Ciudadana",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-048",
+    "prompt": "¿En qué consistió históricamente la ampliación del sufragio femenino en Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El reconocimiento del derecho a voto de las mujeres, inicialmente en elecciones municipales y luego en todas",
+      "La eliminación del derecho a voto para las mujeres",
+      "Un cambio que no afectó a las mujeres",
+      "La creación de un partido político exclusivo para mujeres"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ampliación del sufragio femenino en Chile se dio primero en elecciones municipales y luego se extendió a todas las elecciones.",
+    "objectiveShortName": "Ampliación del sufragio y reformas estructurales",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "soc-nm1-extra2-049",
+    "prompt": "¿Qué caracterizó la resistencia indígena durante la Colonia en el territorio actual de Chile?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Hubo procesos prolongados de resistencia, especialmente del pueblo mapuche, frente al avance colonial",
+      "No existió ninguna forma de resistencia indígena",
+      "Los pueblos indígenas colaboraron siempre sin ninguna oposición",
+      "La resistencia solo ocurrió fuera de Chile"
+    ],
+    "correctIndex": 0,
+    "explanation": "El pueblo mapuche protagonizó procesos prolongados de resistencia frente al avance colonial español.",
+    "objectiveShortName": "Relaciones españoles-indígenas en la Colonia",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "soc-nm1-extra2-050",
+    "prompt": "¿Qué rol cumplen las elecciones periódicas en un sistema republicano?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Permiten renovar o mantener a las autoridades según la voluntad ciudadana expresada en votación",
+      "Eliminan la necesidad de una Constitución",
+      "Impiden cualquier cambio de gobierno",
+      "Solo ocurren una vez cada 100 años"
+    ],
+    "correctIndex": 0,
+    "explanation": "Las elecciones periódicas permiten a la ciudadanía renovar o mantener autoridades, un rasgo esencial del republicanismo.",
+    "objectiveShortName": "Características del republicanismo",
+    "strandName": "Dimensión Histórica",
+    "difficulty": "avanzada"
+  }
+]

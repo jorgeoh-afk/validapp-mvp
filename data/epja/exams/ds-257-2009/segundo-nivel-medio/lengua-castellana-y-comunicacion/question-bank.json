@@ -1,0 +1,914 @@
+[
+  {
+    "localId": "len-nm2-comprension-001",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: Según el texto, ¿qué reduce el uso de la bicicleta?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La contaminación del aire",
+      "El precio de la bencina",
+      "El número de autos fabricados",
+      "El tamaño de las ciudades"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"andar en bicicleta reduce la contaminación del aire\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-002",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De por qué las ciudades deberían tener más ciclovías",
+      "De la historia de la bicicleta",
+      "De cómo reparar una bicicleta",
+      "De los tipos de combustible"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto argumenta a favor de más ciclovías en las ciudades.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-003",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Qué responde el autor a quienes dicen que las ciclovías quitan espacio a los autos?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que tienen razón y no se debe construir más",
+      "Que en ciudades con ciclovías el tráfico no ha empeorado significativamente",
+      "Que los autos ya no se necesitan",
+      "El texto no responde a esa objeción"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto contraargumenta con el dato de que el tráfico no ha empeorado en esas ciudades.",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-004",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un texto argumentativo",
+      "Una receta",
+      "Un cuento de terror",
+      "Una noticia deportiva"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto defiende una postura (más ciclovías) con razones, propio de un texto argumentativo.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-005",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Cuál es la tesis (idea principal defendida) de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Las ciudades deberían invertir más en ciclovías seguras",
+      "Los autos deberían prohibirse por completo",
+      "Andar en bicicleta es peligroso",
+      "Las ciudades no necesitan cambios"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tesis se presenta al inicio: la necesidad de invertir más en ciclovías seguras.",
+    "objectiveShortName": "Reconoce estructura del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-006",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Cuál oración del texto presenta un CONTRAARGUMENTO?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"Algunos argumentan que las ciclovías quitan espacio a los autos\"",
+      "\"Ampliar las ciclovías es una medida beneficiosa\"",
+      "\"Andar en bicicleta reduce la contaminación del aire\"",
+      "\"Mejora la salud de quienes pedalean regularmente\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Esa oración presenta la postura contraria antes de responderla, es decir, el contraargumento.",
+    "objectiveShortName": "Elementos del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-007",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Cuál es uno de los ARGUMENTOS que apoya la tesis del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Andar en bicicleta reduce la contaminación del aire",
+      "Las ciclovías son muy caras de construir",
+      "A nadie le gusta andar en bicicleta",
+      "El texto no da ningún argumento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ese es uno de los dos argumentos principales (contaminación y salud) que apoyan la tesis.",
+    "objectiveShortName": "Tesis, argumentos y conclusiones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-008",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Qué función cumple la frase \"Por estas razones\" al final del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Introduce una nueva tesis distinta",
+      "Marca la conclusión que retoma los argumentos dados",
+      "Presenta un dato irrelevante",
+      "Cambia completamente el tema"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Por estas razones\" señala que lo que sigue es la conclusión, apoyada en lo argumentado antes.",
+    "objectiveShortName": "Función de componentes del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-009",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Cuál de las siguientes es una OPINIÓN, no un hecho, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ampliar las ciclovías es una medida beneficiosa",
+      "Andar en bicicleta no usa combustible",
+      "Existen ciudades con ciclovías construidas",
+      "El texto menciona el tráfico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una valoración/postura del autor, no un dato verificable de forma objetiva.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-010",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Qué función cumple la expresión \"en primer lugar... en segundo lugar\" en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ordena los argumentos para que sean más claros",
+      "Introduce un diálogo entre personajes",
+      "Da una instrucción de uso",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "Son conectores que organizan y jerarquizan los argumentos presentados.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-011",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Con qué problema actual de las ciudades se relaciona el tema de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La contaminación del aire y la congestión vehicular",
+      "La escasez de agua potable",
+      "El precio de las viviendas",
+      "La falta de escuelas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto conecta el uso de la bicicleta con la reducción de la contaminación, un problema urbano actual.",
+    "objectiveShortName": "Relaciona el tema con la realidad contemporánea",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-012",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían las ciudades tener más ciclovías?\"\nLas ciudades deberían invertir más en ciclovías seguras. En primer lugar, andar en bicicleta reduce la contaminación del aire, ya que no usa combustible. En segundo lugar, mejora la salud de quienes pedalean regularmente, al ser una forma de ejercicio accesible. Algunos argumentan que las ciclovías quitan espacio a los autos, pero en ciudades donde se han construido, el tráfico no ha empeorado de forma significativa. Por estas razones, ampliar las ciclovías es una medida beneficiosa para las ciudades.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El argumento de la salud es razonable, ya que el texto dice que pedalear es una forma de ejercicio accesible\"",
+      "\"El texto está completamente equivocado sin ninguna razón\"",
+      "\"El texto habla sobre transporte marítimo\"",
+      "\"No hay ningún argumento en el texto\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Usa un argumento explícito del texto (ejercicio accesible) para fundamentar la valoración.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-013",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: Según el texto, ¿qué mejora estudiar de adulto, además de las oportunidades laborales?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La confianza personal",
+      "El clima",
+      "El precio de la vivienda",
+      "El transporte público"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"estudiar de adulto mejora la confianza personal\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-014",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De los beneficios de seguir estudiando en la vida adulta",
+      "De cómo buscar trabajo",
+      "De la historia de la educación",
+      "De un problema familiar"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto argumenta a favor de continuar los estudios en la adultez.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-015",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Cómo responde el texto a la idea de que \"ya es tarde\" para estudiar?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Con el dato de que cientos de personas terminan sus estudios cada año sin importar la edad",
+      "Diciendo que tienen razón",
+      "Ignorando completamente esa idea",
+      "El texto no la menciona"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto contraargumenta con un dato sobre personas que estudian a cualquier edad.",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-016",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un texto argumentativo",
+      "Una carta personal",
+      "Un afiche publicitario",
+      "Una biografía"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto defiende una postura con argumentos, característico de un texto argumentativo.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-017",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Cuál es la tesis del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Seguir estudiando en la vida adulta trae beneficios concretos",
+      "Es imposible estudiar siendo adulto",
+      "Solo los jóvenes deberían estudiar",
+      "Estudiar no sirve para nada"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tesis se presenta en la primera oración del texto.",
+    "objectiveShortName": "Reconoce estructura del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-018",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Cuál oración presenta el CONTRAARGUMENTO en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"Hay quienes piensan que ya es 'tarde' para estudiar\"",
+      "\"Nunca es tarde para retomar los estudios\"",
+      "\"Permite acceder a mejores oportunidades laborales\"",
+      "\"Estudiar de adulto mejora la confianza personal\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Presenta la postura contraria antes de refutarla con un dato.",
+    "objectiveShortName": "Elementos del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-019",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Cuál es la CONCLUSIÓN del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Nunca es tarde para retomar los estudios",
+      "Es imposible estudiar de adulto",
+      "Solo importa el trabajo, no el estudio",
+      "El texto no tiene conclusión"
+    ],
+    "correctIndex": 0,
+    "explanation": "La conclusión cierra el texto retomando la idea central tras los argumentos.",
+    "objectiveShortName": "Tesis, argumentos y conclusiones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-020",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Qué función cumple la palabra \"Primero... Segundo\" en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ordena y presenta los distintos argumentos",
+      "Introduce un contraargumento",
+      "Cierra el texto",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "Estas palabras organizan la presentación secuencial de los argumentos.",
+    "objectiveShortName": "Función de componentes del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-021",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Muchos trabajos piden estudios completos",
+      "Estudiar es la actividad más importante de la vida",
+      "Nunca vale la pena trabajar sin estudiar",
+      "Todos deberían estudiar lo mismo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una afirmación verificable sobre requisitos laborales, no una valoración personal.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-022",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Qué función cumple la expresión \"en conclusión\" al final del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Anuncia el cierre del argumento con la idea final",
+      "Presenta un nuevo argumento",
+      "Introduce una pregunta",
+      "No tiene ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "\"En conclusión\" es un conector que anuncia el cierre del razonamiento.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-023",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Con qué realidad actual se relaciona el tema de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La educación de personas adultas que retoman sus estudios",
+      "La construcción de carreteras",
+      "El cambio climático",
+      "El turismo internacional"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto se relaciona directamente con la educación de personas jóvenes y adultas (EPJA).",
+    "objectiveShortName": "Relaciona el tema con la realidad contemporánea",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-024",
+    "prompt": "Lee el texto y responde.\n\n\"¿Es necesario seguir estudiando en la vida adulta?\"\nSeguir estudiando en la vida adulta trae beneficios concretos. Primero, permite acceder a mejores oportunidades laborales, ya que muchos trabajos piden estudios completos. Segundo, estudiar de adulto mejora la confianza personal, porque se logra una meta que muchas veces quedó pendiente. Hay quienes piensan que ya es \"tarde\" para estudiar, pero cientos de personas terminan sus estudios cada año, sin importar la edad. En conclusión, nunca es tarde para retomar los estudios.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"Estudiar de adulto es valioso, ya que el texto menciona que mejora la confianza personal y las oportunidades laborales\"",
+      "\"El texto dice que es imposible estudiar de adulto\"",
+      "\"El texto trata sobre deportes\"",
+      "\"No hay ningún argumento en el texto\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Usa dos argumentos explícitos del texto para fundamentar la valoración positiva.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-025",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Qué le enseñó el tío al narrador?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "A lijar una silla rota",
+      "A cocinar",
+      "A manejar",
+      "A tocar un instrumento"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"me enseñó a lijar una silla rota\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-026",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De un aprendizaje compartido entre el narrador y su tío",
+      "De la historia de la carpintería",
+      "De un viaje en auto",
+      "De un problema económico"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto narra un momento de enseñanza silenciosa entre tío y sobrino.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-027",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Qué se puede inferir sobre la personalidad del tío Raúl?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que era paciente y de pocas palabras",
+      "Que era muy hablador y impaciente",
+      "Que no le gustaban los niños",
+      "Que odiaba su trabajo"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto lo describe como callado y paciente al enseñar sin alzar la voz.",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-028",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un texto narrativo",
+      "Un texto argumentativo",
+      "Un instructivo técnico",
+      "Un aviso publicitario"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto relata un recuerdo personal con desarrollo temporal, es narrativo.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-029",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Cómo se describe físicamente al tío Raúl?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De manos ásperas y mirada atenta",
+      "De manos suaves y mirada distraída",
+      "Muy alto y delgado",
+      "El texto no lo describe físicamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"de manos ásperas y mirada atenta\".",
+    "objectiveShortName": "Identifica aspectos de los personajes",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-030",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: En el texto, \"sin nunca alzar la voz\" sugiere que el tío era:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Agresivo al corregir",
+      "Calmado y paciente al corregir",
+      "Indiferente a los errores",
+      "Muy exigente y duro"
+    ],
+    "correctIndex": 1,
+    "explanation": "La expresión indica que corregía con calma, sin gritar ni molestarse.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-031",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Qué palabra puede reemplazar \"callado\" en el texto sin cambiar el sentido?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ruidoso",
+      "Silencioso",
+      "Alegre",
+      "Distraído"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Callado\" y \"silencioso\" son sinónimos en este contexto.",
+    "objectiveShortName": "Reemplaza palabra por sinónimo según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-032",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El tío tenía un taller detrás de su casa",
+      "El tío era el mejor carpintero del mundo",
+      "El taller era el lugar más bonito del barrio",
+      "Nadie más sabía trabajar la madera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un dato objetivo del relato, no una valoración.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-033",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Qué función cumple la frase final \"no todo se enseña con palabras\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Resume la reflexión o aprendizaje del narrador",
+      "Describe una herramienta del taller",
+      "Presenta un nuevo personaje",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una reflexión final que resume el aprendizaje que deja la experiencia narrada.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-034",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Con qué aspecto de la vida actual se relaciona el tema de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La transmisión de oficios y saberes entre generaciones",
+      "El uso de redes sociales",
+      "El transporte público",
+      "La tecnología espacial"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto retrata la transmisión de un oficio (carpintería) de una generación a otra.",
+    "objectiveShortName": "Relaciona el tema con la realidad contemporánea",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-035",
+    "prompt": "Lee el texto y responde.\n\n\"El Taller de mi Tío\"\nMi tío Raúl tenía un taller pequeño detrás de su casa, lleno de herramientas viejas y olor a madera. Era un hombre callado, de manos ásperas y mirada atenta, que podía pasar horas arreglando muebles sin decir una palabra. Un día me enseñó a lijar una silla rota, con paciencia, corrigiendo mis errores sin nunca alzar la voz. Ese día aprendí que no todo se enseña con palabras.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El tío enseñaba con paciencia, como muestra el hecho de que corregía sin alzar la voz\"",
+      "\"El tío nunca quiso enseñarle nada al narrador\"",
+      "\"El texto trata sobre un viaje al extranjero\"",
+      "\"El taller estaba abandonado y sucio\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Usa un hecho explícito del texto (corregir sin alzar la voz) para fundamentar la interpretación.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-036",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: Según el texto, ¿qué reduce el cultivo de verduras propias?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los gastos familiares",
+      "El tiempo libre",
+      "El número de vecinos",
+      "El tamaño de las casas"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice que acceder a verduras propias \"reduce gastos\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-037",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "De por qué deberían fomentarse los huertos comunitarios",
+      "De la historia de la agricultura",
+      "De cómo cocinar verduras",
+      "De un problema de tránsito"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto argumenta a favor de fomentar los huertos comunitarios en las ciudades.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-038",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Cómo responde el autor a quienes dicen que los huertos ocupan espacio necesario?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Con el dato de que en varios barrios un huerto bien organizado no compite con otras necesidades del espacio",
+      "Diciendo que tienen toda la razón",
+      "Ignorando completamente esa idea",
+      "El texto no responde a esa objeción"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto contraargumenta con la experiencia de barrios donde el huerto no compite con otros usos del espacio.",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-039",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un texto argumentativo",
+      "Una receta de cocina",
+      "Un cuento infantil",
+      "Una biografía"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto defiende una postura con razones, propio de un texto argumentativo.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-040",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Cuál es la tesis de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los huertos comunitarios deberían fomentarse en más barrios de las ciudades",
+      "Los huertos son peligrosos para la salud",
+      "Nadie debería cultivar verduras",
+      "Los municipios no deben invertir en nada"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tesis se presenta en la primera oración del texto.",
+    "objectiveShortName": "Reconoce estructura del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-041",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Cuál oración presenta el CONTRAARGUMENTO en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones\"",
+      "\"Los municipios deberían apoyar más este tipo de iniciativas\"",
+      "\"Permiten a las familias acceder a verduras frescas\"",
+      "\"Fortalecen los lazos entre vecinos\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Presenta la postura contraria antes de refutarla con evidencia.",
+    "objectiveShortName": "Elementos del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-042",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Cuál es uno de los ARGUMENTOS que apoya la tesis?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Fortalecen los lazos entre vecinos",
+      "Los huertos son muy caros de mantener",
+      "A nadie le gusta cultivar",
+      "El texto no da ningún argumento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ese es uno de los dos argumentos principales (ahorro y lazos vecinales) que apoyan la tesis.",
+    "objectiveShortName": "Tesis, argumentos y conclusiones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-043",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Qué función cumple la frase \"Por estas razones\" al final del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Introduce una nueva tesis distinta",
+      "Marca la conclusión que retoma los argumentos dados",
+      "Presenta un dato irrelevante",
+      "Cambia completamente el tema"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Por estas razones\" señala que lo que sigue es la conclusión, apoyada en lo argumentado antes.",
+    "objectiveShortName": "Función de componentes del texto argumentativo",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-044",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Cuál de las siguientes es una OPINIÓN, no un hecho, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Los municipios deberían apoyar más este tipo de iniciativas",
+      "El cuidado del huerto suele ser una actividad compartida",
+      "Existen huertos comunitarios en varios barrios",
+      "El texto menciona el espacio público"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una postura/valoración del autor, no un dato verificable de forma objetiva.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-045",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Qué función cumple la expresión \"en primer lugar... en segundo lugar\" en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Ordena los argumentos para que sean más claros",
+      "Introduce un diálogo entre personajes",
+      "Da una instrucción de uso",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "Son conectores que organizan y jerarquizan los argumentos presentados.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-046",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Con qué tendencia actual de las ciudades se relaciona el tema de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La búsqueda de espacios verdes y comunitarios en zonas urbanas",
+      "La construcción de rascacielos",
+      "El aumento del tráfico aéreo",
+      "La minería a gran escala"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto se relaciona con la tendencia actual de incorporar espacios verdes y comunitarios en las ciudades.",
+    "objectiveShortName": "Relaciona el tema con la realidad contemporánea",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-047",
+    "prompt": "Lee el texto y responde.\n\n\"¿Deberían fomentarse los huertos comunitarios en las ciudades?\"\nLos huertos comunitarios deberían fomentarse en más barrios de las ciudades. En primer lugar, permiten a las familias acceder a verduras frescas cultivadas por ellas mismas, lo que reduce gastos. En segundo lugar, fortalecen los lazos entre vecinos, ya que el cuidado del huerto suele ser una actividad compartida. Algunos sostienen que los huertos ocupan espacio que podría usarse para otras construcciones, pero la experiencia de varios barrios muestra que un huerto bien organizado no compite con otras necesidades del espacio público. Por estas razones, los municipios deberían apoyar más este tipo de iniciativas.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El argumento de los lazos vecinales es razonable, ya que el texto dice que el cuidado del huerto suele ser una actividad compartida\"",
+      "\"El texto está completamente equivocado sin ninguna razón\"",
+      "\"El texto habla sobre transporte público\"",
+      "\"No hay ningún argumento en el texto\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Usa un argumento explícito del texto (actividad compartida) para fundamentar la valoración.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-048",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Cuántos años llevaba don Alberto proyectando películas?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Diez años",
+      "Treinta años",
+      "Cinco años",
+      "No se especifica"
+    ],
+    "correctIndex": 1,
+    "explanation": "El texto dice \"llevaba treinta años proyectando películas\".",
+    "objectiveShortName": "Identifica información explícita",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-049",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿De qué trata principalmente este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Del cierre de un cine y el cariño de la comunidad hacia él",
+      "De la historia del cine digital",
+      "De un problema económico grave",
+      "De un viaje al extranjero"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto narra el cierre de un cine de barrio y cómo la comunidad lo despide con cariño.",
+    "objectiveShortName": "Infiere el sentido global del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-050",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Por qué cada vez asistía menos gente al cine?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Por la llegada de las plataformas digitales",
+      "Porque el cine subió mucho los precios",
+      "Porque el cine se cambió de barrio",
+      "El texto no lo explica"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice \"Con la llegada de las plataformas digitales, cada vez menos gente asistía\".",
+    "objectiveShortName": "Infiere información del texto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-051",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Qué tipo de texto es este?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Un texto narrativo",
+      "Un texto argumentativo",
+      "Un instructivo",
+      "Un afiche publicitario"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto relata un evento con desarrollo temporal, propio de un texto narrativo.",
+    "objectiveShortName": "Identifica el tipo de texto por estructura",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "inicial"
+  },
+  {
+    "localId": "len-nm2-comprension-052",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Qué se puede inferir sobre los sentimientos de don Alberto al final del relato?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Que sintió que su trabajo había dejado un recuerdo valioso en la comunidad",
+      "Que se sintió completamente indiferente",
+      "Que se enojó con los vecinos",
+      "Que decidió abrir otro cine de inmediato"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto dice que entendió que los recuerdos creados seguirían vivos, mostrando un sentimiento de valoración de su legado.",
+    "objectiveShortName": "Identifica aspectos de los personajes",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-053",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: En el texto, \"para su sorpresa\" indica que don Alberto:",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Esperaba que nadie fuera a la función",
+      "No esperaba que tanta gente asistiera",
+      "Ya sabía exactamente cuánta gente iría",
+      "Estaba enojado con los vecinos"
+    ],
+    "correctIndex": 1,
+    "explanation": "La expresión \"para su sorpresa\" indica que el resultado fue distinto a lo que él esperaba.",
+    "objectiveShortName": "Infiere sentido de palabra según contexto",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "intermedia"
+  },
+  {
+    "localId": "len-nm2-comprension-054",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Cuál es un HECHO, no una opinión, en el texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "La sala se llenó de antiguos vecinos",
+      "Ese cine era el mejor lugar del mundo",
+      "Todos los vecinos amaban el cine más que a nada",
+      "Fue la noche más importante de la historia del barrio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un evento concreto narrado en el texto, no una valoración.",
+    "objectiveShortName": "Distingue hechos de opiniones",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-055",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Qué función cumple la frase final sobre \"los recuerdos que había creado seguirían vivos\"?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "Resume la reflexión final del personaje sobre el significado de su trabajo",
+      "Describe el funcionamiento técnico de un proyector",
+      "Presenta un nuevo personaje",
+      "No cumple ninguna función"
+    ],
+    "correctIndex": 0,
+    "explanation": "Es una reflexión final que resume el aprendizaje/sentimiento que deja la experiencia narrada.",
+    "objectiveShortName": "Analiza recursos verbales y no verbales",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-056",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Con qué fenómeno actual se relaciona el tema de este texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "El reemplazo de negocios tradicionales por plataformas digitales",
+      "El aumento del uso de bicicletas",
+      "El cambio climático",
+      "La construcción de nuevas carreteras"
+    ],
+    "correctIndex": 0,
+    "explanation": "El texto retrata cómo las plataformas digitales han desplazado a negocios tradicionales como los cines de barrio.",
+    "objectiveShortName": "Relaciona el tema con la realidad contemporánea",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  },
+  {
+    "localId": "len-nm2-comprension-057",
+    "prompt": "Lee el texto y responde.\n\n\"La Última Función\"\nDon Alberto llevaba treinta años proyectando películas en el mismo cine de barrio. Con la llegada de las plataformas digitales, cada vez menos gente asistía a las funciones. Una noche, antes de cerrar el cine para siempre, decidió proyectar una última película, gratis, para quien quisiera ir. Para su sorpresa, la sala se llenó de antiguos vecinos que habían crecido viendo películas ahí. Esa noche, don Alberto entendió que, aunque el cine cerraba, los recuerdos que había creado seguirían vivos.\n\nPregunta: ¿Qué opinión está mejor fundamentada con información del texto?",
+    "questionType": "seleccion_multiple",
+    "choices": [
+      "\"El cine de don Alberto dejó una huella importante en la comunidad, como muestra que la sala se llenó en su última función\"",
+      "\"A nadie le importó el cierre del cine\"",
+      "\"El texto trata sobre un partido de fútbol\"",
+      "\"Don Alberto nunca quiso proyectar películas\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Usa un hecho explícito del texto (la sala llena) para fundamentar la interpretación.",
+    "objectiveShortName": "Fundamenta opiniones sobre textos leídos",
+    "strandName": "Comprensión Lectora",
+    "difficulty": "avanzada"
+  }
+]

@@ -35,7 +35,7 @@ function asRpcRow<T>(data: unknown): T | null {
 }
 type AttemptQuestionChoiceRow = {
   question_id: string;
-  position: number;
+  question_position: number;
   prompt: string;
   choices: string[];
   resource_url: string | null;

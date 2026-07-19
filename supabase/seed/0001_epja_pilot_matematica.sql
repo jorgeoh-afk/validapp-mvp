@@ -239,8 +239,15 @@ begin
      'Comparación y operatoria (adición, sustracción, multiplicación, división).',
      'Resuelve un problema que involucra comparar o determinar operatoria (adición sustracción, multiplicación, división) con número enteros y/o número racionales.',
      'en_revision', 'Temario VE EPJA D.S. 257 — Educación Matemática, Primer Nivel Medio (2025)', 2025, 6, v_framework_257_id, v_source_id)
-  on conflict (unit_id, level_id, short_name) do update set official_text = excluded.official_text
-  returning id into v_obj_numeros_1_id;
+  on conflict (unit_id, level_id, short_name) do update set official_text = excluded.official_text;
+
+  -- El insert de arriba trae 7 filas, así que `returning ... into` (que
+  -- exige una sola fila) no sirve para capturar el id de un objetivo en
+  -- particular -- se resuelve con un select aparte por su short_name.
+  select id into v_obj_numeros_1_id
+    from public.learning_objectives
+    where unit_id = v_unit_numeros_id and level_id = v_level_id
+      and short_name = 'Números enteros en contextos cotidianos';
 
   -- Eje: Álgebra y Funciones (5 objetivos)
   insert into public.learning_objectives (unit_id, level_id, short_name, description, official_text, status, curricular_source, reference_year, order_index, framework_id, source_id)

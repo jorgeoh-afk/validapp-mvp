@@ -85,7 +85,7 @@ describe("startEssayAttempt", () => {
             data: [
               {
                 question_id: "q1",
-                position: 0,
+                question_position: 0,
                 prompt: "P1",
                 choices: ["a", "b"],
                 resource_url: null,
@@ -93,7 +93,7 @@ describe("startEssayAttempt", () => {
               },
               {
                 question_id: "q2",
-                position: 1,
+                question_position: 1,
                 prompt: "P2",
                 choices: ["a", "b", "c"],
                 resource_url: null,
@@ -194,7 +194,7 @@ describe("getAttemptView", () => {
           data: [
             {
               question_id: "q1",
-              position: 0,
+              question_position: 0,
               prompt: "¿Cuánto es 2+2?",
               choices: ["3", "4"],
               resource_url: null,

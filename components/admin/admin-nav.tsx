@@ -20,6 +20,7 @@ const NAV_GROUPS: NavGroup[] = [
       { href: "/admin/lecciones", label: "Lecciones" },
       { href: "/admin/importar-temario", label: "Importar temario completo" },
       { href: "/admin/preguntas", label: "Preguntas" },
+      { href: "/admin/revision-preguntas", label: "Revisión de preguntas IA" },
       { href: "/admin/resultados", label: "Resultados" },
       { href: "/admin/ensayos", label: "Ensayos" },
       { href: "/admin/cobertura", label: "Cobertura curricular" },

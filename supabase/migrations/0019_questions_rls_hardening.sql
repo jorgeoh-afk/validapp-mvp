@@ -67,7 +67,7 @@ create policy "questions_select_admin" on public.questions for select
 create or replace function public.get_attempt_question_choices(p_attempt_id uuid)
 returns table (
   question_id uuid,
-  position int,
+  question_position int,
   prompt text,
   choices jsonb,
   resource_url text,
@@ -78,6 +78,10 @@ security definer
 set search_path = public
 stable
 as $$
+  -- `position` (sin calificar) no se puede usar como nombre de columna en
+  -- `returns table`: es palabra reservada del parser de Postgres en ese
+  -- contexto (aunque sí es válida como nombre de columna de tabla normal,
+  -- ver `eq.position` más abajo). Por eso el alias `question_position`.
   select q.id, eq.position, q.prompt, q.choices, q.resource_url, q.points
   from public.essay_attempts a
   join public.essay_questions eq on eq.essay_id = a.essay_id

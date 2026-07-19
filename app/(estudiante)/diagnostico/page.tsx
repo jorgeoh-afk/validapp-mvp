@@ -1,37 +1,62 @@
 import Link from "next/link";
+import { ArrowLeft, ChevronRight, ClipboardCheck } from "lucide-react";
 import { listSubjects } from "@/lib/data/content";
-import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default async function DiagnosticoPage() {
   const subjects = await listSubjects();
 
   return (
-    <main className="mx-auto max-w-xl px-6 py-12">
-      <Link href="/panel" className="text-sm underline">
-        ← Mi panel
+    <main className="mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-8 sm:px-6 sm:py-12">
+      <Link
+        href="/panel"
+        className="flex w-fit items-center gap-1 text-sm text-muted-foreground underline-offset-4 hover:underline"
+      >
+        <ArrowLeft className="size-4" aria-hidden="true" />
+        Mi panel
       </Link>
-      <h1 className="mt-2 text-xl font-semibold">Diagnóstico</h1>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Elige una asignatura para rendir tu diagnóstico inicial.
-      </p>
 
-      <ul className="mt-6 flex flex-col gap-2">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-xl">Diagnóstico inicial</CardTitle>
+          <CardDescription>
+            Elige una asignatura para rendir tu diagnóstico y recibir una
+            ruta de aprendizaje hecha a tu medida.
+          </CardDescription>
+        </CardHeader>
+      </Card>
+
+      <ul className="flex flex-col gap-3">
         {subjects.map((subject) => (
-          <li
-            key={subject.id}
-            className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
-          >
-            <span>{subject.name}</span>
+          <li key={subject.id}>
             <Link
               href={`/diagnostico/${subject.id}`}
-              className={buttonVariants({ variant: "default", size: "sm" })}
+              className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-4 text-sm font-medium text-foreground transition-colors hover:bg-muted"
             >
-              Rendir diagnóstico
+              <span
+                aria-hidden="true"
+                className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"
+              >
+                <ClipboardCheck className="size-5" />
+              </span>
+              <span className="min-w-0 flex-1 truncate">{subject.name}</span>
+              <span className="shrink-0 text-xs font-medium text-primary">
+                Rendir diagnóstico
+              </span>
+              <ChevronRight
+                className="size-4 shrink-0 text-muted-foreground"
+                aria-hidden="true"
+              />
             </Link>
           </li>
         ))}
         {subjects.length === 0 && (
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-muted-foreground">
             Aún no hay asignaturas disponibles.
           </p>
         )}

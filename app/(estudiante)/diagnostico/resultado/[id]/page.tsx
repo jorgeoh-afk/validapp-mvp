@@ -1,7 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PartyPopper, Target } from "lucide-react";
 import { getDiagnosticResult } from "@/lib/data/diagnostics";
+import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ProgressBar } from "@/components/ui/progress-bar";
+import { cn } from "@/lib/utils";
 
 export default async function ResultadoDiagnosticoPage({
   params,
@@ -18,20 +29,40 @@ export default async function ResultadoDiagnosticoPage({
   );
 
   return (
-    <main className="mx-auto flex max-w-xl flex-col items-center gap-4 px-6 py-16 text-center">
-      <h1 className="text-2xl font-semibold">
-        Resultado — {diagnostic.subjects?.name}
-      </h1>
-      <p className="text-lg">
-        {diagnostic.score} de {diagnostic.total_questions} correctas (
-        {porcentaje}%)
-      </p>
-      {diagnostic.estimated_level?.name && (
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Nivel estimado: <strong>{diagnostic.estimated_level.name}</strong>
-        </p>
-      )}
-      <Link href="/panel" className={buttonVariants({ variant: "outline" })}>
+    <main className="mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-8 sm:px-6 sm:py-12">
+      <Card>
+        <CardHeader className="text-center">
+          <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-primary/10">
+            <PartyPopper className="size-7 text-primary" aria-hidden="true" />
+          </div>
+          <CardTitle className="text-xl">
+            Diagnóstico de {diagnostic.subjects?.name} completado
+          </CardTitle>
+          <CardDescription>
+            Respondiste correctamente {diagnostic.score} de{" "}
+            {diagnostic.total_questions} preguntas.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-4">
+          <ProgressBar value={porcentaje} label="Resultado" />
+          {diagnostic.estimated_level?.name && (
+            <div className="flex justify-center">
+              <Badge className="gap-1.5 px-3 py-1 text-sm">
+                <Target className="size-3.5" aria-hidden="true" />
+                Nivel estimado: {diagnostic.estimated_level.name}
+              </Badge>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      <Link
+        href="/panel"
+        className={cn(
+          buttonVariants({ variant: "default", size: "lg" }),
+          "w-full"
+        )}
+      >
         Volver a mi panel
       </Link>
     </main>

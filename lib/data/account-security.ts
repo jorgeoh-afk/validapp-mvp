@@ -42,12 +42,12 @@
 // - Invalidación de OTRAS sesiones/dispositivos: `_updateUser` (ver mismo
 //   archivo, método `_updateUser`) solo hace `PUT /user` con el nuevo
 //   password y guarda la sesión propia; no llama a `signOut` ni a ningún
-//   endpoint de revocación de otras sesiones. Es decir, el SDK NO cierra
-//   automáticamente las sesiones de otros dispositivos al cambiar la
-//   contraseña. Si se quisiera ese comportamiento, existe
-//   `supabase.auth.signOut({ scope: "others" })`, pero es una llamada
-//   aparte que no se agrega aquí sin definición de producto explícita (ver
-//   resumen entregado al orquestador).
+//   endpoint de revocación de otras sesiones. Por eso, después de un cambio
+//   de contraseña exitoso, se llama explícitamente a
+//   `supabase.auth.signOut({ scope: "others" })`: cierra cualquier otra
+//   sesión activa del mismo usuario (otro navegador/dispositivo) sin tocar
+//   la sesión actual, que es justamente el cliente que acaba de reautenticar
+//   la contraseña actual más arriba.
 //
 // Rate limiting: no se agrega una capa propia de límite de intentos. GoTrue
 // ya modela `over_request_rate_limit` como código de error tipado en el SDK
@@ -151,6 +151,20 @@ export async function updatePassword(
       status: "error",
       message: "No pudimos actualizar tu contraseña. Intenta de nuevo.",
     };
+  }
+
+  // No se bloquea el éxito si esto falla: la contraseña ya quedó cambiada,
+  // que es lo importante para la cuenta. Si el cierre de otras sesiones
+  // falla (p. ej. error de red puntual), se registra pero no se muestra
+  // como error al estudiante — su contraseña sí se actualizó correctamente.
+  const { error: signOutOthersError } = await supabase.auth.signOut({
+    scope: "others",
+  });
+  if (signOutOthersError) {
+    console.error(
+      "No se pudieron cerrar las otras sesiones tras el cambio de contraseña:",
+      signOutOthersError.message
+    );
   }
 
   return { status: "success" };

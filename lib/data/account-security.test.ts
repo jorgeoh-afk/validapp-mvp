@@ -159,6 +159,47 @@ describe("updatePassword", () => {
     expect(updateUserArgs).toEqual({ password: "nuevaSegura1" });
   });
 
+  it("cierra las demás sesiones (scope: others) tras un cambio exitoso", async () => {
+    let signOutArgs: { scope?: string } | null = null;
+    setMock({
+      user: { id: "u1", email: "estudiante@validapp.cl" },
+      auth: {
+        signInWithPassword: () => ({ error: null }),
+        updateUser: () => ({ error: null }),
+        signOut: (args) => {
+          signOutArgs = args;
+          return { error: null };
+        },
+      },
+    });
+
+    const result = await updatePassword(
+      null,
+      formData({ currentPassword: "actual1", newPassword: "nuevaSegura1", confirmPassword: "nuevaSegura1" })
+    );
+
+    expect(result).toEqual({ status: "success" });
+    expect(signOutArgs).toEqual({ scope: "others" });
+  });
+
+  it("igual reporta éxito si falla el cierre de otras sesiones (la contraseña ya cambió)", async () => {
+    setMock({
+      user: { id: "u1", email: "estudiante@validapp.cl" },
+      auth: {
+        signInWithPassword: () => ({ error: null }),
+        updateUser: () => ({ error: null }),
+        signOut: () => ({ error: { message: "network error" } }),
+      },
+    });
+
+    const result = await updatePassword(
+      null,
+      formData({ currentPassword: "actual1", newPassword: "nuevaSegura1", confirmPassword: "nuevaSegura1" })
+    );
+
+    expect(result).toEqual({ status: "success" });
+  });
+
   it("traduce same_password de updateUser a un mensaje específico", async () => {
     setMock({
       user: { id: "u1", email: "estudiante@validapp.cl" },

@@ -82,6 +82,9 @@ export type AuthMockHandlers = {
   updateUser?: (args: {
     password?: string;
   }) => { error?: { message: string; code?: string } | null };
+  signOut?: (args: {
+    scope?: "global" | "local" | "others";
+  }) => { error?: { message: string; code?: string } | null };
 };
 
 export function createSupabaseMock(opts: {
@@ -143,6 +146,11 @@ export function createSupabaseMock(opts: {
         const handler = opts.auth?.updateUser;
         const result = handler ? handler(args) : { error: null };
         return { data: {}, error: result.error ?? null };
+      },
+      signOut: async (args: { scope?: "global" | "local" | "others" } = {}) => {
+        const handler = opts.auth?.signOut;
+        const result = handler ? handler(args) : { error: null };
+        return { error: result.error ?? null };
       },
     },
     from(table: string) {

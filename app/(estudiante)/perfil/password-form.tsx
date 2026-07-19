@@ -106,7 +106,8 @@ export function PasswordForm() {
         {!mismatch && state?.status === "success" && (
           <p className="flex items-center gap-2 rounded-xl bg-success/10 p-3 text-sm text-success">
             <CheckCircle2 className="size-4 shrink-0" aria-hidden="true" />
-            Listo, tu contraseña quedó actualizada.
+            Listo, tu contraseña quedó actualizada. Cerramos tu sesión en
+            otros dispositivos por seguridad.
           </p>
         )}
       </div>

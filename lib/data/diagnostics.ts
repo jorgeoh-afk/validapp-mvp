@@ -155,10 +155,19 @@ export async function submitDiagnostic(
 
 export async function getDiagnosticResult(id: string) {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  // Defensa en profundidad: además de la política RLS `diagnostics_select_own`,
+  // se filtra explícitamente por el dueño del diagnóstico en la query de la
+  // aplicación, para no depender únicamente de RLS.
   const { data } = await supabase
     .from("diagnostics")
     .select("*, subjects(name), estimated_level:levels!estimated_level_id(name)")
     .eq("id", id)
-    .single();
+    .eq("student_id", user.id)
+    .maybeSingle();
   return data;
 }

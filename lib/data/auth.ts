@@ -3,8 +3,19 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import { STUDENT_PREFIXES } from "@/lib/supabase/middleware";
 
 export type AuthFormState = { error: string } | null;
+
+// El middleware agrega `?next=<ruta>` al redirigir a `/login` desde una ruta
+// de estudiante protegida (ver `updateSession`). Se valida que empiece con
+// uno de los prefijos de estudiante conocidos para evitar un "open redirect"
+// (que `next` apunte a un dominio externo o a una ruta de administrador).
+function resolveStudentRedirect(next: string | null): string | null {
+  if (!next || !next.startsWith("/")) return null;
+  if (next.startsWith("//")) return null; // "//evil.com" también es absoluto
+  return STUDENT_PREFIXES.some((prefix) => next.startsWith(prefix)) ? next : null;
+}
 
 export async function signUp(
   _prevState: AuthFormState,
@@ -59,7 +70,12 @@ export async function signIn(
     .eq("id", data.user.id)
     .maybeSingle();
 
-  redirect(profile?.role === "administrador" ? "/admin" : "/panel");
+  if (profile?.role === "administrador") {
+    redirect("/admin");
+  }
+
+  const next = resolveStudentRedirect(String(formData.get("next") ?? ""));
+  redirect(next ?? "/panel");
 }
 
 export async function signOut() {

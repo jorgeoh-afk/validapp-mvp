@@ -21,18 +21,53 @@ function formatTime(totalSeconds: number) {
   return `${minutes}:${String(seconds).padStart(2, "0")}`;
 }
 
+// Al recargar a mitad de un intento, `attempt.questions` ya trae, para cada
+// pregunta, si fue respondida (`answered`) y con qué alternativa
+// (`selectedVisualPosition`/`isCorrect`), calculado en `getAttemptView`
+// (`lib/data/essay-attempts.ts`). Se usa ese estado para no volver a mostrar
+// siempre la pregunta 1 en blanco.
+function findResumeIndex(questions: Attempt["questions"]) {
+  const firstUnanswered = questions.findIndex((q) => !q.answered);
+  return firstUnanswered === -1 ? Math.max(0, questions.length - 1) : firstUnanswered;
+}
+
 export function EssayAttemptForm({ attempt }: { attempt: Attempt }) {
   const router = useRouter();
   const total = attempt.questions.length;
 
-  const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState<number | null>(null);
-  const [revealed, setRevealed] = useState(false);
+  const resumeIndex = findResumeIndex(attempt.questions);
+  const resumeQuestion = attempt.questions[resumeIndex] as
+    | Attempt["questions"][number]
+    | undefined;
+  // Solo el modo "inmediata" revela retroalimentación pregunta a pregunta; en
+  // "al_finalizar" la respuesta guardada avanza directo a la siguiente sin
+  // marcar `revealed`.
+  const resumeRevealed =
+    Boolean(resumeQuestion?.answered) && attempt.feedbackMode === "inmediata";
+
+  const [current, setCurrent] = useState(resumeIndex);
+  const [selected, setSelected] = useState<number | null>(
+    resumeQuestion?.selectedVisualPosition ?? null
+  );
+  const [revealed, setRevealed] = useState(resumeRevealed);
   const [feedback, setFeedback] = useState<{
     correct: boolean;
     correctVisualPosition: number;
     explanation: string | null;
-  } | null>(null);
+  } | null>(() => {
+    if (!resumeRevealed || !resumeQuestion) return null;
+    // No se guarda `correctVisualPosition`/`explanation` de una respuesta ya
+    // calificada, solo `isCorrect`: si acertó, la alternativa correcta es la
+    // que eligió; si no, no se conoce cuál era (se deja sin resaltar ninguna
+    // como correcta en vez de arriesgar mostrar una incorrecta como buena).
+    return {
+      correct: Boolean(resumeQuestion.isCorrect),
+      correctVisualPosition: resumeQuestion.isCorrect
+        ? resumeQuestion.selectedVisualPosition ?? -1
+        : -1,
+      explanation: null,
+    };
+  });
   const [error, setError] = useState<string | null>(null);
   const [isSaving, startSaving] = useTransition();
   const [isFinishing, startFinishing] = useTransition();

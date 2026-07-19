@@ -434,6 +434,40 @@ export async function getAttemptView(attemptId: string): Promise<AttemptView> {
     .maybeSingle();
   if (!attempt || attempt.student_id !== user.id) return null;
 
+  const essay = attempt.essays as unknown as {
+    name: string;
+    feedback_mode: "inmediata" | "al_finalizar";
+    time_limit_minutes: number | null;
+  } | null;
+
+  let status = attempt.status as "en_curso" | "enviado" | "expirado";
+
+  // Defensa en profundidad contra la expiración: hoy `essay-attempt-form.tsx`
+  // entrega el intento por tiempo con un `setInterval` en el cliente, así que
+  // si el estudiante cierra la pestaña antes de que se cumpla el plazo, el
+  // intento queda "en_curso" para siempre. Se repite aquí, en el punto de
+  // lectura, la misma verificación: si ya venció `started_at +
+  // time_limit_minutes`, se cierra reutilizando `submitEssayAttempt` con el
+  // mismo motivo "expirado" que ya usa el corte manual del cliente.
+  if (status === "en_curso" && essay?.time_limit_minutes != null) {
+    const deadline =
+      new Date(attempt.started_at).getTime() + essay.time_limit_minutes * 60_000;
+    if (Date.now() >= deadline) {
+      const closeResult = await submitEssayAttempt(attemptId, "expirado");
+      if ("error" in closeResult) {
+        // No se oculta el error: se deja constancia en el log del servidor.
+        // La vista sigue devolviéndose igual (con el estado que ya traía la
+        // fila), para no romper la pantalla del intento por esto.
+        console.error(
+          `No se pudo cerrar por expiración el intento ${attemptId}:`,
+          closeResult.error
+        );
+      } else {
+        status = "expirado";
+      }
+    }
+  }
+
   const { data: answers } = await supabase
     .from("essay_attempt_answers")
     .select(
@@ -453,12 +487,6 @@ export async function getAttemptView(attemptId: string): Promise<AttemptView> {
   const metaByQuestion = new Map(
     (questionMeta ?? []).map((q) => [q.question_id, q])
   );
-
-  const essay = attempt.essays as unknown as {
-    name: string;
-    feedback_mode: "inmediata" | "al_finalizar";
-    time_limit_minutes: number | null;
-  } | null;
 
   const questions: AttemptQuestionView[] = (answers ?? []).map((a) => {
     const meta = metaByQuestion.get(a.question_id);
@@ -485,7 +513,7 @@ export async function getAttemptView(attemptId: string): Promise<AttemptView> {
     attemptId: attempt.id,
     essayId: attempt.essay_id,
     essayName: essay?.name ?? "",
-    status: attempt.status as "en_curso" | "enviado" | "expirado",
+    status,
     feedbackMode: essay?.feedback_mode ?? "al_finalizar",
     timeLimitMinutes: essay?.time_limit_minutes ?? null,
     startedAt: attempt.started_at,

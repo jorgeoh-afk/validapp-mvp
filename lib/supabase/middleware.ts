@@ -2,7 +2,10 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 const ADMIN_PREFIX = "/admin";
-const STUDENT_PREFIXES = ["/panel", "/diagnostico", "/ruta", "/leccion"];
+// Se exporta para que `signIn` (`lib/data/auth.ts`) valide el parámetro
+// `?next=` con la misma lista, en vez de mantener una copia separada que
+// pueda quedar desincronizada (como pasó con "/ensayos").
+export const STUDENT_PREFIXES = ["/panel", "/diagnostico", "/ruta", "/leccion", "/ensayos"];
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });

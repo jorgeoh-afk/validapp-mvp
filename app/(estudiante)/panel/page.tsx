@@ -11,6 +11,7 @@ import {
   Target,
   Timer,
   Trophy,
+  UserRound,
 } from "lucide-react";
 import { getCurrentProfile } from "@/lib/data/profiles";
 import { signOut } from "@/lib/data/auth";
@@ -482,6 +483,13 @@ export default async function PanelEstudiante() {
             <Sparkles className="size-5 text-primary" aria-hidden="true" />
             Ver progreso
           </a>
+          <Link
+            href="/perfil"
+            className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-4 text-center text-xs font-medium transition-colors hover:bg-muted"
+          >
+            <UserRound className="size-5 text-primary" aria-hidden="true" />
+            Mi perfil
+          </Link>
         </CardContent>
       </Card>
     </main>

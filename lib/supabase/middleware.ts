@@ -5,7 +5,7 @@ const ADMIN_PREFIX = "/admin";
 // Se exporta para que `signIn` (`lib/data/auth.ts`) valide el parámetro
 // `?next=` con la misma lista, en vez de mantener una copia separada que
 // pueda quedar desincronizada (como pasó con "/ensayos").
-export const STUDENT_PREFIXES = ["/panel", "/diagnostico", "/ruta", "/leccion", "/ensayos"];
+export const STUDENT_PREFIXES = ["/panel", "/diagnostico", "/ruta", "/leccion", "/ensayos", "/perfil"];
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });

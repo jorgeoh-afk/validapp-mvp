@@ -26,7 +26,7 @@ function formatTime(totalSeconds: number) {
 // (`selectedVisualPosition`/`isCorrect`), calculado en `getAttemptView`
 // (`lib/data/essay-attempts.ts`). Se usa ese estado para no volver a mostrar
 // siempre la pregunta 1 en blanco.
-function findResumeIndex(questions: Attempt["questions"]) {
+export function findResumeIndex(questions: Attempt["questions"]) {
   const firstUnanswered = questions.findIndex((q) => !q.answered);
   return firstUnanswered === -1 ? Math.max(0, questions.length - 1) : firstUnanswered;
 }

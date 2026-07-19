@@ -215,6 +215,150 @@ describe("getAttemptView", () => {
   });
 });
 
+// Prueba de regresión para el bug de QA "la expiración por tiempo límite
+// dependía únicamente del reloj del cliente" (ver commit 295a0bd):
+// `getAttemptView` ahora repite la verificación de vencimiento en el
+// servidor y cierra el intento (reutilizando `submitEssayAttempt` con motivo
+// "expirado") si `started_at + time_limit_minutes` ya pasó, en vez de
+// confiar solo en el `setInterval` del cliente.
+describe("getAttemptView - expiración server-side", () => {
+  it("cierra como expirado un intento en_curso cuyo tiempo límite ya venció", async () => {
+    const updatePayloads: unknown[] = [];
+
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        essay_attempts: (state) => {
+          if (state.method === "update") {
+            updatePayloads.push(state.payload);
+            return { data: null, error: null };
+          }
+          // Mismo intento devuelto tanto para la lectura de `getAttemptView`
+          // como para la relectura que hace `submitEssayAttempt` al
+          // cerrarlo: `started_at` muy en el pasado + un límite de 30
+          // minutos, así que el plazo ya venció sin importar cuándo corra
+          // esta prueba.
+          return {
+            data: {
+              id: "attempt-1",
+              essay_id: "essay-1",
+              student_id: "student-1",
+              status: "en_curso",
+              started_at: "2020-01-01T00:00:00Z",
+              essays: {
+                name: "Ensayo 1",
+                feedback_mode: "al_finalizar",
+                time_limit_minutes: 30,
+              },
+            },
+          };
+        },
+        essay_attempt_answers: () => ({
+          data: [
+            {
+              id: "answer-1",
+              question_id: "q1",
+              display_position: 0,
+              shuffled_choice_order: [0, 1],
+              selected_index: 0,
+              is_correct: true,
+            },
+          ],
+        }),
+      },
+      rpc: {
+        get_attempt_question_choices: () => ({
+          data: [
+            {
+              question_id: "q1",
+              question_position: 0,
+              prompt: "P1",
+              choices: ["a", "b"],
+              resource_url: null,
+              points: 1,
+            },
+          ],
+        }),
+      },
+    });
+
+    const view = await getAttemptView("attempt-1");
+
+    expect(view?.status).toBe("expirado");
+    // El cierre se hizo a través de la misma vía que el corte manual del
+    // cliente: un update a essay_attempts con status "expirado".
+    expect(updatePayloads).toHaveLength(1);
+    expect(updatePayloads[0]).toMatchObject({ status: "expirado" });
+    expect(
+      callsToTable(mock.calls, "essay_attempts").filter((c) => c.type === "update")
+    ).toHaveLength(1);
+  });
+
+  it("mantiene en_curso un intento cuyo tiempo límite todavía no vence", async () => {
+    const updatePayloads: unknown[] = [];
+
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        essay_attempts: (state) => {
+          if (state.method === "update") {
+            updatePayloads.push(state.payload);
+            return { data: null, error: null };
+          }
+          return {
+            data: {
+              id: "attempt-1",
+              essay_id: "essay-1",
+              student_id: "student-1",
+              status: "en_curso",
+              started_at: new Date().toISOString(), // recién empezado
+              essays: {
+                name: "Ensayo 1",
+                feedback_mode: "al_finalizar",
+                time_limit_minutes: 60,
+              },
+            },
+          };
+        },
+        essay_attempt_answers: () => ({
+          data: [
+            {
+              id: "answer-1",
+              question_id: "q1",
+              display_position: 0,
+              shuffled_choice_order: [0, 1],
+              selected_index: null,
+              is_correct: null,
+            },
+          ],
+        }),
+      },
+      rpc: {
+        get_attempt_question_choices: () => ({
+          data: [
+            {
+              question_id: "q1",
+              question_position: 0,
+              prompt: "P1",
+              choices: ["a", "b"],
+              resource_url: null,
+              points: 1,
+            },
+          ],
+        }),
+      },
+    });
+
+    const view = await getAttemptView("attempt-1");
+
+    expect(view?.status).toBe("en_curso");
+    expect(updatePayloads).toHaveLength(0);
+    expect(
+      callsToTable(mock.calls, "essay_attempts").filter((c) => c.type === "update")
+    ).toHaveLength(0);
+  });
+});
+
 describe("submitEssayAnswer", () => {
   it("traduce la posición visual y delega la calificación en grade_essay_answer", async () => {
     const mock = setMock({

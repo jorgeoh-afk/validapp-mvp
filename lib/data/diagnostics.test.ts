@@ -29,7 +29,9 @@ vi.mock("@/lib/data/gamification", () => ({
   recordDiagnosticCompleted: vi.fn(async () => {}),
 }));
 
-const { getDiagnosticQuestions, submitDiagnostic } = await import("./diagnostics");
+const { getDiagnosticQuestions, submitDiagnostic, getDiagnosticResult } = await import(
+  "./diagnostics"
+);
 
 function setMock(opts: {
   user?: { id: string } | null;
@@ -144,5 +146,56 @@ describe("submitDiagnostic", () => {
 
     const result = await submitDiagnostic(null, formData);
     expect(result).toEqual({ error: "No se pudieron cargar las preguntas." });
+  });
+});
+
+// Prueba de regresión para el bug de QA "el resultado de diagnóstico
+// dependía solo de RLS sin filtro explícito de dueño" (ver commit 295a0bd).
+// `getDiagnosticResult` agrega `.eq("student_id", user.id)` además de la
+// política RLS `diagnostics_select_own`; este mock simula la base de datos
+// real filtrando por esa misma columna, para verificar que el código de la
+// aplicación efectivamente la envía en la consulta y no confía únicamente en
+// RLS.
+describe("getDiagnosticResult", () => {
+  const diagnosticRow = {
+    id: "diag-1",
+    student_id: "owner-1",
+    subject_id: "subject-1",
+    score: 5,
+    total_questions: 10,
+    subjects: { name: "Matemática" },
+    estimated_level: { name: "Nivel 1" },
+  };
+
+  function diagnosticsHandler(state: { filters: Record<string, unknown> }) {
+    // Simula el filtro `student_id` que aplicaría RLS/la query real: solo
+    // devuelve la fila si el filtro coincide con el dueño real del
+    // diagnóstico ("owner-1"), sin importar qué id de estudiante haya sido
+    // pedido.
+    if (state.filters.id !== "diag-1" || state.filters.student_id !== "owner-1") {
+      return { data: null };
+    }
+    return { data: diagnosticRow };
+  }
+
+  it("devuelve null si el diagnóstico pedido pertenece a otro estudiante", async () => {
+    const mock = setMock({
+      user: { id: "student-2" }, // autenticado como alguien distinto del dueño
+      from: { diagnostics: diagnosticsHandler },
+    });
+
+    const result = await getDiagnosticResult("diag-1");
+    expect(result).toBeNull();
+    expect(callsToTable(mock.calls, "diagnostics")).toHaveLength(1);
+  });
+
+  it("devuelve el diagnóstico cuando el estudiante autenticado es el dueño", async () => {
+    setMock({
+      user: { id: "owner-1" },
+      from: { diagnostics: diagnosticsHandler },
+    });
+
+    const result = await getDiagnosticResult("diag-1");
+    expect(result).toMatchObject({ id: "diag-1", student_id: "owner-1" });
   });
 });

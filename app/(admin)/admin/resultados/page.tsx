@@ -5,7 +5,8 @@ import {
 } from "@/lib/data/admin-results";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ProgressBar } from "@/components/ui/progress-bar";
+import { PercentCell } from "@/components/admin/percent-cell";
+import { StudentResultsTable } from "./student-results-table";
 
 const ESSAY_STATUS_LABEL: Record<string, string> = {
   borrador: "Borrador",
@@ -27,19 +28,6 @@ const ESSAY_STATUS_VARIANT: Record<
   finalizado: "success",
   archivado: "destructive",
 };
-
-/** Celda compacta que muestra el porcentaje como texto y como barra. */
-function PercentCell({ value }: { value: number | null }) {
-  if (value === null) {
-    return <span className="text-muted-foreground">—</span>;
-  }
-  return (
-    <div className="flex items-center gap-2">
-      <span className="tabular-nums">{value}%</span>
-      <ProgressBar value={value} showValue={false} size="sm" className="w-20" />
-    </div>
-  );
-}
 
 export default async function ResultadosPage() {
   const [students, subjects, essays] = await Promise.all([
@@ -100,47 +88,7 @@ export default async function ResultadosPage() {
           <CardTitle>Por estudiante</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[600px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-border text-left">
-                  <th className="py-2 pr-4">Estudiante</th>
-                  <th className="py-2 pr-4">Diagnósticos</th>
-                  <th className="py-2 pr-4">Promedio</th>
-                  <th className="py-2 pr-4">Lecciones completadas</th>
-                  <th className="py-2 pr-4">Ensayos rendidos</th>
-                  <th className="py-2 pr-4">Promedio ensayos</th>
-                  <th className="py-2 pr-4">Puntos</th>
-                  <th className="py-2 pr-4">Racha</th>
-                </tr>
-              </thead>
-              <tbody>
-                {students.map((student) => (
-                  <tr key={student.id} className="border-b border-border/50">
-                    <td className="py-2 pr-4">{student.fullName}</td>
-                    <td className="py-2 pr-4">{student.diagnosticsCount}</td>
-                    <td className="py-2 pr-4">
-                      <PercentCell value={student.diagnosticsAvgPercent} />
-                    </td>
-                    <td className="py-2 pr-4">{student.lessonsCompleted}</td>
-                    <td className="py-2 pr-4">{student.essaysCompleted}</td>
-                    <td className="py-2 pr-4">
-                      <PercentCell value={student.essaysAvgPercent} />
-                    </td>
-                    <td className="py-2 pr-4">{student.totalPoints}</td>
-                    <td className="py-2 pr-4">{student.currentStreak} días</td>
-                  </tr>
-                ))}
-                {students.length === 0 && (
-                  <tr>
-                    <td colSpan={8} className="py-4 text-muted-foreground">
-                      Aún no hay estudiantes registrados.
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
+          <StudentResultsTable students={students} />
         </CardContent>
       </Card>
 

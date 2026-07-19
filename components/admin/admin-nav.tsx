@@ -22,6 +22,7 @@ const NAV_GROUPS: NavGroup[] = [
       { href: "/admin/preguntas", label: "Preguntas" },
       { href: "/admin/revision-preguntas", label: "Revisión de preguntas IA" },
       { href: "/admin/resultados", label: "Resultados" },
+      { href: "/admin/leads", label: "Interesados" },
       { href: "/admin/ensayos", label: "Ensayos" },
       { href: "/admin/cobertura", label: "Cobertura curricular" },
       { href: "/admin/estadisticas", label: "Estadísticas de preguntas" },

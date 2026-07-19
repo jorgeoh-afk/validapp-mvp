@@ -50,3 +50,48 @@ export async function submitLead(
   }
   return { success: true };
 }
+
+export type LeadRow = {
+  id: string;
+  name: string;
+  age: number;
+  email: string;
+  phone: string;
+  region: string;
+  level: string;
+  consentComplete: boolean;
+  createdAt: string;
+};
+
+/**
+ * Lista de interesados registrados en el formulario público de la landing.
+ * Solo lectura: pensada para el panel administrativo (protegido por RLS con
+ * `is_admin()` y por el layout de /admin). No expone estos datos a
+ * componentes cliente ni los registra en consola.
+ */
+export async function getLeads(): Promise<LeadRow[]> {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("leads")
+    .select(
+      "id, name, age, email, phone, region, level, consent_data, consent_guardian, created_at"
+    )
+    .order("created_at", { ascending: false });
+
+  if (error || !data) {
+    return [];
+  }
+
+  return data.map((lead) => ({
+    id: lead.id,
+    name: lead.name,
+    age: lead.age,
+    email: lead.email,
+    phone: lead.phone,
+    region: lead.region,
+    level: lead.level,
+    consentComplete: lead.consent_data === true && lead.consent_guardian === true,
+    createdAt: lead.created_at,
+  }));
+}

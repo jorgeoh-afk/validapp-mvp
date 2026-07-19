@@ -48,32 +48,59 @@ export type DeleteImpact = {
 
 /**
  * Cuenta cuántas filas dependientes (lecciones, preguntas, grandes ideas,
- * conocimientos esenciales) se perderían por el `on delete cascade` real de
- * la migración 0002/0014 si se elimina esta asignatura. Se usa para mostrar
- * el conteo real en el diálogo de confirmación antes de borrar.
+ * conocimientos esenciales, ejes con sus unidades y objetivos de
+ * aprendizaje) se perderían por el `on delete cascade` real de las
+ * migraciones 0002/0010/0014 si se elimina esta asignatura. Se usa para
+ * mostrar el conteo real en el diálogo de confirmación antes de borrar.
+ *
+ * `strands.subject_id` (0010) es `on delete cascade`, y de ahí en cadena
+ * `units.strand_id` y `learning_objectives.unit_id` también lo son (ver
+ * `getStrandDeleteImpact`) — sin este conteo, el diálogo subestimaba el
+ * impacto real de borrar una asignatura.
  */
 export async function getSubjectDeleteImpact(
   subjectId: string
 ): Promise<DeleteImpact> {
   const supabase = await createClient();
-  const [lessons, questions, bigIdeas, essentialKnowledge] = await Promise.all([
-    supabase
-      .from("lessons")
+  const [lessons, questions, bigIdeas, essentialKnowledge, strands] =
+    await Promise.all([
+      supabase
+        .from("lessons")
+        .select("id", { count: "exact", head: true })
+        .eq("subject_id", subjectId),
+      supabase
+        .from("questions")
+        .select("id", { count: "exact", head: true })
+        .eq("subject_id", subjectId),
+      supabase
+        .from("big_ideas")
+        .select("id", { count: "exact", head: true })
+        .eq("subject_id", subjectId),
+      supabase
+        .from("essential_knowledge")
+        .select("id", { count: "exact", head: true })
+        .eq("subject_id", subjectId),
+      supabase.from("strands").select("id").eq("subject_id", subjectId),
+    ]);
+  const strandIds = (strands.data ?? []).map((s) => s.id);
+
+  let unitIds: string[] = [];
+  if (strandIds.length > 0) {
+    const { data: units } = await supabase
+      .from("units")
+      .select("id")
+      .in("strand_id", strandIds);
+    unitIds = (units ?? []).map((u) => u.id);
+  }
+
+  let objectivesCount = 0;
+  if (unitIds.length > 0) {
+    const { count } = await supabase
+      .from("learning_objectives")
       .select("id", { count: "exact", head: true })
-      .eq("subject_id", subjectId),
-    supabase
-      .from("questions")
-      .select("id", { count: "exact", head: true })
-      .eq("subject_id", subjectId),
-    supabase
-      .from("big_ideas")
-      .select("id", { count: "exact", head: true })
-      .eq("subject_id", subjectId),
-    supabase
-      .from("essential_knowledge")
-      .select("id", { count: "exact", head: true })
-      .eq("subject_id", subjectId),
-  ]);
+      .in("unit_id", unitIds);
+    objectivesCount = count ?? 0;
+  }
 
   return {
     counts: [
@@ -81,6 +108,9 @@ export async function getSubjectDeleteImpact(
       { label: "preguntas", value: questions.count ?? 0 },
       { label: "grandes ideas", value: bigIdeas.count ?? 0 },
       { label: "conocimientos esenciales", value: essentialKnowledge.count ?? 0 },
+      { label: "ejes temáticos", value: strandIds.length },
+      { label: "unidades", value: unitIds.length },
+      { label: "objetivos de aprendizaje", value: objectivesCount },
     ],
   };
 }

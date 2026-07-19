@@ -125,7 +125,7 @@ export async function approveQuestionForExam(formData: FormData) {
   const levelId = String(formData.get("levelId") ?? "");
   if (!id) return;
   const supabase = await createClient();
-  await supabase
+  const { error } = await supabase
     .from("questions")
     .update({
       validation_status: "approved_for_exam",
@@ -133,6 +133,7 @@ export async function approveQuestionForExam(formData: FormData) {
       updated_at: new Date().toISOString(),
     })
     .eq("id", id);
+  if (error) console.error(`approveQuestionForExam(${id}) falló:`, error.message);
   revalidatePath("/admin/revision-preguntas");
   if (subjectId && levelId) {
     revalidatePath(`/admin/revision-preguntas?subjectId=${subjectId}&levelId=${levelId}`);
@@ -150,7 +151,7 @@ export async function approveAllQuestionsForExam(formData: FormData) {
   const levelId = String(formData.get("levelId") ?? "");
   if (!subjectId || !levelId) return;
   const supabase = await createClient();
-  await supabase
+  const { error } = await supabase
     .from("questions")
     .update({
       validation_status: "approved_for_exam",
@@ -161,6 +162,9 @@ export async function approveAllQuestionsForExam(formData: FormData) {
     .eq("level_id", levelId)
     .eq("source_type", "validapp_original")
     .in("validation_status", ["automatically_validated", "ai_generated_review_required"]);
+  if (error) {
+    console.error(`approveAllQuestionsForExam(${subjectId}, ${levelId}) falló:`, error.message);
+  }
   revalidatePath("/admin/revision-preguntas");
   revalidatePath(`/admin/revision-preguntas?subjectId=${subjectId}&levelId=${levelId}`);
 }
@@ -172,13 +176,14 @@ export async function rejectQuestion(formData: FormData) {
   const levelId = String(formData.get("levelId") ?? "");
   if (!id) return;
   const supabase = await createClient();
-  await supabase
+  const { error } = await supabase
     .from("questions")
     .update({
       is_active: false,
       updated_at: new Date().toISOString(),
     })
     .eq("id", id);
+  if (error) console.error(`rejectQuestion(${id}) falló:`, error.message);
   revalidatePath("/admin/revision-preguntas");
   if (subjectId && levelId) {
     revalidatePath(`/admin/revision-preguntas?subjectId=${subjectId}&levelId=${levelId}`);

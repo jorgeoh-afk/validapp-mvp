@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, GraduationCap, Mail } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentProfile } from "@/lib/data/profiles";
 import { buttonVariants } from "@/components/ui/button";
@@ -60,7 +60,7 @@ export default async function PerfilEstudiante() {
         <CardHeader>
           <CardTitle className="text-xl">Mi perfil</CardTitle>
           <CardDescription>
-            Revisa tus datos y actualiza tu nombre cuando lo necesites.
+            Revisa y actualiza tus datos cuando lo necesites.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
@@ -77,39 +77,27 @@ export default async function PerfilEstudiante() {
             </div>
           </div>
 
-          {profile.target_level && (
-            <div className="flex items-center gap-3 rounded-xl border border-border bg-muted/40 px-4 py-3">
-              <GraduationCap
-                className="size-4 shrink-0 text-muted-foreground"
-                aria-hidden="true"
-              />
-              <div className="flex min-w-0 flex-col">
-                <span className="text-xs text-muted-foreground">
-                  Nivel que estás preparando
-                </span>
-                <span className="truncate text-sm font-medium">
-                  {profile.target_level}
-                </span>
-              </div>
-            </div>
-          )}
-
           <p className="text-xs text-muted-foreground">
-            El correo y el nivel se muestran solo como información. Si
-            necesitas cambiarlos, escríbenos a soporte.
+            El correo se muestra solo como información. Si necesitas
+            cambiarlo, escríbenos a soporte.
           </p>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Editar nombre</CardTitle>
+          <CardTitle className="text-base">Editar mis datos</CardTitle>
           <CardDescription>
-            Así te vamos a mostrar en tu panel y en tus actividades.
+            Tu nombre así te lo vamos a mostrar en tu panel y actividades. El
+            nivel es solo para que tengamos contexto de lo que estás
+            preparando.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ProfileForm fullName={profile.full_name ?? ""} />
+          <ProfileForm
+            fullName={profile.full_name ?? ""}
+            targetLevel={profile.target_level ?? ""}
+          />
         </CardContent>
       </Card>
 

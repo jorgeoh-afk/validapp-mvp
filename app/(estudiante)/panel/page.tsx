@@ -471,11 +471,13 @@ export default async function PanelEstudiante() {
             <ClipboardList className="size-5 text-primary" aria-hidden="true" />
             Ensayos
           </Link>
-          <span className="flex flex-col items-center gap-1.5 rounded-xl border border-dashed border-border bg-muted/40 px-3 py-4 text-center text-xs font-medium text-muted-foreground">
-            <BookOpenCheck className="size-5" aria-hidden="true" />
+          <Link
+            href="/errores"
+            className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-4 text-center text-xs font-medium transition-colors hover:bg-muted"
+          >
+            <BookOpenCheck className="size-5 text-primary" aria-hidden="true" />
             Revisar errores
-            <span className="text-[0.65rem]">Próximamente</span>
-          </span>
+          </Link>
           <a
             href="#progreso-asignaturas"
             className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-4 text-center text-xs font-medium transition-colors hover:bg-muted"

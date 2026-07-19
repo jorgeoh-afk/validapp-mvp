@@ -7,6 +7,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import type { DeleteImpact } from "@/lib/data/content";
 
 export type FormState = { error: string } | null;
 
@@ -62,10 +63,11 @@ function parseRecord(formData: FormData): ParsedRecord {
 
 export async function listBigIdeas() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("big_ideas")
     .select("*, subjects(name), levels(name)")
     .order("order_index");
+  if (error) console.error("listBigIdeas falló:", error.message);
   return data ?? [];
 }
 
@@ -87,6 +89,19 @@ export async function upsertBigIdea(
   return null;
 }
 
+/**
+ * Ninguna tabla referencia `big_ideas` como FK (revisado en 0014, 0016,
+ * 0021, 0023): eliminar una gran idea no tiene dependientes reales. Se
+ * mantiene la función y el diálogo de confirmación por consistencia y como
+ * capa extra de "¿estás seguro?", aunque `counts` quede siempre vacío.
+ */
+export async function getBigIdeaDeleteImpact(
+  bigIdeaId: string
+): Promise<DeleteImpact> {
+  void bigIdeaId;
+  return { counts: [] };
+}
+
 export async function deleteBigIdea(
   _prevState: FormState,
   formData: FormData
@@ -103,10 +118,11 @@ export async function deleteBigIdea(
 
 export async function listEssentialKnowledge() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("essential_knowledge")
     .select("*, subjects(name), levels(name)")
     .order("order_index");
+  if (error) console.error("listEssentialKnowledge falló:", error.message);
   return data ?? [];
 }
 
@@ -126,6 +142,29 @@ export async function upsertEssentialKnowledge(
   if (error) return { error: error.message };
   revalidatePath("/admin/conocimientos-esenciales");
   return null;
+}
+
+/**
+ * `essential_knowledge_learning_objectives.essential_knowledge_id` (0014) es
+ * `on delete cascade`: borra el vínculo con objetivos de aprendizaje (fila
+ * puente), no los objetivos en sí. En la práctica esta tabla se dejó vacía
+ * a propósito para el set de datos actual de Media (ver comentario en la
+ * migración 0014), así que hoy este conteo siempre debería dar 0.
+ */
+export async function getEssentialKnowledgeDeleteImpact(
+  essentialKnowledgeId: string
+): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("essential_knowledge_learning_objectives")
+    .select("learning_objective_id", { count: "exact", head: true })
+    .eq("essential_knowledge_id", essentialKnowledgeId);
+
+  return {
+    counts: [
+      { label: "vínculos con objetivos de aprendizaje", value: count ?? 0 },
+    ],
+  };
 }
 
 export async function deleteEssentialKnowledge(

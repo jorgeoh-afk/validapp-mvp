@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { listSkills, deleteSkill } from "@/lib/data/curriculum";
-import { DeleteButton } from "@/components/admin/delete-button";
+import {
+  listSkills,
+  deleteSkill,
+  getSkillDeleteImpact,
+} from "@/lib/data/curriculum";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { SkillForm } from "./skill-form";
 
 export default async function HabilidadesPage({
@@ -47,7 +51,12 @@ export default async function HabilidadesPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={skill.id} action={deleteSkill} />
+              <ConfirmDeleteDialog
+                id={skill.id}
+                itemLabel={`la habilidad "${skill.name}"`}
+                action={deleteSkill}
+                loadImpact={getSkillDeleteImpact}
+              />
             </div>
           </li>
         ))}

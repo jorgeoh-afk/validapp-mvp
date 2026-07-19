@@ -6,6 +6,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import type { DeleteImpact } from "@/lib/data/content";
 
 export type FormState = { error: string } | null;
 
@@ -13,10 +14,11 @@ export type FormState = { error: string } | null;
 
 export async function listPrograms() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("programs")
     .select("*")
     .order("order_index");
+  if (error) console.error("listPrograms falló:", error.message);
   return data ?? [];
 }
 
@@ -42,6 +44,32 @@ export async function upsertProgram(
   return null;
 }
 
+/**
+ * `levels.program_id` (0010) es `on delete set null`, no `cascade`: eliminar
+ * un programa NO borra los cursos clasificados en él, solo los deja sin
+ * programa asignado. Por eso `counts` queda vacío (nada se elimina de
+ * verdad) y el conteo de cursos afectados se muestra como `note`
+ * informativo, no como parte de la lista "esto también eliminará".
+ */
+export async function getProgramDeleteImpact(
+  programId: string
+): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("levels")
+    .select("id", { count: "exact", head: true })
+    .eq("program_id", programId);
+  const affected = count ?? 0;
+
+  return {
+    counts: [],
+    note:
+      affected > 0
+        ? `${affected} curso(s) actualmente clasificados en este programa quedarán sin programa asignado (no se eliminan).`
+        : null,
+  };
+}
+
 export async function deleteProgram(
   _prevState: FormState,
   formData: FormData
@@ -58,10 +86,11 @@ export async function deleteProgram(
 
 export async function listEducationLevels() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("education_levels")
     .select("*")
     .order("order_index");
+  if (error) console.error("listEducationLevels falló:", error.message);
   return data ?? [];
 }
 
@@ -85,6 +114,29 @@ export async function upsertEducationLevel(
   if (error) return { error: error.message };
   revalidatePath("/admin/niveles-educativos");
   return null;
+}
+
+/**
+ * Mismo caso que `getProgramDeleteImpact`: `levels.education_level_id`
+ * (0010) es `on delete set null`, no `cascade`.
+ */
+export async function getEducationLevelDeleteImpact(
+  educationLevelId: string
+): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("levels")
+    .select("id", { count: "exact", head: true })
+    .eq("education_level_id", educationLevelId);
+  const affected = count ?? 0;
+
+  return {
+    counts: [],
+    note:
+      affected > 0
+        ? `${affected} curso(s) actualmente clasificados en este nivel educativo quedarán sin nivel educativo asignado (no se eliminan).`
+        : null,
+  };
 }
 
 export async function deleteEducationLevel(
@@ -133,10 +185,11 @@ export async function classifyLevel(
 
 export async function listStrands() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("strands")
     .select("*, subjects(name)")
     .order("order_index");
+  if (error) console.error("listStrands falló:", error.message);
   return data ?? [];
 }
 
@@ -172,6 +225,69 @@ export async function upsertStrand(
   return null;
 }
 
+/**
+ * `units.strand_id` (0010) es `on delete cascade`, y a su vez
+ * `learning_objectives.unit_id` (0010) también es `cascade`: eliminar un eje
+ * borra en cadena sus unidades y los objetivos de aprendizaje de esas
+ * unidades. `essay_strand_distribution.strand_id` (0016) también es
+ * `cascade` directo sobre el eje (borra la cuota configurada en ensayos, NO
+ * los `essay_questions`/`essay_attempts` ya generados/rendidos, que
+ * referencian `question_id`, no `strand_id`).
+ *
+ * `questions.learning_objective_id` (0011) es `on delete set null`: las
+ * preguntas de los objetivos borrados NO se eliminan, solo pierden ese
+ * vínculo. Se informa aparte como `note`.
+ */
+export async function getStrandDeleteImpact(
+  strandId: string
+): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { data: units } = await supabase
+    .from("units")
+    .select("id")
+    .eq("strand_id", strandId);
+  const unitIds = (units ?? []).map((u) => u.id);
+
+  let objectiveIds: string[] = [];
+  if (unitIds.length > 0) {
+    const { data: objectives } = await supabase
+      .from("learning_objectives")
+      .select("id")
+      .in("unit_id", unitIds);
+    objectiveIds = (objectives ?? []).map((o) => o.id);
+  }
+
+  const [essayStrandDist, unlinkedQuestions] = await Promise.all([
+    supabase
+      .from("essay_strand_distribution")
+      .select("id", { count: "exact", head: true })
+      .eq("strand_id", strandId),
+    objectiveIds.length > 0
+      ? supabase
+          .from("questions")
+          .select("id", { count: "exact", head: true })
+          .in("learning_objective_id", objectiveIds)
+      : Promise.resolve({ count: 0 }),
+  ]);
+
+  const unlinkedQuestionsCount = unlinkedQuestions.count ?? 0;
+
+  return {
+    counts: [
+      { label: "unidades", value: unitIds.length },
+      { label: "objetivos de aprendizaje", value: objectiveIds.length },
+      {
+        label: "distribuciones de ensayo por eje configuradas",
+        value: essayStrandDist.count ?? 0,
+      },
+    ],
+    note:
+      unlinkedQuestionsCount > 0
+        ? `Además, ${unlinkedQuestionsCount} pregunta(s) quedarán sin objetivo de aprendizaje asociado (no se eliminan).`
+        : null,
+  };
+}
+
 export async function deleteStrand(
   _prevState: FormState,
   formData: FormData
@@ -188,10 +304,11 @@ export async function deleteStrand(
 
 export async function listUnits() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("units")
     .select("*, strands(name, subjects(name))")
     .order("order_index");
+  if (error) console.error("listUnits falló:", error.message);
   return data ?? [];
 }
 
@@ -227,6 +344,40 @@ export async function upsertUnit(
   return null;
 }
 
+/**
+ * `learning_objectives.unit_id` (0010) es `on delete cascade`. Igual que en
+ * `getStrandDeleteImpact`, las preguntas que apuntaban a esos objetivos solo
+ * pierden el vínculo (`questions.learning_objective_id` es `set null`,
+ * 0011), no se eliminan.
+ */
+export async function getUnitDeleteImpact(unitId: string): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { data: objectives } = await supabase
+    .from("learning_objectives")
+    .select("id")
+    .eq("unit_id", unitId);
+  const objectiveIds = (objectives ?? []).map((o) => o.id);
+
+  let unlinkedQuestionsCount = 0;
+  if (objectiveIds.length > 0) {
+    const { count } = await supabase
+      .from("questions")
+      .select("id", { count: "exact", head: true })
+      .in("learning_objective_id", objectiveIds);
+    unlinkedQuestionsCount = count ?? 0;
+  }
+
+  return {
+    counts: [
+      { label: "objetivos de aprendizaje", value: objectiveIds.length },
+    ],
+    note:
+      unlinkedQuestionsCount > 0
+        ? `Además, ${unlinkedQuestionsCount} pregunta(s) quedarán sin objetivo de aprendizaje asociado (no se eliminan).`
+        : null,
+  };
+}
+
 export async function deleteUnit(
   _prevState: FormState,
   formData: FormData
@@ -243,7 +394,11 @@ export async function deleteUnit(
 
 export async function listSkills() {
   const supabase = await createClient();
-  const { data } = await supabase.from("skills").select("*").order("name");
+  const { data, error } = await supabase
+    .from("skills")
+    .select("*")
+    .order("name");
+  if (error) console.error("listSkills falló:", error.message);
   return data ?? [];
 }
 
@@ -268,6 +423,40 @@ export async function upsertSkill(
   return null;
 }
 
+/**
+ * `learning_objective_skills.skill_id` (0010) es `on delete cascade`: borra
+ * la asociación (fila puente), no el objetivo de aprendizaje en sí.
+ * `questions.skill_id` (0011) es `on delete set null`: las preguntas que
+ * usan esta habilidad solo pierden el vínculo, no se eliminan.
+ */
+export async function getSkillDeleteImpact(skillId: string): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const [links, unlinkedQuestions] = await Promise.all([
+    supabase
+      .from("learning_objective_skills")
+      .select("learning_objective_id", { count: "exact", head: true })
+      .eq("skill_id", skillId),
+    supabase
+      .from("questions")
+      .select("id", { count: "exact", head: true })
+      .eq("skill_id", skillId),
+  ]);
+  const unlinkedQuestionsCount = unlinkedQuestions.count ?? 0;
+
+  return {
+    counts: [
+      {
+        label: "vínculos con objetivos de aprendizaje",
+        value: links.count ?? 0,
+      },
+    ],
+    note:
+      unlinkedQuestionsCount > 0
+        ? `Además, ${unlinkedQuestionsCount} pregunta(s) quedarán sin esta habilidad asociada (no se eliminan).`
+        : null,
+  };
+}
+
 export async function deleteSkill(
   _prevState: FormState,
   formData: FormData
@@ -284,12 +473,13 @@ export async function deleteSkill(
 
 export async function listLearningObjectives() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("learning_objectives")
     .select(
       "*, units(name, strands(name, subjects(name))), levels(name), learning_objective_skills(skill_id, skills(name))"
     )
     .order("order_index");
+  if (error) console.error("listLearningObjectives falló:", error.message);
   return data ?? [];
 }
 
@@ -388,6 +578,61 @@ export async function upsertLearningObjective(
 
   revalidatePath("/admin/objetivos-aprendizaje");
   return null;
+}
+
+/**
+ * Tres tablas cascada real sobre un objetivo de aprendizaje:
+ * `learning_objective_skills.learning_objective_id` (0010, borra el
+ * vínculo con habilidades), `essay_objectives.learning_objective_id` (0012,
+ * borra la CUOTA configurada en un ensayo para este objetivo — no borra
+ * `essay_questions` ni `essay_attempts`, que no referencian objetivos
+ * directamente) y `essential_knowledge_learning_objectives.learning_objective_id`
+ * (0014, borra el vínculo con conocimientos esenciales).
+ * `questions.learning_objective_id` (0011) es `on delete set null`: las
+ * preguntas que usan este objetivo solo pierden el vínculo.
+ */
+export async function getLearningObjectiveDeleteImpact(
+  objectiveId: string
+): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const [skillLinks, essayObjectives, essentialKnowledgeLinks, unlinkedQuestions] =
+    await Promise.all([
+      supabase
+        .from("learning_objective_skills")
+        .select("skill_id", { count: "exact", head: true })
+        .eq("learning_objective_id", objectiveId),
+      supabase
+        .from("essay_objectives")
+        .select("id", { count: "exact", head: true })
+        .eq("learning_objective_id", objectiveId),
+      supabase
+        .from("essential_knowledge_learning_objectives")
+        .select("essential_knowledge_id", { count: "exact", head: true })
+        .eq("learning_objective_id", objectiveId),
+      supabase
+        .from("questions")
+        .select("id", { count: "exact", head: true })
+        .eq("learning_objective_id", objectiveId),
+    ]);
+  const unlinkedQuestionsCount = unlinkedQuestions.count ?? 0;
+
+  return {
+    counts: [
+      { label: "vínculos con habilidades", value: skillLinks.count ?? 0 },
+      {
+        label: "configuraciones de distribución en ensayos",
+        value: essayObjectives.count ?? 0,
+      },
+      {
+        label: "vínculos con conocimientos esenciales",
+        value: essentialKnowledgeLinks.count ?? 0,
+      },
+    ],
+    note:
+      unlinkedQuestionsCount > 0
+        ? `Además, ${unlinkedQuestionsCount} pregunta(s) quedarán sin este objetivo de aprendizaje asociado (no se eliminan).`
+        : null,
+  };
 }
 
 export async function deleteLearningObjective(

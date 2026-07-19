@@ -2,12 +2,13 @@ import Link from "next/link";
 import {
   listPendingReviewGroups,
   listPendingQuestionsForGroup,
-  approveQuestionForExam,
-  approveAllQuestionsForExam,
-  rejectQuestion,
 } from "@/lib/data/question-review";
+import {
+  ApproveQuestionButton,
+  ApproveAllButton,
+  RejectQuestionButton,
+} from "./review-actions";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const VALIDATION_STATUS_LABEL: Record<string, string> = {
@@ -105,13 +106,11 @@ export default async function RevisionPreguntasPage({
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <form action={approveAllQuestionsForExam}>
-                <input type="hidden" name="subjectId" value={activeGroup.subjectId} />
-                <input type="hidden" name="levelId" value={activeGroup.levelId} />
-                <Button type="submit" variant="default" size="sm">
-                  Aprobar todas las visibles ({questions.length})
-                </Button>
-              </form>
+              <ApproveAllButton
+                subjectId={activeGroup.subjectId}
+                levelId={activeGroup.levelId}
+                count={questions.length}
+              />
               <Link
                 href="/admin/revision-preguntas"
                 className="text-sm font-medium text-primary underline-offset-4 hover:underline"
@@ -158,23 +157,17 @@ export default async function RevisionPreguntasPage({
                       Objetivo: {q.learning_objective_short_name}
                     </p>
                   )}
-                  <div className="flex items-center gap-2">
-                    <form action={approveQuestionForExam}>
-                      <input type="hidden" name="id" value={q.id} />
-                      <input type="hidden" name="subjectId" value={activeGroup.subjectId} />
-                      <input type="hidden" name="levelId" value={activeGroup.levelId} />
-                      <Button type="submit" variant="default" size="sm">
-                        Aprobar para examen
-                      </Button>
-                    </form>
-                    <form action={rejectQuestion}>
-                      <input type="hidden" name="id" value={q.id} />
-                      <input type="hidden" name="subjectId" value={activeGroup.subjectId} />
-                      <input type="hidden" name="levelId" value={activeGroup.levelId} />
-                      <Button type="submit" variant="ghost" size="sm">
-                        Descartar (desactivar)
-                      </Button>
-                    </form>
+                  <div className="flex flex-wrap items-start gap-2">
+                    <ApproveQuestionButton
+                      id={q.id}
+                      subjectId={activeGroup.subjectId}
+                      levelId={activeGroup.levelId}
+                    />
+                    <RejectQuestionButton
+                      id={q.id}
+                      subjectId={activeGroup.subjectId}
+                      levelId={activeGroup.levelId}
+                    />
                   </div>
                 </CardContent>
               </Card>

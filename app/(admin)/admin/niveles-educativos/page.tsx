@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { listEducationLevels, deleteEducationLevel } from "@/lib/data/curriculum";
-import { DeleteButton } from "@/components/admin/delete-button";
+import {
+  listEducationLevels,
+  deleteEducationLevel,
+  getEducationLevelDeleteImpact,
+} from "@/lib/data/curriculum";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { EducationLevelForm } from "./education-level-form";
 
 export default async function NivelesEducativosPage({
@@ -53,7 +57,12 @@ export default async function NivelesEducativosPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={level.id} action={deleteEducationLevel} />
+              <ConfirmDeleteDialog
+                id={level.id}
+                itemLabel={`el nivel educativo "${level.name}"`}
+                action={deleteEducationLevel}
+                loadImpact={getEducationLevelDeleteImpact}
+              />
             </div>
           </li>
         ))}

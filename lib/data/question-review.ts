@@ -113,17 +113,27 @@ export async function listPendingQuestionsForGroup(
   }));
 }
 
+export type ReviewActionState = { error: string } | null;
+
 /**
  * Aprueba una pregunta generada para poder usarse en un ensayo. Requiere
  * sesión de administrador real: el trigger `questions_prevent_ai_self_approval`
  * (0023) rechaza este UPDATE si `public.is_admin()` no es verdadero para el
  * usuario autenticado de la sesión.
+ *
+ * Firma `(_prevState, formData)` para poder usarse con `useActionState` en
+ * el cliente (ver `app/(admin)/admin/revision-preguntas/review-actions.tsx`)
+ * y así mostrar el error de Supabase en la interfaz en vez de solo
+ * registrarlo con `console.error`.
  */
-export async function approveQuestionForExam(formData: FormData) {
+export async function approveQuestionForExam(
+  _prevState: ReviewActionState,
+  formData: FormData
+): Promise<ReviewActionState> {
   const id = String(formData.get("id") ?? "");
   const subjectId = String(formData.get("subjectId") ?? "");
   const levelId = String(formData.get("levelId") ?? "");
-  if (!id) return;
+  if (!id) return { error: "Falta la pregunta a aprobar." };
   const supabase = await createClient();
   const { error } = await supabase
     .from("questions")
@@ -133,11 +143,15 @@ export async function approveQuestionForExam(formData: FormData) {
       updated_at: new Date().toISOString(),
     })
     .eq("id", id);
-  if (error) console.error(`approveQuestionForExam(${id}) falló:`, error.message);
+  if (error) {
+    console.error(`approveQuestionForExam(${id}) falló:`, error.message);
+    return { error: error.message };
+  }
   revalidatePath("/admin/revision-preguntas");
   if (subjectId && levelId) {
     revalidatePath(`/admin/revision-preguntas?subjectId=${subjectId}&levelId=${levelId}`);
   }
+  return null;
 }
 
 /**
@@ -146,10 +160,15 @@ export async function approveQuestionForExam(formData: FormData) {
  * vez -- Supabase-JS no expone `update ... where id = any(...)` con
  * `returning` fácil desde el cliente, así que se resuelve con un `.in()`).
  */
-export async function approveAllQuestionsForExam(formData: FormData) {
+export async function approveAllQuestionsForExam(
+  _prevState: ReviewActionState,
+  formData: FormData
+): Promise<ReviewActionState> {
   const subjectId = String(formData.get("subjectId") ?? "");
   const levelId = String(formData.get("levelId") ?? "");
-  if (!subjectId || !levelId) return;
+  if (!subjectId || !levelId) {
+    return { error: "Falta la asignatura o el nivel a aprobar." };
+  }
   const supabase = await createClient();
   const { error } = await supabase
     .from("questions")
@@ -164,17 +183,26 @@ export async function approveAllQuestionsForExam(formData: FormData) {
     .in("validation_status", ["automatically_validated", "ai_generated_review_required"]);
   if (error) {
     console.error(`approveAllQuestionsForExam(${subjectId}, ${levelId}) falló:`, error.message);
+    return { error: error.message };
   }
   revalidatePath("/admin/revision-preguntas");
   revalidatePath(`/admin/revision-preguntas?subjectId=${subjectId}&levelId=${levelId}`);
+  return null;
 }
 
-/** Devuelve la pregunta a borrador (no debería usarse en ningún ensayo). */
-export async function rejectQuestion(formData: FormData) {
+/**
+ * Devuelve la pregunta a borrador (no debería usarse en ningún ensayo).
+ * Misma firma `(_prevState, formData)` que las otras dos acciones de esta
+ * cola, por la misma razón (error visible con `useActionState`).
+ */
+export async function rejectQuestion(
+  _prevState: ReviewActionState,
+  formData: FormData
+): Promise<ReviewActionState> {
   const id = String(formData.get("id") ?? "");
   const subjectId = String(formData.get("subjectId") ?? "");
   const levelId = String(formData.get("levelId") ?? "");
-  if (!id) return;
+  if (!id) return { error: "Falta la pregunta a descartar." };
   const supabase = await createClient();
   const { error } = await supabase
     .from("questions")
@@ -183,9 +211,13 @@ export async function rejectQuestion(formData: FormData) {
       updated_at: new Date().toISOString(),
     })
     .eq("id", id);
-  if (error) console.error(`rejectQuestion(${id}) falló:`, error.message);
+  if (error) {
+    console.error(`rejectQuestion(${id}) falló:`, error.message);
+    return { error: error.message };
+  }
   revalidatePath("/admin/revision-preguntas");
   if (subjectId && levelId) {
     revalidatePath(`/admin/revision-preguntas?subjectId=${subjectId}&levelId=${levelId}`);
   }
+  return null;
 }

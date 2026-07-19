@@ -18,6 +18,14 @@ type FormState = { error: string } | null;
 export type DeleteImpact = {
   counts: { label: string; value: number }[];
   blockedReason?: string | null;
+  /**
+   * Efecto informativo NO destructivo (p. ej. una fila que queda con una
+   * columna en `null` por un `on delete set null`, en vez de eliminarse).
+   * Se muestra en tono neutro, separado de `counts` (que asume borrado real
+   * vía `on delete cascade`) para no decir "esto eliminará" sobre algo que
+   * en realidad solo pierde una referencia.
+   */
+  note?: string | null;
 };
 
 /**
@@ -120,6 +128,12 @@ export function ConfirmDeleteDialog({
           >
             <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
             {impact.blockedReason}
+          </p>
+        )}
+
+        {!loading && !impact?.blockedReason && impact?.note && (
+          <p className="rounded-lg bg-muted p-3 text-sm text-muted-foreground">
+            {impact.note}
           </p>
         )}
 

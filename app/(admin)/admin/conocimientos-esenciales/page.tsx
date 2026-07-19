@@ -4,10 +4,11 @@ import {
   listEssentialKnowledge,
   upsertEssentialKnowledge,
   deleteEssentialKnowledge,
+  getEssentialKnowledgeDeleteImpact,
 } from "@/lib/data/big-ideas";
 import { Badge } from "@/components/ui/badge";
 import { StatementForm } from "@/components/admin/statement-form";
-import { DeleteButton } from "@/components/admin/delete-button";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 
 const STATUS_LABEL: Record<string, string> = {
   borrador: "Borrador",
@@ -101,7 +102,12 @@ export default async function ConocimientosEsencialesPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={item.id} action={deleteEssentialKnowledge} />
+              <ConfirmDeleteDialog
+                id={item.id}
+                itemLabel="este conocimiento esencial"
+                action={deleteEssentialKnowledge}
+                loadImpact={getEssentialKnowledgeDeleteImpact}
+              />
             </div>
           </li>
         ))}

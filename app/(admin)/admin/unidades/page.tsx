@@ -1,6 +1,11 @@
 import Link from "next/link";
-import { listUnits, listStrands, deleteUnit } from "@/lib/data/curriculum";
-import { DeleteButton } from "@/components/admin/delete-button";
+import {
+  listUnits,
+  listStrands,
+  deleteUnit,
+  getUnitDeleteImpact,
+} from "@/lib/data/curriculum";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { UnitForm } from "./unit-form";
 
 export default async function UnidadesPage({
@@ -63,7 +68,12 @@ export default async function UnidadesPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={unit.id} action={deleteUnit} />
+              <ConfirmDeleteDialog
+                id={unit.id}
+                itemLabel={`la unidad "${unit.name}"`}
+                action={deleteUnit}
+                loadImpact={getUnitDeleteImpact}
+              />
             </div>
           </li>
         ))}

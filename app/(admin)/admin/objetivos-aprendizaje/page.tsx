@@ -4,9 +4,10 @@ import {
   listUnits,
   listSkills,
   deleteLearningObjective,
+  getLearningObjectiveDeleteImpact,
 } from "@/lib/data/curriculum";
 import { listLevels } from "@/lib/data/content";
-import { DeleteButton } from "@/components/admin/delete-button";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { LearningObjectiveForm } from "./learning-objective-form";
 
 const STATUS_LABEL: Record<string, string> = {
@@ -110,7 +111,12 @@ export default async function ObjetivosAprendizajePage({
               >
                 Editar
               </Link>
-              <DeleteButton id={objective.id} action={deleteLearningObjective} />
+              <ConfirmDeleteDialog
+                id={objective.id}
+                itemLabel={`el objetivo "${objective.short_name}"`}
+                action={deleteLearningObjective}
+                loadImpact={getLearningObjectiveDeleteImpact}
+              />
             </div>
           </li>
         ))}

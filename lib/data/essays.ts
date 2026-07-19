@@ -33,10 +33,11 @@ export type FormState = { error: string } | null;
 
 export async function listEssays() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("essays")
     .select("*, levels(name), essay_questions(id)")
     .order("created_at", { ascending: false });
+  if (error) console.error("listEssays falló:", error.message);
   return data ?? [];
 }
 
@@ -249,6 +250,27 @@ export async function listEssayDistributions(essayId: string) {
       .select("*")
       .eq("essay_id", essayId),
   ]);
+  if (subjects.error) {
+    console.error("listEssayDistributions (essay_subjects) falló:", subjects.error.message);
+  }
+  if (strands.error) {
+    console.error(
+      "listEssayDistributions (essay_strand_distribution) falló:",
+      strands.error.message
+    );
+  }
+  if (objectives.error) {
+    console.error(
+      "listEssayDistributions (essay_objectives) falló:",
+      objectives.error.message
+    );
+  }
+  if (difficulty.error) {
+    console.error(
+      "listEssayDistributions (essay_difficulty_distribution) falló:",
+      difficulty.error.message
+    );
+  }
   return {
     subjects: subjects.data ?? [],
     strands: strands.data ?? [],

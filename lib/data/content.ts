@@ -9,7 +9,11 @@ export type FormState = { error: string } | null;
 
 export async function listSubjects() {
   const supabase = await createClient();
-  const { data } = await supabase.from("subjects").select("*").order("name");
+  const { data, error } = await supabase
+    .from("subjects")
+    .select("*")
+    .order("name");
+  if (error) console.error("listSubjects falló:", error.message);
   return data ?? [];
 }
 
@@ -34,6 +38,12 @@ export async function upsertSubject(
 export type DeleteImpact = {
   counts: { label: string; value: number }[];
   blockedReason?: string | null;
+  /**
+   * Efecto informativo NO destructivo (p. ej. una fila que queda con una
+   * columna en `null` por un `on delete set null`, en vez de eliminarse).
+   * Ver `components/admin/confirm-delete-dialog.tsx` para cómo se muestra.
+   */
+  note?: string | null;
 };
 
 /**
@@ -91,10 +101,11 @@ export async function deleteSubject(
 
 export async function listLevels() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("levels")
     .select("*, programs(name), education_levels(name)")
     .order("order_index");
+  if (error) console.error("listLevels falló:", error.message);
   return data ?? [];
 }
 
@@ -182,10 +193,11 @@ export async function deleteLevel(
 
 export async function listLessons() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("lessons")
     .select("*, subjects(name), levels(name)")
     .order("order_index");
+  if (error) console.error("listLessons falló:", error.message);
   return data ?? [];
 }
 
@@ -265,21 +277,23 @@ const QUESTION_REVIEW_STATUSES = [
 
 export async function listQuestions() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("questions")
     .select(
       "*, subjects(name), levels(name), lessons(title), learning_objectives(short_name), skills(name), question_tag_assignments(question_tags(id, name))"
     )
     .order("created_at", { ascending: false });
+  if (error) console.error("listQuestions falló:", error.message);
   return data ?? [];
 }
 
 export async function listQuestionTags() {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("question_tags")
     .select("*")
     .order("name");
+  if (error) console.error("listQuestionTags falló:", error.message);
   return data ?? [];
 }
 

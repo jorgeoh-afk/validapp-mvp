@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { listPrograms, deleteProgram } from "@/lib/data/curriculum";
-import { DeleteButton } from "@/components/admin/delete-button";
+import {
+  listPrograms,
+  deleteProgram,
+  getProgramDeleteImpact,
+} from "@/lib/data/curriculum";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { ProgramForm } from "./program-form";
 
 export default async function ProgramasPage({
@@ -47,7 +51,12 @@ export default async function ProgramasPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={program.id} action={deleteProgram} />
+              <ConfirmDeleteDialog
+                id={program.id}
+                itemLabel={`el programa "${program.name}"`}
+                action={deleteProgram}
+                loadImpact={getProgramDeleteImpact}
+              />
             </div>
           </li>
         ))}

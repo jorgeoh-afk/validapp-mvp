@@ -1,9 +1,14 @@
 import Link from "next/link";
 import { listSubjects, listLevels } from "@/lib/data/content";
-import { listBigIdeas, upsertBigIdea, deleteBigIdea } from "@/lib/data/big-ideas";
+import {
+  listBigIdeas,
+  upsertBigIdea,
+  deleteBigIdea,
+  getBigIdeaDeleteImpact,
+} from "@/lib/data/big-ideas";
 import { Badge } from "@/components/ui/badge";
 import { StatementForm } from "@/components/admin/statement-form";
-import { DeleteButton } from "@/components/admin/delete-button";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 
 const STATUS_LABEL: Record<string, string> = {
   borrador: "Borrador",
@@ -98,7 +103,12 @@ export default async function GrandesIdeasPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={item.id} action={deleteBigIdea} />
+              <ConfirmDeleteDialog
+                id={item.id}
+                itemLabel="esta gran idea"
+                action={deleteBigIdea}
+                loadImpact={getBigIdeaDeleteImpact}
+              />
             </div>
           </li>
         ))}

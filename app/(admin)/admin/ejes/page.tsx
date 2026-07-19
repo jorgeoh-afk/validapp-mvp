@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { listStrands, deleteStrand } from "@/lib/data/curriculum";
+import {
+  listStrands,
+  deleteStrand,
+  getStrandDeleteImpact,
+} from "@/lib/data/curriculum";
 import { listSubjects } from "@/lib/data/content";
-import { DeleteButton } from "@/components/admin/delete-button";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { StrandForm } from "./strand-form";
 
 export default async function EjesPage({
@@ -61,7 +65,12 @@ export default async function EjesPage({
               >
                 Editar
               </Link>
-              <DeleteButton id={strand.id} action={deleteStrand} />
+              <ConfirmDeleteDialog
+                id={strand.id}
+                itemLabel={`el eje "${strand.name}"`}
+                action={deleteStrand}
+                loadImpact={getStrandDeleteImpact}
+              />
             </div>
           </li>
         ))}

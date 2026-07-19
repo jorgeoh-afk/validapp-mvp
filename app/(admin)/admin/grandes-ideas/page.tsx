@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { listSubjects, listLevels } from "@/lib/data/content";
 import { listBigIdeas, upsertBigIdea, deleteBigIdea } from "@/lib/data/big-ideas";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { StatementForm } from "@/components/admin/statement-form";
+import { DeleteButton } from "@/components/admin/delete-button";
 
 const STATUS_LABEL: Record<string, string> = {
   borrador: "Borrador",
@@ -98,12 +98,7 @@ export default async function GrandesIdeasPage({
               >
                 Editar
               </Link>
-              <form action={deleteBigIdea}>
-                <input type="hidden" name="id" value={item.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={item.id} action={deleteBigIdea} />
             </div>
           </li>
         ))}

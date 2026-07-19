@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listPrograms, deleteProgram } from "@/lib/data/curriculum";
-import { Button } from "@/components/ui/button";
+import { DeleteButton } from "@/components/admin/delete-button";
 import { ProgramForm } from "./program-form";
 
 export default async function ProgramasPage({
@@ -47,12 +47,7 @@ export default async function ProgramasPage({
               >
                 Editar
               </Link>
-              <form action={deleteProgram}>
-                <input type="hidden" name="id" value={program.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={program.id} action={deleteProgram} />
             </div>
           </li>
         ))}

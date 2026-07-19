@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { listSubjects, deleteSubject } from "@/lib/data/content";
-import { Button } from "@/components/ui/button";
+import {
+  listSubjects,
+  deleteSubject,
+  getSubjectDeleteImpact,
+} from "@/lib/data/content";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { SubjectForm } from "./subject-form";
 
 export default async function AsignaturasPage({
@@ -37,12 +41,12 @@ export default async function AsignaturasPage({
               >
                 Editar
               </Link>
-              <form action={deleteSubject}>
-                <input type="hidden" name="id" value={subject.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <ConfirmDeleteDialog
+                id={subject.id}
+                itemLabel={`la asignatura "${subject.name}"`}
+                action={deleteSubject}
+                loadImpact={getSubjectDeleteImpact}
+              />
             </div>
           </li>
         ))}

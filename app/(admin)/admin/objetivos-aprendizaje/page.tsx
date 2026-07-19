@@ -6,7 +6,7 @@ import {
   deleteLearningObjective,
 } from "@/lib/data/curriculum";
 import { listLevels } from "@/lib/data/content";
-import { Button } from "@/components/ui/button";
+import { DeleteButton } from "@/components/admin/delete-button";
 import { LearningObjectiveForm } from "./learning-objective-form";
 
 const STATUS_LABEL: Record<string, string> = {
@@ -110,12 +110,7 @@ export default async function ObjetivosAprendizajePage({
               >
                 Editar
               </Link>
-              <form action={deleteLearningObjective}>
-                <input type="hidden" name="id" value={objective.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={objective.id} action={deleteLearningObjective} />
             </div>
           </li>
         ))}

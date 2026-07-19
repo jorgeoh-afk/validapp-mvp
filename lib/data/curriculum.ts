@@ -42,11 +42,16 @@ export async function upsertProgram(
   return null;
 }
 
-export async function deleteProgram(formData: FormData) {
+export async function deleteProgram(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("programs").delete().eq("id", id);
+  const { error } = await supabase.from("programs").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/programas");
+  return null;
 }
 
 // ---------- Niveles educativos ----------
@@ -82,11 +87,19 @@ export async function upsertEducationLevel(
   return null;
 }
 
-export async function deleteEducationLevel(formData: FormData) {
+export async function deleteEducationLevel(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("education_levels").delete().eq("id", id);
+  const { error } = await supabase
+    .from("education_levels")
+    .delete()
+    .eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/niveles-educativos");
+  return null;
 }
 
 // ---------- Clasificación de cursos (levels) ----------
@@ -159,11 +172,16 @@ export async function upsertStrand(
   return null;
 }
 
-export async function deleteStrand(formData: FormData) {
+export async function deleteStrand(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("strands").delete().eq("id", id);
+  const { error } = await supabase.from("strands").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/ejes");
+  return null;
 }
 
 // ---------- Unidades ----------
@@ -209,11 +227,16 @@ export async function upsertUnit(
   return null;
 }
 
-export async function deleteUnit(formData: FormData) {
+export async function deleteUnit(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("units").delete().eq("id", id);
+  const { error } = await supabase.from("units").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/unidades");
+  return null;
 }
 
 // ---------- Habilidades ----------
@@ -245,11 +268,16 @@ export async function upsertSkill(
   return null;
 }
 
-export async function deleteSkill(formData: FormData) {
+export async function deleteSkill(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("skills").delete().eq("id", id);
+  const { error } = await supabase.from("skills").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/habilidades");
+  return null;
 }
 
 // ---------- Objetivos de aprendizaje ----------
@@ -362,9 +390,17 @@ export async function upsertLearningObjective(
   return null;
 }
 
-export async function deleteLearningObjective(formData: FormData) {
+export async function deleteLearningObjective(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("learning_objectives").delete().eq("id", id);
+  const { error } = await supabase
+    .from("learning_objectives")
+    .delete()
+    .eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/objetivos-aprendizaje");
+  return null;
 }

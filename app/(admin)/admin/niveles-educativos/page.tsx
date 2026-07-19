@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listEducationLevels, deleteEducationLevel } from "@/lib/data/curriculum";
-import { Button } from "@/components/ui/button";
+import { DeleteButton } from "@/components/admin/delete-button";
 import { EducationLevelForm } from "./education-level-form";
 
 export default async function NivelesEducativosPage({
@@ -53,12 +53,7 @@ export default async function NivelesEducativosPage({
               >
                 Editar
               </Link>
-              <form action={deleteEducationLevel}>
-                <input type="hidden" name="id" value={level.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={level.id} action={deleteEducationLevel} />
             </div>
           </li>
         ))}

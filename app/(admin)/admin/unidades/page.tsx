@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listUnits, listStrands, deleteUnit } from "@/lib/data/curriculum";
-import { Button } from "@/components/ui/button";
+import { DeleteButton } from "@/components/admin/delete-button";
 import { UnitForm } from "./unit-form";
 
 export default async function UnidadesPage({
@@ -63,12 +63,7 @@ export default async function UnidadesPage({
               >
                 Editar
               </Link>
-              <form action={deleteUnit}>
-                <input type="hidden" name="id" value={unit.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={unit.id} action={deleteUnit} />
             </div>
           </li>
         ))}

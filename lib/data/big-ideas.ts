@@ -87,11 +87,16 @@ export async function upsertBigIdea(
   return null;
 }
 
-export async function deleteBigIdea(formData: FormData) {
+export async function deleteBigIdea(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("big_ideas").delete().eq("id", id);
+  const { error } = await supabase.from("big_ideas").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/grandes-ideas");
+  return null;
 }
 
 // ---------- Conocimientos esenciales ----------
@@ -123,11 +128,19 @@ export async function upsertEssentialKnowledge(
   return null;
 }
 
-export async function deleteEssentialKnowledge(formData: FormData) {
+export async function deleteEssentialKnowledge(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("essential_knowledge").delete().eq("id", id);
+  const { error } = await supabase
+    .from("essential_knowledge")
+    .delete()
+    .eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/conocimientos-esenciales");
+  return null;
 }
 
 // ---------- Lectura para el estudiante ----------

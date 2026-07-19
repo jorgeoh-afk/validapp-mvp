@@ -31,11 +31,60 @@ export async function upsertSubject(
   return null;
 }
 
-export async function deleteSubject(formData: FormData) {
+export type DeleteImpact = {
+  counts: { label: string; value: number }[];
+  blockedReason?: string | null;
+};
+
+/**
+ * Cuenta cuántas filas dependientes (lecciones, preguntas, grandes ideas,
+ * conocimientos esenciales) se perderían por el `on delete cascade` real de
+ * la migración 0002/0014 si se elimina esta asignatura. Se usa para mostrar
+ * el conteo real en el diálogo de confirmación antes de borrar.
+ */
+export async function getSubjectDeleteImpact(
+  subjectId: string
+): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const [lessons, questions, bigIdeas, essentialKnowledge] = await Promise.all([
+    supabase
+      .from("lessons")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", subjectId),
+    supabase
+      .from("questions")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", subjectId),
+    supabase
+      .from("big_ideas")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", subjectId),
+    supabase
+      .from("essential_knowledge")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", subjectId),
+  ]);
+
+  return {
+    counts: [
+      { label: "lecciones", value: lessons.count ?? 0 },
+      { label: "preguntas", value: questions.count ?? 0 },
+      { label: "grandes ideas", value: bigIdeas.count ?? 0 },
+      { label: "conocimientos esenciales", value: essentialKnowledge.count ?? 0 },
+    ],
+  };
+}
+
+export async function deleteSubject(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("subjects").delete().eq("id", id);
+  const { error } = await supabase.from("subjects").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/asignaturas");
+  return null;
 }
 
 // ---------- Niveles ----------
@@ -86,11 +135,47 @@ export async function upsertLevel(
   return null;
 }
 
-export async function deleteLevel(formData: FormData) {
+/**
+ * Cuenta ensayos que cuelgan de este curso (`essays.level_id`, migración
+ * 0012) y, adicionalmente, los intentos de estudiantes (`essay_attempts`,
+ * migración 0013) registrados sobre esos ensayos — ambos con `on delete
+ * cascade` real hacia `levels`.
+ */
+export async function getLevelDeleteImpact(levelId: string): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { data: essays } = await supabase
+    .from("essays")
+    .select("id")
+    .eq("level_id", levelId);
+  const essayIds = (essays ?? []).map((e) => e.id);
+
+  let attemptsCount = 0;
+  if (essayIds.length > 0) {
+    const { count } = await supabase
+      .from("essay_attempts")
+      .select("id", { count: "exact", head: true })
+      .in("essay_id", essayIds);
+    attemptsCount = count ?? 0;
+  }
+
+  return {
+    counts: [
+      { label: "ensayos", value: essayIds.length },
+      { label: "intentos de estudiantes en esos ensayos", value: attemptsCount },
+    ],
+  };
+}
+
+export async function deleteLevel(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("levels").delete().eq("id", id);
+  const { error } = await supabase.from("levels").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/niveles");
+  return null;
 }
 
 // ---------- Lecciones ----------
@@ -137,11 +222,35 @@ export async function upsertLesson(
   return null;
 }
 
-export async function deleteLesson(formData: FormData) {
+/**
+ * Cuenta el progreso de estudiantes (`lesson_progress`, migración 0005) que
+ * se perdería al eliminar esta lección (`on delete cascade` real hacia
+ * `lessons`).
+ */
+export async function getLessonDeleteImpact(lessonId: string): Promise<DeleteImpact> {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("lesson_progress")
+    .select("id", { count: "exact", head: true })
+    .eq("lesson_id", lessonId);
+
+  return {
+    counts: [
+      { label: "registros de progreso de estudiantes", value: count ?? 0 },
+    ],
+  };
+}
+
+export async function deleteLesson(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
   const id = String(formData.get("id") ?? "");
   const supabase = await createClient();
-  await supabase.from("lessons").delete().eq("id", id);
+  const { error } = await supabase.from("lessons").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/lecciones");
+  return null;
 }
 
 // ---------- Preguntas ----------
@@ -329,11 +438,62 @@ export async function upsertQuestion(
   return null;
 }
 
-export async function deleteQuestion(formData: FormData) {
-  const id = String(formData.get("id") ?? "");
+/**
+ * Cuenta cuántos `essay_questions` (migración 0012) y `diagnostic_answers`
+ * (migración 0004) referencian esta pregunta. Si hay al menos 1 de
+ * cualquiera de los dos, se bloquea el borrado: ya hay evidencia real de uso
+ * (la pregunta quedó congelada en un ensayo generado, o un estudiante ya
+ * respondió un diagnóstico con ella) y borrarla rompería ese historial. En
+ * ese caso se sugiere archivarla con `updateQuestionReviewStatus`
+ * (`review_status = 'archivado'`), que ya excluye la pregunta de nuevos
+ * ensayos/diagnósticos sin destruir las respuestas ya registradas.
+ */
+export async function getQuestionDeleteImpact(
+  questionId: string
+): Promise<DeleteImpact> {
   const supabase = await createClient();
-  await supabase.from("questions").delete().eq("id", id);
+  const [essayQuestions, diagnosticAnswers] = await Promise.all([
+    supabase
+      .from("essay_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("question_id", questionId),
+    supabase
+      .from("diagnostic_answers")
+      .select("id", { count: "exact", head: true })
+      .eq("question_id", questionId),
+  ]);
+  const essayQuestionsCount = essayQuestions.count ?? 0;
+  const diagnosticAnswersCount = diagnosticAnswers.count ?? 0;
+
+  return {
+    counts: [
+      { label: "usos en ensayos generados", value: essayQuestionsCount },
+      { label: "respuestas de diagnóstico", value: diagnosticAnswersCount },
+    ],
+    blockedReason:
+      essayQuestionsCount > 0 || diagnosticAnswersCount > 0
+        ? `Esta pregunta ya se usó en ${essayQuestionsCount} ensayo(s) generado(s) y tiene ${diagnosticAnswersCount} respuesta(s) de diagnóstico registradas. No se puede eliminar porque borraría ese historial. Usa el botón "Archivar" en la lista para sacarla de circulación sin perder los resultados ya registrados.`
+        : null,
+  };
+}
+
+export async function deleteQuestion(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const id = String(formData.get("id") ?? "");
+  if (!id) return { error: "Falta la pregunta a eliminar." };
+
+  // Re-verifica el bloqueo en el servidor: no basta con ocultar el botón en
+  // la UI, porque un POST directo al endpoint podría saltárselo.
+  const impact = await getQuestionDeleteImpact(id);
+  if (impact.blockedReason) return { error: impact.blockedReason };
+
+  const supabase = await createClient();
+  const { error } = await supabase.from("questions").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/preguntas");
+  return null;
 }
 
 export async function updateQuestionReviewStatus(formData: FormData) {

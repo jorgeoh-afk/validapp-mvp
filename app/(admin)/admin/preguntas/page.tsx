@@ -6,6 +6,7 @@ import {
   listLevels,
   listLessons,
   deleteQuestion,
+  getQuestionDeleteImpact,
   updateQuestionReviewStatus,
 } from "@/lib/data/content";
 import {
@@ -17,6 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { QuestionForm, type Editing } from "./question-form";
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -278,12 +280,12 @@ export default async function PreguntasPage({
                       </form>
                     )
                   )}
-                  <form action={deleteQuestion}>
-                    <input type="hidden" name="id" value={question.id} />
-                    <Button type="submit" variant="ghost" size="sm">
-                      Eliminar
-                    </Button>
-                  </form>
+                  <ConfirmDeleteDialog
+                    id={question.id}
+                    itemLabel="esta pregunta"
+                    action={deleteQuestion}
+                    loadImpact={getQuestionDeleteImpact}
+                  />
                 </div>
               </li>
             ))}

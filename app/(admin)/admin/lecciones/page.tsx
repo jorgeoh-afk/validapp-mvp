@@ -1,6 +1,12 @@
 import Link from "next/link";
-import { listLessons, listSubjects, listLevels, deleteLesson } from "@/lib/data/content";
-import { Button } from "@/components/ui/button";
+import {
+  listLessons,
+  listSubjects,
+  listLevels,
+  deleteLesson,
+  getLessonDeleteImpact,
+} from "@/lib/data/content";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { LessonForm } from "./lesson-form";
 
 export default async function LeccionesPage({
@@ -60,12 +66,12 @@ export default async function LeccionesPage({
               >
                 Editar
               </Link>
-              <form action={deleteLesson}>
-                <input type="hidden" name="id" value={lesson.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <ConfirmDeleteDialog
+                id={lesson.id}
+                itemLabel={`la lección "${lesson.title}"`}
+                action={deleteLesson}
+                loadImpact={getLessonDeleteImpact}
+              />
             </div>
           </li>
         ))}

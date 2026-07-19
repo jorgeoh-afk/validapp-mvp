@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { listStrands, deleteStrand } from "@/lib/data/curriculum";
 import { listSubjects } from "@/lib/data/content";
-import { Button } from "@/components/ui/button";
+import { DeleteButton } from "@/components/admin/delete-button";
 import { StrandForm } from "./strand-form";
 
 export default async function EjesPage({
@@ -61,12 +61,7 @@ export default async function EjesPage({
               >
                 Editar
               </Link>
-              <form action={deleteStrand}>
-                <input type="hidden" name="id" value={strand.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={strand.id} action={deleteStrand} />
             </div>
           </li>
         ))}

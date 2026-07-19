@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { listEssays, deleteEssay } from "@/lib/data/essays";
+import { listEssays, deleteEssay, getEssayDeleteImpact } from "@/lib/data/essays";
 import { listLevels } from "@/lib/data/content";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { EssayForm } from "./essay-form";
 
 const STATUS_LABEL: Record<string, string> = {
@@ -109,12 +109,12 @@ export default async function EnsayosPage() {
                   >
                     Configurar
                   </Link>
-                  <form action={deleteEssay}>
-                    <input type="hidden" name="id" value={essay.id} />
-                    <Button type="submit" variant="ghost" size="sm">
-                      Eliminar
-                    </Button>
-                  </form>
+                  <ConfirmDeleteDialog
+                    id={essay.id}
+                    itemLabel={`el ensayo "${essay.name}"`}
+                    action={deleteEssay}
+                    loadImpact={getEssayDeleteImpact}
+                  />
                 </div>
               </li>
             ))}

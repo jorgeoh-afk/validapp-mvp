@@ -169,11 +169,62 @@ export async function updateEssayStatus(formData: FormData) {
   revalidatePath(`/admin/ensayos/${id}`);
 }
 
-export async function deleteEssay(formData: FormData) {
-  const id = String(formData.get("id") ?? "");
+export type DeleteImpact = {
+  counts: { label: string; value: number }[];
+  blockedReason?: string | null;
+};
+
+/**
+ * Cuenta los `essay_attempts` (migración 0013) registrados sobre este
+ * ensayo. Si ya hay al menos 1 intento, o el ensayo está `publicado`/
+ * `finalizado` (ya visible o ya rendido por estudiantes), se bloquea el
+ * borrado: eliminarlo destruiría resultados históricos reales. En ese caso
+ * se sugiere archivarlo desde su página de configuración (`updateEssayStatus`
+ * ya soporta el estado `archivado`) en vez de borrarlo.
+ */
+export async function getEssayDeleteImpact(essayId: string): Promise<DeleteImpact> {
   const supabase = await createClient();
-  await supabase.from("essays").delete().eq("id", id);
+  const [{ count: attemptsCount }, { data: essay }] = await Promise.all([
+    supabase
+      .from("essay_attempts")
+      .select("id", { count: "exact", head: true })
+      .eq("essay_id", essayId),
+    supabase.from("essays").select("status").eq("id", essayId).single(),
+  ]);
+  const attempts = attemptsCount ?? 0;
+  const status = essay?.status ?? "borrador";
+  const isPublishedOrFinished = status === "publicado" || status === "finalizado";
+
+  let blockedReason: string | null = null;
+  if (attempts > 0) {
+    blockedReason = `Este ensayo ya tiene ${attempts} intento(s) de estudiantes registrados. No se puede eliminar porque borraría esos resultados. Archívalo desde su página de configuración en vez de eliminarlo.`;
+  } else if (isPublishedOrFinished) {
+    blockedReason = `Este ensayo está "${status}" y puede estar visible para estudiantes. No se puede eliminar en ese estado. Cámbialo a "archivado" desde su página de configuración en vez de eliminarlo.`;
+  }
+
+  return {
+    counts: [{ label: "intentos de estudiantes", value: attempts }],
+    blockedReason,
+  };
+}
+
+export async function deleteEssay(
+  _prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const id = String(formData.get("id") ?? "");
+  if (!id) return { error: "Falta el ensayo a eliminar." };
+
+  // Re-verifica el bloqueo en el servidor: no basta con ocultar el botón en
+  // la UI, porque un POST directo al endpoint podría saltárselo.
+  const impact = await getEssayDeleteImpact(id);
+  if (impact.blockedReason) return { error: impact.blockedReason };
+
+  const supabase = await createClient();
+  const { error } = await supabase.from("essays").delete().eq("id", id);
+  if (error) return { error: error.message };
   revalidatePath("/admin/ensayos");
+  return null;
 }
 
 // ---------- Distribuciones (asignatura / objetivo / dificultad) ----------

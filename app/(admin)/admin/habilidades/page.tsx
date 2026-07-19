@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listSkills, deleteSkill } from "@/lib/data/curriculum";
-import { Button } from "@/components/ui/button";
+import { DeleteButton } from "@/components/admin/delete-button";
 import { SkillForm } from "./skill-form";
 
 export default async function HabilidadesPage({
@@ -47,12 +47,7 @@ export default async function HabilidadesPage({
               >
                 Editar
               </Link>
-              <form action={deleteSkill}>
-                <input type="hidden" name="id" value={skill.id} />
-                <Button type="submit" variant="ghost" size="sm">
-                  Eliminar
-                </Button>
-              </form>
+              <DeleteButton id={skill.id} action={deleteSkill} />
             </div>
           </li>
         ))}

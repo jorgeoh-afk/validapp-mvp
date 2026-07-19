@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { listLevels, deleteLevel } from "@/lib/data/content";
+import {
+  listLevels,
+  deleteLevel,
+  getLevelDeleteImpact,
+} from "@/lib/data/content";
 import { listPrograms, listEducationLevels } from "@/lib/data/curriculum";
-import { Button } from "@/components/ui/button";
+import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
 import { LevelForm } from "./level-form";
 import { LevelClassifyForm } from "./level-classify-form";
 
@@ -78,12 +82,12 @@ export default async function NivelesPage({
                 >
                   Editar
                 </Link>
-                <form action={deleteLevel}>
-                  <input type="hidden" name="id" value={level.id} />
-                  <Button type="submit" variant="ghost" size="sm">
-                    Eliminar
-                  </Button>
-                </form>
+                <ConfirmDeleteDialog
+                  id={level.id}
+                  itemLabel={`el nivel "${level.name}"`}
+                  action={deleteLevel}
+                  loadImpact={getLevelDeleteImpact}
+                />
               </div>
             </div>
             <LevelClassifyForm

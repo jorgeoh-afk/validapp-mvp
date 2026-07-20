@@ -1,0 +1,137 @@
+-- ============================================================
+-- ⚠️ OBSOLETO — NO EJECUTAR BAJO NINGUNA CIRCUNSTANCIA ⚠️
+-- ============================================================
+--
+-- Este plan (y los 16 archivos .sql que lo acompañan en esta carpeta) se
+-- construyó el 2026-07-20 sobre una premisa FALSA: que el proyecto de
+-- PRODUCCIÓN (ref plvxlfdcaycnsslbfqov) no tenía contenido curricular
+-- cargado. Se verificó ese mismo día que es falso: producción ya tenía su
+-- propio contenido cargado de forma independiente (9 subjects, 6 levels,
+-- 670 questions, 23 essays, 217 learning_objectives, con IDs propios
+-- distintos a los de desarrollo) Y 24 estudiantes + 4 administradores
+-- reales ya usando la plataforma.
+--
+-- Ejecutar cualquiera de estos INSERT contra producción duplicaría todo el
+-- currículum con IDs en conflicto y arriesgaría corromper el progreso real
+-- de esos estudiantes. El problema que motivó este plan (un ensayo sin
+-- preguntas generadas) se resolvió por otra vía, sin tocar datos: un
+-- administrador aprobó el backlog de preguntas pendiente y corrió "Generar
+-- selección automática" para cada ensayo directamente en el panel admin de
+-- producción. Ver la conversación del 2026-07-20 para el detalle completo.
+--
+-- Esta carpeta se conserva solo como referencia histórica de por qué NO se
+-- hizo un traspaso de datos DEV -> PROD. No se borró sin autorización
+-- explícita del usuario.
+-- ============================================================
+--
+-- ORDEN DE EJECUCIÓN — traspaso de contenido curricular DEV -> PRODUCCIÓN
+-- ValidApp (validapp-mvp)
+--
+-- Este archivo es solo un índice/checklist en forma de comentario SQL. No
+-- contiene ningún INSERT. NINGÚN archivo de esta carpeta se ha ejecutado
+-- contra producción todavía. Requiere autorización explícita antes de
+-- pegar y correr cada uno en el SQL Editor del dashboard de Supabase del
+-- proyecto de PRODUCCIÓN (ref plvxlfdcaycnsslbfqov).
+--
+-- Origen de los datos: proyecto Supabase de DESARROLLO (ref
+-- ljzdpkyxvehrjqtixbya), leído en modo SOLO LECTURA (BEGIN; SET TRANSACTION
+-- READ ONLY; ... ROLLBACK;) el 2026-07-20. No se modificó ningún dato de
+-- desarrollo para generar estos archivos.
+--
+-- Ejecutar EN ESTE ORDEN (respeta dependencias de llave foránea):
+--   01_programs.sql                          (1 fila)
+--   02_education_levels.sql                  (1 fila)
+--   03_subjects.sql                          (5 filas)
+--   04_levels.sql                            (2 filas)
+--   05_curriculum_frameworks.sql             (2 filas)
+--   06_content_sources.sql                   (2 filas)
+--   07_strands.sql                           (14 filas)
+--   08_units.sql                             (14 filas)
+--   09_learning_objectives.sql               (158 filas)
+--   10_framework_subjects.sql                (10 filas)
+--   11_questions_parte1de3.sql               (250 filas)
+--   11_questions_parte2de3.sql               (250 filas)
+--   11_questions_parte3de3.sql               (169 filas)
+--   12_essays.sql                            (24 filas)
+--   13_essay_subjects.sql                    (1 fila)
+--   14_essay_strand_distribution.sql         (50 filas)
+--   15_essay_questions.sql                   (25 filas)
+--
+-- TOTAL: 978 filas en 17 archivos.
+--
+-- Todos los INSERT usan `on conflict (id) do nothing`: es seguro reintentar
+-- un archivo si algo falla a mitad de camino (no duplica filas). Aun así,
+-- respeta el orden -- si `07_strands.sql` se pega antes que `05` o `06`,
+-- fallará por llave foránea (`strands.framework_id` / `strands.source_id`
+-- no existirían todavía en producción).
+--
+-- ---------- Qué NO se copia (a propósito) ----------
+--   - `skills`, `learning_objective_skills`, `big_ideas`,
+--     `essential_knowledge`, `essential_knowledge_learning_objectives`,
+--     `question_tags`, `question_tag_assignments`, `question_stimuli`,
+--     `essay_objectives`, `essay_difficulty_distribution`: 0 filas en
+--     desarrollo hoy. Nada que copiar.
+--   - `question_usage_stats` (25 filas en desarrollo): NO se copia aunque
+--     técnicamente cuelga de `questions`. Su contenido (times_used,
+--     correct_count, total_answers) es una AGREGACIÓN de respuestas reales
+--     de intentos (`essay_attempt_answers`), es decir, es dato del dominio
+--     "Resultados y progreso" de DESARROLLO/pruebas, no "Contenido y
+--     preguntas". Copiarlo mezclaría estadísticas de uso de cuentas de
+--     prueba de desarrollo con producción real.
+--   - `lessons` (1 fila, feature legado de práctica por lección, no forma
+--     parte del currículum EPJA cargado): no se copia. Por eso
+--     `questions.lesson_id` se fuerza a NULL en el INSERT (afecta a 2 de
+--     las 669 preguntas que en desarrollo apuntaban a esa lección legado).
+--   - `essay_attempts` / `essay_attempt_answers` / `diagnostics` /
+--     `diagnostic_answers` / `lesson_progress` / `profiles` / cualquier
+--     tabla de "Autenticación y usuarios" o "Resultados y progreso": fuera
+--     de alcance por definición -- son datos de estudiantes reales o de
+--     prueba, nunca deben copiarse entre entornos.
+--   - `curriculum_frameworks.verified_by` / `content_sources.verified_by` /
+--     `essays.target_student_id`: forzados a NULL en el INSERT aunque en
+--     desarrollo estén vacíos hoy (defensivo -- son FKs a `profiles`, cuyos
+--     UUID de auth.users NUNCA coinciden entre proyectos Supabase
+--     distintos).
+--
+-- ---------- Decisión sobre IDs ----------
+-- Se preservan los mismos UUID de desarrollo. Producción está vacía en
+-- estas tablas (0 filas verificado hoy), así que no hay riesgo de colisión,
+-- y mantiene consistentes todas las referencias de FK entre archivos
+-- (p. ej. `essay_questions.question_id` sigue apuntando al mismo `questions.id`).
+--
+-- ---------- Riesgo documentado: trigger anti-autoaprobación de IA ----------
+-- `questions_prevent_ai_self_approval` (migraciones 0023/0025) bloquea que
+-- una pregunta con `source_type='validapp_original'` y `generated_by` no
+-- nulo quede en `validation_status` = 'pedagogically_reviewed' |
+-- 'source_verified' | 'approved_for_exam' salvo que `is_admin()` sea
+-- verdadero -- y una conexión SQL directa (sin sesión real de Supabase
+-- Auth) nunca tiene ese contexto, así que `is_admin()` es SIEMPRE falso
+-- aquí, para cualquier usuario, incluido el dueño de la base.
+--
+-- De las 669 preguntas, 119 están hoy en `validation_status =
+-- 'approved_for_exam'` (todas de Matemática -- ver resumen del plan). De
+-- esas, 114 tienen `generated_by` no nulo (fueron generadas por IA y luego
+-- aprobadas por un administrador real en el panel de desarrollo) y SÍ
+-- activarían el trigger. Las otras 5 no tienen `generated_by` y no lo
+-- activan.
+--
+-- En vez de desactivar el trigger (no corresponde -- es un control de
+-- seguridad deliberado, y desactivar controles para evitar un error no es
+-- aceptable), `11_questions_parte*.sql` inserta esas 114 filas con
+-- `validation_status = 'automatically_validated'` en vez de
+-- 'approved_for_exam'. Es un valor válido y honesto (esas preguntas SÍ
+-- pasaron los validadores automáticos), solo que todavía no reflejan la
+-- aprobación humana ya hecha en desarrollo.
+--
+-- ACCIÓN PENDIENTE DESPUÉS DE CARGAR EL CONTENIDO (no se puede hacer por
+-- SQL, tiene que ser un administrador real autenticado en la app, por
+-- diseño): entrar a /admin/revision-preguntas en PRODUCCIÓN y volver a
+-- aprobar esas preguntas de Matemática a 'approved_for_exam'. Mientras eso
+-- no pase, en producción NO habrá preguntas disponibles para diagnóstico ni
+-- práctica de lección de NINGUNA asignatura (ver 0024_diagnostic_lesson_
+-- review_gate.sql: exige is_active=true AND validation_status=
+-- 'approved_for_exam'), aunque el ensayo "Ensayo A — Matemática, Primer
+-- Nivel Medio" SÍ podrá rendirse igual (su selección ya está congelada en
+-- `essay_questions` y la función que sirve las preguntas de un intento no
+-- filtra por validation_status).
+-- ============================================================

@@ -5,6 +5,8 @@ import {
   getProgramDeleteImpact,
 } from "@/lib/data/curriculum";
 import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
+import { CurriculumBadgeList } from "@/components/admin/curriculum-badge-list";
+import { getProgramBadges } from "@/lib/curriculum-badges";
 import { ProgramForm } from "./program-form";
 
 export default async function ProgramasPage({
@@ -37,12 +39,15 @@ export default async function ProgramasPage({
             key={program.id}
             className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
           >
-            <span>
-              {program.name}{" "}
-              <span className="text-zinc-500">
-                (orden {program.order_index}
-                {program.active ? "" : " · inactivo"})
+            <span className="flex flex-col gap-1">
+              <span>
+                {program.name}{" "}
+                <span className="text-zinc-500">
+                  (orden {program.order_index}
+                  {program.active ? "" : " · inactivo"})
+                </span>
               </span>
+              <CurriculumBadgeList badges={getProgramBadges(program)} />
             </span>
             <div className="flex items-center gap-2">
               <Link

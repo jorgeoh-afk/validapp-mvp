@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
+import { getLevelBadges } from "@/lib/curriculum-badges";
 import { QuestionForm, type Editing } from "./question-form";
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -254,6 +255,11 @@ export default async function PreguntasPage({
                           </Badge>
                         ) : null
                     )}
+                    {getLevelBadges(question.levels).map((badge) => (
+                      <Badge key={badge.label} variant={badge.variant}>
+                        {badge.label}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
                 <div className="flex items-center gap-2 self-start">

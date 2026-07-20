@@ -8,6 +8,8 @@ import {
 } from "@/lib/data/curriculum";
 import { listLevels } from "@/lib/data/content";
 import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
+import { CurriculumBadgeList } from "@/components/admin/curriculum-badge-list";
+import { getLevelBadges } from "@/lib/curriculum-badges";
 import { LearningObjectiveForm } from "./learning-objective-form";
 
 const STATUS_LABEL: Record<string, string> = {
@@ -93,16 +95,19 @@ export default async function ObjetivosAprendizajePage({
             key={objective.id}
             className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
           >
-            <span>
-              {objective.code ? `${objective.code} — ` : ""}
-              {objective.short_name}{" "}
-              <span className="text-zinc-500">
-                ({objective.units?.strands?.subjects?.name} ·{" "}
-                {objective.units?.strands?.name} · {objective.units?.name} ·{" "}
-                {objective.levels?.name} · {STATUS_LABEL[objective.status]} ·
-                prioridad {PRIORITY_LABEL[objective.priority]}
-                {objective.active ? "" : " · inactivo"})
+            <span className="flex flex-col gap-1">
+              <span>
+                {objective.code ? `${objective.code} — ` : ""}
+                {objective.short_name}{" "}
+                <span className="text-zinc-500">
+                  ({objective.units?.strands?.subjects?.name} ·{" "}
+                  {objective.units?.strands?.name} · {objective.units?.name} ·{" "}
+                  {objective.levels?.name} · {STATUS_LABEL[objective.status]} ·
+                  prioridad {PRIORITY_LABEL[objective.priority]}
+                  {objective.active ? "" : " · inactivo"})
+                </span>
               </span>
+              <CurriculumBadgeList badges={getLevelBadges(objective.levels)} />
             </span>
             <div className="flex items-center gap-2">
               <Link

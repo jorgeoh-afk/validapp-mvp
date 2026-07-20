@@ -2,6 +2,11 @@ import Link from "next/link";
 import { ArrowLeft, Mail } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentProfile } from "@/lib/data/profiles";
+import {
+  listPrograms,
+  listLevelsByProgram,
+  type CurriculumLevelOption,
+} from "@/lib/data/curriculum";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -11,14 +16,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { ProfileForm } from "./profile-form";
+import { ProfileForm, type ProgramOption } from "./profile-form";
 import { PasswordForm } from "./password-form";
 
 export default async function PerfilEstudiante() {
   const supabase = await createClient();
   const [profile, {
     data: { user },
-  }] = await Promise.all([getCurrentProfile(), supabase.auth.getUser()]);
+  }, programs] = await Promise.all([
+    getCurrentProfile(),
+    supabase.auth.getUser(),
+    listPrograms(),
+  ]);
 
   if (!profile || !user) {
     return (
@@ -45,6 +54,13 @@ export default async function PerfilEstudiante() {
       </main>
     );
   }
+
+  // Cursos/niveles del programa que el estudiante ya tenía elegido (si
+  // tiene uno), cargados en el servidor para que el paso 3 del formulario
+  // parta con las opciones completas y no solo con el curso ya guardado.
+  const initialLevels = profile.target_program_id
+    ? await listLevelsByProgram(profile.target_program_id)
+    : [];
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-xl flex-col gap-6 bg-background px-4 py-8 text-foreground sm:px-6 sm:py-12">
@@ -89,14 +105,33 @@ export default async function PerfilEstudiante() {
           <CardTitle className="text-base">Editar mis datos</CardTitle>
           <CardDescription>
             Tu nombre así te lo vamos a mostrar en tu panel y actividades. El
-            nivel es solo para que tengamos contexto de lo que estás
-            preparando.
+            tipo de estudiante, programa y curso son solo para que tengamos
+            contexto de lo que estás preparando.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <ProfileForm
             fullName={profile.full_name ?? ""}
-            targetLevel={profile.target_level ?? ""}
+            studentAgeGroup={profile.student_age_group ?? null}
+            targetProgram={
+              // El cliente de Supabase (sin esquema de tipos generado) infiere
+              // este embed como arreglo por defecto; en runtime PostgREST
+              // devuelve un objeto único porque la FK vive en `profiles`
+              // (relación a-uno hacia `programs`).
+              (profile.target_program as unknown as ProgramOption | null) ??
+              null
+            }
+            targetLevel={
+              (profile.target_level_detail as unknown as CurriculumLevelOption | null) ??
+              null
+            }
+            initialLevels={initialLevels}
+            regularProgram={
+              programs.find(
+                (p) => p.code === "regular_examenes_libres_menores"
+              ) ?? null
+            }
+            epjaPrograms={programs.filter((p) => p.curriculum_type === "epja")}
           />
         </CardContent>
       </Card>

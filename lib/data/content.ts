@@ -2,8 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import { assertProgramCourseCompatibility } from "@/lib/data/curriculum";
 
 export type FormState = { error: string } | null;
+
+const EDUCATION_TYPES = ["menor_18", "mayor_18"] as const;
 
 // ---------- Asignaturas ----------
 
@@ -133,7 +136,9 @@ export async function listLevels() {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("levels")
-    .select("*, programs(name), education_levels(name)")
+    .select(
+      "*, programs(name, code, curriculum_type), education_levels(name)"
+    )
     .order("order_index");
   if (error) console.error("listLevels falló:", error.message);
   return data ?? [];
@@ -148,18 +153,47 @@ export async function upsertLevel(
   const orderIndex = Number(formData.get("orderIndex") ?? 0);
   const programId = String(formData.get("programId") ?? "");
   const educationLevelId = String(formData.get("educationLevelId") ?? "");
+  const code = String(formData.get("code") ?? "").trim();
+  const educationTypeRaw = String(formData.get("educationType") ?? "").trim();
+  const equivalentGradeFromLevelId = String(
+    formData.get("equivalentGradeFromLevelId") ?? ""
+  ).trim();
+  const equivalentGradeToLevelId = String(
+    formData.get("equivalentGradeToLevelId") ?? ""
+  ).trim();
+
   if (!name) return { error: "El nombre es obligatorio." };
   if (!programId || !educationLevelId) {
     return { error: "Programa y nivel educativo son obligatorios." };
   }
+  if (
+    educationTypeRaw &&
+    !EDUCATION_TYPES.includes(educationTypeRaw as (typeof EDUCATION_TYPES)[number])
+  ) {
+    return { error: "Tipo de estudiante no válido." };
+  }
+
+  const supabase = await createClient();
+
+  // Validación amigable ANTES de que el trigger `levels_program_curriculum_match`
+  // rechace la combinación con una excepción cruda de base de datos.
+  const compatibilityError = await assertProgramCourseCompatibility(
+    supabase,
+    programId,
+    educationTypeRaw || null
+  );
+  if (compatibilityError) return { error: compatibilityError };
 
   const record = {
     name,
     order_index: orderIndex,
     program_id: programId,
     education_level_id: educationLevelId,
+    code: code || null,
+    education_type: educationTypeRaw || null,
+    equivalent_grade_from_level_id: equivalentGradeFromLevelId || null,
+    equivalent_grade_to_level_id: equivalentGradeToLevelId || null,
   };
-  const supabase = await createClient();
   const { error } = id
     ? await supabase.from("levels").update(record).eq("id", id)
     : await supabase.from("levels").insert(record);
@@ -167,7 +201,7 @@ export async function upsertLevel(
   if (error) {
     if (error.code === "23505") {
       return {
-        error: `Ya existe un nivel llamado "${name}". Búscalo en la lista de abajo para editarlo o clasificarlo, no hace falta crearlo de nuevo.`,
+        error: `Ya existe un nivel llamado "${name}" (o el código "${code}" ya está en uso). Búscalo en la lista de abajo para editarlo o clasificarlo, no hace falta crearlo de nuevo.`,
       };
     }
     return { error: error.message };
@@ -310,7 +344,7 @@ export async function listQuestions() {
   const { data, error } = await supabase
     .from("questions")
     .select(
-      "*, subjects(name), levels(name), lessons(title), learning_objectives(short_name), skills(name), question_tag_assignments(question_tags(id, name))"
+      "*, subjects(name), levels(name, education_type, programs(code, curriculum_type)), lessons(title), learning_objectives(short_name), skills(name), question_tag_assignments(question_tags(id, name))"
     )
     .order("created_at", { ascending: false });
   if (error) console.error("listQuestions falló:", error.message);

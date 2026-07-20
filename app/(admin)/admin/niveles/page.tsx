@@ -6,6 +6,8 @@ import {
 } from "@/lib/data/content";
 import { listPrograms, listEducationLevels } from "@/lib/data/curriculum";
 import { ConfirmDeleteDialog } from "@/components/admin/confirm-delete-dialog";
+import { CurriculumBadgeList } from "@/components/admin/curriculum-badge-list";
+import { getLevelBadges } from "@/lib/curriculum-badges";
 import { LevelForm } from "./level-form";
 import { LevelClassifyForm } from "./level-classify-form";
 
@@ -21,6 +23,9 @@ export default async function NivelesPage({
     listEducationLevels(),
   ]);
   const editing = edit ? levels.find((l) => l.id === edit) ?? null : null;
+  const regularLevels = levels
+    .filter((l) => l.education_type === "menor_18")
+    .map((l) => ({ id: l.id, name: l.name }));
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-12">
@@ -55,9 +60,11 @@ export default async function NivelesPage({
       ) : (
         <div className="mt-6">
           <LevelForm
+            key={editing?.id ?? "new"}
             editing={editing}
             programs={programs}
             educationLevels={educationLevels}
+            regularLevels={regularLevels}
           />
         </div>
       )}
@@ -69,11 +76,14 @@ export default async function NivelesPage({
             className="flex flex-col gap-2 rounded-lg border border-border px-3 py-2"
           >
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-              <span>
-                {level.name}{" "}
-                <span className="text-zinc-500">
-                  (orden {level.order_index})
+              <span className="flex flex-col gap-1">
+                <span>
+                  {level.name}{" "}
+                  <span className="text-zinc-500">
+                    (orden {level.order_index})
+                  </span>
                 </span>
+                <CurriculumBadgeList badges={getLevelBadges(level)} />
               </span>
               <div className="flex items-center gap-2">
                 <Link

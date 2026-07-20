@@ -386,6 +386,18 @@ function resolveCount(
  * generación administrativa normal (`generateEssay`) sigue usando el pool
  * amplio (incluye preguntas en revisión, para que el admin vea el estado
  * real del banco al generar una vista previa).
+ *
+ * GUARDRAIL (Currículum Regular vs. EPJA, ver 0028_regular_epja_curriculum_
+ * hierarchy.sql): el único filtro de curso es `.eq("level_id", levelId)` —
+ * una comparación exacta de fila (uuid), nunca por `levels.name` ni por el
+ * texto de `levels.equivalence`. Esta función NO debe, hoy ni en el futuro,
+ * expandir implícitamente el pool hacia
+ * `levels.equivalent_grade_from_level_id`/`equivalent_grade_to_level_id`
+ * cuando falte cobertura para un nivel EPJA — esas columnas son solo
+ * informativas/estructurales. Si algún día se decide reutilizar preguntas de
+ * un curso regular para un nivel EPJA (o viceversa), debe ser una decisión
+ * EXPLÍCITA por ensayo (p. ej. un flag nuevo en `essays`, cuya columna debe
+ * pedirse a `/validapp-db`), nunca un fallback silencioso agregado aquí.
  */
 export async function buildCandidatePool(
   levelId: string,

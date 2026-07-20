@@ -22,6 +22,8 @@ export async function listPrograms() {
   return data ?? [];
 }
 
+const CURRICULUM_TYPES = ["regular", "epja"] as const;
+
 export async function upsertProgram(
   _prevState: FormState,
   formData: FormData
@@ -31,15 +33,53 @@ export async function upsertProgram(
   const description = String(formData.get("description") ?? "").trim();
   const orderIndex = Number(formData.get("orderIndex") ?? 0);
   const active = formData.get("active") === "on";
+  const code = String(formData.get("code") ?? "").trim();
+  const curriculumTypeRaw = String(formData.get("curriculumType") ?? "").trim();
+  const minimumAgeRaw = String(formData.get("minimumAge") ?? "").trim();
+  const maximumAgeRaw = String(formData.get("maximumAge") ?? "").trim();
   if (!name) return { error: "El nombre es obligatorio." };
 
-  const record = { name, description, order_index: orderIndex, active };
+  if (
+    curriculumTypeRaw &&
+    !CURRICULUM_TYPES.includes(curriculumTypeRaw as (typeof CURRICULUM_TYPES)[number])
+  ) {
+    return { error: "Tipo de currículum no válido." };
+  }
+  const minimumAge = minimumAgeRaw ? Number(minimumAgeRaw) : null;
+  const maximumAge = maximumAgeRaw ? Number(maximumAgeRaw) : null;
+  if (minimumAge !== null && Number.isNaN(minimumAge)) {
+    return { error: "La edad mínima debe ser un número." };
+  }
+  if (maximumAge !== null && Number.isNaN(maximumAge)) {
+    return { error: "La edad máxima debe ser un número." };
+  }
+  if (minimumAge !== null && maximumAge !== null && maximumAge < minimumAge) {
+    return { error: "La edad máxima no puede ser menor que la edad mínima." };
+  }
+
+  const record = {
+    name,
+    description,
+    order_index: orderIndex,
+    active,
+    code: code || null,
+    curriculum_type: curriculumTypeRaw || null,
+    minimum_age: minimumAge,
+    maximum_age: maximumAge,
+  };
   const supabase = await createClient();
   const { error } = id
     ? await supabase.from("programs").update(record).eq("id", id)
     : await supabase.from("programs").insert(record);
 
-  if (error) return { error: error.message };
+  if (error) {
+    if (error.code === "23505") {
+      return {
+        error: `Ya existe un programa con el código "${code}". Elige uno distinto.`,
+      };
+    }
+    return { error: error.message };
+  }
   revalidatePath("/admin/programas");
   return null;
 }
@@ -158,6 +198,70 @@ export async function deleteEducationLevel(
 // Reutiliza la tabla `levels` existente ("curso"); solo agrega la clasificación
 // opcional dentro de programa y nivel educativo.
 
+/**
+ * Cursos/niveles de un programa específico (p. ej. los 5 niveles EPJA de
+ * adultos de "Exámenes Libres", o los 12 cursos regulares). Usado por el
+ * flujo progresivo de "Mi perfil" del estudiante (paso 3): la nota de
+ * equivalencia (`equivalence`) solo aplica a los niveles EPJA de adultos
+ * condensados, viene null en los 12 cursos regulares individuales.
+ */
+export type CurriculumLevelOption = {
+  id: string;
+  name: string;
+  code: string | null;
+  education_type: "menor_18" | "mayor_18" | null;
+  equivalence: string | null;
+  track: string | null;
+  order_index: number;
+};
+
+export async function listLevelsByProgram(
+  programId: string
+): Promise<CurriculumLevelOption[]> {
+  if (!programId) return [];
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("levels")
+    .select("id, name, code, education_type, equivalence, track, order_index")
+    .eq("program_id", programId)
+    .order("order_index");
+  if (error) {
+    console.error("listLevelsByProgram falló:", error.message);
+    return [];
+  }
+  return data ?? [];
+}
+
+/**
+ * Valida en servidor -antes de que el trigger `levels_program_curriculum_match`
+ * de la base de datos rechace la combinación con una excepción cruda- que el
+ * `education_type` del curso sea compatible con el `curriculum_type` del
+ * programa elegido. Se usa tanto al clasificar un curso existente
+ * (`classifyLevel`) como al crear/editar uno (`upsertLevel`, en
+ * `lib/data/content.ts`).
+ */
+export async function assertProgramCourseCompatibility(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  programId: string,
+  educationType: string | null
+): Promise<string | null> {
+  if (!educationType) return null;
+  const { data: program } = await supabase
+    .from("programs")
+    .select("curriculum_type")
+    .eq("id", programId)
+    .single();
+
+  if (!program?.curriculum_type) return null;
+  if (program.curriculum_type === "regular" && educationType !== "menor_18") {
+    return 'Este programa es de Currículum Regular: solo admite cursos de "Estudiantes de exámenes libres menores de 18 años".';
+  }
+  if (program.curriculum_type === "epja" && educationType !== "mayor_18") {
+    return 'Este programa es EPJA: solo admite cursos de "Estudiantes de exámenes libres mayores de 18 años".';
+  }
+  return null;
+}
+
 export async function classifyLevel(
   _prevState: FormState,
   formData: FormData
@@ -168,6 +272,21 @@ export async function classifyLevel(
   if (!id) return { error: "Falta el curso a clasificar." };
 
   const supabase = await createClient();
+
+  if (programId) {
+    const { data: level } = await supabase
+      .from("levels")
+      .select("education_type")
+      .eq("id", id)
+      .single();
+    const compatibilityError = await assertProgramCourseCompatibility(
+      supabase,
+      programId,
+      level?.education_type ?? null
+    );
+    if (compatibilityError) return { error: compatibilityError };
+  }
+
   const { error } = await supabase
     .from("levels")
     .update({
@@ -476,7 +595,7 @@ export async function listLearningObjectives() {
   const { data, error } = await supabase
     .from("learning_objectives")
     .select(
-      "*, units(name, strands(name, subjects(name))), levels(name), learning_objective_skills(skill_id, skills(name))"
+      "*, units(name, strands(name, subjects(name))), levels(name, education_type, programs(code, curriculum_type)), learning_objective_skills(skill_id, skills(name))"
     )
     .order("order_index");
   if (error) console.error("listLearningObjectives falló:", error.message);

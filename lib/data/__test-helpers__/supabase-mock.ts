@@ -39,6 +39,7 @@ type QueryChain = {
   eq: (col: string, val: unknown) => QueryChain;
   in: (col: string, vals: unknown) => QueryChain;
   is: (col: string, val: unknown) => QueryChain;
+  or: (filters?: string) => QueryChain;
   order: (col?: string, opts?: unknown) => QueryChain;
   limit: (n?: number) => QueryChain;
   returns: () => QueryChain;
@@ -124,6 +125,13 @@ export function createSupabaseMock(opts: {
         state.filters[col] = val;
         return chain;
       },
+      // No-op a propósito (mismo criterio que `order`/`limit`): este mock no
+      // evalúa la expresión OR en sí (p. ej. `available_from.is.null,
+      // available_from.lte.<fecha>`), solo permite que el código de
+      // producción encadene `.or(...)` sin romper. Las pruebas que necesiten
+      // distinguir por `available_from` deben simularlo devolviendo
+      // directamente las filas ya "filtradas" desde el handler de la tabla.
+      or: () => chain,
       order: () => chain,
       limit: () => chain,
       returns: () => chain,

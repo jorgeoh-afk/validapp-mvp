@@ -4,6 +4,7 @@ import { getStudentMistakes } from "@/lib/data/mistakes";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { requireEnrolledProfile } from "../_lib/enrollment";
 
 const SOURCE_LABEL: Record<string, string> = {
   diagnostico: "Diagnóstico",
@@ -11,6 +12,7 @@ const SOURCE_LABEL: Record<string, string> = {
 };
 
 export default async function RevisarErroresPage() {
+  await requireEnrolledProfile();
   const mistakes = await getStudentMistakes();
 
   const bySubject = new Map<string, { subjectName: string; items: typeof mistakes }>();

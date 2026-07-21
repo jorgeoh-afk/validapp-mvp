@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { requireEnrolledProfile } from "../_lib/enrollment";
 
 const ESSAY_TYPE_LABEL: Record<string, string> = {
   general_curso: "General del curso",
@@ -23,6 +24,7 @@ const ESSAY_TYPE_LABEL: Record<string, string> = {
 };
 
 export default async function EnsayosPage() {
+  await requireEnrolledProfile();
   const essays = await listAvailableEssaysForStudent();
 
   return (

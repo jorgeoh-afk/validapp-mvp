@@ -88,6 +88,29 @@ async function getStudentLevelId(
   return data?.estimated_level_id ?? null;
 }
 
+// ---------- Restricción total por inscripción ----------
+//
+// Decisión explícita del usuario (misma sesión que separó Currículum Regular
+// vs. EPJA en 0028_regular_epja_curriculum_hierarchy.sql, y que restringió el
+// diagnóstico en 0029_diagnostic_scoped_to_enrolled_level.sql): el contenido
+// que un estudiante puede VER Y RENDIR se restringe totalmente a su
+// inscripción (`profiles.target_level_id`), no al nivel estimado por
+// diagnóstico (`getStudentLevelId` de arriba, que sigue existiendo solo para
+// el criterio de orden/"coincide con tu nivel" de `matchesStudentLevel` más
+// abajo -- ya no controla qué se muestra, solo cómo se ordena dentro de lo ya
+// filtrado por `getStudentTargetLevelId`).
+async function getStudentTargetLevelId(
+  supabase: SupabaseClient,
+  studentId: string
+): Promise<string | null> {
+  const { data } = await supabase
+    .from("profiles")
+    .select("target_level_id")
+    .eq("id", studentId)
+    .maybeSingle();
+  return data?.target_level_id ?? null;
+}
+
 // ---------- Listado de ensayos disponibles ----------
 
 export type AvailableEssay = {
@@ -113,6 +136,15 @@ export async function listAvailableEssaysForStudent(): Promise<AvailableEssay[]>
   } = await supabase.auth.getUser();
   if (!user) return [];
 
+  // Restricción total por inscripción: solo se listan ensayos del nivel
+  // exacto en que el estudiante está inscrito (`profiles.target_level_id`).
+  // Si el perfil todavía no tiene nivel objetivo asignado (no debería llegar
+  // aquí -- el wizard de `/perfil` y el gate de UI lo exigen antes -- pero se
+  // es defensivo), no se muestra ningún ensayo en vez de mostrar todos los
+  // niveles.
+  const targetLevelId = await getStudentTargetLevelId(supabase, user.id);
+  if (!targetLevelId) return [];
+
   const studentLevelId = await getStudentLevelId(supabase, user.id);
   const nowIso = new Date().toISOString();
 
@@ -122,6 +154,7 @@ export async function listAvailableEssaysForStudent(): Promise<AvailableEssay[]>
       "id, name, essay_type, level_id, total_questions, time_limit_minutes, max_attempts, available_from, status, levels(name, order_index)"
     )
     .eq("status", "publicado")
+    .eq("level_id", targetLevelId)
     .or(`available_from.is.null,available_from.lte.${nowIso}`);
 
   if (!essays || essays.length === 0) return [];
@@ -172,6 +205,11 @@ export async function listAvailableEssaysForStudent(): Promise<AvailableEssay[]>
       attemptsRemaining,
       canStart,
       inProgressAttemptId: usage.inProgressId,
+      // Ahora casi siempre `true`: `essays` ya viene filtrado por
+      // `target_level_id` arriba, así que solo difiere del nivel inscrito
+      // cuando el nivel ESTIMADO por diagnóstico no coincide con él (p. ej.
+      // el estudiante reprobó su diagnóstico de nivel fijo). Se conserva el
+      // campo para no romper el tipo `AvailableEssay` que ya consume la UI.
       matchesStudentLevel: studentLevelId != null && e.level_id === studentLevelId,
     };
   });
@@ -224,11 +262,19 @@ export async function getEssayStartInfo(essayId: string): Promise<EssayStartInfo
   const { data: essay } = await supabase
     .from("essays")
     .select(
-      "id, name, essay_type, status, available_from, total_questions, time_limit_minutes, total_points, feedback_mode, max_attempts, levels(name)"
+      "id, name, essay_type, status, available_from, total_questions, time_limit_minutes, total_points, feedback_mode, max_attempts, level_id, levels(name)"
     )
     .eq("id", essayId)
     .maybeSingle();
   if (!essay) return null;
+
+  // Restricción total por inscripción: defensa en profundidad complementaria
+  // al filtro ya aplicado en `listAvailableEssaysForStudent` (que es la vía
+  // normal de descubrimiento). Un estudiante que conozca/adivine el id de un
+  // ensayo de otro nivel no debe poder ver ni su detalle; se trata igual que
+  // "no encontrado" para no revelar que el ensayo existe en otro nivel.
+  const targetLevelId = await getStudentTargetLevelId(supabase, user.id);
+  if (!targetLevelId || essay.level_id !== targetLevelId) return null;
 
   const { data: attempts } = await supabase
     .from("essay_attempts")
@@ -287,10 +333,21 @@ export async function startEssayAttempt(
 
   const { data: essay } = await supabase
     .from("essays")
-    .select("id, status, available_from, order_mode, max_attempts")
+    .select("id, status, available_from, order_mode, max_attempts, level_id")
     .eq("id", essayId)
     .maybeSingle();
   if (!essay) return { error: "No se encontró el ensayo." };
+
+  // Restricción total por inscripción: defensa en profundidad complementaria
+  // al filtro ya aplicado en `listAvailableEssaysForStudent`. Un estudiante
+  // nunca puede INICIAR un intento nuevo de un ensayo que no sea de su nivel
+  // inscrito, aunque conozca/adivine el id directamente. Se trata igual que
+  // "no encontrado", para no revelar que el ensayo existe en otro nivel.
+  const targetLevelId = await getStudentTargetLevelId(supabase, user.id);
+  if (!targetLevelId || essay.level_id !== targetLevelId) {
+    return { error: "No se encontró el ensayo." };
+  }
+
   if (essay.status !== "publicado") {
     return { error: "Este ensayo todavía no está publicado." };
   }

@@ -44,11 +44,20 @@ function setMock(opts: {
 }
 
 describe("getDiagnosticQuestions", () => {
-  it("trae las preguntas vía get_diagnostic_questions, sin correct_index y sin tocar questions", async () => {
+  it("trae las preguntas vía get_diagnostic_questions con p_level_id (nivel inscrito), sin correct_index y sin tocar questions", async () => {
     const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "lvl1" } }),
+      },
       rpc: {
         get_diagnostic_questions: (args) => {
           expect(args?.p_subject_id).toBe("subject-1");
+          // Restricción total por inscripción (migración
+          // 0029_diagnostic_scoped_to_enrolled_level.sql): el nivel enviado
+          // es el inscrito del estudiante (`profiles.target_level_id`), no
+          // uno adivinado ni el de un diagnóstico anterior.
+          expect(args?.p_level_id).toBe("lvl1");
           return {
             data: [
               { id: "q1", prompt: "P1", choices: ["a", "b"], level_id: "lvl1" },
@@ -67,6 +76,27 @@ describe("getDiagnosticQuestions", () => {
     expect(callsToTable(mock.calls, "questions")).toHaveLength(0);
     expect(callsToRpc(mock.calls, "get_diagnostic_questions")).toHaveLength(1);
   });
+
+  it("no devuelve preguntas si el estudiante no está autenticado", async () => {
+    const mock = setMock({ user: null });
+    const questions = await getDiagnosticQuestions("subject-1");
+    expect(questions).toEqual([]);
+    expect(callsToRpc(mock.calls, "get_diagnostic_questions")).toHaveLength(0);
+  });
+
+  it("no devuelve preguntas si el perfil todavía no tiene nivel objetivo asignado (defensivo)", async () => {
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: null } }),
+      },
+    });
+
+    const questions = await getDiagnosticQuestions("subject-1");
+    expect(questions).toEqual([]);
+    // Ni siquiera se llama al RPC sin nivel objetivo.
+    expect(callsToRpc(mock.calls, "get_diagnostic_questions")).toHaveLength(0);
+  });
 });
 
 describe("submitDiagnostic", () => {
@@ -77,6 +107,7 @@ describe("submitDiagnostic", () => {
     const mock = setMock({
       user: { id: "student-1" },
       from: {
+        profiles: () => ({ data: { target_level_id: "lvl1" } }),
         levels: () => ({ data: [{ id: "lvl1", order_index: 0 }] }),
         diagnostics: (state) => {
           if (state.method === "insert") {
@@ -96,6 +127,11 @@ describe("submitDiagnostic", () => {
         grade_diagnostic_questions: (args) => {
           expect(args?.p_question_ids).toEqual(["q1", "q2"]);
           expect(args?.p_selected_indexes).toEqual([0, 1]);
+          // Restricción total por inscripción (Gap 2, migración local
+          // 0030_grade_diagnostic_questions_scoped_to_level.sql): el nivel
+          // enviado es el inscrito del estudiante (`profiles.target_level_id`),
+          // igual que ya hace `getDiagnosticQuestions`.
+          expect(args?.p_level_id).toBe("lvl1");
           return {
             data: [
               { question_id: "q1", level_id: "lvl1", is_correct: true },
@@ -134,6 +170,9 @@ describe("submitDiagnostic", () => {
   it("devuelve error si grade_diagnostic_questions no encuentra preguntas", async () => {
     setMock({
       user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "lvl1" } }),
+      },
       rpc: {
         grade_diagnostic_questions: () => ({ data: [] }),
       },
@@ -146,6 +185,79 @@ describe("submitDiagnostic", () => {
 
     const result = await submitDiagnostic(null, formData);
     expect(result).toEqual({ error: "No se pudieron cargar las preguntas." });
+  });
+
+  // Prueba de regresión del Gap 2 (restricción total por inscripción, ver
+  // migración local 0030_grade_diagnostic_questions_scoped_to_level.sql,
+  // creada en paralelo por `validapp-db-engineer`, aún no aplicada a ninguna
+  // base de datos): un request manipulado podría enviar `question_ids` que
+  // pertenecen a OTRO nivel distinto del inscrito del estudiante. La función
+  // RPC filtra por `p_level_id` y simplemente omite del resultado las
+  // preguntas que no calcen (mismo comportamiento defensivo que ya existía
+  // para ids inexistentes) -- este mock simula esa función devolviendo solo
+  // la pregunta que sí pertenece al nivel enviado, para verificar que
+  // `submitDiagnostic` efectivamente envía `p_level_id` y no confía en que el
+  // cliente haya mandado solo ids de su propio nivel.
+  it("no califica preguntas de otro nivel: solo cuenta las que la RPC devuelve para p_level_id", async () => {
+    let insertedDiagnostic: Record<string, unknown> | null = null;
+    let insertedAnswers: unknown[] = [];
+
+    setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "lvl-inscrito" } }),
+        levels: () => ({ data: [{ id: "lvl-inscrito", order_index: 0 }] }),
+        diagnostics: (state) => {
+          if (state.method === "insert") {
+            insertedDiagnostic = state.payload as Record<string, unknown>;
+            return { data: { id: "diag-1" }, error: null };
+          }
+          return { data: null, error: null };
+        },
+        diagnostic_answers: (state) => {
+          if (state.method === "insert") {
+            insertedAnswers = state.payload as unknown[];
+          }
+          return { data: null, error: null };
+        },
+      },
+      rpc: {
+        grade_diagnostic_questions: (args) => {
+          expect(args?.p_level_id).toBe("lvl-inscrito");
+          // "q-otro-nivel" fue enviada por el cliente pero pertenece a otro
+          // nivel: la función RPC (real, filtrando por p_level_id) no la
+          // devolvería en absoluto. Se simula ese filtro devolviendo solo
+          // "q1" en el resultado, aunque `p_question_ids` haya pedido ambas.
+          expect(args?.p_question_ids).toEqual(["q1", "q-otro-nivel"]);
+          return {
+            data: [{ question_id: "q1", level_id: "lvl-inscrito", is_correct: true }],
+          };
+        },
+      },
+    });
+
+    const formData = new FormData();
+    formData.set("subjectId", "subject-1");
+    formData.set("questionIds", "q1,q-otro-nivel");
+    formData.set("answer_q1", "0");
+    formData.set("answer_q-otro-nivel", "0");
+
+    await expect(submitDiagnostic(null, formData)).rejects.toThrow(
+      "REDIRECT:/diagnostico/resultado/diag-1"
+    );
+
+    // Solo se califica y guarda "q1": la pregunta de otro nivel no aparece
+    // en absoluto en `graded`, así que no se cuenta en el puntaje ni se
+    // inserta como respuesta.
+    expect(insertedDiagnostic).toMatchObject({
+      student_id: "student-1",
+      subject_id: "subject-1",
+      score: 1,
+      total_questions: 1,
+    });
+    expect(insertedAnswers).toEqual([
+      { question_id: "q1", selected_index: 0, is_correct: true, diagnostic_id: "diag-1" },
+    ]);
   });
 });
 

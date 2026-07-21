@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
   Award,
   BookOpenCheck,
@@ -28,6 +29,7 @@ import {
 } from "@/components/ui/card";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { cn } from "@/lib/utils";
+import { isEnrollmentComplete } from "../_lib/enrollment";
 
 function nextGoalMessage(points: number, streak: number) {
   if (streak < 3) {
@@ -70,6 +72,10 @@ export default async function PanelEstudiante() {
         </Card>
       </main>
     );
+  }
+
+  if (!isEnrollmentComplete(profile)) {
+    redirect("/perfil?incompleto=1");
   }
 
   const [stats, summary] = await Promise.all([

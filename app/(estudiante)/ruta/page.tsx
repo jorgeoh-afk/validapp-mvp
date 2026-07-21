@@ -7,8 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { requireEnrolledProfile } from "../_lib/enrollment";
 
 export default async function RutaSubjectsPage() {
+  await requireEnrolledProfile();
   const subjects = await listSubjects();
 
   return (

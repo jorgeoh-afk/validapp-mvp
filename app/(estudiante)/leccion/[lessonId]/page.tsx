@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PracticeForm } from "./practice-form";
+import { requireEnrolledProfile } from "../../_lib/enrollment";
 
 export default async function LeccionPage({
   params,
@@ -17,6 +18,7 @@ export default async function LeccionPage({
   params: Promise<{ lessonId: string }>;
 }) {
   const { lessonId } = await params;
+  await requireEnrolledProfile();
   const lesson = await getLesson(lessonId);
   if (!lesson) notFound();
 

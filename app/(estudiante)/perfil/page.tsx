@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Mail } from "lucide-react";
+import { ArrowLeft, Mail, ShieldAlert } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentProfile } from "@/lib/data/profiles";
 import {
@@ -19,8 +19,15 @@ import { cn } from "@/lib/utils";
 import { ProfileForm, type ProgramOption } from "./profile-form";
 import { PasswordForm } from "./password-form";
 
-export default async function PerfilEstudiante() {
-  const supabase = await createClient();
+export default async function PerfilEstudiante({
+  searchParams,
+}: {
+  searchParams: Promise<{ incompleto?: string }>;
+}) {
+  const [{ incompleto }, supabase] = await Promise.all([
+    searchParams,
+    createClient(),
+  ]);
   const [profile, {
     data: { user },
   }, programs] = await Promise.all([
@@ -71,6 +78,19 @@ export default async function PerfilEstudiante() {
         <ArrowLeft className="size-4" aria-hidden="true" />
         Volver a mi panel
       </Link>
+
+      {incompleto === "1" && (
+        <div className="flex items-start gap-2 rounded-xl border border-warning/40 bg-warning/10 px-4 py-3 text-sm text-foreground">
+          <ShieldAlert
+            className="mt-0.5 size-4 shrink-0 text-warning-foreground"
+            aria-hidden="true"
+          />
+          <p>
+            Completa tu tipo de estudiante, programa y curso para acceder a
+            tu ruta, lecciones, diagnóstico y ensayos.
+          </p>
+        </div>
+      )}
 
       <Card>
         <CardHeader>

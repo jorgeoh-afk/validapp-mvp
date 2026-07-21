@@ -7,9 +7,28 @@ import { recordLessonCompleted } from "@/lib/data/gamification";
 
 export async function getLesson(lessonId: string) {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  // Restricción total por inscripción (mismo criterio que `getLearningPath`
+  // en `lib/data/progress.ts`): un estudiante no debe poder VER el contenido
+  // de una lección de otro nivel, aunque conozca su URL directamente. Si el
+  // perfil todavía no tiene nivel objetivo asignado (no debería llegar aquí
+  // -- el wizard de `/perfil` y el gate de UI lo exigen antes -- pero se es
+  // defensivo), no se muestra ninguna lección.
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("target_level_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  const targetLevelId = profile?.target_level_id ?? null;
+  if (!targetLevelId) return null;
+
   const { data } = await supabase
     .from("lessons")
-    .select("id, title, content, subject_id, levels(name)")
+    .select("id, title, content, subject_id, level_id, levels(name)")
     .eq("id", lessonId)
     .single()
     .returns<{
@@ -17,8 +36,17 @@ export async function getLesson(lessonId: string) {
       title: string;
       content: string;
       subject_id: string;
+      level_id: string;
       levels: { name: string } | null;
     }>();
+
+  if (!data) return null;
+  // La página que consume esta función (`app/(estudiante)/leccion/[lessonId]/
+  // page.tsx`) ya hace `if (!lesson) notFound();`: devolver `null` aquí basta
+  // para que un intento de ver una lección de otro nivel resulte en 404, sin
+  // necesidad de tocar ese archivo.
+  if (data.level_id !== targetLevelId) return null;
+
   return data;
 }
 
@@ -119,9 +147,18 @@ export async function submitLessonPractice(
   const lesson = await getLesson(lessonId);
   if (!lesson) return { error: "Lección no encontrada." };
 
+  // `getLearningPath` ahora filtra por el nivel inscrito del estudiante
+  // (`profiles.target_level_id`, ver `lib/data/progress.ts`): una lección de
+  // otro nivel ya NO aparece en `path` en absoluto, así que `status` queda
+  // `undefined` en vez de "bloqueada". Si no se tratara ese caso aparte, la
+  // guarda de abajo dejaría pasar la práctica de una lección fuera del nivel
+  // inscrito (bug de seguridad introducido por el filtro de nivel, no
+  // presente antes). Se bloquea igual que una lección bloqueada, sin
+  // distinguir el motivo exacto (no pertenece a la asignatura, no existe, o
+  // es de otro nivel) para no revelar más de lo necesario.
   const path = await getLearningPath(lesson.subject_id);
   const status = path.find((l) => l.id === lessonId)?.status;
-  if (status === "bloqueada") {
+  if (!status || status === "bloqueada") {
     return { error: "Esta lección todavía está bloqueada." };
   }
 

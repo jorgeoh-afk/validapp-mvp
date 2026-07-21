@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { StartEssayButton } from "./start-essay-button";
+import { requireEnrolledProfile } from "../../_lib/enrollment";
 
 const ESSAY_TYPE_LABEL: Record<string, string> = {
   general_curso: "General del curso",
@@ -29,6 +30,7 @@ export default async function EnsayoDetallePage({
   params: Promise<{ essayId: string }>;
 }) {
   const { essayId } = await params;
+  await requireEnrolledProfile();
   const info = await getEssayStartInfo(essayId);
   if (!info) notFound();
 

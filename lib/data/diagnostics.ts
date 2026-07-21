@@ -30,11 +30,35 @@ function asRpcRows<T>(data: unknown): T[] | null {
 
 export async function getDiagnosticQuestions(subjectId: string) {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
+
+  // Restricción total por inscripción (decisión explícita del usuario, ver
+  // 0028_regular_epja_curriculum_hierarchy.sql y
+  // 0029_diagnostic_scoped_to_enrolled_level.sql): el diagnóstico deja de
+  // estimar nivel y pasa a ser una prueba fija del nivel inscrito
+  // (`profiles.target_level_id`). Si el perfil todavía no tiene nivel
+  // objetivo asignado (no debería llegar aquí -- el wizard de `/perfil` y el
+  // gate de UI lo exigen antes -- pero se es defensivo), no se entrega
+  // ninguna pregunta.
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("target_level_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  const targetLevelId = profile?.target_level_id ?? null;
+  if (!targetLevelId) return [];
+
   // La lectura directa de `questions` está restringida a administradores
   // (migración 0019); un estudiante autenticado solo puede leer preguntas
-  // sin `correct_index` a través de esta función security-definer.
+  // sin `correct_index` a través de esta función security-definer. Desde la
+  // migración 0029, la función exige también `p_level_id` -- ya no devuelve
+  // preguntas de todos los niveles de la asignatura.
   const { data: rawData } = await supabase.rpc("get_diagnostic_questions", {
     p_subject_id: subjectId,
+    p_level_id: targetLevelId,
   });
 
   const questions = asRpcRows<DiagnosticQuestionRow>(rawData) ?? [];
@@ -66,6 +90,23 @@ export async function submitDiagnostic(
   } = await supabase.auth.getUser();
   if (!user) return { error: "Debes iniciar sesión." };
 
+  // Restricción total por inscripción (misma decisión que
+  // `get_diagnostic_questions`, ver 0029_diagnostic_scoped_to_enrolled_level.sql
+  // y `getDiagnosticQuestions` más arriba en este archivo): un request
+  // manipulado podría enviar `question_ids` que no pertenezcan al nivel
+  // inscrito del estudiante. `grade_diagnostic_questions` (migración
+  // 0030_grade_diagnostic_questions_scoped_to_level.sql, solo local, aún no
+  // aplicada a ninguna base de datos) exige también `p_level_id` y filtra
+  // `q.level_id = p_level_id` -- las preguntas que no calcen simplemente no
+  // aparecen en `graded`, mismo comportamiento defensivo que ya existía para
+  // ids inexistentes.
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("target_level_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  const targetLevelId = profile?.target_level_id ?? null;
+
   // `grade_diagnostic_questions` compara internamente contra `correct_index`
   // (una función security-definer, mismo patrón que la lectura de arriba) y
   // devuelve solo `is_correct` ya calculado — el índice correcto nunca sale
@@ -78,6 +119,7 @@ export async function submitDiagnostic(
       const raw = formData.get(`answer_${id}`);
       return raw === null ? -1 : Number(raw);
     }),
+    p_level_id: targetLevelId,
   });
   const graded = asRpcRows<GradeDiagnosticQuestionRow>(gradedRaw);
 

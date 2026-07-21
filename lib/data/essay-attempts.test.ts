@@ -36,6 +36,8 @@ const {
   submitEssayAnswer,
   getAttemptResult,
   getAttemptView,
+  listAvailableEssaysForStudent,
+  getEssayStartInfo,
 } = await import("./essay-attempts");
 
 function setMock(opts: {
@@ -62,8 +64,10 @@ describe("startEssayAttempt", () => {
             available_from: null,
             order_mode: "fijo",
             max_attempts: null,
+            level_id: "level-1",
           },
         }),
+        profiles: () => ({ data: { target_level_id: "level-1" } }),
         essay_attempts: (state) => {
           if (state.method === "insert") {
             return { data: { id: "attempt-1" }, error: null };
@@ -143,8 +147,10 @@ describe("startEssayAttempt", () => {
             available_from: null,
             order_mode: "fijo",
             max_attempts: null,
+            level_id: "level-1",
           },
         }),
+        profiles: () => ({ data: { target_level_id: "level-1" } }),
         essay_attempts: () => ({ data: [] }),
         essay_questions: () => ({ count: 0 }),
       },
@@ -479,5 +485,194 @@ describe("getAttemptResult", () => {
     expect(result?.questions[0].isCorrect).toBe(true);
     expect(result?.questions[0].explanation).toBe("porque a es correcta");
     expect(callsToTable(mock.calls, "questions")).toHaveLength(0);
+  });
+});
+
+// Pruebas de la restricción total por inscripción (decisión explícita del
+// usuario, ver 0028_regular_epja_curriculum_hierarchy.sql y
+// 0029_diagnostic_scoped_to_enrolled_level.sql): un estudiante solo debe ver
+// y poder rendir ensayos de su `profiles.target_level_id` exacto.
+describe("listAvailableEssaysForStudent", () => {
+  const essaysOfBothLevels = [
+    {
+      id: "essay-own-level",
+      name: "Ensayo de mi nivel",
+      essay_type: "general_curso",
+      level_id: "level-enrolled",
+      total_questions: 10,
+      time_limit_minutes: null,
+      max_attempts: null,
+      available_from: null,
+      status: "publicado",
+      levels: { name: "Mi nivel", order_index: 1 },
+    },
+    {
+      id: "essay-other-level",
+      name: "Ensayo de otro nivel",
+      essay_type: "general_curso",
+      level_id: "level-other",
+      total_questions: 10,
+      time_limit_minutes: null,
+      max_attempts: null,
+      available_from: null,
+      status: "publicado",
+      levels: { name: "Otro nivel", order_index: 2 },
+    },
+  ];
+
+  it("solo trae ensayos del nivel exacto en que está inscrito el estudiante, aunque haya otros publicados", async () => {
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "level-enrolled" } }),
+        essays: (state) => {
+          const rows = essaysOfBothLevels.filter(
+            (e) => e.level_id === state.filters.level_id
+          );
+          return { data: rows };
+        },
+        essay_attempts: () => ({ data: [] }),
+        diagnostics: () => ({ data: null }),
+      },
+    });
+
+    const list = await listAvailableEssaysForStudent();
+    expect(list.map((e) => e.id)).toEqual(["essay-own-level"]);
+    expect(list.some((e) => e.levelId === "level-other")).toBe(false);
+    expect(callsToTable(mock.calls, "essays")).toHaveLength(1);
+  });
+
+  it("no muestra ningún ensayo si el perfil todavía no tiene nivel objetivo asignado", async () => {
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: null } }),
+        essays: () => ({ data: essaysOfBothLevels }),
+      },
+    });
+
+    const list = await listAvailableEssaysForStudent();
+    expect(list).toEqual([]);
+    // Defensivo: ni siquiera se llega a consultar `essays` sin nivel objetivo.
+    expect(callsToTable(mock.calls, "essays")).toHaveLength(0);
+  });
+});
+
+describe("getEssayStartInfo - restricción por inscripción", () => {
+  it("devuelve null si el ensayo pedido es de un nivel distinto al inscrito, aunque exista y esté publicado", async () => {
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "level-enrolled" } }),
+        essays: () => ({
+          data: {
+            id: "essay-other-level",
+            name: "Ensayo de otro nivel",
+            essay_type: "general_curso",
+            status: "publicado",
+            available_from: null,
+            total_questions: 10,
+            time_limit_minutes: null,
+            total_points: 10,
+            feedback_mode: "al_finalizar",
+            max_attempts: null,
+            level_id: "level-other",
+            levels: { name: "Otro nivel" },
+          },
+        }),
+      },
+    });
+
+    const info = await getEssayStartInfo("essay-other-level");
+    expect(info).toBeNull();
+    // No se llegó a consultar intentos: se corta antes, en el chequeo de nivel.
+    expect(callsToTable(mock.calls, "essay_attempts")).toHaveLength(0);
+  });
+
+  it("devuelve el detalle normal si el ensayo es del nivel inscrito", async () => {
+    setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "level-enrolled" } }),
+        essays: () => ({
+          data: {
+            id: "essay-own-level",
+            name: "Ensayo de mi nivel",
+            essay_type: "general_curso",
+            status: "publicado",
+            available_from: null,
+            total_questions: 10,
+            time_limit_minutes: null,
+            total_points: 10,
+            feedback_mode: "al_finalizar",
+            max_attempts: null,
+            level_id: "level-enrolled",
+            levels: { name: "Mi nivel" },
+          },
+        }),
+        essay_attempts: () => ({ data: [] }),
+      },
+    });
+
+    const info = await getEssayStartInfo("essay-own-level");
+    expect(info).not.toBeNull();
+    expect(info?.id).toBe("essay-own-level");
+    expect(info?.canStart).toBe(true);
+  });
+});
+
+describe("startEssayAttempt - restricción por inscripción", () => {
+  it("rechaza iniciar un intento nuevo de un ensayo de otro nivel, tratándolo como 'no encontrado'", async () => {
+    const mock = setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: "level-enrolled" } }),
+        essays: () => ({
+          data: {
+            id: "essay-other-level",
+            status: "publicado",
+            available_from: null,
+            order_mode: "fijo",
+            max_attempts: null,
+            level_id: "level-other",
+          },
+        }),
+      },
+    });
+
+    const formData = new FormData();
+    formData.set("essayId", "essay-other-level");
+
+    const result = await startEssayAttempt(null, formData);
+    expect(result).toEqual({ error: "No se encontró el ensayo." });
+    // No se llegó a crear ningún intento.
+    expect(
+      callsToTable(mock.calls, "essay_attempts").some((c) => c.type === "insert")
+    ).toBe(false);
+  });
+
+  it("rechaza iniciar un intento si el perfil todavía no tiene nivel objetivo asignado", async () => {
+    setMock({
+      user: { id: "student-1" },
+      from: {
+        profiles: () => ({ data: { target_level_id: null } }),
+        essays: () => ({
+          data: {
+            id: "essay-1",
+            status: "publicado",
+            available_from: null,
+            order_mode: "fijo",
+            max_attempts: null,
+            level_id: "level-1",
+          },
+        }),
+      },
+    });
+
+    const formData = new FormData();
+    formData.set("essayId", "essay-1");
+
+    const result = await startEssayAttempt(null, formData);
+    expect(result).toEqual({ error: "No se encontró el ensayo." });
   });
 });

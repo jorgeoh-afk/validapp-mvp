@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DiagnosticForm } from "./diagnostic-form";
+import { requireEnrolledProfile } from "../../_lib/enrollment";
 
 export default async function RendirDiagnosticoPage({
   params,
@@ -17,6 +18,7 @@ export default async function RendirDiagnosticoPage({
   params: Promise<{ subjectId: string }>;
 }) {
   const { subjectId } = await params;
+  await requireEnrolledProfile();
   const [questions, subjects] = await Promise.all([
     getDiagnosticQuestions(subjectId),
     listSubjects(),

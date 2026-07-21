@@ -15,6 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { requireEnrolledProfile } from "../../_lib/enrollment";
 
 const LEVEL_STATUS_CONFIG = {
   completado: {
@@ -40,6 +41,7 @@ export default async function RutaPage({
   params: Promise<{ subjectId: string }>;
 }) {
   const { subjectId } = await params;
+  await requireEnrolledProfile();
   const [path, subjects, levels] = await Promise.all([
     getLearningPath(subjectId),
     listSubjects(),

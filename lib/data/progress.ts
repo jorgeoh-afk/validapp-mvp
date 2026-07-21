@@ -21,10 +21,27 @@ export async function getLearningPath(
   } = await supabase.auth.getUser();
   if (!user) return [];
 
+  // Restricción total por inscripción (decisión explícita del usuario, ver
+  // 0028_regular_epja_curriculum_hierarchy.sql y
+  // 0029_diagnostic_scoped_to_enrolled_level.sql): un estudiante solo debe
+  // ver lecciones de su `target_level_id` exacto, nunca de otro nivel aunque
+  // sea la misma asignatura. Si el perfil todavía no tiene nivel objetivo
+  // asignado (no debería llegar aquí -- el wizard de `/perfil` y el gate de
+  // UI lo exigen antes -- pero se es defensivo), no se muestra ninguna
+  // lección en vez de mostrar todos los niveles.
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("target_level_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  const targetLevelId = profile?.target_level_id ?? null;
+  if (!targetLevelId) return [];
+
   const { data: lessons } = await supabase
     .from("lessons")
     .select("id, title, order_index, levels(name, order_index)")
     .eq("subject_id", subjectId)
+    .eq("level_id", targetLevelId)
     .returns<
       {
         id: string;
@@ -45,32 +62,40 @@ export async function getLearningPath(
     .eq("student_id", user.id);
   const completedIds = new Set((progressRows ?? []).map((r) => r.lesson_id));
 
-  const { data: diagnostic } = await supabase
-    .from("diagnostics")
-    .select("estimated_level:levels!estimated_level_id(order_index)")
-    .eq("student_id", user.id)
-    .eq("subject_id", subjectId)
-    .order("completed_at", { ascending: false })
-    .limit(1)
-    .maybeSingle()
-    .returns<{ estimated_level: { order_index: number } | null }>();
-
-  const estimatedOrder = diagnostic?.estimated_level?.order_index;
-
-  let startIndex = 0;
-  if (typeof estimatedOrder === "number") {
-    const idx = sortedLessons.findIndex(
-      (l) => (l.levels?.order_index ?? 0) >= estimatedOrder
-    );
-    startIndex = idx === -1 ? sortedLessons.length : idx;
-  }
-
+  // Nota (bug encontrado y corregido en la auditoría de QA de la restricción
+  // total por inscripción, ver 0029_diagnostic_scoped_to_enrolled_level.sql):
+  // antes de esta corrección, aquí se traía el diagnóstico más reciente del
+  // estudiante para esta asignatura (sin filtrar por nivel, porque
+  // `diagnostics` no guarda "en qué nivel se rindió", solo
+  // `estimated_level_id`) y se usaba su `order_index` para marcar como
+  // "completada" -de entrada, sin `lesson_progress`- cualquier lección de
+  // nivel inferior al estimado. Ese mecanismo tenía sentido cuando
+  // `getLearningPath` devolvía lecciones de TODOS los niveles de la
+  // asignatura y el diagnóstico las abarcaba todas para estimar en cuál
+  // nivel debía empezar el estudiante.
+  //
+  // Ahora que `lessons` arriba ya está filtrado a un solo `level_id` (el
+  // inscrito), todas las lecciones de `sortedLessons` comparten el mismo
+  // `levels.order_index`, así que ese mecanismo queda en uno de dos estados,
+  // ninguno correcto:
+  //   - Si el diagnóstico es reciente y del nivel inscrito: es un no-op (el
+  //     `order_index` estimado siempre es <= el propio, por cómo
+  //     `submitDiagnostic` calcula `estimated_level_id` ahora que las
+  //     preguntas ya vienen todas del mismo nivel).
+  //   - Si el diagnóstico es de un nivel MAYOR al inscrito actual (p. ej. el
+  //     estudiante rindió un diagnóstico cuando estaba inscrito en un nivel
+  //     más avanzado y luego bajó de nivel en "Mi perfil", o es un
+  //     diagnóstico de antes de esta restricción): TODAS las lecciones del
+  //     nivel inscrito quedarían marcadas "completada" de entrada, sin que el
+  //     estudiante haya hecho ninguna -- infla el progreso mostrado
+  //     (`overallPercent`/`completedLessons` en el panel) de forma falsa.
+  // Se elimina el mecanismo: el estado de una lección depende únicamente de
+  // `lesson_progress` (completada de verdad) y del desbloqueo secuencial
+  // dentro del nivel inscrito.
   let previousUnlocked = true;
-  return sortedLessons.map((lesson, index) => {
+  return sortedLessons.map((lesson) => {
     let status: LessonStatus;
     if (completedIds.has(lesson.id)) {
-      status = "completada";
-    } else if (index < startIndex) {
       status = "completada";
     } else if (previousUnlocked) {
       status = "disponible";

@@ -100,7 +100,7 @@ describe("getDiagnosticQuestions", () => {
 });
 
 describe("submitDiagnostic", () => {
-  it("califica vía grade_diagnostic_questions y guarda el resultado sin haber leído correct_index", async () => {
+  it("califica vía grade_diagnostic_questions, no aprueba (<60%) y guarda estimated_level_id=null sin haber leído correct_index", async () => {
     let insertedDiagnostic: Record<string, unknown> | null = null;
     let insertedAnswers: unknown[] = [];
 
@@ -108,7 +108,6 @@ describe("submitDiagnostic", () => {
       user: { id: "student-1" },
       from: {
         profiles: () => ({ data: { target_level_id: "lvl1" } }),
-        levels: () => ({ data: [{ id: "lvl1", order_index: 0 }] }),
         diagnostics: (state) => {
           if (state.method === "insert") {
             insertedDiagnostic = state.payload as Record<string, unknown>;
@@ -158,8 +157,13 @@ describe("submitDiagnostic", () => {
     expect(insertedDiagnostic).toMatchObject({
       student_id: "student-1",
       subject_id: "subject-1",
-      score: 1, // solo q1 fue correcta según el fixture de la RPC
+      score: 1, // solo q1 fue correcta según el fixture de la RPC: 1/2 = 50%
       total_questions: 2,
+      // Redefinición del resultado del diagnóstico (ya no "estima" nivel,
+      // ver `submitDiagnostic`): con 50% < 60% no aprueba, así que
+      // `estimated_level_id` queda `null` -- nunca se inventa un nivel de
+      // reemplazo (fallback viejo `levels[0].id`, ver bug reportado).
+      estimated_level_id: null,
     });
     expect(insertedAnswers).toEqual([
       { question_id: "q1", selected_index: 0, is_correct: true, diagnostic_id: "diag-1" },
@@ -206,7 +210,6 @@ describe("submitDiagnostic", () => {
       user: { id: "student-1" },
       from: {
         profiles: () => ({ data: { target_level_id: "lvl-inscrito" } }),
-        levels: () => ({ data: [{ id: "lvl-inscrito", order_index: 0 }] }),
         diagnostics: (state) => {
           if (state.method === "insert") {
             insertedDiagnostic = state.payload as Record<string, unknown>;
@@ -254,6 +257,9 @@ describe("submitDiagnostic", () => {
       subject_id: "subject-1",
       score: 1,
       total_questions: 1,
+      // 1/1 = 100% >= 60%: aprueba, así que `estimated_level_id` guarda el
+      // mismo nivel inscrito enviado como `p_level_id`.
+      estimated_level_id: "lvl-inscrito",
     });
     expect(insertedAnswers).toEqual([
       { question_id: "q1", selected_index: 0, is_correct: true, diagnostic_id: "diag-1" },

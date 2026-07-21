@@ -133,7 +133,6 @@ export async function submitDiagnostic(
     selected_index: number;
     is_correct: boolean;
   }[] = [];
-  const levelStats = new Map<string, { correct: number; total: number }>();
 
   for (const q of graded) {
     const selectedRaw = formData.get(`answer_${q.question_id}`);
@@ -144,31 +143,19 @@ export async function submitDiagnostic(
       selected_index: selectedIndex,
       is_correct: q.is_correct,
     });
-
-    const stats = levelStats.get(q.level_id) ?? { correct: 0, total: 0 };
-    stats.total += 1;
-    if (q.is_correct) stats.correct += 1;
-    levelStats.set(q.level_id, stats);
   }
 
-  const { data: levels } = await supabase
-    .from("levels")
-    .select("id, order_index")
-    .order("order_index");
-
-  let estimatedLevelId: string | null = null;
-  if (levels && levels.length > 0) {
-    for (const level of [...levels].reverse()) {
-      const stats = levelStats.get(level.id);
-      if (stats && stats.correct / stats.total >= 0.6) {
-        estimatedLevelId = level.id;
-        break;
-      }
-    }
-    if (!estimatedLevelId) {
-      estimatedLevelId = levels[0].id;
-    }
-  }
+  // El diagnóstico ya no "estima" un nivel probando varios cursos de una
+  // asignatura (eso terminó con la migración 0029, que restringe todo el
+  // diagnóstico al nivel inscrito del estudiante) -- ahora es una prueba de
+  // aprobado/no aprobado de `targetLevelId`. Si aprueba (>=60%),
+  // `estimated_level_id` guarda ese mismo nivel (para mostrar "aprobaste
+  // {nivel}"); si no aprueba, queda `null` -- nunca se inventa un nivel de
+  // reemplazo (el fallback viejo `levels[0].id` traía el nivel de menor
+  // `order_index` de TODA la base, sin relación con el estudiante, ver
+  // bug reportado).
+  const passed = graded.length > 0 && score / graded.length >= 0.6;
+  const estimatedLevelId = passed ? targetLevelId : null;
 
   const { data: diagnostic, error } = await supabase
     .from("diagnostics")

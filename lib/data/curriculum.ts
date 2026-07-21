@@ -215,21 +215,96 @@ export type CurriculumLevelOption = {
   order_index: number;
 };
 
+const LEVEL_OPTION_COLUMNS =
+  "id, name, code, education_type, equivalence, track, order_index";
+
+/**
+ * Niveles alcanzables por un programa, combinando dos caminos: la relación
+ * canónica directa (`levels.program_id`) y la tabla puente `program_levels`
+ * (0031), que permite que un mismo nivel esté disponible bajo varios
+ * programas -- caso de "EPJA - Modalidad Regular" y "EPJA - Modalidad
+ * Flexible", que no tienen niveles propios y comparten los 5 niveles EPJA
+ * condensados de "EPJA - Exámenes Libres". Se resuelve con dos consultas
+ * separadas (en vez de un `.or()` con `in` interpolado en el string) para no
+ * tener que armar SQL a mano ni depender de escapar ids dentro de un
+ * template string; el merge/dedupe por `id` ocurre en memoria porque el seed
+ * 0010 inserta también la relación canónica en la tabla puente para
+ * "Currículum Regular" y "EPJA Exámenes Libres", así que esos niveles
+ * calificarían dos veces si no se deduplicaran.
+ *
+ * Manejo de errores asimétrico a propósito: si falla la consulta DIRECTA
+ * (`levels.program_id`), se comporta como antes de esta función (log +
+ * `[]`) -- es el camino que ya está en producción hoy y no debería fallar.
+ * Si falla cualquiera de las consultas del PUENTE (`program_levels`, o la
+ * segunda consulta a `levels` con los ids del puente) -- por ejemplo porque
+ * la migración 0031/seed 0010 todavía no se han aplicado a esa base de
+ * datos -- se loguea el error pero se devuelven igual los niveles ya
+ * obtenidos por la vía directa, en vez de `[]`. La parte nueva (compartir
+ * niveles vía puente) debe degradar a "no agrega nada extra todavía", nunca
+ * a "rompe lo que ya funcionaba".
+ */
 export async function listLevelsByProgram(
   programId: string
 ): Promise<CurriculumLevelOption[]> {
   if (!programId) return [];
   const supabase = await createClient();
-  const { data, error } = await supabase
+
+  const { data: directLevels, error: directError } = await supabase
     .from("levels")
-    .select("id, name, code, education_type, equivalence, track, order_index")
-    .eq("program_id", programId)
-    .order("order_index");
-  if (error) {
-    console.error("listLevelsByProgram falló:", error.message);
+    .select(LEVEL_OPTION_COLUMNS)
+    .eq("program_id", programId);
+
+  if (directError) {
+    console.error("listLevelsByProgram falló:", directError.message);
     return [];
   }
-  return data ?? [];
+
+  const byId = new Map<string, CurriculumLevelOption>();
+  for (const level of directLevels ?? []) {
+    byId.set(level.id, level);
+  }
+
+  const { data: bridgeIds, error: bridgeIdsError } = await supabase
+    .from("program_levels")
+    .select("level_id")
+    .eq("program_id", programId);
+
+  if (bridgeIdsError) {
+    console.error(
+      "listLevelsByProgram (program_levels) falló, se ignora y se devuelve solo la relación directa:",
+      bridgeIdsError.message
+    );
+    return Array.from(byId.values()).sort(
+      (a, b) => a.order_index - b.order_index
+    );
+  }
+
+  const bridgeLevelIds = (bridgeIds ?? [])
+    .map((row) => row.level_id)
+    .filter((levelId) => !byId.has(levelId));
+
+  if (bridgeLevelIds.length > 0) {
+    const { data: bridgeLevels, error: bridgeLevelsError } = await supabase
+      .from("levels")
+      .select(LEVEL_OPTION_COLUMNS)
+      .in("id", bridgeLevelIds);
+    if (bridgeLevelsError) {
+      console.error(
+        "listLevelsByProgram (levels via puente) falló, se ignora y se devuelve solo la relación directa:",
+        bridgeLevelsError.message
+      );
+      return Array.from(byId.values()).sort(
+        (a, b) => a.order_index - b.order_index
+      );
+    }
+    for (const level of bridgeLevels ?? []) {
+      byId.set(level.id, level);
+    }
+  }
+
+  return Array.from(byId.values()).sort(
+    (a, b) => a.order_index - b.order_index
+  );
 }
 
 /**

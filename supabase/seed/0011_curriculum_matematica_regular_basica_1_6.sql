@@ -43,13 +43,15 @@
 -- QUÉ CUBRE Y QUÉ NO
 -- ============================================================================
 -- Cubre: los 5 ejes temáticos oficiales x 6 cursos (1° a 6° Básico) = 30
--- combinaciones eje-curso, cada una con 1 unidad y 3 objetivos de aprendizaje
--- "semilla" (representativos, no exhaustivos). El PDF oficial suele declarar
--- entre 5 y 8 OA por eje y curso -- este archivo NO reproduce ese número
--- completo a propósito (ver confianza baja arriba): son 3 objetivos
--- curados por eje/curso, pensados como cobertura inicial para habilitar
--- lecciones y banco de preguntas por objetivo, pendientes de expandirse y
--- verificar contra el documento oficial línea por línea.
+-- combinaciones eje-curso, cada una con 1 unidad y entre 4 y 6 objetivos de
+-- aprendizaje curados (ampliado desde la versión inicial de 3 objetivos
+-- "semilla" por eje/curso). El eje Números lleva 6 objetivos por curso (mayor
+-- peso relativo en el currículo oficial); Patrones y Álgebra y Geometría
+-- llevan 5; Medición y Datos y Probabilidades llevan 4 (ejes con menor
+-- cantidad de OA oficiales en este tramo). Siguen siendo representativos, NO
+-- exhaustivos -- el PDF oficial puede declarar un número distinto de OA por
+-- eje y curso, y esta cobertura ampliada no reemplaza la verificación línea
+-- por línea contra el documento oficial.
 --
 -- No cubre: banco de preguntas, lecciones, ensayos, habilidades (fuera de
 -- alcance de esta tarea -- ver /validapp-assessments para preguntas/ensayos).
@@ -162,7 +164,10 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Conteo hasta 20', 'Contar números hasta 20 de 1 en 1 y de 2 en 2, en forma ascendente y descendente.', 0),
   ('Lectura, escritura y representación hasta 20', 'Leer, escribir y representar números naturales del 0 al 20 de manera concreta, pictórica y simbólica.', 1),
-  ('Adición y sustracción hasta 20', 'Resolver problemas de adición y sustracción en el ámbito del 20, sin reagrupación.', 2)
+  ('Adición y sustracción hasta 20', 'Resolver problemas de adición y sustracción en el ámbito del 20, sin reagrupación.', 2),
+  ('Composición y descomposición de números hasta 20', 'Componer y descomponer números del 0 al 20 de manera aditiva, usando material concreto y pictórico.', 3),
+  ('Estimación de cantidades', 'Estimar cantidades hasta 20 y comprobar la estimación mediante el conteo.', 4),
+  ('Uso de monedas de uso común', 'Identificar y usar monedas de uso común ($10, $50, $100, $500) en situaciones cotidianas simples de compra y venta.', 5)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Números') and name = 'Números — 1° Básico') as u
 cross join (select id from public.levels where code = 'regular_1_basico') as l
@@ -184,7 +189,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Patrones repetitivos', 'Reconocer, describir y crear patrones numéricos y de figuras repetitivos.', 0),
   ('El signo igual como equivalencia', 'Comprender el signo igual como una relación de equivalencia entre dos expresiones.', 1),
-  ('Predicción de elementos en una secuencia', 'Usar un patrón para predecir elementos faltantes en una secuencia numérica o de figuras.', 2)
+  ('Predicción de elementos en una secuencia', 'Usar un patrón para predecir elementos faltantes en una secuencia numérica o de figuras.', 2),
+  ('Patrones crecientes y decrecientes simples', 'Reconocer y describir patrones numéricos crecientes y decrecientes simples de 1 en 1 y de 2 en 2.', 3),
+  ('Igualdades numéricas simples', 'Completar igualdades numéricas simples de adición y sustracción hasta 20.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Patrones y Álgebra') and name = 'Patrones y Álgebra — 1° Básico') as u
 cross join (select id from public.levels where code = 'regular_1_basico') as l
@@ -206,7 +213,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Figuras 2D y cuerpos 3D básicos', 'Reconocer y nombrar figuras 2D (cuadrado, triángulo, círculo, rectángulo) y cuerpos 3D (esfera, cono, cubo, cilindro) en el entorno.', 0),
   ('Ubicación relativa de objetos', 'Describir la posición de personas y objetos usando vocabulario de ubicación relativa (izquierda/derecha, arriba/abajo, dentro/fuera).', 1),
-  ('Representación de objetos con figuras geométricas', 'Representar objetos del entorno mediante figuras geométricas 2D y cuerpos 3D básicos.', 2)
+  ('Representación de objetos con figuras geométricas', 'Representar objetos del entorno mediante figuras geométricas 2D y cuerpos 3D básicos.', 2),
+  ('Comparación de tamaños y formas', 'Comparar y clasificar figuras 2D y cuerpos 3D según sus atributos (forma, tamaño, número de lados).', 3),
+  ('Referentes de posición en trayectos', 'Describir trayectos y ubicaciones usando referentes de posición (adelante/atrás, cerca/lejos).', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Geometría') and name = 'Geometría — 1° Básico') as u
 cross join (select id from public.levels where code = 'regular_1_basico') as l
@@ -228,7 +237,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Comparación de longitudes, pesos y capacidades', 'Comparar y ordenar longitudes, pesos y capacidades de objetos sin usar instrumentos de medida estandarizados.', 0),
   ('Secuencia temporal', 'Ubicar eventos de la rutina diaria y semanal en una secuencia temporal (antes/después, días de la semana).', 1),
-  ('Lectura de la hora en punto', 'Leer la hora en punto en relojes análogos y digitales.', 2)
+  ('Lectura de la hora en punto', 'Leer la hora en punto en relojes análogos y digitales.', 2),
+  ('Comparación de la duración de eventos', 'Comparar la duración de eventos cotidianos usando vocabulario temporal (más corto/más largo, antes/después).', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Medición') and name = 'Medición — 1° Básico') as u
 cross join (select id from public.levels where code = 'regular_1_basico') as l
@@ -250,7 +260,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Recolección y registro de datos', 'Recolectar datos del entorno y registrarlos en tablas simples y pictogramas.', 0),
   ('Eventos seguros, posibles e imposibles', 'Distinguir entre eventos seguros, posibles e imposibles en situaciones cotidianas.', 1),
-  ('Interpretación de pictogramas simples', 'Interpretar información presentada en pictogramas simples de hasta dos categorías.', 2)
+  ('Interpretación de pictogramas simples', 'Interpretar información presentada en pictogramas simples de hasta dos categorías.', 2),
+  ('Clasificación de objetos según un atributo', 'Clasificar objetos concretos según un atributo y justificar el criterio de clasificación usado.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Datos y Probabilidades') and name = 'Datos y Probabilidades — 1° Básico') as u
 cross join (select id from public.levels where code = 'regular_1_basico') as l
@@ -275,7 +286,10 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Conteo hasta 100', 'Contar números hasta 100 de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10, en forma ascendente y descendente.', 0),
   ('Comparación de números hasta 100', 'Leer, escribir, representar y comparar números naturales hasta 100.', 1),
-  ('Adición y sustracción hasta 100', 'Resolver problemas de adición y sustracción hasta 100, incluyendo situaciones con reagrupación.', 2)
+  ('Adición y sustracción hasta 100', 'Resolver problemas de adición y sustracción hasta 100, incluyendo situaciones con reagrupación.', 2),
+  ('Composición y descomposición hasta 100', 'Componer y descomponer números del 0 al 100 en forma aditiva, de acuerdo a su valor posicional.', 3),
+  ('Fracciones simples: mitades y cuartos', 'Identificar mitades y cuartos como partes de un todo, de manera concreta y pictórica.', 4),
+  ('Estrategias de cálculo mental', 'Aplicar estrategias de cálculo mental para adiciones y sustracciones hasta 20.', 5)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Números') and name = 'Números — 2° Básico') as u
 cross join (select id from public.levels where code = 'regular_2_basico') as l
@@ -297,7 +311,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Patrones numéricos con una regla', 'Crear, describir y registrar patrones numéricos identificando la regla que los genera.', 0),
   ('Valores desconocidos en igualdades', 'Determinar valores desconocidos en igualdades numéricas simples de adición y sustracción.', 1),
-  ('Doble, triple y mitad', 'Representar de manera concreta y pictórica el doble, el triple y la mitad de una cantidad.', 2)
+  ('Doble, triple y mitad', 'Representar de manera concreta y pictórica el doble, el triple y la mitad de una cantidad.', 2),
+  ('Secuencias con dos operaciones', 'Crear y describir secuencias numéricas que combinan una regla de suma y una de resta.', 3),
+  ('Uso de la balanza para igualdades', 'Representar igualdades numéricas usando el modelo de balanza en equilibrio.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Patrones y Álgebra') and name = 'Patrones y Álgebra — 2° Básico') as u
 cross join (select id from public.levels where code = 'regular_2_basico') as l
@@ -319,7 +335,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Ubicación mediante coordenadas informales', 'Describir la posición de objetos en una cuadrícula usando coordenadas informales (filas y columnas).', 0),
   ('Simetría en figuras 2D', 'Identificar la línea de simetría en figuras 2D.', 1),
-  ('Guardas y teselados', 'Diseñar guardas y teselados simples combinando figuras 2D.', 2)
+  ('Guardas y teselados', 'Diseñar guardas y teselados simples combinando figuras 2D.', 2),
+  ('Figuras 3D a partir de redes simples', 'Reconocer figuras 3D a partir de sus redes o desarrollos planos simples.', 3),
+  ('Descripción de trayectos con giros', 'Describir la posición de objetos y trayectos utilizando puntos de referencia y giros simples.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Geometría') and name = 'Geometría — 2° Básico') as u
 cross join (select id from public.levels where code = 'regular_2_basico') as l
@@ -341,7 +359,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Medición de longitudes', 'Medir longitudes usando unidades no estandarizadas y estandarizadas (centímetro, metro).', 0),
   ('Hora en punto y media hora', 'Registrar y comunicar la hora en punto y media hora en relojes análogos y digitales.', 1),
-  ('Estimación de peso', 'Estimar y medir el peso de objetos usando unidades no estandarizadas.', 2)
+  ('Estimación de peso', 'Estimar y medir el peso de objetos usando unidades no estandarizadas.', 2),
+  ('Comparación de capacidades', 'Comparar y ordenar la capacidad de recipientes usando unidades no estandarizadas y estandarizadas (litro).', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Medición') and name = 'Medición — 2° Básico') as u
 cross join (select id from public.levels where code = 'regular_2_basico') as l
@@ -363,7 +382,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Preguntas y recolección de datos', 'Formular preguntas y recolectar datos del entorno para responderlas.', 0),
   ('Pictogramas y gráficos de barra simples', 'Construir e interpretar pictogramas y gráficos de barra simples.', 1),
-  ('Eventos más o menos probables', 'Reconocer que algunos eventos cotidianos son más o menos probables que otros.', 2)
+  ('Eventos más o menos probables', 'Reconocer que algunos eventos cotidianos son más o menos probables que otros.', 2),
+  ('Tablas de conteo', 'Registrar datos recolectados en tablas de conteo simples y responder preguntas a partir de ellas.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Datos y Probabilidades') and name = 'Datos y Probabilidades — 2° Básico') as u
 cross join (select id from public.levels where code = 'regular_2_basico') as l
@@ -388,7 +408,10 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Números hasta 1.000', 'Leer, escribir, representar y comparar números naturales hasta 1.000.', 0),
   ('Adición y sustracción hasta 1.000', 'Resolver problemas de adición y sustracción hasta 1.000, con y sin reagrupación.', 1),
-  ('Multiplicación y división hasta el 10', 'Resolver problemas de multiplicación y división en el contexto de las tablas hasta el 10.', 2)
+  ('Multiplicación y división hasta el 10', 'Resolver problemas de multiplicación y división en el contexto de las tablas hasta el 10.', 2),
+  ('Valor posicional hasta la unidad de mil', 'Representar y describir números hasta 1.000 según su valor posicional (unidades, decenas, centenas).', 3),
+  ('Fracciones como parte de un todo', 'Identificar y representar fracciones de uso común (1/2, 1/3, 1/4) como partes de un todo o de un grupo de objetos.', 4),
+  ('Estrategias de multiplicación', 'Aplicar estrategias para construir las tablas de multiplicar hasta el 10 (representación en tablas, arreglos rectangulares).', 5)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Números') and name = 'Números — 3° Básico') as u
 cross join (select id from public.levels where code = 'regular_3_basico') as l
@@ -410,7 +433,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Cálculo mental', 'Aplicar estrategias de cálculo mental para resolver adiciones y sustracciones.', 0),
   ('Ecuaciones simples de un paso', 'Resolver ecuaciones simples de un paso usando la relación entre las cuatro operaciones.', 1),
-  ('Patrones con las cuatro operaciones', 'Describir patrones numéricos que involucran adición, sustracción, multiplicación y división.', 2)
+  ('Patrones con las cuatro operaciones', 'Describir patrones numéricos que involucran adición, sustracción, multiplicación y división.', 2),
+  ('Reglas de formación de patrones', 'Describir la regla de formación de un patrón numérico y usarla para extenderlo.', 3),
+  ('Relación entre multiplicación y división', 'Aplicar la relación inversa entre la multiplicación y la división para resolver problemas.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Patrones y Álgebra') and name = 'Patrones y Álgebra — 3° Básico') as u
 cross join (select id from public.levels where code = 'regular_3_basico') as l
@@ -432,7 +457,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Prismas y pirámides', 'Identificar y describir prismas y pirámides según el número de caras, vértices y aristas.', 0),
   ('Traslaciones de figuras 2D', 'Realizar traslaciones de figuras 2D sobre una cuadrícula.', 1),
-  ('Plano cartesiano — primer cuadrante', 'Ubicar objetos en el primer cuadrante de un plano cartesiano simple.', 2)
+  ('Plano cartesiano — primer cuadrante', 'Ubicar objetos en el primer cuadrante de un plano cartesiano simple.', 2),
+  ('Ángulos rectos en el entorno', 'Identificar ángulos rectos en figuras 2D y en objetos del entorno, usando una escuadra como referencia.', 3),
+  ('Simetría de reflexión', 'Determinar si una figura 2D tiene uno o más ejes de simetría de reflexión.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Geometría') and name = 'Geometría — 3° Básico') as u
 cross join (select id from public.levels where code = 'regular_3_basico') as l
@@ -454,7 +481,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Perímetro de figuras 2D', 'Medir y estimar el perímetro de figuras 2D.', 0),
   ('Paso del tiempo', 'Resolver problemas que involucran el paso del tiempo en horas y minutos.', 1),
-  ('Estimación de volumen con unidades no estandarizadas', 'Estimar y medir volumen usando unidades no estandarizadas.', 2)
+  ('Estimación de volumen con unidades no estandarizadas', 'Estimar y medir volumen usando unidades no estandarizadas.', 2),
+  ('Lectura de calendarios', 'Leer y utilizar calendarios para resolver problemas relacionados con el paso del tiempo (días, semanas, meses).', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Medición') and name = 'Medición — 3° Básico') as u
 cross join (select id from public.levels where code = 'regular_3_basico') as l
@@ -476,7 +504,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Gráficos de barra simple y doble', 'Comparar e interpretar datos representados en pictogramas y gráficos de barra simple y doble.', 0),
   ('Registro de experimentos aleatorios', 'Registrar los resultados de experimentos aleatorios repetidos.', 1),
-  ('Promedio de un conjunto de datos', 'Calcular el promedio (media aritmética) de un conjunto de datos y usarlo para describirlos.', 2)
+  ('Promedio de un conjunto de datos', 'Calcular el promedio (media aritmética) de un conjunto de datos y usarlo para describirlos.', 2),
+  ('Formulación de preguntas estadísticas', 'Formular preguntas estadísticas y planificar la recolección de datos para responderlas.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Datos y Probabilidades') and name = 'Datos y Probabilidades — 3° Básico') as u
 cross join (select id from public.levels where code = 'regular_3_basico') as l
@@ -501,7 +530,10 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Números hasta 10.000', 'Leer, escribir, representar y comparar números naturales hasta 10.000.', 0),
   ('Adición y sustracción hasta 10.000', 'Aplicar estrategias para resolver adiciones y sustracciones hasta 10.000.', 1),
-  ('Multiplicación y división con el algoritmo', 'Resolver problemas de multiplicación y división usando el algoritmo, con dígitos hasta el 10.000.', 2)
+  ('Multiplicación y división con el algoritmo', 'Resolver problemas de multiplicación y división usando el algoritmo, con dígitos hasta el 10.000.', 2),
+  ('Equivalencia de fracciones', 'Identificar y representar fracciones equivalentes de manera concreta, pictórica y simbólica.', 3),
+  ('Adición y sustracción de fracciones y decimales simples', 'Resolver adiciones y sustracciones de fracciones con igual denominador y de números decimales hasta la décima.', 4),
+  ('Estimación de resultados', 'Estimar el resultado de operaciones antes de calcularlas, y verificar la razonabilidad de la respuesta obtenida.', 5)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Números') and name = 'Números — 4° Básico') as u
 cross join (select id from public.levels where code = 'regular_4_basico') as l
@@ -523,7 +555,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Patrones en tablas y plano cartesiano', 'Representar patrones numéricos mediante tablas y gráficos en el plano cartesiano.', 0),
   ('Valores desconocidos en adición y sustracción', 'Determinar valores desconocidos en adiciones y sustracciones.', 1),
-  ('Propiedad distributiva', 'Aplicar la propiedad distributiva de la multiplicación respecto de la adición.', 2)
+  ('Propiedad distributiva', 'Aplicar la propiedad distributiva de la multiplicación respecto de la adición.', 2),
+  ('Ecuaciones simples con multiplicación y división', 'Resolver ecuaciones simples de un paso que involucran multiplicación y división.', 3),
+  ('Reglas de dos operaciones combinadas', 'Describir y aplicar reglas que combinan dos operaciones para generar secuencias numéricas.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Patrones y Álgebra') and name = 'Patrones y Álgebra — 4° Básico') as u
 cross join (select id from public.levels where code = 'regular_4_basico') as l
@@ -545,7 +579,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Ángulos como abertura entre rayos', 'Identificar ángulos como la abertura entre dos rayos con un origen común, y compararlos.', 0),
   ('Perímetro y área de rectángulos y cuadrados', 'Determinar el perímetro y el área de rectángulos y cuadrados.', 1),
-  ('Reflexiones y rotaciones', 'Realizar reflexiones y rotaciones de figuras 2D en el plano cartesiano.', 2)
+  ('Reflexiones y rotaciones', 'Realizar reflexiones y rotaciones de figuras 2D en el plano cartesiano.', 2),
+  ('Clasificación de triángulos y cuadriláteros', 'Clasificar triángulos según sus lados y ángulos, y cuadriláteros según sus propiedades.', 3),
+  ('Coordenadas en los cuatro cuadrantes', 'Ubicar y describir posiciones de objetos en los cuatro cuadrantes de un plano cartesiano.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Geometría') and name = 'Geometría — 4° Básico') as u
 cross join (select id from public.levels where code = 'regular_4_basico') as l
@@ -567,7 +603,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Conversión de unidades de tiempo', 'Convertir entre unidades de medida de tiempo (segundos, minutos, horas, días).', 0),
   ('Medición exploratoria de ángulos', 'Medir y comparar ángulos de forma exploratoria usando un transportador.', 1),
-  ('Problemas de perímetro y área', 'Resolver problemas cotidianos que involucran perímetro y área.', 2)
+  ('Problemas de perímetro y área', 'Resolver problemas cotidianos que involucran perímetro y área.', 2),
+  ('Conversión de unidades de longitud y masa', 'Convertir entre unidades de medida de longitud (m, cm, mm) y de masa (kg, g) en contextos cotidianos.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Medición') and name = 'Medición — 4° Básico') as u
 cross join (select id from public.levels where code = 'regular_4_basico') as l
@@ -589,7 +626,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Gráficos de línea', 'Construir e interpretar gráficos de línea para representar cambios en el tiempo.', 0),
   ('Encuestas y tablas de frecuencia', 'Realizar encuestas simples y organizar los datos en tablas de frecuencia.', 1),
-  ('Probabilidad con fracciones simples', 'Comparar la probabilidad de ocurrencia de eventos usando fracciones simples.', 2)
+  ('Probabilidad con fracciones simples', 'Comparar la probabilidad de ocurrencia de eventos usando fracciones simples.', 2),
+  ('Interpretación de la moda en un conjunto de datos', 'Determinar e interpretar la moda de un conjunto de datos presentados en tablas o gráficos.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Datos y Probabilidades') and name = 'Datos y Probabilidades — 4° Básico') as u
 cross join (select id from public.levels where code = 'regular_4_basico') as l
@@ -614,7 +652,10 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Números hasta 1.000.000', 'Leer, escribir, representar y comparar números naturales hasta 1.000.000.', 0),
   ('Operatoria con fracciones', 'Resolver problemas con las cuatro operaciones que incluyen fracciones propias, impropias y números mixtos.', 1),
-  ('Decimales hasta la centésima', 'Identificar y representar números decimales hasta la centésima.', 2)
+  ('Decimales hasta la centésima', 'Identificar y representar números decimales hasta la centésima.', 2),
+  ('Múltiplos y divisores', 'Determinar múltiplos y divisores de un número y aplicarlos en la resolución de problemas.', 3),
+  ('Multiplicación y división de decimales', 'Resolver problemas de multiplicación y división de números decimales por números naturales de un dígito.', 4),
+  ('Relación entre fracciones, decimales y porcentajes', 'Relacionar fracciones, decimales y porcentajes de uso común (1/2=0,5=50%) en situaciones cotidianas.', 5)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Números') and name = 'Números — 5° Básico') as u
 cross join (select id from public.levels where code = 'regular_5_basico') as l
@@ -636,7 +677,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Prioridad de operaciones', 'Aplicar la prioridad de operaciones al resolver expresiones numéricas combinadas.', 0),
   ('Lenguaje algebraico simple', 'Utilizar lenguaje algebraico simple para representar situaciones cotidianas.', 1),
-  ('Ecuaciones e inecuaciones de un paso', 'Resolver ecuaciones e inecuaciones de un paso en el ámbito de los números naturales.', 2)
+  ('Ecuaciones e inecuaciones de un paso', 'Resolver ecuaciones e inecuaciones de un paso en el ámbito de los números naturales.', 2),
+  ('Secuencias con números decimales y fracciones', 'Describir y continuar secuencias numéricas que involucran fracciones o decimales.', 3),
+  ('Representación gráfica de relaciones simples', 'Representar en tablas y gráficos la relación entre dos cantidades que varían juntas.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Patrones y Álgebra') and name = 'Patrones y Álgebra — 5° Básico') as u
 cross join (select id from public.levels where code = 'regular_5_basico') as l
@@ -658,7 +701,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Construcción de triángulos', 'Construir triángulos dado un conjunto de medidas de lados y/o ángulos.', 0),
   ('Área de triángulos y paralelogramos', 'Determinar el área de triángulos y paralelogramos.', 1),
-  ('Elementos de figuras 3D', 'Identificar y describir la relación entre los elementos de figuras 3D (aristas, caras, vértices).', 2)
+  ('Elementos de figuras 3D', 'Identificar y describir la relación entre los elementos de figuras 3D (aristas, caras, vértices).', 2),
+  ('Círculo y sus elementos', 'Identificar y describir los elementos del círculo (centro, radio, diámetro, circunferencia).', 3),
+  ('Redes de cuerpos geométricos', 'Construir redes (desarrollos planos) de prismas y pirámides.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Geometría') and name = 'Geometría — 5° Básico') as u
 cross join (select id from public.levels where code = 'regular_5_basico') as l
@@ -680,7 +725,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Volumen mediante conteo de cubos', 'Estimar y medir el volumen de prismas rectos mediante el conteo de cubos unitarios.', 0),
   ('Conversión de unidades del Sistema Internacional', 'Convertir entre unidades de medida del Sistema Internacional (longitud, masa, capacidad).', 1),
-  ('Perímetro y área de figuras compuestas', 'Resolver problemas geométricos que involucran perímetro y área de figuras compuestas.', 2)
+  ('Perímetro y área de figuras compuestas', 'Resolver problemas geométricos que involucran perímetro y área de figuras compuestas.', 2),
+  ('Estimación y medición de ángulos con transportador', 'Estimar y medir ángulos usando un transportador, clasificándolos según su medida.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Medición') and name = 'Medición — 5° Básico') as u
 cross join (select id from public.levels where code = 'regular_5_basico') as l
@@ -702,7 +748,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Gráficos circulares', 'Construir e interpretar gráficos circulares para representar datos.', 0),
   ('Media, moda y rango', 'Determinar la media, la moda y el rango de un conjunto de datos.', 1),
-  ('Probabilidad experimental y teórica', 'Comparar resultados obtenidos experimentalmente con la probabilidad teórica de un evento.', 2)
+  ('Probabilidad experimental y teórica', 'Comparar resultados obtenidos experimentalmente con la probabilidad teórica de un evento.', 2),
+  ('Comparación de dos conjuntos de datos', 'Comparar dos conjuntos de datos representados en gráficos, usando medidas de tendencia central.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Datos y Probabilidades') and name = 'Datos y Probabilidades — 5° Básico') as u
 cross join (select id from public.levels where code = 'regular_5_basico') as l
@@ -727,7 +774,10 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Cuatro operaciones con números naturales', 'Resolver problemas rutinarios y no rutinarios que involucran las cuatro operaciones con números naturales.', 0),
   ('Cuatro operaciones con fracciones y decimales', 'Resolver problemas con las cuatro operaciones con fracciones y números decimales.', 1),
-  ('Porcentaje en situaciones cotidianas', 'Aplicar el concepto de porcentaje en la resolución de problemas cotidianos.', 2)
+  ('Porcentaje en situaciones cotidianas', 'Aplicar el concepto de porcentaje en la resolución de problemas cotidianos.', 2),
+  ('Números negativos en contexto', 'Ubicar números enteros negativos en la recta numérica en contextos como temperatura y altitud.', 3),
+  ('Mínimo común múltiplo y máximo común divisor', 'Determinar el mínimo común múltiplo y el máximo común divisor de dos números y aplicarlos en la resolución de problemas.', 4),
+  ('Razones y proporciones', 'Utilizar razones y proporciones para representar y resolver problemas que involucran comparación de cantidades.', 5)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Números') and name = 'Números — 6° Básico') as u
 cross join (select id from public.levels where code = 'regular_6_basico') as l
@@ -749,7 +799,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Reducción de expresiones algebraicas simples', 'Utilizar simbología algebraica para reducir expresiones simples.', 0),
   ('Ecuaciones e inecuaciones con enteros', 'Resolver ecuaciones e inecuaciones de un paso en el ámbito de los números enteros.', 1),
-  ('Proporcionalidad en tablas y gráficos', 'Representar la relación de proporcionalidad directa en tablas y gráficos.', 2)
+  ('Proporcionalidad en tablas y gráficos', 'Representar la relación de proporcionalidad directa en tablas y gráficos.', 2),
+  ('Expresiones algebraicas para representar relaciones', 'Utilizar expresiones algebraicas simples para representar la relación entre dos variables.', 3),
+  ('Resolución de problemas con proporcionalidad directa', 'Resolver problemas de la vida cotidiana que involucran proporcionalidad directa.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Patrones y Álgebra') and name = 'Patrones y Álgebra — 6° Básico') as u
 cross join (select id from public.levels where code = 'regular_6_basico') as l
@@ -771,7 +823,9 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Construcción de ángulos', 'Construir un ángulo dada su medida, usando un transportador.', 0),
   ('Área y perímetro de figuras compuestas', 'Determinar el área y el perímetro de figuras compuestas por triángulos y cuadriláteros.', 1),
-  ('Teselaciones del plano', 'Realizar teselaciones del plano usando figuras 2D y transformaciones isométricas.', 2)
+  ('Teselaciones del plano', 'Realizar teselaciones del plano usando figuras 2D y transformaciones isométricas.', 2),
+  ('Ángulos entre rectas y un transversal', 'Identificar y clasificar ángulos formados por dos rectas y una transversal (correspondientes, alternos internos).', 3),
+  ('Circunferencia: longitud y área del círculo', 'Calcular la longitud de la circunferencia y el área del círculo, de manera manual y/o con software educativo.', 4)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Geometría') and name = 'Geometría — 6° Básico') as u
 cross join (select id from public.levels where code = 'regular_6_basico') as l
@@ -793,7 +847,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Volumen de prismas rectos con fórmula', 'Determinar el volumen de prismas rectos usando una fórmula.', 0),
   ('Conversión de unidades de superficie y volumen', 'Convertir entre unidades de medida de superficie y de volumen.', 1),
-  ('Problemas combinados de perímetro, área y volumen', 'Resolver problemas geométricos que combinan perímetro, área y volumen.', 2)
+  ('Problemas combinados de perímetro, área y volumen', 'Resolver problemas geométricos que combinan perímetro, área y volumen.', 2),
+  ('Área de superficie de prismas', 'Calcular el área de superficie de prismas rectos a partir de su red.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Medición') and name = 'Medición — 6° Básico') as u
 cross join (select id from public.levels where code = 'regular_6_basico') as l
@@ -815,7 +870,8 @@ select u.id, l.id, v.short_name, v.description, 'borrador',
 from (values
   ('Comparación de distintos tipos de gráficos', 'Comparar e interpretar datos usando distintos tipos de gráficos (barra, línea, circular).', 0),
   ('Estudios con muestras y poblaciones', 'Explicar la diferencia entre estudios estadísticos basados en muestras y en poblaciones completas.', 1),
-  ('Probabilidad como razón de casos favorables', 'Registrar resultados de experimentos aleatorios y estimar la probabilidad de un evento como la razón entre casos favorables y casos posibles.', 2)
+  ('Probabilidad como razón de casos favorables', 'Registrar resultados de experimentos aleatorios y estimar la probabilidad de un evento como la razón entre casos favorables y casos posibles.', 2),
+  ('Combinaciones simples en experimentos aleatorios', 'Determinar el número de resultados posibles en experimentos aleatorios simples mediante diagramas de árbol o tablas.', 3)
 ) as v(short_name, description, order_index)
 cross join (select id from public.units where strand_id = (select id from public.strands where subject_id = (select id from public.subjects where name = 'Matemática') and name = 'Datos y Probabilidades') and name = 'Datos y Probabilidades — 6° Básico') as u
 cross join (select id from public.levels where code = 'regular_6_basico') as l
